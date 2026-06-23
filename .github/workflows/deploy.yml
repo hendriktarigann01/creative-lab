@@ -1,0 +1,56 @@
+name: Auto Deploy Next.js (SSR) to cPanel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Next.js for production
+        run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_URL: ${{ secrets.NEXT_PUBLIC_BASE_URL }}
+
+      - name: Prepare deployment folder
+        run: |
+          mkdir -p deploy
+          cp -r .next package.json package-lock.json server.js public deploy/
+          rm -rf deploy/.next/cache
+          rm -f deploy/.next/trace
+          rm -f deploy/.next/trace-build
+          rm -rf deploy/.next/turbopack
+          echo "✅ Total files to deploy: $(find deploy -type f | wc -l)"
+
+      - name: Deploy to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: deploy/
+          server-dir: ./
+          timeout: 120000
+          exclude: |
+            **/.git*
+            **/.github*
+            .next/cache/**
+            .next/trace
+            .next/trace-build
+            .next/turbopack/**
