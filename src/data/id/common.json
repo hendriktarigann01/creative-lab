@@ -1,0 +1,175 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "services": "Layanan",
+    "portfolio": "Portofolio",
+    "contact": "Hubungi Kami",
+    "getStarted": "Mulai"
+  },
+  "hero": {
+    "title": "Architecting digital ecosystems",
+    "gradientWord": "digital ecosystems",
+    "description": "Kami merancang ekosistem perangkat lunak khusus dan instalasi fisik interaktif dengan ketelitian tinggi.",
+    "ctaText": "Mulai Evolusi Digital Anda"
+  },
+  "about": {
+    "seq1Plain": "Kami tidak hanya",
+    "seq1Gradient": "menulis kode.",
+    "seq2Plain": "Kami merekayasa",
+    "seq2Gradient": "Pengalaman.",
+    "seq3Plain": "Presisi dalam",
+    "seq3Gradient": "Aksi."
+  },
+  "advantages": {
+    "heading": "Mengapa memilih kami?",
+    "headingPlain": "Mengapa memilih ",
+    "headingColored": "kami?",
+    "subheading": "Bekerja samalah dengan para ahli yang membangun tanpa batas.",
+    "cpu": {
+      "title": "Optimasi Hardware-First",
+      "desc": "Dibangun oleh insinyur yang memahami spesifikasi LED/LCD. Tanpa lag, tanpa kesalahan rasio aspek."
+    },
+    "shield": {
+      "title": "Kredibilitas B2G",
+      "desc": "Kami memahami standar pengadaan, keamanan, dan pelaporan sektor publik."
+    },
+    "wrench": {
+      "title": "Eksekusi End-to-End",
+      "desc": "Dari baris kode pertama hingga sekrup terakhir pada instalasi fisik—kami memiliki prosesnya."
+    },
+    "zap": {
+      "title": "Prototyping Cepat",
+      "desc": "Mengubah ide abstrak menjadi perangkat lunak MVP yang dapat diuji dalam hitungan minggu, bukan bulan."
+    },
+    "server": {
+      "title": "Arsitektur Skalabel",
+      "desc": "Microservices cloud-native dirancang untuk menangani jutaan pengguna secara bersamaan dengan mudah."
+    },
+    "clock": {
+      "title": "Mission Control 24/7",
+      "desc": "Dukungan SLA berdedikasi memastikan zero downtime untuk infrastruktur penting."
+    }
+  },
+  "services": {
+    "heading": "Layanan Kami",
+    "gradientWord": "Layanan",
+    "subheading": "Rangkaian lengkap kapabilitas tingkat ahli, terlihat dalam sekejap.",
+    "enterprise": {
+      "title": "Enterprise & B2G Solutions",
+      "desc": "Efisiensi, Keamanan Data, dan Skalabilitas."
+    },
+    "gamification": {
+      "title": "Gamification & Games",
+      "desc": "Retensi, Ingatan Brand, dan ROI."
+    },
+    "interactive": {
+      "title": "Interactive Experiences",
+      "desc": "Memaksimalkan Potensi Perangkat Keras MJ Solution."
+    },
+    "strategy": {
+      "title": "Digital Strategy",
+      "desc": "Kemitraan Jangka Panjang."
+    }
+  },
+  "workflow": {
+    "heading": "Alur Kerja Kami",
+    "gradientWord": "Alur Kerja",
+    "subheading": "Peta Jalan Interaktif. Lacak proses kami dari konsep hingga pengiriman!",
+    "step1": {
+      "title": "Discovery",
+      "desc": "Kami menganalisis logika bisnis Anda, mengaudit sistem warisan, dan menentukan persyaratan teknis."
+    },
+    "step2": {
+      "title": "Blueprint",
+      "desc": "Arsitek kami merancang UI/UX, skema database, dan alur kerja sistem."
+    },
+    "step3": {
+      "title": "Build",
+      "desc": "Sprint pengembangan agile dengan integrasi berkelanjutan dan pembaruan klien secara real-time."
+    },
+    "step4": {
+      "title": "Test",
+      "desc": "QA yang ketat, pengujian penetrasi keamanan, dan pengujian penerimaan pengguna (UAT)."
+    },
+    "step5": {
+      "title": "Deploy",
+      "desc": "Peluncuran lancar ke server produksi, toko aplikasi, atau kios perangkat keras fisik."
+    },
+    "step6": {
+      "title": "Support",
+      "desc": "SLA 24/7, pemantauan berkelanjutan, dan pemeliharaan server yang skalabel."
+    }
+  },
+  "portfolio": {
+    "heading": "Portofolio Kami",
+    "gradientWord": "Portofolio",
+    "subheading": "Arahkan kursor untuk menjelajahi eksekusi tingkat master kami.",
+    "showcaseTitle": "Galeri Semua Proyek",
+    "exploreProject": "Jelajahi Proyek"
+  },
+  "cta": {
+    "heading": "Siap membangun tanpa batas?",
+    "gradientWord": "tanpa batas?",
+    "description": "Hubungi tim teknisi kami untuk merancang ekosistem perangkat lunak khusus dan instalasi fisik interaktif dengan ketelitian tinggi.",
+    "ctaText": "Mulai Sekarang"
+  },
+  "contact": {
+    "heading": "Ayo buat mahakarya bersama",
+    "gradientWord": "mahakarya bersama",
+    "subheading": "Hubungi kami di platform pilihan Anda. Kami siap merespons.",
+    "faqTitle": "Pertanyaan yang Sering Diajukan",
+    "faqSub": "Semua yang perlu Anda ketahui tentang memulai proyek dengan Creative Lab.",
+    "infoTitle": "Informasi Kontak",
+    "emailLabel": "Saluran Email",
+    "emailSub": "Respons dalam waktu 24 jam.",
+    "phoneLabel": "Dukungan Telepon",
+    "phoneSub": "Sen - Jum, 09.00 - 18.00 (WIB)",
+    "hqLabel": "Kantor Pusat",
+    "hqSub": "MJ Solution Indonesia Center",
+    "slaLabel": "Ketersediaan SLA",
+    "slaSub": "Dukungan langsung untuk sistem aktif",
+    "connectSocial": "Hubungkan di Media Sosial",
+    "faqs": [
+      {
+        "q": "Seberapa cepat Anda merespons pertanyaan?",
+        "a": "Kami memantau saluran komunikasi kami 24/7. Biasanya, Anda akan menerima respons dari pimpinan teknis kami dalam 12–24 jam pada hari kerja."
+      },
+      {
+        "q": "Apakah Anda menangani pengaturan perangkat keras untuk pengalaman interaktif?",
+        "a": "Ya, kami memiliki prosesnya dari ujung ke ujung. Kami menyediakan, mengonfigurasi, dan memasang perangkat keras khusus (booth LED, sensor VR, modul IoT) untuk memastikan kompatibilitas perangkat lunak yang optimal."
+      },
+      {
+        "q": "Apakah Anda memenuhi syarat untuk pengadaan B2G / pemerintah?",
+        "a": "Tentu saja. Kami mematuhi semua pelaporan kota, standar keamanan, dan daftar periksa kepatuhan pengadaan B2G di Indonesia."
+      },
+      {
+        "q": "Bisakah kita menjadwalkan demonstrasi di lokasi?",
+        "a": "Ya. Hubungi kami melalui telepon atau email untuk meminta presentasi mock-up dengan ketelitian tinggi di kantor pusat Anda atau di showroom Jakarta kami."
+      }
+    ]
+  },
+  "projectDetail": {
+    "backBtn": "Kembali ke Portofolio",
+    "overview": "Ikhtisar Proyek",
+    "challenge": "Tantangan",
+    "solution": "Solusi Kami",
+    "deliverables": "Hasil Eksekusi Utama",
+    "detailsTitle": "Detail Proyek",
+    "client": "Klien",
+    "role": "Peran Kami",
+    "timeline": "Linimasa",
+    "impact": "Metrik Dampak",
+    "techDeployed": "Teknologi yang Digunakan",
+    "notFoundTitle": "Proyek Tidak Ditemukan",
+    "notFoundSub": "Eksekusi portofolio yang diminta tidak dapat ditemukan."
+  },
+  "footer": {
+    "tagline": "Architecting Tomorrow's Legacy",
+    "copyright": "Semua hak dilindungi undang-undang."
+  },
+  "notFound": {
+    "title": "Halaman Tidak Ditemukan",
+    "description": "Halaman yang Anda cari tidak ada, telah dihapus, atau telah dipindahkan dalam ekosistem kami.",
+    "goHome": "Kembali ke Beranda"
+  }
+}

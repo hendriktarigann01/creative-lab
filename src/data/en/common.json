@@ -1,0 +1,176 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact Us",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "title": "Architecting digital ecosystems",
+    "gradientWord": "digital ecosystems",
+    "description": "We design bespoke software ecosystems and high-fidelity interactive physical installations.",
+    "ctaText": "Start Your Digital Evolution"
+  },
+  "about": {
+    "seq1Plain": "We don't just",
+    "seq1Gradient": "write code.",
+    "seq2Plain": "We engineer",
+    "seq2Gradient": "experiences.",
+    "seq3Plain": "Precision in",
+    "seq3Gradient": "action."
+  },
+  "advantages": {
+    "heading": "Why choose us?",
+    "headingPlain": "Why choose ",
+    "headingColored": "us?",
+    "subheading": "Partner with the experts who build without limits.",
+    "cpu": {
+      "title": "Hardware-First Optimization",
+      "desc": "Built by engineers who understand LED/LCD specs. No lag, no aspect ratio errors."
+    },
+    "shield": {
+      "title": "B2G Credibility",
+      "desc": "We understand the procurement, security, and reporting standards of the public sector."
+    },
+    "wrench": {
+      "title": "End-to-End Execution",
+      "desc": "From the first line of code to the final screw in the installation—we own the process."
+    },
+    "zap": {
+      "title": "Rapid Prototyping",
+      "desc": "Turning abstract ideas into testable MVP software in weeks, not months."
+    },
+    "server": {
+      "title": "Scalable Architecture",
+      "desc": "Cloud-native microservices designed to handle millions of concurrent users effortlessly."
+    },
+    "clock": {
+      "title": "24/7 Mission Control",
+      "desc": "Dedicated SLA support ensuring zero downtime for critical infrastructure."
+    }
+  },
+  "services": {
+    "heading": "Our Services",
+    "gradientWord": "Services",
+    "subheading": "A comprehensive suite of master-level capabilities, visible at a glance.",
+    "enterprise": {
+      "title": "Enterprise & B2G Solutions",
+      "desc": "Efficiency, Data Security, and Scalability."
+    },
+    "gamification": {
+      "title": "Gamification & Games",
+      "desc": "Retention, Brand Recall, and ROI."
+    },
+    "interactive": {
+      "title": "Interactive Experiences",
+      "desc": "Maximizing MJ Solution Hardware Potential."
+    },
+    "strategy": {
+      "title": "Digital Strategy",
+      "desc": "Long-term Partnerships."
+    }
+  },
+  "workflow": {
+    "heading": "Our Workflow",
+    "gradientWord": "Workflow",
+    "subheading": "Interactive Roadmap. Track our process from concept to delivery!",
+    "step1": {
+      "title": "Discovery",
+      "desc": "We analyze your business logic, audit legacy systems, and define technical requirements."
+    },
+    "step2": {
+      "title": "Blueprint",
+      "desc": "Our architects design the UI/UX, database schemas, and system workflows."
+    },
+    "step3": {
+      "title": "Build",
+      "desc": "Agile development sprints with continuous integration and real-time client updates."
+    },
+    "step4": {
+      "title": "Test",
+      "desc": "Rigorous QA, security penetration testing, and user acceptance testing (UAT)."
+    },
+    "step5": {
+      "title": "Deploy",
+      "desc": "Smooth rollout to production servers, app stores, or physical hardware kiosks."
+    },
+    "step6": {
+      "title": "Support",
+      "desc": "24/7 SLAs, continuous monitoring, and scalable server maintenance."
+    }
+  },
+  "portfolio": {
+    "heading": "Our Portfolio",
+    "gradientWord": "Portfolio",
+    "subheading": "Hover to explore our master-level executions.",
+    "showcaseTitle": "All Projects Showcase",
+    "exploreProject": "Explore Project"
+  },
+  "cta": {
+    "heading": "Ready to build without limits?",
+    "gradientWord": "without limits?",
+    "description": "Connect with our engineering team to design bespoke software ecosystems and high-fidelity interactive physical installations.",
+    "ctaText": "Get Started Now"
+  },
+  "contact": {
+    "heading": "Let's build a masterpiece together",
+    "gradientWord": "masterpiece together",
+    "subheading": "Contact us on your preferred platform. We are ready to respond.",
+    "faqTitle": "Frequently Asked Questions",
+    "faqSub": "Everything you need to know about starting a project with Creative Lab.",
+    "infoTitle": "Contact Information",
+    "emailLabel": "Email Channels",
+    "emailSub": "Expect a response within 24h.",
+    "phoneLabel": "Hotline Support",
+    "phoneSub": "Mon - Fri, 9am - 6pm (GMT+7)",
+    "hqLabel": "Office HQ",
+    "hqSub": "MJ Solution Indonesia Center",
+    "slaLabel": "SLA Availability",
+    "slaSub": "Immediate support for active builds",
+    "connectSocial": "Connect on Social Media",
+    "faqs": [
+      {
+        "q": "How fast do you respond to inquiries?",
+        "a": "We monitor our communication channels 24/7. Typically, you will receive a response from our engineering leads within 12–24 hours on business days."
+      },
+      {
+        "q": "Do you handle the hardware setup for interactive experiences?",
+        "a": "Yes, we own the process end-to-end. We supply, configure, and install custom hardware (LED booths, VR sensors, IoT modules) to ensure optimal software compatibility."
+      },
+      {
+        "q": "Are you eligible for B2G / government procurement?",
+        "a": "Absolutely. We comply with all municipal reporting, security standards, and B2G procurement compliance checklists in Indonesia."
+      },
+      {
+        "q": "Can we schedule an on-site demonstration?",
+        "a": "Yes. Contact us via phone or email to request a high-fidelity mock-up presentation at your headquarters or at our Jakarta showroom."
+      }
+    ]
+  },
+  "projectDetail": {
+    "backBtn": "Back to Portfolio",
+    "overview": "Project Overview",
+    "challenge": "The Challenge",
+    "solution": "Our Solution",
+    "deliverables": "Key Execution Deliverables",
+    "detailsTitle": "Project Details",
+    "client": "Client",
+    "role": "Our Role",
+    "timeline": "Timeline",
+    "impact": "Impact metric",
+    "techDeployed": "Technologies Deployed",
+    "notFoundTitle": "Project Not Found",
+    "notFoundSub": "The requested portfolio execution could not be located."
+  },
+  "footer": {
+    "tagline": "Architecting Tomorrow's Legacy",
+    "copyright": "All rights reserved."
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for does not exist, has been removed, or has been relocated within our ecosystem.",
+    "goHome": "Back to Homepage"
+  }
+}
+

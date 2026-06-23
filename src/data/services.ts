@@ -1,0 +1,64 @@
+import { Service } from '../types';
+
+export const servicesHeader = {
+  heading: 'Our Services',
+  gradientWord: 'Services',
+  subheading: 'A comprehensive suite of master-level capabilities, visible at a glance.',
+};
+
+export const servicesData: Service[] = [
+  {
+    title: 'Enterprise & B2G Solutions',
+    desc: 'Efficiency, Data Security, and Scalability.',
+    icon: 'Code2',
+    color: 'enterprise',
+    slug: 'enterprise-b2g-solutions',
+    features: [
+      'Bespoke Web & Mobile: High-performance internal apps (HRIS, CRM) tailored to your logic.',
+      'Smart Dashboard: Transform complex data into real-time insights for Command Centers.',
+      'Custom CMS: Centralized control for seamless updates across thousands of devices.',
+      'Asset Management: Digital tracking using QR/RFID to secure high-value assets.',
+    ],
+    link: '/our-services/enterprise-b2g-solutions',
+  },
+  {
+    title: 'Gamification & Games',
+    desc: 'Retention, Brand Recall, and ROI.',
+    icon: 'Gamepad2',
+    color: 'gamification',
+    slug: 'gamification-games',
+    features: [
+      'Kinetic & Gesture Games: Motion sensor experiences turning lobbies into active playgrounds.',
+      'AR Activation: Overlaying digital magic—perfect for product launches.',
+      'Social Wall: Real-time social media feeds displayed on your LED screens.',
+      'Phygital Leaderboards: Competitive gaming hubs synced with smartphones.',
+    ],
+    link: '/our-services/gamification-games',
+  },
+  {
+    title: 'Interactive Experiences',
+    desc: 'Maximizing MJ Solution Hardware Potential.',
+    icon: 'Activity',
+    color: 'interactive',
+    slug: 'interactive-experiences',
+    features: [
+      'Smart Wayfinding: Intelligent navigation for malls, hospitals, and government hubs.',
+      'VR Simulators: Immersive training and 360 virtual property tours.',
+      'Interactive Modules: Multi-touch software for deep exploration in museums.',
+      'IoT Integration: Middleware connecting software to physical sensors and lighting.',
+    ],
+    link: '/our-services/interactive-experiences',
+  },
+  {
+    title: 'Digital Strategy',
+    desc: 'Long-term Partnerships.',
+    icon: 'Presentation',
+    color: 'strategy',
+    slug: 'digital-strategy',
+    features: [
+      'Transformation Roadmap: We advise and transition institutions from manual to automated workflows.',
+      'UI/UX Design Lab: User-centric interfaces intuitive for Gen Z to Government officials.',
+    ],
+    link: '/our-services/digital-strategy',
+  },
+];
