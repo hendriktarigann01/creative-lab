@@ -1,19 +1,19 @@
-import { useMemo } from 'react';
+import { useId } from 'react';
+import Script from 'next/script';
 
 interface JsonLdProps {
   schema: any;
 }
 
 export function JsonLd({ schema }: JsonLdProps) {
-  const htmlContent = useMemo(() => {
-    return `<script type="application/ld+json">${JSON.stringify(schema).replace(/</g, '\\u003c')}</script>`;
-  }, [schema]);
+  const id = useId();
 
   return (
-    <div
-      style={{ display: 'none' }}
+    <Script
+      id={`json-ld-${id}`}
+      type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: htmlContent,
+        __html: JSON.stringify(schema),
       }}
     />
   );

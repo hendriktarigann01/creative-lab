@@ -18,7 +18,7 @@ export function GradientText({ className, variant = 'primary', ...props }: Gradi
   return (
     <span
       className={cn(
-        'bg-linear-to-r bg-clip-text text-transparent font-semibold',
+        'bg-linear-to-r bg-clip-text text-transparent font-medium',
         gradients[variant],
         className
       )}

@@ -56,21 +56,16 @@ export default function DigitalStrategyPage() {
 
       <section className="pb-16 bg-background relative overflow-hidden">
         <Container>
-
           {/* Transformation Roadmap Timeline */}
           <div className="my-16 sm:my-24 relative">
             <div className="flex flex-col gap-3 max-w-3xl mb-12 sm:mb-16 text-center mx-auto items-center">
-              <Badge variant="outline">Proven Methodology</Badge>
-              <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-1">
+              <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mt-1">
                 Transformation <span className="text-[#10b981]">Roadmap</span>
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-xl">
                 Scroll through our proven 6-phase methodology.
               </p>
             </div>
-
-            {/* Vertically centered line */}
-            <div className="absolute left-[15px] md:left-1/2 top-4 bottom-4 w-0.5 bg-linear-to-b from-[#10b981]/40 to-[#10b981]/10 md:-translate-x-1/2" />
 
             <div className="flex flex-col gap-10">
               {data.roadmap.map((phase, index) => {
@@ -83,6 +78,13 @@ export default function DigitalStrategyPage() {
                       isLeft ? 'md:flex-row-reverse' : ''
                     }`}
                   >
+                    {/* Connecting line to the next step */}
+                    {index < data.roadmap.length - 1 && (
+                      <div
+                        className="absolute top-[24px] left-[15px] md:left-1/2 w-0.5 bg-linear-to-b from-[#10b981] to-[#10b981]/20 opacity-35 z-0 md:-translate-x-1/2"
+                        style={{ height: 'calc(100% + 40px)' }}
+                      />
+                    )}
                     {/* Glowing Node */}
                     <div className="absolute left-[-1px] md:left-1/2 top-2.5 w-8.5 h-8.5 rounded-full bg-card border-2 border-[#10b981] flex items-center justify-center md:-translate-x-1/2 z-10 shadow-lg shadow-black/10 dark:shadow-black/80">
                       <CheckCircle2 className="w-4 h-4 text-[#10b981]" />
@@ -91,10 +93,10 @@ export default function DigitalStrategyPage() {
                     {/* Timeline Content card */}
                     <div className="w-full md:w-[calc(50%-2rem)] ml-8 md:ml-0">
                       <Card className="p-6 hover:border-[#10b981]/25 transition-all duration-300">
-                        <span className="text-xs font-bold text-[#10b981] tracking-widest uppercase">
+                        <span className="text-xs font-medium text-[#10b981] tracking-widest uppercase">
                           {phase.phase}
                         </span>
-                        <h4 className="text-lg sm:text-xl font-bold text-foreground mt-1.5 mb-2">
+                        <h4 className="text-base sm:text-lg md:text-xl font-medium text-foreground mt-1.5 mb-2">
                           {phase.title}
                         </h4>
                         <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -110,7 +112,7 @@ export default function DigitalStrategyPage() {
 
           {/* Core Capabilities */}
           <div className="my-16 sm:my-24">
-            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-foreground mb-10 sm:mb-14">
+            <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mb-10 sm:mb-14">
               Core <span className="text-[#10b981]">Capabilities</span>
             </h2>
 
@@ -123,7 +125,9 @@ export default function DigitalStrategyPage() {
                   <div className="w-12 h-12 rounded-xl bg-[#10b981]/10 border border-[#10b981]/20 flex items-center justify-center text-[#10b981] mb-2">
                     {getIcon(cap.icon, 'w-6 h-6')}
                   </div>
-                  <h3 className="text-xl font-bold text-foreground tracking-tight">{cap.title}</h3>
+                  <h3 className="text-lg sm:text-xl font-medium text-foreground tracking-tight">
+                    {cap.title}
+                  </h3>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     {cap.desc}
                   </p>
@@ -134,8 +138,8 @@ export default function DigitalStrategyPage() {
 
           {/* Page CTA */}
           <AnimateOnScroll variant="scale" className="my-16 sm:my-24  mx-auto">
-            <Card className="p-8 sm:p-12 text-center relative overflow-hidden flex flex-col items-center gap-5 sm:gap-6 shadow-2xl">
-              <h3 className="text-2xl sm:text-4xl font-bold text-foreground tracking-tight">
+            <Card className="p-8 sm:p-12 text-center relative overflow-hidden flex flex-col items-center gap-5 sm:gap-6">
+              <h3 className="text-xl sm:text-2xl md:text-4xl font-medium text-foreground tracking-tight">
                 Ready to{' '}
                 <span className="text-[#10b981] drop-shadow-[0_2px_10px_rgba(16,185,129,0.2)]">
                   Transform?

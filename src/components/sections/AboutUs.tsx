@@ -55,7 +55,7 @@ export function AboutUs() {
             display: progress > 0.38 ? 'none' : 'flex',
           }}
         >
-          <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold text-center tracking-tight text-foreground max-w-5xl leading-tight">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-center tracking-tight text-foreground max-w-5xl leading-tight">
             {t('seq1Plain')}{' '}
             <span className="bg-linear-to-r from-[#AB7FEB] to-[#540EE1] bg-clip-text text-transparent">
               {t('seq1Gradient')}
@@ -72,7 +72,7 @@ export function AboutUs() {
             display: progress < 0.28 || progress > 0.73 ? 'none' : 'flex',
           }}
         >
-          <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight text-foreground max-w-5xl leading-tight">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-foreground max-w-5xl leading-tight">
             {t('seq2Plain')}{' '}
             <span className="bg-linear-to-r from-[#AB7FEB] to-[#540EE1] bg-clip-text text-transparent">
               {t('seq2Gradient')}
@@ -104,7 +104,7 @@ export function AboutUs() {
             <div className="absolute inset-0 bg-radial-[circle_at_center,transparent_20%,#000000_100%]" />
 
             <div className="absolute inset-0 flex items-center justify-center px-4">
-              <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight text-foreground max-w-5xl leading-tight">
+              <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-foreground max-w-5xl leading-tight">
                 {t('seq3Plain')}{' '}
                 <span className="bg-linear-to-r from-[#AB7FEB] to-[#540EE1] bg-clip-text text-transparent">
                   {t('seq3Gradient')}

@@ -14,7 +14,6 @@ import {
 } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Card } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 import { PageHero } from '@/components/ui/PageHero';
@@ -117,12 +116,10 @@ export default function EnterprisePage() {
 
       <section className="pb-16 bg-background relative overflow-hidden">
         <Container>
-
           {/* Interactive Live Dashboard Mock */}
           <div className="my-16 sm:my-24">
             <div className="flex flex-col gap-3 max-w-3xl mb-8 sm:mb-12">
-              <Badge variant="outline">Interactive Console</Badge>
-              <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-1">
+              <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mt-1">
                 Live <span className="text-[#3b82f6]">Dashboard</span>
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -137,10 +134,10 @@ export default function EnterprisePage() {
                   key={index}
                   className="p-6 text-center hover:border-[#3b82f6]/20 transition-all duration-300"
                 >
-                  <span className="text-3xl sm:text-4xl font-black tracking-tight text-[#3b82f6]">
+                  <span className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-[#3b82f6]">
                     {metric.value}
                   </span>
-                  <span className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mt-2">
+                  <span className="block text-xs font-medium uppercase tracking-wider text-muted-foreground mt-2">
                     {metric.label}
                   </span>
                 </Card>
@@ -150,22 +147,22 @@ export default function EnterprisePage() {
             {/* Command Center Live Console */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
               {/* Console log */}
-              <div className="lg:col-span-2 rounded-2xl border border-border bg-card overflow-hidden flex flex-col h-[320px] shadow-2xl">
-                <div className="px-4 py-3 bg-muted/40 border-b border-border flex items-center justify-between">
+              <div className="lg:col-span-2 rounded-2xl border border-border bg-card overflow-hidden flex flex-col h-[320px]">
+                <div className="px-4 py-3 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Terminal className="w-4 h-4 text-muted-foreground" />
-                    <span className="text-xs font-bold text-muted-foreground tracking-wider uppercase">
+                    <span className="text-xs font-medium text-muted-foreground tracking-wider uppercase">
                       MJS Command Center — Live Feed
                     </span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                    <span className="text-[10px] font-bold text-emerald-500 uppercase tracking-widest">
+                    <span className="text-[10px] font-medium text-emerald-500 uppercase tracking-widest">
                       ONLINE
                     </span>
                   </div>
                 </div>
-                <div className="p-4 flex-1 font-mono text-xs overflow-y-auto flex flex-col gap-2 bg-background border border-border/10">
+                <div className="p-4 flex-1 font-mono text-xs overflow-y-auto flex flex-col gap-2 border-t border-border">
                   {logs.map((log, index) => {
                     const isOk = log.includes('[OK]');
                     const isData = log.includes('[DATA]');
@@ -195,9 +192,9 @@ export default function EnterprisePage() {
                       <div className="w-10 h-10 rounded-lg bg-[#3b82f6]/10 border border-[#3b82f6]/20 flex items-center justify-center text-[#3b82f6]">
                         {getIcon(status.icon, 'w-5 h-5')}
                       </div>
-                      <span className="text-sm font-semibold text-foreground">{status.label}</span>
+                      <span className="text-sm font-medium text-foreground">{status.label}</span>
                     </div>
-                    <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 uppercase tracking-wider">
+                    <span className="text-xs font-medium text-emerald-600 dark:text-emerald-400 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 uppercase tracking-wider">
                       {status.status}
                     </span>
                   </Card>
@@ -208,7 +205,7 @@ export default function EnterprisePage() {
 
           {/* Core Capabilities */}
           <div className="my-16 sm:my-24">
-            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-foreground mb-10 sm:mb-14">
+            <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mb-10 sm:mb-14">
               Core <span className="text-[#3b82f6]">Capabilities</span>
             </h2>
 
@@ -221,7 +218,9 @@ export default function EnterprisePage() {
                   <div className="w-12 h-12 rounded-xl bg-[#3b82f6]/10 border border-[#3b82f6]/20 flex items-center justify-center text-[#3b82f6] mb-2">
                     {getIcon(cap.icon, 'w-6 h-6')}
                   </div>
-                  <h3 className="text-xl font-bold text-foreground tracking-tight">{cap.title}</h3>
+                  <h3 className="text-lg sm:text-xl font-medium text-foreground tracking-tight">
+                    {cap.title}
+                  </h3>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     {cap.desc}
                   </p>
@@ -232,8 +231,8 @@ export default function EnterprisePage() {
 
           {/* Page CTA */}
           <AnimateOnScroll variant="scale" className="my-16 sm:my-24  mx-auto">
-            <Card className="p-8 sm:p-12 text-center relative overflow-hidden flex flex-col items-center gap-5 sm:gap-6 shadow-2xl">
-              <h3 className="text-2xl sm:text-4xl font-bold text-foreground tracking-tight">
+            <Card className="p-8 sm:p-12 text-center relative overflow-hidden flex flex-col items-center gap-5 sm:gap-6">
+              <h3 className="text-xl sm:text-2xl md:text-4xl font-medium text-foreground tracking-tight">
                 Ready to{' '}
                 <span className="text-[#3b82f6] drop-shadow-[0_2px_10px_rgba(59,130,246,0.2)]">
                   Transform?

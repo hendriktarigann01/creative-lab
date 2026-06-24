@@ -15,12 +15,12 @@ export function RandomPattern({ className, variant = 'advantage', ...props }: Ra
   }, []);
 
   if (!mounted) {
-    return <div className={cn('absolute inset-0 pointer-events-none z-0', className)} {...props} />;
+    return <div className={cn('absolute inset-0 pointer-events-none z-0 overflow-hidden', className)} {...props} />;
   }
 
   if (variant === 'advantage') {
     return (
-      <div className={cn('absolute inset-0 pointer-events-none z-0', className)} {...props}>
+      <div className={cn('absolute inset-0 pointer-events-none z-0 overflow-hidden', className)} {...props}>
         {/* Left Pattern */}
         <div
           className="absolute bg-[url('/pattern.png')] bg-contain bg-center bg-no-repeat top-[15%] left-[-5%]"
@@ -49,7 +49,7 @@ export function RandomPattern({ className, variant = 'advantage', ...props }: Ra
 
   if (variant === 'cta-contact') {
     return (
-      <div className={cn('absolute inset-0 pointer-events-none z-0', className)} {...props}>
+      <div className={cn('absolute inset-0 pointer-events-none z-0 overflow-hidden', className)} {...props}>
         {/* Centered Pattern blending across sections */}
         <div
           className="absolute bg-[url('/pattern.png')] bg-contain bg-center bg-no-repeat left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"

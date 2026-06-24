@@ -17,7 +17,7 @@ export const siteMetadata = {
     'Interactive installation',
   ],
   siteUrl: 'https://creative-lab.co.id',
-  email: 'hello@creative-lab.co.id',
+  email: 'hello.creativelab@mjsolution.co.id',
   phone: '+62 812 3456 7890',
   locale: 'en_US',
 };

@@ -78,7 +78,7 @@ export function Services() {
   });
 
   return (
-    <section id="services" className="relative py-24 sm:py-32 bg-background">
+    <section id="services" className="relative py-24 sm:py-32 bg-background overflow-hidden">
       {/* Background radial highlight */}
       <div className="absolute top-[20%] left-[-10%] w-[40%] h-[50%] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
 
@@ -111,7 +111,7 @@ export function Services() {
                       {getIcon(service.icon, theme.text)}
                     </div>
                     {/* Content */}
-                    <h3 className="text-xl font-bold text-foreground tracking-tight mb-2 group-hover:text-primary transition-colors">
+                    <h3 className="text-lg sm:text-xl font-medium text-foreground tracking-tight mb-2 group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-6">
@@ -140,7 +140,7 @@ export function Services() {
                             />
                             <span>
                               {titlePart && (
-                                <span className="font-semibold text-foreground">{titlePart}</span>
+                                <span className="font-medium text-foreground">{titlePart}</span>
                               )}
                               {descPart}
                             </span>
@@ -153,7 +153,7 @@ export function Services() {
                   {/* Learn More Link */}
                   <Link
                     href={service.link as any}
-                    className={`inline-flex items-center text-sm font-semibold tracking-wide gap-1 w-fit group-hover:underline cursor-pointer ${theme.text}`}
+                    className={`inline-flex items-center text-sm font-medium tracking-wide gap-1 w-fit group-hover:underline cursor-pointer ${theme.text}`}
                   >
                     Learn More
                   </Link>

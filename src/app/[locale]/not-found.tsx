@@ -20,7 +20,7 @@ export default function NotFound() {
   const t = useTranslations('notFound');
 
   return (
-    <main className="bg-background text-foreground flex flex-col items-center justify-center relative overflow-hidden min-h-screen w-full">
+    <main className="bg-background text-foreground flex flex-col items-center justify-center relative overflow-hidden min-h-dvh w-full">
       {/* Glow Effects */}
       <div className="absolute top-[25%] left-[-15%] w-[45%] h-[45%] rounded-full bg-primary/10 blur-[130px] pointer-events-none" />
       <div className="absolute bottom-[20%] right-[-15%] w-[40%] h-[40%] rounded-full bg-[#540EE1]/5 blur-[130px] pointer-events-none" />
@@ -29,7 +29,7 @@ export default function NotFound() {
         <AnimateOnScroll variant="fadeIn" className="w-full flex flex-col items-center">
           <Illustration className="w-full max-w-md h-auto text-primary/80 drop-shadow-[0_0_50px_rgba(84,14,225,0.25)] mb-10 select-none" />
           
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-foreground mb-6 leading-tight max-w-2xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-foreground mb-6 leading-tight max-w-2xl">
             {t('title')}
           </h1>
           
@@ -41,7 +41,7 @@ export default function NotFound() {
             href="/"
             variant="primary"
             size="lg"
-            className="font-bold tracking-wide"
+            className="font-medium tracking-wide"
           >
             {t('goHome')}
           </Button>

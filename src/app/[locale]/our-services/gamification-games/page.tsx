@@ -120,12 +120,10 @@ export default function GamificationPage() {
 
       <section className="pb-16 bg-background relative overflow-hidden">
         <Container>
-
           {/* Try It Yourself Mini Game */}
           <div className="my-16 sm:my-24">
             <div className="flex flex-col gap-3 max-w-3xl mb-8 sm:mb-12">
-              <Badge variant="outline">Interactive Demo</Badge>
-              <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-1">
+              <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mt-1">
                 Try It <span className="text-[#8b5cf6]">Yourself</span>
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -140,14 +138,15 @@ export default function GamificationPage() {
               <div className="flex justify-between items-center bg-muted/30 border border-border px-6 py-4 rounded-xl relative z-15">
                 <div className="flex items-center gap-1.5">
                   <Trophy className="w-5 h-5 text-[#8b5cf6]" />
-                  <span className="text-sm font-semibold text-muted-foreground">
-                    Score: <span className="text-foreground font-bold text-lg">{score}</span>
+                  <span className="text-sm font-medium text-muted-foreground">
+                    Score: <span className="text-foreground font-medium text-lg">{score}</span>
                   </span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Target className="w-5 h-5 text-[#8b5cf6]" />
-                  <span className="text-sm font-semibold text-muted-foreground">
-                    Time Left: <span className="text-foreground font-bold text-lg">{timeLeft}s</span>
+                  <span className="text-sm font-medium text-muted-foreground">
+                    Time Left:{' '}
+                    <span className="text-foreground font-medium text-lg">{timeLeft}s</span>
                   </span>
                 </div>
               </div>
@@ -175,7 +174,7 @@ export default function GamificationPage() {
                 {/* Game over overlay */}
                 {gameState === 'gameover' && (
                   <div className="flex flex-col items-center gap-4 text-center px-4 relative z-10 animate-fade-in">
-                    <p className="text-xl font-bold text-foreground">
+                    <p className="text-xl font-medium text-foreground">
                       Game Over! Score: <span className="text-[#8b5cf6]">{score}</span>
                     </p>
                     <Button
@@ -209,7 +208,7 @@ export default function GamificationPage() {
 
           {/* Core Capabilities */}
           <div className="my-16 sm:my-24">
-            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-foreground mb-10 sm:mb-14">
+            <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mb-10 sm:mb-14">
               Core <span className="text-[#8b5cf6]">Capabilities</span>
             </h2>
 
@@ -222,7 +221,9 @@ export default function GamificationPage() {
                   <div className="w-12 h-12 rounded-xl bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 flex items-center justify-center text-[#8b5cf6] mb-2">
                     {getIcon(cap.icon, 'w-6 h-6')}
                   </div>
-                  <h3 className="text-xl font-bold text-foreground tracking-tight">{cap.title}</h3>
+                  <h3 className="text-lg sm:text-xl font-medium text-foreground tracking-tight">
+                    {cap.title}
+                  </h3>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     {cap.desc}
                   </p>
@@ -233,8 +234,8 @@ export default function GamificationPage() {
 
           {/* Page CTA */}
           <AnimateOnScroll variant="scale" className="my-16 sm:my-24  mx-auto">
-            <Card className="p-8 sm:p-12 text-center relative overflow-hidden flex flex-col items-center gap-5 sm:gap-6 shadow-2xl">
-              <h3 className="text-2xl sm:text-4xl font-bold text-foreground tracking-tight">
+            <Card className="p-8 sm:p-12 text-center relative overflow-hidden flex flex-col items-center gap-5 sm:gap-6">
+              <h3 className="text-xl sm:text-2xl md:text-4xl font-medium text-foreground tracking-tight">
                 Ready to{' '}
                 <span className="text-[#8b5cf6] drop-shadow-[0_2px_10px_rgba(139,92,246,0.2)]">
                   Play?

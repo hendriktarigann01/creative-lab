@@ -13,7 +13,6 @@ export function CTA({ hidePattern = false }: { hidePattern?: boolean }) {
   return (
     <section className="relative py-24 sm:py-32 overflow-hidden">
       {!hidePattern && <RandomPattern variant="cta-contact" />}
-      {/* Blended Glow Effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full bg-primary/10 blur-[100px] sm:blur-[140px] mix-blend-screen pointer-events-none animate-pulse duration-5000" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] sm:w-[300px] h-[200px] sm:h-[300px] rounded-full bg-accent/10 blur-[80px] sm:blur-[100px] mix-blend-screen pointer-events-none" />
 

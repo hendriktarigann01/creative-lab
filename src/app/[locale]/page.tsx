@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { siteMetadata } from '@/data/metadata';
 import { getOrganizationSchema, getWebSiteSchema } from '@/lib/structured-data';
 
@@ -56,11 +57,13 @@ export default function Home() {
   return (
     <>
       {/* Structured Data injection */}
-      <script
+      <Script
+        id="organization-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
-      <script
+      <Script
+        id="website-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />

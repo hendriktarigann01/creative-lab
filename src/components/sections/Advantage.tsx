@@ -67,7 +67,7 @@ function AdvantageCard({ i, title, desc, icon, progress, range, targetScale }: A
             <span className={style.iconColor}>{ICON_MAP[icon]}</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight leading-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-foreground tracking-tight leading-tight">
             {title}
           </h2>
 
@@ -109,14 +109,14 @@ export function Advantage() {
   return (
     <main className="bg-background relative" ref={container}>
       <RandomPattern variant="advantage" />
-      <section className="min-h-[50vh] w-full grid place-content-center text-center">
+      <section className="min-h-[35vh] md:min-h-[50vh] -mb-[25vh] md:mb-0 w-full grid place-content-center text-center">
         <Container className="flex flex-col items-center gap-4">
           <span
-            className="text-[11px] font-semibold tracking-[.15em] uppercase text-accent px-4 py-1.5 rounded-full border border-accent/25"
+            className="text-[11px] font-medium tracking-[.15em] uppercase text-accent px-4 py-1.5 rounded-full border border-accent/25"
           >
             Our Advantage
           </span>
-          <h1 className="text-5xl sm:text-7xl font-bold tracking-tight leading-[1.1] text-foreground">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight leading-[1.1] text-foreground">
             {headingPlain}
             <span className="text-accent">{headingColored}</span>
           </h1>

@@ -112,12 +112,13 @@ export default function ServicesOverviewPage() {
         title={header.heading}
         gradientWord={header.gradientWord}
         description={header.subheading}
+        accentColor="#540ee1"
       />
 
       <section className="pb-16 bg-background relative overflow-hidden">
         <Container>
           <div className="my-20 sm:my-28 relative">
-            <h3 className="text-2xl sm:text-3xl font-bold text-center text-foreground mb-16 tracking-tight">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-medium text-center text-foreground mb-16 tracking-tight">
               Our{' '}
               <span className="bg-linear-to-r from-[#AB7FEB] to-[#540EE1] bg-clip-text text-transparent">
                 Workflow
@@ -149,10 +150,10 @@ export default function ServicesOverviewPage() {
 
                     <div className="w-full sm:w-[calc(50%-2rem)] ml-8 sm:ml-0">
                       <Card className="p-6 border-2 border-primary dark:border-border bg-card transition-all duration-300">
-                        <span className="text-xs font-bold text-accent tracking-widest uppercase">
+                        <span className="text-xs font-medium text-accent tracking-widest uppercase">
                           Step {step.step}
                         </span>
-                        <h4 className="text-xl font-bold text-foreground tracking-tight mt-1.5 mb-2">
+                        <h4 className="text-lg sm:text-xl font-medium text-foreground tracking-tight mt-1.5 mb-2">
                           {step.title}
                         </h4>
                         <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -184,7 +185,7 @@ export default function ServicesOverviewPage() {
                   >
                     <button
                       onClick={() => setOpenAccordion(isOpen ? null : index)}
-                      className="w-full px-6 py-5 sm:py-6 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors focus:outline-none cursor-pointer"
+                      className="w-full px-6 py-5 sm:py-6 flex items-center justify-between text-left transition-colors focus:outline-none cursor-pointer"
                     >
                       <div className="flex items-center gap-4">
                         <div
@@ -197,7 +198,7 @@ export default function ServicesOverviewPage() {
                         >
                           {getSlugIcon(service.slug, 'w-5 h-5')}
                         </div>
-                        <h3 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">
+                        <h3 className="text-lg sm:text-xl font-medium text-foreground tracking-tight">
                           {service.title}
                         </h3>
                       </div>
@@ -213,11 +214,11 @@ export default function ServicesOverviewPage() {
                         isOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
                       }`}
                     >
-                      <div className="px-6 pb-6 sm:pb-8 pt-2 border-t border-border grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+                      <div className="px-6 pb-6 sm:pb-8 pt-2 grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
                         <div className="md:col-span-8 flex flex-col gap-6">
                           <div>
                             <p
-                              className="text-xs font-semibold uppercase tracking-wider mb-1"
+                              className="text-xs font-medium uppercase tracking-wider mb-1"
                               style={{ color: service.color }}
                             >
                               {service.tagline}
@@ -228,7 +229,7 @@ export default function ServicesOverviewPage() {
                           </div>
 
                           <div>
-                            <h4 className="text-xs font-semibold uppercase tracking-wider text-foreground mb-3">
+                            <h4 className="text-xs font-medium uppercase tracking-wider text-foreground mb-3">
                               Capabilities Highlights
                             </h4>
                             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -249,7 +250,7 @@ export default function ServicesOverviewPage() {
 
                           <Link
                             href={`/our-services/${service.slug}`}
-                            className="inline-flex items-center gap-1.5 text-sm font-semibold tracking-wide hover:underline mt-2 w-fit cursor-pointer"
+                            className="inline-flex items-center gap-1.5 text-sm font-medium tracking-wide hover:underline mt-2 w-fit cursor-pointer"
                             style={{ color: service.color }}
                           >
                             Explore Full Page
@@ -258,12 +259,12 @@ export default function ServicesOverviewPage() {
 
                         <div className="md:col-span-4 p-6 rounded-xl bg-muted/30 border border-border text-center flex flex-col justify-center h-full mt-4 md:mt-0">
                           <span
-                            className="text-4xl sm:text-5xl font-black tracking-tight"
+                            className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight"
                             style={{ color: service.color }}
                           >
                             {service.stat}
                           </span>
-                          <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mt-2">
+                          <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground mt-2">
                             {service.statLabel}
                           </span>
                         </div>
@@ -280,7 +281,7 @@ export default function ServicesOverviewPage() {
               <div className="absolute -top-1/2 -left-1/2 w-full h-full rounded-full bg-primary/5 blur-[100px] pointer-events-none" />
               <div className="absolute -bottom-1/2 -right-1/2 w-full h-full rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
 
-              <h3 className="text-2xl sm:text-4xl font-bold text-foreground tracking-tight">
+              <h3 className="text-xl sm:text-2xl md:text-4xl font-medium text-foreground tracking-tight">
                 Not sure which service{' '}
                 <span className="bg-linear-to-r from-[#AB7FEB] to-[#540EE1] bg-clip-text text-transparent">
                   fits?

@@ -1,6 +1,5 @@
 'use client';
 
-import Image from "next/image";
 import { portfolioDetails } from '@/data/portfolio-detail';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Container } from '@/components/ui/Container';
@@ -8,6 +7,7 @@ import { usePortfolioCarousel } from '@/hooks/usePortfolioCarousel';
 import { ARROW_CLASSES } from '@/constants/portfolio';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import { LazyImage } from '@/components/ui/LazyImage';
 
 interface PortfolioProps {
   hideHeader?: boolean;
@@ -46,7 +46,7 @@ export function Portfolio({ hideHeader = false }: PortfolioProps) {
   return (
     <section
       id="portfolio"
-      className={hideHeader ? "py-8 relative z-20" : "py-24 relative z-20"}
+      className={`relative z-20 overflow-hidden ${hideHeader ? 'py-8' : 'py-24'}`}
     >
       <Container className="flex flex-col items-center">
         {!hideHeader && (
@@ -64,20 +64,21 @@ export function Portfolio({ hideHeader = false }: PortfolioProps) {
             ref={containerRef}
             onMouseEnter={() => setAutoplayActive(false)}
             onMouseLeave={() => setAutoplayActive(true)}
-            className="fan-layout flex relative justify-center items-center w-full max-w-[80rem]"
+            className="fan-layout flex relative justify-center items-center w-full md:max-w-[80rem]"
           >
             {cards.map((card, index) => {
               const image = (
-                <div className="relative w-full h-full overflow-hidden bg-card rounded-[1.5rem]">
-                  <img
+                <div className="relative w-full h-full overflow-hidden bg-card rounded-lg md:rounded-3xl">
+                  <LazyImage
                     src={card.imgUrl}
-                    loading="lazy"
                     alt={card.alt || `Card ${index}`}
-                    className="absolute inset-0 w-full h-full object-cover object-center z-10 transition-transform duration-500 hover:scale-105"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover object-center z-10 transition-transform duration-500 hover:scale-105"
                   />
                   {/* Label overlay */}
-                  <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-20 flex justify-center items-end h-1/2 pointer-events-none">
-                    <span className="text-white font-bold text-xl md:text-2xl drop-shadow-md text-center">
+                  <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-20 flex justify-center items-end h-1/2 pointer-events-none">
+                    <span className="text-white font-medium text-sm sm:text-xl md:text-2xl drop-shadow-md text-center">
                       {card.alt}
                     </span>
                   </div>
@@ -109,7 +110,7 @@ export function Portfolio({ hideHeader = false }: PortfolioProps) {
             >
               {chevron('left')}
             </button>
-            
+
             <button
               className={`${ARROW_CLASSES} w-8 h-8 md:w-10 md:h-10`}
               onClick={() => cycle('right')}
@@ -133,30 +134,57 @@ export function Portfolio({ hideHeader = false }: PortfolioProps) {
             align-items: center;
           }
           .fan-card {
-            position: absolute;
-            width: 28rem;
-            height: 20rem;
-            border-radius: 1.5rem;
-            overflow: hidden;
-            transform-style: preserve-3d;
-            will-change: transform, opacity;
+          position: absolute;
+          width: 28rem;
+          height: 20rem;
+          border-radius: 1.5rem;
+          overflow: hidden;
+          will-change: transform, opacity;
+        }
+
+        @media (max-width: 1024px) {
+          .fan-layout {
+            height: 18rem;
           }
-          @media (max-width: 1024px) {
-            .fan-layout { height: 26rem; }
-            .fan-card { width: 24rem; height: 17rem; }
+
+          .fan-card {
+            width: 16rem;
+            height: 11rem;
           }
-          @media (max-width: 768px) {
-            .fan-layout { height: 22rem; }
-            .fan-card { width: 20rem; height: 14rem; }
+        }
+
+        @media (max-width: 768px) {
+          .fan-layout {
+            height: 15rem;
           }
-          @media (max-width: 640px) {
-            .fan-layout { height: 18rem; }
-            .fan-card { width: 17rem; height: 12rem; }
+
+          .fan-card {
+            width: 13rem;
+            height: 9rem;
           }
-          @media (max-width: 480px) {
-            .fan-layout { height: 15rem; }
-            .fan-card { width: 14rem; height: 10rem; }
+        }
+
+        @media (max-width: 640px) {
+          .fan-layout {
+            height: 13rem;
           }
+
+          .fan-card {
+            width: 11rem;
+            height: 7.5rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .fan-layout {
+            height: 11rem;
+          }
+
+          .fan-card {
+            width: 9rem;
+            height: 6rem;
+          }
+        }
         `,
         }}
       />

@@ -2,11 +2,10 @@
 
 import { useState } from 'react';
 import { Container } from '@/components/ui/Container';
-import { Card } from '@/components/ui/Card';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Contact } from '@/components/sections/Contact';
 import { CTA } from '@/components/sections/CTA';
-import { Mail, Phone, Clock, ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { PageHero } from '@/components/ui/PageHero';
 
@@ -19,17 +18,15 @@ export default function ContactPage() {
   const contactFaqs = t.raw('faqs') as { q: string; a: string }[];
 
   return (
-    <div className="bg-background min-h-screen pb-16 relative overflow-hidden flex flex-col items-center">
+    <div className="bg-background min-h-dvh pb-16 relative overflow-hidden flex flex-col items-center">
       <div className="w-full relative z-10">
         <PageHero
-          breadcrumbs={[
-            { name: tNav('contact') }
-          ]}
+          breadcrumbs={[{ name: tNav('contact') }]}
           label={tNav('contact')}
           title={t('heading')}
           gradientWord={t('gradientWord')}
           description={t('subheading')}
-          align="center"
+          accentColor="#540ee1"
         />
       </div>
 
@@ -37,52 +34,7 @@ export default function ContactPage() {
         <Contact hideHeader={true} />
       </div>
 
-      <Container className="relative z-10 mb-20 sm:mb-28">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Card className="p-6 border-border bg-card hover:border-primary/20 transition-all duration-300 flex flex-col gap-4">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-              <Mail className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
-                {t('emailLabel')}
-              </h4>
-              <p className="text-base font-bold text-foreground mt-1.5 break-all">
-                hello@creative-lab.co.id
-              </p>
-              <p className="text-xs text-muted-foreground mt-2">{t('emailSub')}</p>
-            </div>
-          </Card>
 
-          <Card className="p-6 border-border bg-card hover:border-primary/20 transition-all duration-300 flex flex-col gap-4">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-              <Phone className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
-                {t('phoneLabel')}
-              </h4>
-              <p className="text-base font-bold text-foreground mt-1.5">+62 812 3456 7890</p>
-              <p className="text-xs text-muted-foreground mt-2">{t('phoneSub')}</p>
-            </div>
-          </Card>
-
-          <Card className="p-6 border-border bg-card hover:border-primary/20 transition-all duration-300 flex flex-col gap-4">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-              <Clock className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
-                {t('slaLabel')}
-              </h4>
-              <p className="text-base font-bold text-foreground mt-1.5">
-                {locale === 'id' ? 'Operasional 24/7' : '24/7 Operations'}
-              </p>
-              <p className="text-xs text-muted-foreground mt-2">{t('slaSub')}</p>
-            </div>
-          </Card>
-        </div>
-      </Container>
 
       <Container className="relative z-10 mb-20 sm:mb-28 ">
         <SectionHeader
@@ -104,7 +56,7 @@ export default function ContactPage() {
                 >
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : index)}
-                    className="w-full flex items-center justify-between p-6 text-left text-foreground font-semibold transition-colors duration-200 hover:text-primary cursor-pointer"
+                    className="w-full flex items-center justify-between p-6 text-left text-foreground font-medium transition-colors duration-200 hover:text-primary cursor-pointer"
                   >
                     <span className="text-base sm:text-lg">{faq.q}</span>
                     <ChevronDown

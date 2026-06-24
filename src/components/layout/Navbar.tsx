@@ -119,7 +119,7 @@ export function Navbar() {
                   href={item.path as never}
                   className={cn(
                     'relative text-sm font-medium tracking-wide transition-all duration-500 px-2 py-2 block overflow-hidden group',
-                    isActive ? 'text-primary font-semibold' : 'text-muted-foreground'
+                    isActive ? 'text-primary font-medium' : 'text-muted-foreground'
                   )}
                 >
                   {item.name}
@@ -162,7 +162,7 @@ export function Navbar() {
                       className={cn(
                         'flex items-center gap-2 w-full px-3 py-2.5 text-sm transition-colors text-left cursor-pointer',
                         locale === l
-                          ? 'text-primary font-semibold'
+                          ? 'text-primary font-medium'
                           : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                       )}
                     >
@@ -222,9 +222,8 @@ export function Navbar() {
             })}
           </nav>
 
-          <div className="flex gap-3 justify-center items-center py-2 border-t border-border">
+          <div className="flex gap-3 justify-center items-center py-2">
             <Toggle className="w-9 h-9" />
-            <div className="w-px h-5 bg-border mx-1" />
             {locales.map((l) => (
               <button
                 key={l}
@@ -233,7 +232,7 @@ export function Navbar() {
                   handleLinkClick();
                 }}
                 className={cn(
-                  'flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-full border transition-all duration-200 cursor-pointer',
+                  'flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-md border transition-all duration-200 cursor-pointer',
                   locale === l
                     ? 'bg-primary text-primary-foreground border-primary'
                     : 'border-border text-muted-foreground hover:border-primary/50 hover:text-primary'

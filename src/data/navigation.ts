@@ -14,7 +14,7 @@ export const ctaItem = {
 
 export const socialLinks: SocialLink[] = [
   { name: 'Phone', path: 'tel:+6281234567890', icon: 'Phone' },
-  { name: 'Mail', path: 'mailto:hello@creative-lab.co.id', icon: 'Mail' },
+  { name: 'Mail', path: 'mailto:hello.creativelab@mjsolution.co.id', icon: 'Mail' },
   { name: 'Globe', path: '#', icon: 'Globe' },
 ];
 

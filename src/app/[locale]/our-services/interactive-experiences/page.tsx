@@ -1,18 +1,103 @@
 'use client';
 
-import { useState, useRef, MouseEvent, TouchEvent } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { MapPin, Glasses, Monitor, Cpu, Search, Navigation, Eye, Camera, X } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Card } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 import { PageHero } from '@/components/ui/PageHero';
 import { JsonLd } from '@/components/ui/JsonLd';
 import { getBreadcrumbSchema, getServiceSchema } from '@/lib/structured-data';
 import { useParams } from 'next/navigation';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, useTexture, Html } from '@react-three/drei';
+import * as THREE from 'three';
 
 import { interactivePageData } from '@/data/services-detail';
+
+const hotspotPositions: Record<number, [number, number, number]> = {
+  1: [-400, -50, -300], // Wayfinding Kiosk
+  2: [300, 100, -400], // AR Activation
+  3: [0, -150, 450], // 360 Camera
+};
+
+interface SpherePanoramaProps {
+  hotspots: Array<{ id: number; title: string; desc: string; icon: string }>;
+  activeHotspot: number | null;
+  setActiveHotspot: (id: number | null) => void;
+}
+
+function SpherePanorama({ hotspots, activeHotspot, setActiveHotspot }: SpherePanoramaProps) {
+  const texture = useTexture('https://picsum.photos/seed/creative-lab-360/2048/1024');
+
+  const getIcon = (iconName: string, className: string = 'w-4 h-4') => {
+    switch (iconName) {
+      case 'Search':
+        return <Search className={className} />;
+      case 'Eye':
+        return <Eye className={className} />;
+      case 'Camera':
+        return <Camera className={className} />;
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <group>
+      <mesh>
+        <sphereGeometry args={[500, 60, 40]} />
+        <meshBasicMaterial map={texture} side={THREE.BackSide} />
+      </mesh>
+
+      {/* 3D Hotspots using Html overlay */}
+      {hotspots.map((spot) => {
+        const pos = hotspotPositions[spot.id] || [0, 0, 0];
+        const isActive = activeHotspot === spot.id;
+
+        return (
+          <Html key={spot.id} position={pos} center zIndexRange={[100, 0]}>
+            <div
+              className="group cursor-pointer flex flex-col items-center gap-2 z-10"
+              onClick={(e) => {
+                e.stopPropagation();
+                setActiveHotspot(isActive ? null : spot.id);
+              }}
+            >
+              {/* Hotspot Core */}
+              <div
+                className={`w-11 h-11 rounded-full flex items-center justify-center shadow-[0_4px_15px_rgba(236,72,153,0.5)] relative z-[2] transition-transform duration-200 ease-in-out
+            ${
+              isActive
+                ? 'scale-115 bg-white text-pink-500'
+                : 'bg-pink-500 text-white group-hover:scale-115 group-hover:bg-white group-hover:text-pink-500'
+            }`}
+              >
+                {/* Hotspot Ring (Ping Animation) */}
+                <div className="absolute inset-0 rounded-full border-2 border-pink-500 animate-ping z-0 pointer-events-none" />
+
+                <div className="relative z-10">{getIcon(spot.icon, 'w-5 h-5 block')}</div>
+              </div>
+
+              {/* Hotspot Label */}
+              <span
+                className={`text-xs text-white text-center font-medium uppercase bg-black/40 p-4 rounded-[6px] white-space-nowrap pointer-events-none transition-all duration-200 ease-in-out
+            ${
+              isActive
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-[5px] group-hover:opacity-100 group-hover:translate-y-0'
+            }`}
+              >
+                {spot.title}
+              </span>
+            </div>
+          </Html>
+        );
+      })}
+    </group>
+  );
+}
 
 export default function InteractivePage() {
   const params = useParams();
@@ -20,49 +105,11 @@ export default function InteractivePage() {
   const data = interactivePageData[locale] || interactivePageData['en'];
 
   const [activeHotspot, setActiveHotspot] = useState<number | null>(null);
-  const [posX, setPosX] = useState(0); // background panning position
-  const isDragging = useRef(false);
-  const startX = useRef(0);
+  const [mounted, setMounted] = useState(false);
 
-  // Panorama drag start
-  const handleDragStart = (clientX: number) => {
-    isDragging.current = true;
-    startX.current = clientX - posX;
-  };
-
-  // Panorama dragging
-  const handleDragMove = (clientX: number) => {
-    if (!isDragging.current) return;
-    const diff = clientX - startX.current;
-    // Limit panning boundary
-    const clamped = Math.max(-400, Math.min(400, diff));
-    setPosX(clamped);
-  };
-
-  // Panorama drag stop
-  const handleDragEnd = () => {
-    isDragging.current = false;
-  };
-
-  const handleMouseDown = (e: MouseEvent) => {
-    handleDragStart(e.clientX);
-  };
-
-  const handleMouseMove = (e: MouseEvent) => {
-    handleDragMove(e.clientX);
-  };
-
-  const handleTouchStart = (e: TouchEvent) => {
-    if (e.touches.length === 1) {
-      handleDragStart(e.touches[0].clientX);
-    }
-  };
-
-  const handleTouchMove = (e: TouchEvent) => {
-    if (e.touches.length === 1) {
-      handleDragMove(e.touches[0].clientX);
-    }
-  };
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const getIcon = (iconName: string, className: string = 'w-6 h-6') => {
     switch (iconName) {
@@ -115,14 +162,12 @@ export default function InteractivePage() {
         accentColor="#ec4899"
       />
 
-      <section className="pb-16 bg-background relative overflow-hidden">
+      <section className="bg-background relative overflow-hidden">
         <Container>
-
           {/* 360° Space Simulated Section */}
           <div className="my-16 sm:my-24">
             <div className="flex flex-col gap-3 max-w-3xl mb-8 sm:mb-12">
-              <Badge variant="outline">Interactive 360 Space</Badge>
-              <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-1">
+              <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mt-1">
                 Experience a <span className="text-[#ec4899]">True 360° Space</span>
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -132,65 +177,46 @@ export default function InteractivePage() {
             </div>
 
             {/* 360 Panorama Viewport */}
-            <Card className="border-border bg-background p-0 overflow-hidden relative h-[440px] shadow-2xl flex flex-col justify-end select-none cursor-grab active:cursor-grabbing">
+            <Card className="border-border bg-background p-0 overflow-hidden relative h-[500px] shadow-2xl flex flex-col justify-end select-none cursor-grab active:cursor-grabbing">
               {/* Drag Hint */}
-              <div className="absolute top-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/60 border border-border text-xs font-semibold text-foreground pointer-events-none backdrop-blur-sm">
+              <div className="absolute top-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/60 border border-border text-xs font-medium text-foreground pointer-events-none backdrop-blur-sm">
                 <Navigation className="w-3.5 h-3.5 rotate-45 text-[#ec4899]" />
                 Drag to Look Around
               </div>
 
               {/* Panorama Panning Area */}
-              <div
-                onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseUp={handleDragEnd}
-                onMouseLeave={handleDragEnd}
-                onTouchStart={handleTouchStart}
-                onTouchMove={handleTouchMove}
-                onTouchEnd={handleDragEnd}
-                className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-200 ease-out flex items-center justify-center"
-                style={{
-                  backgroundImage: `url('https://picsum.photos/seed/creative-lab-360/2048/1024')`,
-                  width: '240%',
-                  transform: `translateX(${posX}px)`,
-                }}
-              >
-                {/* Hotspot 1: Wayfinding */}
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setActiveHotspot(1);
-                  }}
-                  className="absolute left-[30%] top-[45%] w-8 h-8 rounded-full bg-[#ec4899] border-2 border-white flex items-center justify-center text-white hover:scale-110 active:scale-95 transition-transform animate-bounce cursor-pointer shadow-lg shadow-[#ec4899]/50"
-                  aria-label="Wayfinding Hotspot"
-                >
-                  <Search className="w-4 h-4" />
-                </button>
-
-                {/* Hotspot 2: AR Activation */}
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setActiveHotspot(2);
-                  }}
-                  className="absolute left-[50%] top-[40%] w-8 h-8 rounded-full bg-[#ec4899] border-2 border-white flex items-center justify-center text-white hover:scale-110 active:scale-95 transition-transform animate-bounce cursor-pointer shadow-lg shadow-[#ec4899]/50"
-                  aria-label="AR Hotspot"
-                >
-                  <Eye className="w-4 h-4" />
-                </button>
-
-                {/* Hotspot 3: 360 Camera */}
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setActiveHotspot(3);
-                  }}
-                  className="absolute left-[70%] top-[50%] w-8 h-8 rounded-full bg-[#ec4899] border-2 border-white flex items-center justify-center text-white hover:scale-110 active:scale-95 transition-transform animate-bounce cursor-pointer shadow-lg shadow-[#ec4899]/50"
-                  aria-label="360 Camera Hotspot"
-                >
-                  <Camera className="w-4 h-4" />
-                </button>
-              </div>
+              {mounted ? (
+                <div className="absolute inset-0 z-0 bg-black">
+                  <Canvas camera={{ position: [0, 0, 0.1], fov: 75 }}>
+                    <OrbitControls
+                      enableZoom={false}
+                      enablePan={false}
+                      enableDamping={true}
+                      dampingFactor={0.05}
+                      rotateSpeed={-0.5}
+                    />
+                    <Suspense
+                      fallback={
+                        <Html center>
+                          <div className="text-white text-xs sm:text-sm">
+                            Loading 360 Environment...
+                          </div>
+                        </Html>
+                      }
+                    >
+                      <SpherePanorama
+                        hotspots={data.hotspots}
+                        activeHotspot={activeHotspot}
+                        setActiveHotspot={setActiveHotspot}
+                      />
+                    </Suspense>
+                  </Canvas>
+                </div>
+              ) : (
+                <div className="absolute inset-0 z-0 bg-black flex items-center justify-center text-white text-xs sm:text-sm">
+                  Loading 360 Environment...
+                </div>
+              )}
 
               {/* Hotspot Info Modal Overlay */}
               {activeHotspot !== null && (
@@ -209,7 +235,7 @@ export default function InteractivePage() {
                       <>
                         <div className="flex items-center gap-2">
                           <div className="text-[#ec4899]">{getIcon(spot.icon, 'w-4 h-4')}</div>
-                          <h4 className="text-sm font-bold text-foreground uppercase tracking-wider">
+                          <h4 className="text-sm font-medium text-foreground uppercase tracking-wider">
                             {spot.title}
                           </h4>
                         </div>
@@ -226,7 +252,7 @@ export default function InteractivePage() {
 
           {/* Real-World Use Cases */}
           <div className="my-16 sm:my-24">
-            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-foreground mb-10 sm:mb-14 text-center">
+            <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mb-10 sm:mb-14 text-center">
               Real-World <span className="text-[#ec4899]">Applications</span>
             </h2>
 
@@ -239,7 +265,9 @@ export default function InteractivePage() {
                   <span className="text-4xl filter drop-shadow-[0_4px_10px_rgba(236,72,153,0.15)] mb-2">
                     {useCase.icon}
                   </span>
-                  <h3 className="text-xl font-bold text-foreground tracking-tight">{useCase.title}</h3>
+                  <h3 className="text-lg sm:text-xl font-medium text-foreground tracking-tight">
+                    {useCase.title}
+                  </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{useCase.desc}</p>
                 </Card>
               ))}
@@ -248,7 +276,7 @@ export default function InteractivePage() {
 
           {/* Core Capabilities */}
           <div className="my-16 sm:my-24">
-            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-foreground mb-10 sm:mb-14">
+            <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mb-10 sm:mb-14">
               Core <span className="text-[#ec4899]">Capabilities</span>
             </h2>
 
@@ -261,7 +289,9 @@ export default function InteractivePage() {
                   <div className="w-12 h-12 rounded-xl bg-[#ec4899]/10 border border-[#ec4899]/20 flex items-center justify-center text-[#ec4899] mb-2">
                     {getIcon(cap.icon, 'w-6 h-6')}
                   </div>
-                  <h3 className="text-xl font-bold text-foreground tracking-tight">{cap.title}</h3>
+                  <h3 className="text-lg sm:text-xl font-medium text-foreground tracking-tight">
+                    {cap.title}
+                  </h3>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     {cap.desc}
                   </p>
@@ -272,8 +302,8 @@ export default function InteractivePage() {
 
           {/* Page CTA */}
           <AnimateOnScroll variant="scale" className="my-16 sm:my-24  mx-auto">
-            <Card className="p-8 sm:p-12 text-center relative overflow-hidden flex flex-col items-center gap-5 sm:gap-6 shadow-2xl">
-              <h3 className="text-2xl sm:text-4xl font-bold text-foreground tracking-tight">
+            <Card className="p-8 sm:p-12 text-center relative overflow-hidden flex flex-col items-center gap-5 sm:gap-6">
+              <h3 className="text-xl sm:text-2xl md:text-4xl font-medium text-foreground tracking-tight">
                 Ready to{' '}
                 <span className="text-[#ec4899] drop-shadow-[0_2px_10px_rgba(236,72,153,0.2)]">
                   Immerse?

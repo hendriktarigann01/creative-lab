@@ -146,12 +146,10 @@ export function Hero() {
           const targetScroll = top + snapTargets[nextStep] * range;
 
           lenis.scrollTo(targetScroll, {
-            duration: 1.3, // slower transition
+            duration: 0.8, // faster transition
             easing: (t) => 1 - Math.pow(1 - t, 3.5),
             onComplete: () => {
-              setTimeout(() => {
-                isAnimatingRef.current = false;
-              }, 150);
+              isAnimatingRef.current = false;
             },
           });
         }
@@ -168,7 +166,7 @@ export function Hero() {
           if (Math.abs(lenis.animatedScroll - targetScroll) > 2) {
             isAnimatingRef.current = true;
             lenis.scrollTo(targetScroll, {
-              duration: 0.9,
+              duration: 0.7,
               easing: (t) => 1 - Math.pow(1 - t, 3),
               onComplete: () => {
                 isAnimatingRef.current = false;
@@ -187,7 +185,11 @@ export function Hero() {
 
         const video = videoRef.current;
         if (video && video.readyState >= 2 && video.duration) {
-          video.currentTime = p * video.duration;
+          const targetTime = p * video.duration;
+          // Avoid micro-seeks to reduce video decoding load
+          if (Math.abs(video.currentTime - targetTime) > 0.03) {
+            video.currentTime = targetTime;
+          }
         }
 
         const hero = getSequenceStyles(p, -0.01, 0.0, 0.1, 0.15);
@@ -229,7 +231,7 @@ export function Hero() {
         style={{ willChange: 'opacity, transform' }}
       >
         <Container className="flex flex-col items-center gap-6 sm:gap-8 pointer-events-auto">
-          <h1 className="text-4xl sm:text-7xl font-bold tracking-tight text-white leading-[1.1] text-center select-none uppercase drop-shadow-lg">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.1] text-center select-none uppercase drop-shadow-lg">
             {parts[0]}
             <span className="bg-linear-to-r from-[#AB7FEB] to-[#540EE1] bg-clip-text text-transparent">
               {grad}
@@ -254,7 +256,7 @@ export function Hero() {
         className="fixed inset-0 z-10 flex items-center justify-center text-center px-4 pointer-events-none"
         style={{ willChange: 'opacity, transform', visibility: 'hidden' }}
       >
-        <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight text-white max-w-5xl leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-medium tracking-tight text-white max-w-5xl leading-tight">
           {tAbout('seq1Plain')}{' '}
           <span className="bg-linear-to-r from-[#AB7FEB] to-[#540EE1] bg-clip-text text-transparent">
             {tAbout('seq1Gradient')}
@@ -267,7 +269,7 @@ export function Hero() {
         className="fixed inset-0 z-10 flex flex-col items-center justify-center text-center px-4 pointer-events-none"
         style={{ willChange: 'opacity, transform', visibility: 'hidden' }}
       >
-        <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight text-white max-w-5xl leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-medium tracking-tight text-white max-w-5xl leading-tight">
           {tAbout('seq2Plain')}{' '}
           <span className="bg-linear-to-r from-[#AB7FEB] to-[#540EE1] bg-clip-text text-transparent">
             {tAbout('seq2Gradient')}
@@ -281,7 +283,7 @@ export function Hero() {
         className="fixed inset-0 z-10 flex items-center justify-center text-center px-4 pointer-events-none"
         style={{ willChange: 'opacity, transform', visibility: 'hidden' }}
       >
-        <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight text-white max-w-5xl leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-medium tracking-tight text-white max-w-5xl leading-tight">
           {tAbout('seq3Plain')}{' '}
           <span className="bg-linear-to-r from-[#AB7FEB] to-[#540EE1] bg-clip-text text-transparent">
             {tAbout('seq3Gradient')}

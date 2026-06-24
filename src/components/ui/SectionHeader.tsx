@@ -37,18 +37,18 @@ export function SectionHeader({
   return (
     <div
       className={cn(
-        'flex flex-col gap-3 max-w-3xl mb-12 sm:mb-16',
+        'flex flex-col gap-3 max-w-3xl mb-10 sm:mb-16',
         align === 'center' ? 'mx-auto text-center items-center' : 'text-left items-start',
         className
       )}
       {...props}
     >
       {label && (
-        <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-accent px-3 py-1 rounded-full border border-accent/25 bg-accent/5 mb-1 select-none">
+        <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-accent px-3 py-1 rounded-full border border-accent/25 bg-accent/5 mb-1 select-none">
           {label}
         </span>
       )}
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground mt-1">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-foreground mt-1">
         {titleContent}
       </h2>
       {description && (

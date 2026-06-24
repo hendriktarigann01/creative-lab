@@ -83,7 +83,7 @@ export function Workflow() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg font-bold text-foreground tracking-tight mb-2">
+                <h3 className="text-lg font-medium text-foreground tracking-tight mb-2">
                   {step.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed max-w-[200px] sm:max-w-[260px] lg:max-w-none">
