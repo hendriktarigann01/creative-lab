@@ -1,7 +1,7 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { portfolioDetails } from '@/data/portfolio-detail';
+
 import { Container } from '@/components/ui/Container';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
@@ -11,6 +11,7 @@ import { CheckCircle2, Calendar, User, Briefcase, BarChart } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter } from '@/i18n/routing';
 import { PageHero } from '@/components/ui/PageHero';
+import { ProjectDetail } from '@/types';
 
 export default function ProjectDetailPage() {
   const params = useParams();
@@ -18,8 +19,14 @@ export default function ProjectDetailPage() {
   const slug = params.slug as string;
   const locale = useLocale();
   const t = useTranslations('projectDetail');
+  const tDetail = useTranslations('portfolio-detail');
 
-  const project = portfolioDetails[locale as keyof typeof portfolioDetails]?.[slug];
+  let project = null;
+  try {
+    project = tDetail.raw(`projects.${slug}`) as ProjectDetail;
+  } catch (e) {
+    project = null;
+  }
 
   if (!project) {
     return (

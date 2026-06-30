@@ -74,3 +74,20 @@ export interface TimelinePhase {
   desc: string;
   position: 'left' | 'right';
 }
+
+export interface ProjectDetail {
+  slug: string;
+  title: string;
+  category: string;
+  image: string;
+  desc: string;
+  overview: string;
+  client: string;
+  role: string;
+  timeline: string;
+  challenge: string;
+  solution: string;
+  features: string[];
+  technologies: string[];
+  stats: { label: string; value: string };
+}

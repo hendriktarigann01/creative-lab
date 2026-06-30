@@ -3,11 +3,11 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
-import { aboutData } from '@/data/about';
 import { useTranslations } from 'next-intl';
 
 export function AboutUs() {
   const t = useTranslations('about');
+  const sequence3 = t.raw('sequence3');
   const containerRef = useRef<HTMLDivElement>(null);
   const progress = useScrollProgress(containerRef);
 
@@ -93,8 +93,8 @@ export function AboutUs() {
         >
           <div className="relative w-full h-full">
             <Image
-              src={aboutData.sequence3.imageUrl}
-              alt={aboutData.sequence3.imageAlt}
+              src={sequence3.imageUrl}
+              alt={sequence3.imageAlt}
               fill
               className="object-cover brightness-40"
               sizes="100vw"

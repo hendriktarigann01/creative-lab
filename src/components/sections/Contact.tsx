@@ -123,7 +123,7 @@ export function Contact({ hideHeader = false }: ContactProps) {
       id="contact"
       className={
         hideHeader
-          ? 'py-8 flex flex-col items-center justify-center font-sans w-full relative overflow-hidden'
+          ? 'py-24 flex flex-col items-center justify-center font-sans w-full relative overflow-hidden'
           : 'py-24 sm:py-32 flex flex-col items-center justify-center font-sans w-full min-h-dvh relative overflow-hidden'
       }
     >

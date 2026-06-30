@@ -1,98 +1,118 @@
 'use client';
 
-import { useRef } from 'react';
-import { useTransform, motion, useScroll, MotionValue } from 'motion/react';
+import { useState, useEffect, useRef } from 'react';
+import { motion } from 'motion/react';
 import { Container } from '@/components/ui/Container';
-import { RandomPattern } from '@/components/ui/RandomPattern';
-import { ICON_MAP, BIG_ICON_MAP, CARD_STYLES } from '@/constants/advantages';
+import { ICON_MAP } from '@/constants/advantages';
 import { useTranslations } from 'next-intl';
+import {
+  HoverSlider,
+  TextStaggerHover,
+  HoverSliderImageWrap,
+  HoverSliderImage,
+  useHoverSliderContext,
+} from '@/components/ui/Slideshow';
 
-interface AdvantageCardProps {
-  i: number;
-  title: string;
-  desc: string;
-  icon: string;
-  progress: MotionValue<number>;
-  range: [number, number];
-  targetScale: number;
+interface AutoPlayProps {
+  count: number;
+  isHovered: boolean;
 }
 
-function AdvantageCard({ i, title, desc, icon, progress, range, targetScale }: AdvantageCardProps) {
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start end', 'start start'],
-  });
+function AutoPlaySlider({ count, isHovered }: AutoPlayProps) {
+  const { activeSlide, changeSlide } = useHoverSliderContext();
 
-  const bigIconScale = useTransform(scrollYProgress, [0, 1], [1.6, 1]);
-  const scale = useTransform(progress, range, [1, targetScale]);
+  useEffect(() => {
+    if (isHovered) return;
+    const interval = setInterval(() => {
+      changeSlide((activeSlide + 1) % count);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, [activeSlide, changeSlide, count, isHovered]);
 
-  const style = CARD_STYLES[i % CARD_STYLES.length];
+  return null;
+}
+
+interface AdvantageRowProps {
+  index: number;
+  item: { title: string; desc: string; icon: string };
+  isHovered: boolean;
+  setHoveredIndex: (index: number | null) => void;
+}
+
+function AdvantageRow({ index, item, isHovered, setHoveredIndex }: AdvantageRowProps) {
+  const { activeSlide, changeSlide } = useHoverSliderContext();
+  const isActive = activeSlide === index;
 
   return (
-    <div ref={container} className="h-screen flex items-center justify-center sticky top-0">
-      <motion.div
-        style={{
-          scale,
-          top: `calc(-5vh + ${i * 25}px)`,
-        }}
-        className={`
-          relative -top-[25%] h-[350px] w-full max-w-5xl rounded-2xl backdrop-blur-2xl origin-top
-          ${style.card} overflow-hidden
-        `}
-      >
+    <div
+      className="relative pt-5 pb-6 group cursor-pointer"
+      onMouseEnter={() => {
+        setHoveredIndex(index);
+        changeSlide(index);
+      }}
+      onMouseLeave={() => setHoveredIndex(null)}
+      onClick={() => {
+        setHoveredIndex(index);
+        changeSlide(index);
+      }}
+    >
+      {/* Header: Icon + Title */}
+      <div className="flex items-center gap-4">
+        {/* Icon */}
         <div
-          className="absolute inset-0 rounded-2xl pointer-events-none z-10"
-          style={{
-            padding: '1px',
-            background:
-              'linear-gradient(135deg, rgba(84,14,225,0.5), rgba(171,127,235,0.15), transparent 60%)',
-            WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-            WebkitMaskComposite: 'xor',
-            maskComposite: 'exclude',
-          }}
-        />
-
-        <motion.div
-          className={`absolute -bottom-8 -right-8 opacity-[0.06] pointer-events-none ${style.bigIconColor}`}
-          style={{ scale: bigIconScale }}
+          className={`w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-300 [&_svg]:w-6 [&_svg]:h-6 ${
+            isActive
+              ? 'bg-accent/15 border-accent/30 text-accent shadow-lg shadow-accent/10'
+              : 'bg-white/5 border-white/10 text-muted-foreground group-hover:border-white/20'
+          }`}
         >
-          {BIG_ICON_MAP[icon]}
-        </motion.div>
-
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-12 gap-6">
-          <div
-            className={`w-16 h-16 rounded-2xl flex items-center justify-center ${style.iconBox}`}
-          >
-            <span className={style.iconColor}>{ICON_MAP[icon]}</span>
-          </div>
-
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-foreground tracking-tight leading-tight">
-            {title}
-          </h2>
-
-          <div
-            className="w-16 h-px"
-            style={{
-              background: 'linear-gradient(90deg, transparent, rgba(171,127,235,0.5), transparent)',
-            }}
-          />
-
-          <p className="text-base text-muted-foreground leading-relaxed max-w-md">{desc}</p>
+          {ICON_MAP[item.icon]}
         </div>
+
+        {/* Title with stagger hover effect */}
+        <TextStaggerHover
+          text={item.title}
+          index={index}
+          className={`text-xl sm:text-2xl font-medium tracking-tight transition-colors duration-300 ${
+            isActive ? 'text-foreground font-semibold' : 'text-foreground/50'
+          }`}
+        />
+      </div>
+
+      {/* Description (collapsible with height animation) */}
+      <motion.div
+        initial={false}
+        animate={{
+          height: isActive ? 'auto' : 0,
+          opacity: isActive ? 1 : 0,
+        }}
+        transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
+        className="overflow-hidden"
+      >
+        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-3 sm:pl-16 pl-0 max-w-xl">
+          {item.desc}
+        </p>
       </motion.div>
+
+      {/* Loading Bar as bottom border */}
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-white/5 overflow-hidden">
+        <motion.div
+          initial={{ width: '0%' }}
+          animate={{ width: isActive ? '100%' : '0%' }}
+          transition={{
+            duration: isActive ? (isHovered ? 0.35 : 4.5) : 0,
+            ease: isActive && !isHovered ? 'linear' : 'easeInOut',
+          }}
+          className="h-full bg-accent"
+        />
+      </div>
     </div>
   );
 }
 
 export function Advantage() {
   const t = useTranslations('advantages');
-  const container = useRef(null);
-  
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start start', 'end end'],
-  });
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const headingPlain = t('headingPlain');
   const headingColored = t('headingColored');
@@ -107,42 +127,58 @@ export function Advantage() {
   ];
 
   return (
-    <main className="bg-background relative" ref={container}>
-      <RandomPattern variant="advantage" />
-      <section className="min-h-[35vh] md:min-h-[50vh] -mb-[25vh] md:mb-0 w-full grid place-content-center text-center">
-        <Container className="flex flex-col items-center gap-4">
+    <main className="bg-background relative py-12 sm:py-20 overflow-hidden">
+      <Container className="flex flex-col gap-16">
+        {/* Title Block */}
+        <div className="flex flex-col gap-4 text-center max-w-3xl mx-auto">
           <span
-            className="text-[11px] font-medium tracking-[.15em] uppercase text-accent px-4 py-1.5 rounded-full border border-accent/25"
+            className="self-center text-[11px] font-medium tracking-[.15em] uppercase text-accent px-4 py-1.5 rounded-full border border-accent/25"
           >
             Our Advantage
           </span>
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight leading-[1.1] text-foreground">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-[1.1] text-foreground">
             {headingPlain}
             <span className="text-accent">{headingColored}</span>
-          </h1>
-          <p className="text-muted-foreground text-lg max-w-md leading-relaxed mt-2">
+          </h2>
+          <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto leading-relaxed mt-2">
             {t('subheading')}
           </p>
-        </Container>
-      </section>
+        </div>
 
-      <section id="advantage" className="w-full">
-        {advantagesItems.map((item, i) => {
-          const targetScale = 1 - (advantagesItems.length - i) * 0.05;
-          return (
-            <AdvantageCard
-              key={i}
-              i={i}
-              title={item.title}
-              desc={item.desc}
-              icon={item.icon}
-              progress={scrollYProgress}
-              range={[i / advantagesItems.length, 1]}
-              targetScale={targetScale}
-            />
-          );
-        })}
-      </section>
+        {/* Hover Slider Grid */}
+        <HoverSlider className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
+          <AutoPlaySlider count={advantagesItems.length} isHovered={hoveredIndex !== null} />
+
+          {/* Left Column: Interactive text list */}
+          <div className="lg:col-span-7 flex flex-col justify-between py-2 order-2 lg:order-1 h-full">
+            {advantagesItems.map((item, index) => (
+              <AdvantageRow
+                key={index}
+                index={index}
+                item={item}
+                isHovered={hoveredIndex !== null}
+                setHoveredIndex={setHoveredIndex}
+              />
+            ))}
+          </div>
+
+          {/* Right Column: Slideshow Images */}
+          <div className="lg:col-span-5 w-full order-1 lg:order-2 flex flex-col h-full min-h-[300px] lg:min-h-full">
+            <HoverSliderImageWrap className="relative flex-1 w-full h-full min-h-[300px] lg:min-h-full rounded-2xl border border-white/10 bg-transparent overflow-hidden shadow-2xl shadow-accent/5">
+              {advantagesItems.map((item, index) => (
+                <HoverSliderImage
+                  key={index}
+                  index={index}
+                  imageUrl={`/advantage/slideshow-${index + 1}.png`}
+                  src={`/advantage/slideshow-${index + 1}.png`}
+                  alt={item.title}
+                  className="object-cover w-full h-full absolute inset-0"
+                />
+              ))}
+            </HoverSliderImageWrap>
+          </div>
+        </HoverSlider>
+      </Container>
     </main>
   );
 }

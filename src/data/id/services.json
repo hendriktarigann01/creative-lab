@@ -1,0 +1,63 @@
+{
+  "servicesHeader": {
+    "heading": "Layanan Kami",
+    "gradientWord": "Layanan",
+    "subheading": "Rangkaian lengkap kemampuan tingkat master, terlihat dalam sekejap."
+  },
+  "servicesData": [
+    {
+      "title": "Enterprise & B2G Solutions",
+      "desc": "Efisiensi, Keamanan Data, dan Skalabilitas.",
+      "icon": "Code2",
+      "color": "enterprise",
+      "slug": "enterprise-b2g-solutions",
+      "features": [
+        "Web & Seluler Kustom: Aplikasi internal berkinerja tinggi (HRIS, CRM) yang disesuaikan dengan logika bisnis Anda.",
+        "Smart Dashboard: Mengubah data kompleks menjadi wawasan real-time untuk Command Center.",
+        "Custom CMS: Kontrol terpusat untuk pembaruan tanpa hambatan di ribuan perangkat.",
+        "Manajemen Aset: Pelacakan digital menggunakan integrasi QR/RFID untuk mengamankan aset berharga."
+      ],
+      "link": "/our-services/enterprise-b2g-solutions"
+    },
+    {
+      "title": "Gamification & Games",
+      "desc": "Retensi, Ingatan Brand, dan ROI.",
+      "icon": "Gamepad2",
+      "color": "gamification",
+      "slug": "gamification-games",
+      "features": [
+        "Game Kinetik & Gerakan: Pengalaman sensor gerak yang mengubah lobi menjadi taman bermain aktif.",
+        "Aktivasi AR: Menambahkan keajaiban digital ke dunia nyata—sempurna untuk peluncuran produk.",
+        "Social Wall: Integrasi media sosial waktu nyata yang menampilkan konten audiens di layar LED.",
+        "Papan Peringkat Phygital: Pusat permainan kompetitif yang disinkronkan dengan smartphone pengunjung."
+      ],
+      "link": "/our-services/gamification-games"
+    },
+    {
+      "title": "Interactive Experiences",
+      "desc": "Memaksimalkan Potensi Perangkat Keras MJ Solution.",
+      "icon": "Activity",
+      "color": "interactive",
+      "slug": "interactive-experiences",
+      "features": [
+        "Smart Wayfinding: Navigasi cerdas untuk pusat perbelanjaan, rumah sakit, dan pusat pemerintahan.",
+        "Simulator VR: Pelatihan imersif dan tur properti virtual (walkthrough 360°).",
+        "Modul Pameran Interaktif: Perangkat lunak multi-sentuh untuk eksplorasi arsip digital di museum.",
+        "Integrasi IoT: Middleware khusus yang menghubungkan perangkat lunak dengan sensor fisik dan pencahayaan."
+      ],
+      "link": "/our-services/interactive-experiences"
+    },
+    {
+      "title": "Digital Strategy",
+      "desc": "Kemitraan Jangka Panjang.",
+      "icon": "Presentation",
+      "color": "strategy",
+      "slug": "digital-strategy",
+      "features": [
+        "Peta Jalan Transformasi: Kami menasihati dan membantu institusi bertransisi dari alur kerja manual ke otomatis.",
+        "Lab Desain UI/UX: Antarmuka yang berpusat pada pengguna, intuitif untuk Gen Z hingga pejabat Pemerintah."
+      ],
+      "link": "/our-services/digital-strategy"
+    }
+  ]
+}

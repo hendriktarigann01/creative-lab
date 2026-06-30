@@ -1,19 +1,13 @@
-import { useId } from 'react';
-import Script from 'next/script';
-
 interface JsonLdProps {
   schema: any;
 }
 
 export function JsonLd({ schema }: JsonLdProps) {
-  const id = useId();
-
   return (
-    <Script
-      id={`json-ld-${id}`}
+    <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(schema),
+        __html: JSON.stringify(schema).replace(/</g, '\\u003c'),
       }}
     />
   );

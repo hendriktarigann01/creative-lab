@@ -1,6 +1,6 @@
 'use client';
 
-import { portfolioDetails } from '@/data/portfolio-detail';
+
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Container } from '@/components/ui/Container';
 import { usePortfolioCarousel } from '@/hooks/usePortfolioCarousel';
@@ -15,11 +15,16 @@ interface PortfolioProps {
 
 export function Portfolio({ hideHeader = false }: PortfolioProps) {
   const t = useTranslations('portfolio');
-  const locale = useLocale();
+  const tDetail = useTranslations('portfolio-detail');
 
-  const projects = Object.values(
-    portfolioDetails[locale as keyof typeof portfolioDetails] || portfolioDetails['en']
-  );
+  const projectsMap = tDetail.raw('projects') as Record<string, {
+    slug: string;
+    title: string;
+    category: string;
+    image: string;
+    desc: string;
+  }>;
+  const projects = Object.values(projectsMap);
   const cards = projects.map((project) => ({
     imgUrl: project.image,
     alt: project.title,

@@ -5,12 +5,14 @@ import { Container } from '@/components/ui/Container';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Button } from '@/components/ui/Button';
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
-import { servicesHeader, servicesData } from '@/data/services';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
+import { Service } from '@/types';
 
 export function Services() {
   const t = useTranslations('services');
+  const servicesHeader = t.raw('servicesHeader');
+  const servicesData = t.raw('servicesData') as Service[];
 
   const getIcon = (iconName: string, colorClass: string) => {
     const iconStyles = `w-7 h-7 ${colorClass}`;

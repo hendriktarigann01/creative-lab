@@ -1,4 +1,6 @@
-import { siteMetadata } from '../data/metadata';
+import metadata from '@/data/en/metadata.json';
+
+const siteMetadata = metadata.siteMetadata;
 
 export function getOrganizationSchema() {
   return {

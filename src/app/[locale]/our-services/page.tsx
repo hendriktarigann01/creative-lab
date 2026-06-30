@@ -27,13 +27,19 @@ import { PageHero } from '@/components/ui/PageHero';
 import { JsonLd } from '@/components/ui/JsonLd';
 import { useTranslations } from 'next-intl';
 
-import { servicesOverviewHeader, servicesOverviewAccordion } from '@/data/services-detail';
-
 export default function ServicesOverviewPage() {
-  const params = useParams();
-  const locale = params.locale as string;
-  const header = servicesOverviewHeader[locale] || servicesOverviewHeader['en'];
-  const accordion = servicesOverviewAccordion[locale] || servicesOverviewAccordion['en'];
+  const t = useTranslations('services-detail');
+  const header = t.raw('servicesOverviewHeader');
+  const accordion = t.raw('servicesOverviewAccordion') as Array<{
+    title: string;
+    slug: string;
+    color: string;
+    tagline: string;
+    description: string;
+    highlights: string[];
+    stat: string;
+    statLabel: string;
+  }>;
   const tWorkflow = useTranslations('workflow');
 
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);

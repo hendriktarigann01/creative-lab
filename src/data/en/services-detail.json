@@ -1,0 +1,262 @@
+{
+  "servicesOverviewHeader": {
+    "heading": "Our Services",
+    "gradientWord": "Services",
+    "subheading": "From enterprise-grade platforms to immersive gamification—we deliver the full spectrum of digital innovation."
+  },
+  "servicesOverviewAccordion": [
+    {
+      "title": "Enterprise & B2G Solutions",
+      "slug": "enterprise-b2g-solutions",
+      "color": "#3b82f6",
+      "tagline": "Efficiency, Data Security, and Scalability.",
+      "description": "We architect robust, secure, and scalable software ecosystems for enterprises and government institutions. Our solutions are built to handle mission-critical operations with zero compromise on performance or security.",
+      "highlights": [
+        "HRIS, CRM & Project Management",
+        "Real-time Command Center Dashboards",
+        "Multi-device CMS Networks",
+        "QR/RFID Asset Tracking"
+      ],
+      "stat": "12,000+",
+      "statLabel": "Devices Managed"
+    },
+    {
+      "title": "Gamification & Games",
+      "slug": "gamification-games",
+      "color": "#8b5cf6",
+      "tagline": "Retention, Brand Recall, and ROI.",
+      "description": "We create immersive, gamified experiences that drive engagement, boost brand recall, and deliver measurable ROI through interactive play. From motion-sensor games to AR activations, we turn physical spaces into digital playgrounds.",
+      "highlights": [
+        "Kinect/Lidar Motion Games",
+        "Augmented Reality Activations",
+        "Social Media LED Walls",
+        "Phygital Leaderboard Systems"
+      ],
+      "stat": "2M+",
+      "statLabel": "User Interactions"
+    },
+    {
+      "title": "Interactive Experiences",
+      "slug": "interactive-experiences",
+      "color": "#ec4899",
+      "tagline": "Maximizing MJ Solution Hardware Potential.",
+      "description": "We maximize the potential of MJ Solution hardware by creating immersive software that merges the physical and digital worlds. From smart wayfinding to VR simulators, we transform spaces into intelligent environments.",
+      "highlights": [
+        "Smart Wayfinding Kiosks",
+        "360° VR Property Tours",
+        "Multi-touch Museum Exhibits",
+        "IoT Sensor Integration"
+      ],
+      "stat": "50+",
+      "statLabel": "Installations"
+    },
+    {
+      "title": "Digital Strategy & Consulting",
+      "slug": "digital-strategy",
+      "color": "#10b981",
+      "tagline": "Long-term Partnerships.",
+      "description": "We are long-term partners, not just vendors. Our consulting practice helps organizations navigate the digital transformation journey with confidence—from legacy system audits to full-scale UI/UX redesigns.",
+      "highlights": [
+        "Digital Transformation Roadmaps",
+        "UI/UX Design Lab",
+        "Legacy System Migration",
+        "Stakeholder Training"
+      ],
+      "stat": "30+",
+      "statLabel": "Transformations"
+    }
+  ],
+  "enterpriseData": {
+    "hero": {
+      "title": "Enterprise & B2G Solutions",
+      "coloredWord": "B2G Solutions",
+      "desc": "We architect robust, secure, and scalable software ecosystems for enterprises and government institutions. Our solutions handle mission-critical operations with zero compromise."
+    },
+    "metrics": [
+      { "label": "Uptime SLA", "value": "99.9%" },
+      { "label": "Devices Managed", "value": "12000+" },
+      { "label": "Data Points/Sec", "value": "50000" },
+      { "label": "Clients Served", "value": "85+" }
+    ],
+    "systemStatus": [
+      { "label": "API Gateway", "status": "Healthy", "icon": "Server" },
+      { "label": "Firewall", "status": "Active", "icon": "Shield" },
+      { "label": "CDN Edge", "status": "14 Nodes", "icon": "Wifi" },
+      { "label": "CPU Load", "status": "23%", "icon": "Activity" }
+    ],
+    "capabilities": [
+      {
+        "title": "Bespoke Web & Mobile Development",
+        "desc": "High-performance internal applications (HRIS, CRM, Project Management) tailored to your specific business logic. We build systems that scale from 10 to 10,000 users.",
+        "icon": "Globe"
+      },
+      {
+        "title": "Smart Dashboard & Data Visualization",
+        "desc": "Transform complex big data into actionable insights with real-time visual dashboards, perfect for Command Centers and Government monitoring.",
+        "icon": "BarChart3"
+      },
+      {
+        "title": "Custom CMS",
+        "desc": "Centralized control for your entire digital network, allowing seamless content updates across thousands of devices from a single console.",
+        "icon": "Database"
+      },
+      {
+        "title": "Asset & Inventory Management",
+        "desc": "Digital tracking solutions using QR/RFID integration to secure and monitor high-value corporate assets in real time.",
+        "icon": "QrCode"
+      }
+    ]
+  },
+  "gamificationPageData": {
+    "hero": {
+      "title": "Gamification & Games",
+      "coloredWord": "Games",
+      "desc": "We create immersive, gamified experiences that drive engagement, boost brand recall, and deliver measurable ROI through interactive play."
+    },
+    "capabilities": [
+      {
+        "title": "Kinetic & Gesture-Based Games",
+        "desc": "Interactive experiences driven by motion sensors (Kinect/Lidar), turning lobbies into active brand playgrounds that captivate visitors.",
+        "icon": "Gamepad2"
+      },
+      {
+        "title": "Augmented Reality Activation",
+        "desc": "Overlaying digital magic onto the real world—perfect for product launches, property marketing (AR Booklets), and retail experiences.",
+        "icon": "Smartphone"
+      },
+      {
+        "title": "Social Wall & Live Feeds",
+        "desc": "Real-time social media integration that displays audience content on your LED screens, driving organic digital traction and engagement.",
+        "icon": "Share2"
+      },
+      {
+        "title": "Phygital Leaderboards",
+        "desc": "Competitive gaming hubs that sync visitors' smartphones with large-scale displays for instant rewards and data collection.",
+        "icon": "Trophy"
+      }
+    ]
+  },
+  "interactivePageData": {
+    "hero": {
+      "title": "Interactive Experiences",
+      "coloredWord": "Experiences",
+      "desc": "We maximize the potential of MJ Solution hardware by creating immersive software experiences that merge the physical and digital worlds."
+    },
+    "hotspots": [
+      {
+        "id": 1,
+        "title": "Wayfinding Kiosk",
+        "desc": "Interactive map with route calculation and live directory.",
+        "icon": "Search"
+      },
+      {
+        "id": 2,
+        "title": "AR Activation",
+        "desc": "Augmented reality overlay triggered by user presence.",
+        "icon": "Eye"
+      },
+      {
+        "id": 3,
+        "title": "360° Camera",
+        "desc": "Captures the entire space for digital twin recreation.",
+        "icon": "Camera"
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Shopping Malls",
+        "desc": "Interactive directory kiosks with real-time promotions displayed on LED videowalls.",
+        "icon": "🏬"
+      },
+      {
+        "title": "Museums & Galleries",
+        "desc": "Multi-touch exhibition tables with gestural zoom, timelines, and audio guides.",
+        "icon": "🏛️"
+      },
+      {
+        "title": "Corporate Lobbies",
+        "desc": "Motion-sensor activated welcome displays with live visitor dashboards.",
+        "icon": "🏢"
+      }
+    ],
+    "capabilities": [
+      {
+        "title": "Smart Wayfinding & Concierge",
+        "desc": "Intelligent navigation systems for malls, hospitals, and government hubs using interactive touchscreen kiosks.",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Virtual Reality Simulators",
+        "desc": "Immersive training or virtual property tours (360° walkthroughs) that provide a hands-on experience without limits.",
+        "icon": "Glasses"
+      },
+      {
+        "title": "Interactive Exhibition Modules",
+        "desc": "Multi-touch software designed for museums and galleries, allowing deep exploration of digital archives.",
+        "icon": "Monitor"
+      },
+      {
+        "title": "IoT & Hardware Integration",
+        "desc": "Custom middleware that connects your software to physical sensors, lighting, or mechanical elements.",
+        "icon": "Cpu"
+      }
+    ]
+  },
+  "digitalStrategyPageData": {
+    "hero": {
+      "title": "Digital Strategy",
+      "coloredWord": "Strategy",
+      "desc": "We are long-term partners, not just vendors. Our consulting practice helps organizations navigate the digital transformation journey with confidence."
+    },
+    "roadmap": [
+      {
+        "phase": "Phase 1",
+        "title": "Audit & Discovery",
+        "desc": "Deep analysis of existing systems, pain points, and stakeholder interviews.",
+        "position": "left"
+      },
+      {
+        "phase": "Phase 2",
+        "title": "Strategy & Architecture",
+        "desc": "Defining the technology stack, data flow architecture, and migration plan.",
+        "position": "right"
+      },
+      {
+        "phase": "Phase 3",
+        "title": "Design & Prototype",
+        "desc": "High-fidelity UI/UX design, user testing, and interactive prototyping.",
+        "position": "left"
+      },
+      {
+        "phase": "Phase 4",
+        "title": "Agile Development",
+        "desc": "Sprint-based development with transparent progress reporting and demos.",
+        "position": "right"
+      },
+      {
+        "phase": "Phase 5",
+        "title": "QA & Launch",
+        "desc": "Rigorous testing (Whitebox, Blackbox, Bulk), soft launch, and full deployment.",
+        "position": "left"
+      },
+      {
+        "phase": "Phase 6",
+        "title": "Growth & Support",
+        "desc": "Continuous monitoring, feature iteration, and 24/7 SLA maintenance.",
+        "position": "right"
+      }
+    ],
+    "capabilities": [
+      {
+        "title": "Digital Transformation Roadmap",
+        "desc": "We don't just build; we advise. We help institutions transition from manual legacy systems to automated digital workflows with a clear, phased roadmap.",
+        "icon": "Route"
+      },
+      {
+        "title": "UI/UX Design Lab",
+        "desc": "Crafting user-centric interfaces that are not only beautiful but also intuitive for various demographics—from Gen Z to Government officials.",
+        "icon": "Palette"
+      }
+    ]
+  }
+}

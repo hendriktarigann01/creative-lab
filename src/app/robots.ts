@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
-import { siteMetadata } from '../data/metadata';
+import metadata from '@/data/en/metadata.json';
+
+const siteMetadata = metadata.siteMetadata;
 
 export default function robots(): MetadataRoute.Robots {
   return {

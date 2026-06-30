@@ -50,7 +50,7 @@ export function Footer() {
         <div className="flex flex-col gap-2">
           <Link href="/" className="inline-block">
             <Image
-              src={theme === 'light' ? '/creative-lab-2.png' : '/creative-lab.png'}
+              src={theme === 'light' ? '/creative-lab-2.webp' : '/creative-lab.webp'}
               alt="Creative LAB Logo"
               width={140}
               height={42}

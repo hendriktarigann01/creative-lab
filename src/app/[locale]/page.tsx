@@ -1,6 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
-import { siteMetadata } from '@/data/metadata';
 import { getOrganizationSchema, getWebSiteSchema } from '@/lib/structured-data';
 
 // Layout components
@@ -16,39 +14,48 @@ import { Portfolio } from '@/components/sections/Portfolio';
 import { Contact } from '@/components/sections/Contact';
 import { CTA } from '@/components/sections/CTA';
 
-export const metadata: Metadata = {
-  title: siteMetadata.title,
-  description: siteMetadata.description,
-  keywords: siteMetadata.keywords,
-  alternates: {
-    canonical: siteMetadata.siteUrl,
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  openGraph: {
-    type: 'website',
-    title: siteMetadata.title,
-    description: siteMetadata.description,
-    url: siteMetadata.siteUrl,
-    siteName: siteMetadata.title,
-    images: [
-      {
-        url: `${siteMetadata.siteUrl}/favicon.svg`,
-        width: 800,
-        height: 600,
-        alt: siteMetadata.title,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: siteMetadata.title,
-    description: siteMetadata.description,
-    images: [`${siteMetadata.siteUrl}/favicon.svg`],
-  },
-};
+interface Props {
+  params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const metadata = (await import(`@/data/${locale}/metadata.json`)).default.siteMetadata;
+
+  return {
+    title: metadata.title,
+    description: metadata.description,
+    keywords: metadata.keywords,
+    alternates: {
+      canonical: metadata.siteUrl,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    openGraph: {
+      type: 'website',
+      title: metadata.title,
+      description: metadata.description,
+      url: metadata.siteUrl,
+      siteName: metadata.title,
+      images: [
+        {
+          url: `${metadata.siteUrl}/favicon.svg`,
+          width: 800,
+          height: 600,
+          alt: metadata.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: metadata.title,
+      description: metadata.description,
+      images: [`${metadata.siteUrl}/favicon.svg`],
+    },
+  };
+}
 
 export default function Home() {
   const organizationSchema = getOrganizationSchema();
@@ -57,15 +64,13 @@ export default function Home() {
   return (
     <>
       {/* Structured Data injection */}
-      <Script
-        id="organization-schema"
+      <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema).replace(/</g, '\\u003c') }}
       />
-      <Script
-        id="website-schema"
+      <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema).replace(/</g, '\\u003c') }}
       />
 
       {/* Global Header */}

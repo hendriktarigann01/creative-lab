@@ -34,8 +34,6 @@ export default function ContactPage() {
         <Contact hideHeader={true} />
       </div>
 
-
-
       <Container className="relative z-10 mb-20 sm:mb-28 ">
         <SectionHeader
           label="FAQ"
@@ -56,7 +54,7 @@ export default function ContactPage() {
                 >
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : index)}
-                    className="w-full flex items-center justify-between p-6 text-left text-foreground font-medium transition-colors duration-200 hover:text-primary cursor-pointer"
+                    className="w-full flex items-center justify-between p-4 text-left text-foreground font-medium transition-colors duration-200 hover:text-primary cursor-pointer"
                   >
                     <span className="text-base sm:text-lg">{faq.q}</span>
                     <ChevronDown
@@ -70,7 +68,7 @@ export default function ContactPage() {
                       isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <p className="p-6 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    <p className="p-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
                       {faq.a}
                     </p>
                   </div>

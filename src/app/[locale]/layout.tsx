@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { LenisProvider } from '@/components/providers/LenisProvider';
-import Script from 'next/script';
 import '@/app/globals.css';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import { themeInitScript } from '@/lib/theme-init';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -35,20 +35,10 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${inter.variable} h-full antialiased dark`} suppressHydrationWarning>
       <head>
-        <Script id="theme-loader" strategy="beforeInteractive">
-          {`
-            (function() {
-              try {
-                const theme = localStorage.getItem('theme');
-                if (theme === 'light') {
-                  document.documentElement.classList.remove('dark');
-                } else {
-                  document.documentElement.classList.add('dark');
-                }
-              } catch (e) {}
-            })()
-          `}
-        </Script>
+          <script
+            id="theme-loader"
+          dangerouslySetInnerHTML={{ __html: themeInitScript }}
+        />
       </head>
       <body className="w-full min-h-full flex flex-col overflow-x-hidden bg-background text-foreground font-sans hide-scrollbar">
         <NextIntlClientProvider messages={messages}>

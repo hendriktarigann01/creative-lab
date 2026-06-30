@@ -9,14 +9,15 @@ import { PageHero } from '@/components/ui/PageHero';
 import { JsonLd } from '@/components/ui/JsonLd';
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 import { getBreadcrumbSchema, getServiceSchema } from '@/lib/structured-data';
-import { useParams } from 'next/navigation';
-
-import { digitalStrategyPageData } from '@/data/services-detail';
+import { useTranslations } from 'next-intl';
 
 export default function DigitalStrategyPage() {
-  const params = useParams();
-  const locale = params.locale as string;
-  const data = digitalStrategyPageData[locale] || digitalStrategyPageData['en'];
+  const t = useTranslations('services-detail');
+  const data = t.raw('digitalStrategyPageData') as {
+    hero: { title: string; coloredWord: string; desc: string };
+    roadmap: Array<{ phase: string; title: string; desc: string; position: 'left' | 'right' }>;
+    capabilities: Array<{ title: string; desc: string; icon: string }>;
+  };
   const getIcon = (iconName: string, className: string = 'w-6 h-6') => {
     switch (iconName) {
       case 'Route':

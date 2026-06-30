@@ -101,7 +101,7 @@ export function Navbar() {
         <Container className="flex items-center justify-between p-0">
           <Link href="/" className="flex items-center group cursor-pointer shrink-0">
             <Image
-              src={theme === 'light' ? '/creative-lab-2.png' : '/creative-lab.png'}
+              src={theme === 'light' ? '/creative-lab-2.webp' : '/creative-lab.webp'}
               alt="Creative LAB Logo"
               width={140}
               height={42}

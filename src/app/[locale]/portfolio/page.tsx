@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { Portfolio } from '@/components/sections/Portfolio';
-import { portfolioDetails } from '@/data/portfolio-detail';
 import { Container } from '@/components/ui/Container';
 import { Card } from '@/components/ui/Card';
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
@@ -11,14 +10,16 @@ import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { PageHero } from '@/components/ui/PageHero';
 import { LazyImage } from '@/components/ui/LazyImage';
+import { ProjectDetail } from '@/types';
 
 export default function PortfolioPage() {
   const [activeFilter, setActiveFilter] = useState('All');
   const t = useTranslations('portfolio');
+  const tDetail = useTranslations('portfolio-detail');
   const locale = useLocale();
 
-  // Get localized portfolio data list dynamically
-  const localizedPortfolio = Object.values(portfolioDetails[locale] || portfolioDetails['en']);
+  const projectsMap = tDetail.raw('projects') as Record<string, ProjectDetail>;
+  const localizedPortfolio = Object.values(projectsMap);
 
   // Localize filter "All" depending on the locale
   const allLabel = locale === 'id' ? 'Semua' : 'All';

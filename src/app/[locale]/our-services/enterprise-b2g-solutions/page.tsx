@@ -19,9 +19,7 @@ import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 import { PageHero } from '@/components/ui/PageHero';
 import { JsonLd } from '@/components/ui/JsonLd';
 import { getBreadcrumbSchema, getServiceSchema } from '@/lib/structured-data';
-import { useParams } from 'next/navigation';
-
-import { enterpriseData } from '@/data/services-detail';
+import { useTranslations } from 'next-intl';
 
 const initialLogs = [
   '14:32:01 [INFO] Dashboard sync completed — 847 devices online',
@@ -44,9 +42,13 @@ const simulatedEvents = [
 ];
 
 export default function EnterprisePage() {
-  const params = useParams();
-  const locale = params.locale as string;
-  const data = enterpriseData[locale] || enterpriseData['en'];
+  const t = useTranslations('services-detail');
+  const data = t.raw('enterpriseData') as {
+    hero: { title: string; coloredWord: string; desc: string };
+    metrics: Array<{ label: string; value: string }>;
+    systemStatus: Array<{ label: string; status: string; icon: string }>;
+    capabilities: Array<{ title: string; desc: string; icon: string }>;
+  };
 
   const [logs, setLogs] = useState<string[]>(initialLogs);
 

@@ -7,23 +7,6 @@ import { Button } from '@/components/ui/Button';
 import { clamp, getSequenceStyles } from '@/lib/hero-utils';
 import { useTranslations } from 'next-intl';
 
-const lerp = (x: number, x0: number, x1: number, y0: number, y1: number) => {
-  const t = (x - x0) / (x1 - x0);
-  const st = t * t * (3 - 2 * t);
-  return y0 + (y1 - y0) * st;
-};
-
-const getWarpedProgress = (rawP: number) => {
-  if (rawP <= 0.12) return 0.0;
-  if (rawP < 0.20) return lerp(rawP, 0.12, 0.20, 0.0, 0.285);
-  if (rawP <= 0.38) return 0.285;
-  if (rawP < 0.48) return lerp(rawP, 0.38, 0.48, 0.285, 0.55);
-  if (rawP <= 0.68) return 0.55;
-  if (rawP < 0.78) return lerp(rawP, 0.68, 0.78, 0.55, 0.825);
-  if (rawP <= 0.92) return 0.825;
-  return lerp(rawP, 0.92, 1.0, 0.825, 1.0);
-};
-
 export function Hero() {
   const tHero = useTranslations('hero');
   const tAbout = useTranslations('about');
@@ -36,11 +19,25 @@ export function Hero() {
   const seq1Ref = useRef<HTMLDivElement>(null);
   const seq2Ref = useRef<HTMLDivElement>(null);
   const seq3Ref = useRef<HTMLDivElement>(null);
-  const rafRef = useRef<number | null>(null);
-  const latestProgressRef = useRef(0);
-  const snapTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const currentStepRef = useRef(0);
-  const isAnimatingRef = useRef(false);
+
+  const progressContainerRef = useRef<HTMLDivElement>(null);
+  const progressTextRef = useRef<HTMLSpanElement>(null);
+  const progressBarRef = useRef<HTMLDivElement>(null);
+
+  const targetProgressRef = useRef(0);
+  const currentTimeRef = useRef(0.5);
+  const initializedRef = useRef(false);
+
+  const applyOverlay = useCallback(
+    (ref: React.RefObject<HTMLDivElement | null>, opacity: number, y: number) => {
+      const el = ref.current;
+      if (!el) return;
+      el.style.opacity = String(opacity);
+      el.style.transform = `translate3d(0, ${y}px, 0)`;
+      el.style.visibility = opacity > 0.01 ? 'visible' : 'hidden';
+    },
+    []
+  );
 
   const updateMetrics = useCallback(() => {
     const container = containerRef.current;
@@ -56,157 +53,96 @@ export function Hero() {
     updateMetrics();
     window.addEventListener('resize', updateMetrics);
 
-    // Initialize step based on initial scroll position
     const initScroll = window.scrollY;
     const { top, height, vh } = containerMetricsRef.current;
     const range = height - vh;
     if (range > 0) {
       const progress = clamp((initScroll - top) / range, 0, 1);
-      if (progress > 0.92) {
-        currentStepRef.current = 4;
-      } else {
-        const snapTargets = [0.0, 0.29, 0.58, 0.85];
-        let closestStep = 0;
-        let minDiff = Math.abs(progress - snapTargets[0]);
-        for (let i = 1; i < snapTargets.length; i++) {
-          const diff = Math.abs(progress - snapTargets[i]);
-          if (diff < minDiff) {
-            minDiff = diff;
-            closestStep = i;
-          }
-        }
-        currentStepRef.current = closestStep;
-      }
+      targetProgressRef.current = progress;
     }
 
     return () => {
       window.removeEventListener('resize', updateMetrics);
-      if (snapTimeoutRef.current) {
-        clearTimeout(snapTimeoutRef.current);
-      }
     };
   }, [updateMetrics]);
 
-  const applyOverlay = useCallback(
-    (ref: React.RefObject<HTMLDivElement | null>, opacity: number, y: number) => {
-      const el = ref.current;
-      if (!el) return;
-      el.style.opacity = String(opacity);
-      el.style.transform = `translate3d(0, ${y}px, 0)`;
-      el.style.visibility = opacity > 0.01 ? 'visible' : 'hidden';
-    },
-    []
-  );
+  useEffect(() => {
+    let frameId: number;
 
-  useLenis(
-    (lenis) => {
-      const { top, height, vh } = containerMetricsRef.current;
-      const range = height - vh;
-      if (range <= 0) return;
+    const updateVideo = () => {
+      const video = videoRef.current;
+      if (!video) {
+        frameId = requestAnimationFrame(updateVideo);
+        return;
+      }
 
-      const progress = clamp((lenis.animatedScroll - top) / range, 0, 1);
-      latestProgressRef.current = progress;
+      const duration = video.duration;
+      if (!duration || isNaN(duration) || video.readyState < 2) {
+        frameId = requestAnimationFrame(updateVideo);
+        return;
+      }
 
-      const snapTargets = [0.0, 0.29, 0.58, 0.85];
-      const dir = lenis.direction; // 1 (down), -1 (up), 0 (none)
+      if (!initializedRef.current) {
+        currentTimeRef.current = targetProgressRef.current * duration;
+        initializedRef.current = true;
+      }
 
-      // State machine logic for scroll snapping
-      if (!isAnimatingRef.current) {
-        const curStep = currentStepRef.current;
-        let nextStep = -1;
+      const targetTime = targetProgressRef.current * duration;
+      const diff = targetTime - currentTimeRef.current;
 
-        if (dir === 1) {
-          // Scrolling down
-          if (curStep === 0 && progress > 0.02) {
-            nextStep = 1;
-          } else if (curStep === 1 && progress > 0.29 + 0.02) {
-            nextStep = 2;
-          } else if (curStep === 2 && progress > 0.58 + 0.02) {
-            nextStep = 3;
-          } else if (curStep === 3 && progress > 0.85 + 0.03) {
-            // transition to free scroll
-            currentStepRef.current = 4;
-          }
-        } else if (dir === -1) {
-          // Scrolling up
-          if (curStep === 4 && progress < 0.88) {
-            nextStep = 3;
-          } else if (curStep === 3 && progress < 0.85 - 0.02) {
-            nextStep = 2;
-          } else if (curStep === 2 && progress < 0.58 - 0.02) {
-            nextStep = 1;
-          } else if (curStep === 1 && progress < 0.29 - 0.02) {
-            nextStep = 0;
-          }
-        }
-
-        if (nextStep !== -1) {
-          currentStepRef.current = nextStep;
-          isAnimatingRef.current = true;
-          const targetScroll = top + snapTargets[nextStep] * range;
-
-          lenis.scrollTo(targetScroll, {
-            duration: 0.8, // faster transition
-            easing: (t) => 1 - Math.pow(1 - t, 3.5),
-            onComplete: () => {
-              isAnimatingRef.current = false;
-            },
-          });
+      if (Math.abs(diff) > 0.005) {
+        currentTimeRef.current += diff * 0.08;
+        if (!video.seeking) {
+          video.currentTime = Math.max(0, currentTimeRef.current);
         }
       }
 
-      // Manage fallback snap back if they stop scrolling
-      if (snapTimeoutRef.current) {
-        clearTimeout(snapTimeoutRef.current);
+      const smoothP = currentTimeRef.current / duration;
+
+      const hero = getSequenceStyles(smoothP, -0.01, 0.0, 0.1, 0.15);
+      applyOverlay(heroRef, hero.opacity, hero.y);
+
+      const s1 = getSequenceStyles(smoothP, 0.15, 0.22, 0.35, 0.38);
+      applyOverlay(seq1Ref, s1.opacity, s1.y);
+
+      const s2 = getSequenceStyles(smoothP, 0.38, 0.45, 0.65, 0.68);
+      applyOverlay(seq2Ref, s2.opacity, s2.y);
+
+      const s3 = getSequenceStyles(smoothP, 0.68, 0.75, 0.9, 0.95);
+      applyOverlay(seq3Ref, s3.opacity, s3.y);
+
+      const percentage = Math.min(100, Math.max(0, Math.round(smoothP * 100)));
+
+      if (progressBarRef.current) {
+        progressBarRef.current.style.transform = `scaleX(${smoothP})`;
+      }
+      if (progressTextRef.current) {
+        progressTextRef.current.textContent = `${percentage}%`;
+      }
+      if (progressContainerRef.current) {
+        const isVisible = smoothP < 0.99;
+        progressContainerRef.current.style.opacity = isVisible ? '1' : '0';
+        progressContainerRef.current.style.visibility = isVisible ? 'visible' : 'hidden';
       }
 
-      if (!isAnimatingRef.current && currentStepRef.current !== 4) {
-        snapTimeoutRef.current = setTimeout(() => {
-          const targetScroll = top + snapTargets[currentStepRef.current] * range;
-          if (Math.abs(lenis.animatedScroll - targetScroll) > 2) {
-            isAnimatingRef.current = true;
-            lenis.scrollTo(targetScroll, {
-              duration: 0.7,
-              easing: (t) => 1 - Math.pow(1 - t, 3),
-              onComplete: () => {
-                isAnimatingRef.current = false;
-              },
-            });
-          }
-        }, 200);
-      }
+      frameId = requestAnimationFrame(updateVideo);
+    };
 
-      if (rafRef.current !== null) return;
+    frameId = requestAnimationFrame(updateVideo);
 
-      rafRef.current = requestAnimationFrame(() => {
-        rafRef.current = null;
-        const rawP = latestProgressRef.current;
-        const p = getWarpedProgress(rawP);
+    return () => {
+      cancelAnimationFrame(frameId);
+    };
+  }, [applyOverlay]);
 
-        const video = videoRef.current;
-        if (video && video.readyState >= 2 && video.duration) {
-          const targetTime = p * video.duration;
-          // Avoid micro-seeks to reduce video decoding load
-          if (Math.abs(video.currentTime - targetTime) > 0.03) {
-            video.currentTime = targetTime;
-          }
-        }
+  useLenis((lenis) => {
+    const { top, height, vh } = containerMetricsRef.current;
+    const range = height - vh;
+    if (range <= 0) return;
 
-        const hero = getSequenceStyles(p, -0.01, 0.0, 0.1, 0.15);
-        applyOverlay(heroRef, hero.opacity, hero.y);
-
-        const s1 = getSequenceStyles(p, 0.15, 0.22, 0.35, 0.38);
-        applyOverlay(seq1Ref, s1.opacity, s1.y);
-
-        const s2 = getSequenceStyles(p, 0.38, 0.45, 0.65, 0.68);
-        applyOverlay(seq2Ref, s2.opacity, s2.y);
-
-        const s3 = getSequenceStyles(p, 0.68, 0.75, 0.9, 0.95);
-        applyOverlay(seq3Ref, s3.opacity, s3.y);
-      });
-    },
-    [applyOverlay]
-  );
+    const progress = clamp((lenis.animatedScroll - top) / range, 0, 1);
+    targetProgressRef.current = progress;
+  }, []);
 
   const title = tHero('title');
   const grad = tHero('gradientWord');
@@ -289,6 +225,28 @@ export function Hero() {
             {tAbout('seq3Gradient')}
           </span>
         </h2>
+      </div>
+
+      {/* Loading Bar */}
+      <div
+        ref={progressContainerRef}
+        className="fixed bottom-0 left-0 z-50 w-full flex flex-col items-end gap-1 pointer-events-none transition-all duration-300 ease-out"
+        style={{ opacity: 0, visibility: 'hidden', willChange: 'opacity, visibility' }}
+      >
+        <span
+          ref={progressTextRef}
+          className="text-xs font-light tracking-wider text-white mr-2 opacity-80 select-none"
+        >
+          0%
+        </span>
+
+        <div className="w-full h-1.5 bg-[#ab7feb]/20 backdrop-blur-sm">
+          <div
+            ref={progressBarRef}
+            className="h-full bg-gradient-to-r from-[#540ee1] to-[#ab7feb] shadow-[0_0_8px_rgba(171,127,235,0.5)] origin-left w-full"
+            style={{ transform: 'scaleX(0)', willChange: 'transform' }}
+          />
+        </div>
       </div>
     </div>
   );

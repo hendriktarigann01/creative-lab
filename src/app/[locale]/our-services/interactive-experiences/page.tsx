@@ -9,12 +9,10 @@ import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 import { PageHero } from '@/components/ui/PageHero';
 import { JsonLd } from '@/components/ui/JsonLd';
 import { getBreadcrumbSchema, getServiceSchema } from '@/lib/structured-data';
-import { useParams } from 'next/navigation';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useTexture, Html } from '@react-three/drei';
 import * as THREE from 'three';
-
-import { interactivePageData } from '@/data/services-detail';
+import { useTranslations } from 'next-intl';
 
 const hotspotPositions: Record<number, [number, number, number]> = {
   1: [-400, -50, -300], // Wayfinding Kiosk
@@ -100,9 +98,13 @@ function SpherePanorama({ hotspots, activeHotspot, setActiveHotspot }: SpherePan
 }
 
 export default function InteractivePage() {
-  const params = useParams();
-  const locale = params.locale as string;
-  const data = interactivePageData[locale] || interactivePageData['en'];
+  const t = useTranslations('services-detail');
+  const data = t.raw('interactivePageData') as {
+    hero: { title: string; coloredWord: string; desc: string };
+    hotspots: Array<{ id: number; title: string; desc: string; icon: string }>;
+    useCases: Array<{ title: string; desc: string; icon: string }>;
+    capabilities: Array<{ title: string; desc: string; icon: string }>;
+  };
 
   const [activeHotspot, setActiveHotspot] = useState<number | null>(null);
   const [mounted, setMounted] = useState(false);
