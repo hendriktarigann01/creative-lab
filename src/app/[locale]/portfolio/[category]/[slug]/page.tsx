@@ -1,6 +1,6 @@
 'use client';
 
-import { useParams } from 'next/navigation';
+import { useParams, notFound } from 'next/navigation';
 
 import { Container } from '@/components/ui/Container';
 import { Card } from '@/components/ui/Card';
@@ -17,6 +17,7 @@ export default function ProjectDetailPage() {
   const params = useParams();
   const router = useRouter();
   const slug = params.slug as string;
+  const categoryParam = params.category as string;
   const locale = useLocale();
   const t = useTranslations('projectDetail');
   const tDetail = useTranslations('portfolio-detail');
@@ -28,18 +29,15 @@ export default function ProjectDetailPage() {
     project = null;
   }
 
-  if (!project) {
-    return (
-      <div className="bg-background min-h-dvh flex flex-col items-center justify-center text-center p-4">
-        <h1 className="text-3xl sm:text-4xl font-medium text-foreground mb-4">
-          {t('notFoundTitle')}
-        </h1>
-        <p className="text-muted-foreground mb-8">{t('notFoundSub')}</p>
-        <Button href="/portfolio" variant="primary">
-          {t('backBtn')}
-        </Button>
-      </div>
-    );
+  const slugify = (text: string) => {
+    return text
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)+/g, '');
+  };
+
+  if (!project || categoryParam !== slugify(project.category)) {
+    notFound();
   }
 
   return (

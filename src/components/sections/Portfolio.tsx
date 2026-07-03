@@ -28,7 +28,7 @@ export function Portfolio({ hideHeader = false }: PortfolioProps) {
   const cards = projects.map((project) => ({
     imgUrl: project.image,
     alt: project.title,
-    linkUrl: `/portfolio/${project.slug}`,
+    linkUrl: `/portfolio/${project.category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')}/${project.slug}`,
   }));
 
   const { centerIndex, containerRef, setAutoplayActive, cycle, needsPagination } =

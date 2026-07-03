@@ -137,37 +137,21 @@ export default function PortfolioPage() {
                 </div>
 
                 <div className="p-6 flex flex-col flex-1 justify-between gap-5">
-                  <div>
+                 
                     <h3 className="text-base sm:text-lg md:text-xl font-medium text-foreground tracking-tight group-hover:text-primary transition-colors duration-300">
                       {project.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-2.5">
                       {project.desc}
                     </p>
-                  </div>
-
-                  <div>
-                    {/* Tech List - sourced directly from project.technologies */}
-                    <div className="flex flex-wrap gap-1.5 mb-5">
-                      {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2 py-0.5 bg-muted rounded-md text-[10px] font-medium text-muted-foreground border border-border/5"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-
                     <Link
                       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                      href={`/portfolio/${project.slug}` as any}
+                      href={`/portfolio/${project.category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')}/${project.slug}` as any}
                       className="inline-flex items-center text-xs sm:text-sm font-medium tracking-wide gap-1 text-primary hover:underline group/link cursor-pointer mt-auto"
                     >
                       {t('exploreProject')}
                       <ExternalLink className="w-3.5 h-3.5 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
                     </Link>
-                  </div>
                 </div>
               </Card>
             </AnimateOnScroll>
