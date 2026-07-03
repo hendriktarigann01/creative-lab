@@ -7,7 +7,7 @@ import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 import { CTA } from '@/components/sections/CTA';
-import { CheckCircle2, Calendar, User, Briefcase, BarChart } from 'lucide-react';
+import { CheckCircle2, Calendar, User, Briefcase, BarChart, ExternalLink } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter } from '@/i18n/routing';
 import { PageHero } from '@/components/ui/PageHero';
@@ -165,21 +165,18 @@ export default function ProjectDetailPage() {
                   </div>
                 </div>
 
-                <div className="pt-6 flex flex-col gap-4">
-                  <span className="block text-muted-foreground/60 uppercase text-[10px] font-medium tracking-wider">
-                    {t('techDeployed')}
-                  </span>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 bg-muted border border-border rounded-lg text-xs font-medium text-muted-foreground"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                {project.liveUrl && (
+                  <div className="pt-6 border-t border-border/40">
+                    <Button
+                      href={project.liveUrl}
+                      variant="primary"
+                      className="w-full justify-center gap-2"
+                    >
+                      <span>{t('visitWebsite')}</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </Button>
                   </div>
-                </div>
+                )}
               </Card>
             </AnimateOnScroll>
           </div>

@@ -90,4 +90,5 @@ export interface ProjectDetail {
   features: string[];
   technologies: string[];
   stats: { label: string; value: string };
+  liveUrl?: string;
 }

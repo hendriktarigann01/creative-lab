@@ -55,54 +55,61 @@ export default function PortfolioPage() {
       {/* Extended Filterable Grid Section */}
       <Container className="relative z-10 mt-16 sm:mt-24">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
-          <div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl text-foreground tracking-tight flex items-center">
+          <div className="w-full mb-12">
+            {/* Title */}
+            <h2 className="w-full text-center leading-normal text-2xl sm:text-3xl md:text-4xl text-foreground tracking-tight">
               {t('showcaseTitle')}
             </h2>
-          </div>
 
-          {/* Dropdown for mobile view */}
-          <div className="relative flex md:hidden w-full sm:w-auto">
-            <select
-              value={activeFilter}
-              onChange={(e) => setActiveFilter(e.target.value)}
-              className="w-full bg-card border border-border rounded-xl px-4 py-2.5 text-sm font-medium text-foreground cursor-pointer focus:outline-none focus:border-primary appearance-none pr-10"
-            >
-              {categories.map((category) => {
-                const displayCatName = category === 'All' ? allLabel : category;
-                return (
-                  <option key={category} value={category}>
-                    {displayCatName}
-                  </option>
-                );
-              })}
-            </select>
-            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-muted-foreground">
-              <Filter className="w-4 h-4" />
+            {/* Mobile Dropdown */}
+            <div className="relative flex md:hidden mt-6 w-full sm:w-auto">
+              <select
+                value={activeFilter}
+                onChange={(e) => setActiveFilter(e.target.value)}
+                className="w-full bg-transparent border border-border rounded-xl px-4 py-2.5 text-sm font-medium text-foreground cursor-pointer focus:outline-none focus:border-primary appearance-none pr-10"
+              >
+                {categories.map((category) => {
+                  const displayCatName = category === 'All' ? allLabel : category;
+                  return (
+                    <option key={category} value={category}>
+                      {displayCatName}
+                    </option>
+                  );
+                })}
+              </select>
+
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-muted-foreground">
+                <Filter className="w-4 h-4" />
+              </div>
             </div>
-          </div>
 
-          {/* Buttons for desktop/tablet view */}
-          <div className="hidden md:flex flex-wrap gap-2">
-            {categories.map((category) => {
-              const displayCatName = category === 'All' ? allLabel : category;
-              return (
-                <button
-                  key={category}
-                  onClick={() => setActiveFilter(category)}
-                  className={`
-                    px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 border cursor-pointer
-                    ${
-                      activeFilter === category
-                        ? 'bg-primary border-primary text-primary-foreground'
-                        : 'bg-muted border-border text-muted-foreground hover:text-foreground hover:border-border/80'
-                    }
-                  `}
-                >
-                  {displayCatName}
-                </button>
-              );
-            })}
+            {/* Desktop Tabs */}
+            <div className="hidden md:flex w-full justify-center mt-8">
+              <div className="flex items-center gap-6 pb-2">
+                {categories.map((category) => {
+                  const displayCatName = category === 'All' ? allLabel : category;
+                  const isActive = activeFilter === category;
+
+                  return (
+                    <button
+                      key={category}
+                      onClick={() => setActiveFilter(category)}
+                      className={`
+                        relative pb-3 text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap
+                        after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:rounded-full after:transition-transform after:duration-300
+                        ${
+                          isActive
+                            ? 'text-primary after:scale-x-100 after:bg-primary font-semibold'
+                            : 'text-muted-foreground hover:text-foreground after:scale-x-0 after:bg-foreground/20 hover:after:scale-x-50'
+                        }
+                      `}
+                    >
+                      {displayCatName}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -121,9 +128,12 @@ export default function PortfolioPage() {
                   />
 
                   {/* Category Tag */}
-                  <span className="absolute top-4 left-4 bg-card/75 backdrop-blur-md border border-border px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-medium text-foreground">
+                  <span className="absolute top-4 left-4 bg-card/70 backdrop-blur-md border border-border px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-medium text-card-foreground transition-all duration-300">
                     {project.category}
                   </span>
+
+                  {/* Blend fade overlay */}
+                  <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-card via-card/30 to-card/0 pointer-events-none" />
                 </div>
 
                 <div className="p-6 flex flex-col flex-1 justify-between gap-5">
@@ -150,6 +160,7 @@ export default function PortfolioPage() {
                     </div>
 
                     <Link
+                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
                       href={`/portfolio/${project.slug}` as any}
                       className="inline-flex items-center text-xs sm:text-sm font-medium tracking-wide gap-1 text-primary hover:underline group/link cursor-pointer mt-auto"
                     >

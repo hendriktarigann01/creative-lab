@@ -25,29 +25,21 @@
     "headingPlain": "Why choose ",
     "headingColored": "us?",
     "subheading": "Partner with the experts who build without limits.",
-    "cpu": {
-      "title": "Hardware-First Optimization",
-      "desc": "Built by engineers who understand LED/LCD specs. No lag, no aspect ratio errors."
+    "integrated": {
+      "title": "Integrated Hardware & Software",
+      "desc": "Complete engineering from first line of code to physical installation, ensuring zero lag."
     },
-    "shield": {
-      "title": "B2G Credibility",
-      "desc": "We understand the procurement, security, and reporting standards of the public sector."
+    "agile": {
+      "title": "Rapid Prototyping & Agile Sprints",
+      "desc": "Convert abstract ideas into testable MVP software in weeks for faster validation and real-world feedback."
     },
-    "wrench": {
-      "title": "End-to-End Execution",
-      "desc": "From the first line of code to the final screw in the installation—we own the process."
+    "enterprise": {
+      "title": "Scalable Infrastructure & 24/7 SLAs",
+      "desc": "Cloud-native microservices built for millions of users with round-the-clock SLA support."
     },
-    "zap": {
-      "title": "Rapid Prototyping",
-      "desc": "Turning abstract ideas into testable MVP software in weeks, not months."
-    },
-    "server": {
-      "title": "Scalable Architecture",
-      "desc": "Cloud-native microservices designed to handle millions of concurrent users effortlessly."
-    },
-    "clock": {
-      "title": "24/7 Mission Control",
-      "desc": "Dedicated SLA support ensuring zero downtime for critical infrastructure."
+    "compliance": {
+      "title": "B2G Compliance & Public Security",
+      "desc": "Strict adherence to public sector procurement, reporting, and civic security standards."
     }
   },
   "services": {
@@ -161,7 +153,8 @@
     "impact": "Impact metric",
     "techDeployed": "Technologies Deployed",
     "notFoundTitle": "Project Not Found",
-    "notFoundSub": "The requested portfolio execution could not be located."
+    "notFoundSub": "The requested portfolio execution could not be located.",
+    "visitWebsite": "Visit Live Website"
   },
   "footer": {
     "tagline": "Architecting Tomorrow's Legacy",

@@ -34,6 +34,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const buttonStyles = cn(baseStyles, variants[variant], sizes[size], className);
 
     if (href) {
+      const isExternal = href.startsWith('http://') || href.startsWith('https://');
+      if (isExternal) {
+        return (
+          <a href={href} target="_blank" rel="noopener noreferrer" className={buttonStyles}>
+            {children}
+          </a>
+        );
+      }
       return (
         <Link href={href} className={buttonStyles}>
           {children}

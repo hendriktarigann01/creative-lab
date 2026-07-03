@@ -25,29 +25,21 @@
     "headingPlain": "Mengapa memilih ",
     "headingColored": "kami?",
     "subheading": "Bekerja samalah dengan para ahli yang membangun tanpa batas.",
-    "cpu": {
-      "title": "Optimasi Hardware-First",
-      "desc": "Dibangun oleh insinyur yang memahami spesifikasi LED/LCD. Tanpa lag, tanpa kesalahan rasio aspek."
+    "integrated": {
+      "title": "Integrasi Hardware & Software",
+      "desc": "Rekayasa lengkap dari baris kode pertama hingga instalasi fisik, menjamin tanpa lag."
     },
-    "shield": {
-      "title": "Kredibilitas B2G",
-      "desc": "Kami memahami standar pengadaan, keamanan, dan pelaporan sektor publik."
+    "agile": {
+      "title": "Prototyping Cepat & Sprint Agile",
+      "desc": "Mengubah ide abstrak menjadi MVP siap uji dalam hitungan minggu untuk validasi cepat."
     },
-    "wrench": {
-      "title": "Eksekusi End-to-End",
-      "desc": "Dari baris kode pertama hingga sekrup terakhir pada instalasi fisik—kami memiliki prosesnya."
+    "enterprise": {
+      "title": "Infrastruktur Skalabel & SLA 24/7",
+      "desc": "Layanan cloud-native untuk jutaan pengguna secara bersamaan dengan dukungan SLA 24/7."
     },
-    "zap": {
-      "title": "Prototyping Cepat",
-      "desc": "Mengubah ide abstrak menjadi perangkat lunak MVP yang dapat diuji dalam hitungan minggu, bukan bulan."
-    },
-    "server": {
-      "title": "Arsitektur Skalabel",
-      "desc": "Microservices cloud-native dirancang untuk menangani jutaan pengguna secara bersamaan dengan mudah."
-    },
-    "clock": {
-      "title": "Mission Control 24/7",
-      "desc": "Dukungan SLA berdedikasi memastikan zero downtime untuk infrastruktur penting."
+    "compliance": {
+      "title": "Kepatuhan B2G & Keamanan Publik",
+      "desc": "Kepatuhan ketat terhadap pengadaan sektor publik, pelaporan, dan standar keamanan negara."
     }
   },
   "services": {
@@ -161,7 +153,8 @@
     "impact": "Metrik Dampak",
     "techDeployed": "Teknologi yang Digunakan",
     "notFoundTitle": "Proyek Tidak Ditemukan",
-    "notFoundSub": "Eksekusi portofolio yang diminta tidak dapat ditemukan."
+    "notFoundSub": "Eksekusi portofolio yang diminta tidak dapat ditemukan.",
+    "visitWebsite": "Kunjungi Website"
   },
   "footer": {
     "tagline": "Architecting Tomorrow's Legacy",

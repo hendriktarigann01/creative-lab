@@ -119,41 +119,11 @@ export function Services() {
                     <p className="text-sm text-muted-foreground leading-relaxed mb-6">
                       {service.desc}
                     </p>
-
-                    {/* Features List */}
-                    <ul className="flex flex-col gap-3.5 mb-8">
-                      {service.features.map((feature, i) => {
-                        const hasColon = feature.includes(':');
-                        let titlePart = '';
-                        let descPart = feature;
-                        if (hasColon) {
-                          const parts = feature.split(':');
-                          titlePart = parts[0] + ':';
-                          descPart = parts[1];
-                        }
-
-                        return (
-                          <li
-                            key={i}
-                            className="flex items-start gap-2 text-xs sm:text-sm text-muted-foreground"
-                          >
-                            <span
-                              className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${theme.text} bg-current`}
-                            />
-                            <span>
-                              {titlePart && (
-                                <span className="font-medium text-foreground">{titlePart}</span>
-                              )}
-                              {descPart}
-                            </span>
-                          </li>
-                        );
-                      })}
-                    </ul>
                   </div>
 
                   {/* Learn More Link */}
                   <Link
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     href={service.link as any}
                     className={`inline-flex items-center text-sm font-medium tracking-wide gap-1 w-fit group-hover:underline cursor-pointer ${theme.text}`}
                   >

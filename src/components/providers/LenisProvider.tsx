@@ -11,6 +11,21 @@ if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
     }
     orig.apply(console, args);
   };
+
+  // Safe wrapper for performance.measure to prevent Next.js 15 dev-server crash on missing marks (e.g. RootNotFound)
+  const nativeMeasure = window.performance.measure;
+  if (nativeMeasure) {
+    (window.performance as any).measure = function (name: string, ...args: any[]): PerformanceMeasure {
+      try {
+        return nativeMeasure.call(window.performance, name, ...args);
+      } catch (e) {
+        if (typeof name === 'string' && name.includes('RootNotFound')) {
+          return {} as PerformanceMeasure;
+        }
+        throw e;
+      }
+    };
+  }
 }
 
 export function LenisProvider({ children }: { children: ReactNode }) {

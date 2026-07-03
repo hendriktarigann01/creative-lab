@@ -7,6 +7,7 @@ import { Footer } from '@/components/layout/Footer';
 
 // Section components
 import { Hero } from '@/components/sections/Hero';
+import { HeroFrameBackground } from '@/components/sections/HeroFrameBackground';
 import { Advantage } from '@/components/sections/Advantage';
 import { Services } from '@/components/sections/Services';
 import { Workflow } from '@/components/sections/Workflow';
@@ -77,7 +78,8 @@ export default function Home() {
       <Navbar />
 
       {/* Main Sections */}
-      <main className="flex-1 bg-background text-foreground">
+      <main className="flex-1 bg-background text-foreground relative">
+        <HeroFrameBackground />
         <Hero />
         <Advantage />
         <Services />
