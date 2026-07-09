@@ -17,7 +17,7 @@ export function Breadcrumb({ items, className }: BreadcrumbProps) {
   const t = useTranslations('nav');
 
   return (
-    <nav className={cn('flex items-center gap-2 text-sm text-muted-foreground mb-6 sm:mb-8', className)} aria-label="Breadcrumb">
+    <nav className={cn('flex items-center gap-2 text-sm text-tertiary mb-6 sm:mb-8', className)} aria-label="Breadcrumb">
       <Link href="/" className="hover:text-foreground transition-colors">
         {t('home')}
       </Link>

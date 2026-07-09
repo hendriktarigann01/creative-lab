@@ -11,17 +11,17 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'primary', size = 'md', href, children, ...props }, ref) => {
     const baseStyles =
-      'inline-flex items-center justify-center font-medium rounded-4xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:opacity-50 disabled:pointer-events-none cursor-pointer';
+      'inline-flex items-center justify-center font-medium rounded-4xl transition-all duration-300 disabled:opacity-50 disabled:pointer-events-none cursor-pointer';
 
     const variants = {
       primary:
-        'bg-primary text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90 hover:scale-[1.02]',
+        'bg-primary text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90',
       secondary:
-        'bg-accent text-accent-foreground shadow-lg shadow-accent/20 hover:bg-accent/90 hover:scale-[1.02]',
+        'bg-accent text-accent-foreground shadow-lg shadow-accent/20 hover:bg-accent/90',
       outline:
         'border border-border bg-transparent text-foreground hover:bg-white/5 hover:border-foreground/20',
       ghost:
-        'bg-transparent text-muted-foreground hover:text-foreground bg-gradient-to-r from-[#540EE1]/18 via-[#540EE1]/10 to-transparent',
+        'bg-transparent text-tertiary hover:text-foreground bg-gradient-to-r from-[#540EE1]/18 via-[#540EE1]/10 to-transparent',
       link: 'bg-transparent text-primary hover:underline p-0 h-auto',
     };
 

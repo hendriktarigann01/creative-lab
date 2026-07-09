@@ -13,7 +13,7 @@ interface AdvantageRowProps {
   isActive: boolean;
 }
 
-function AdvantageRow({ index, item, isActive }: AdvantageRowProps) {
+function AdvantageRow({ index: _index, item, isActive }: AdvantageRowProps) {
   return (
     <div className="relative py-6 sm:py-3.5 transition-all duration-300">
       {/* Header: Icon + Title */}
@@ -23,7 +23,7 @@ function AdvantageRow({ index, item, isActive }: AdvantageRowProps) {
           className={`w-8 h-8 sm:w-10 sm:h-10 p-2 rounded-lg flex items-center justify-center border transition-all duration-300 [&_svg]:w-4 [&_svg]:h-4 sm:[&_svg]:w-5 sm:[&_svg]:h-5 ${
             isActive
               ? 'bg-accent/15 border-accent/30 text-accent'
-              : 'bg-white/5 border-white/10 text-muted-foreground'
+              : 'bg-white/5 border-white/10 text-tertiary'
           }`}
         >
           {ICON_MAP[item.icon]}
@@ -49,7 +49,7 @@ function AdvantageRow({ index, item, isActive }: AdvantageRowProps) {
         transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
         className="overflow-hidden"
       >
-        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-2 sm:pl-14 pl-0 max-w-xl">
+        <p className="text-xs sm:text-sm text-tertiary leading-relaxed mt-2 sm:pl-14 pl-0 max-w-xl">
           {item.desc}
         </p>
       </motion.div>
@@ -113,14 +113,11 @@ export function Advantage() {
         <Container className="flex flex-col gap-4 lg:gap-8 max-h-[95vh] justify-center">
           {/* Title Block */}
           <div className="flex flex-col gap-1 sm:gap-2 text-center max-w-3xl mx-auto shrink-0">
-            <span className="self-center text-[10px] font-medium tracking-[.15em] uppercase text-accent px-3 py-1 rounded-full border border-accent/25">
-              Our Advantage
-            </span>
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-medium tracking-tight leading-[1.1] text-foreground">
               {headingPlain}
               <span className="text-accent">{headingColored}</span>
             </h2>
-            <p className="text-muted-foreground text-xs sm:text-sm max-w-xl mx-auto leading-relaxed mt-1 hidden sm:block">
+            <p className="text-tertiary text-xs sm:text-sm max-w-xl mx-auto leading-relaxed mt-1 hidden sm:block">
               {t('subheading')}
             </p>
           </div>
@@ -131,14 +128,7 @@ export function Advantage() {
             <div className="lg:col-span-7 flex flex-col justify-between py-0.5 order-2 lg:order-1 h-full pr-1">
               {advantagesItems.map((item, index) => {
                 const isActive = activeIndex === index;
-                return (
-                  <AdvantageRow
-                    key={index}
-                    index={index}
-                    item={item}
-                    isActive={isActive}
-                  />
-                );
+                return <AdvantageRow key={index} index={index} item={item} isActive={isActive} />;
               })}
             </div>
 

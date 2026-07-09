@@ -17,6 +17,7 @@ export function Navbar() {
   const locale = useLocale() as Locale;
   const router = useRouter();
   const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -60,13 +61,17 @@ export function Navbar() {
         setVisible(true);
       }
 
+      const threshold = isHomePage 
+        ? (window.innerHeight * 4.2) 
+        : (window.innerHeight - 120);
+
       lastScrollYRef.current = currentScrollY;
-      setScrolled(currentScrollY > 20);
+      setScrolled(currentScrollY > threshold);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
 
   const handleLinkClick = () => {
     setMobileMenuOpen(false);
@@ -80,6 +85,7 @@ export function Navbar() {
   const navItems = [
     { name: t('home'), path: '/' },
     { name: t('services'), path: '/our-services' },
+    { name: t('product'), path: '/product' },
     { name: t('portfolio'), path: '/portfolio' },
     { name: t('contact'), path: '/contact' },
   ];
@@ -95,7 +101,7 @@ export function Navbar() {
     >
       <div
         className={cn(
-          'w-full transition-all rounded-4xl py-2 px-6 duration-300 border backdrop-blur-sm bg-background/10 border-border shadow-lg shadow-black/5'
+          'w-full transition-all rounded-4xl py-2 px-6 duration-300 border backdrop-blur-sm bg-background/5 border-border'
         )}
       >
         <Container className="flex items-center justify-between p-0">
@@ -119,7 +125,7 @@ export function Navbar() {
                   href={item.path as never}
                   className={cn(
                     'relative text-sm font-medium tracking-wide transition-all duration-500 px-2 py-2 block overflow-hidden group',
-                    isActive ? 'text-primary font-medium' : 'text-muted-foreground'
+                    isActive ? 'text-primary font-medium' : (isHomePage ? (scrolled ? 'text-tertiary' : 'text-white') : 'text-tertiary')
                   )}
                 >
                   {item.name}
@@ -140,7 +146,10 @@ export function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground px-3 py-1.5 transition-colors cursor-pointer"
+                className={cn(
+                  "flex items-center gap-1.5 text-sm font-medium hover:text-foreground px-3 py-1.5 transition-colors cursor-pointer",
+                  isHomePage ? (scrolled ? "text-tertiary" : "text-white") : "text-tertiary"
+                )}
               >
                 <Image
                   src={localeFlags[locale]}
@@ -163,7 +172,7 @@ export function Navbar() {
                         'flex items-center gap-2 w-full px-3 py-2.5 text-sm transition-colors text-left cursor-pointer',
                         locale === l
                           ? 'text-primary font-medium'
-                          : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                          : 'text-tertiary hover:text-foreground hover:bg-muted'
                       )}
                     >
                       <Image
@@ -184,14 +193,17 @@ export function Navbar() {
               href="/contact"
               variant="outline"
               size="sm"
-              className="rounded-full hover:border-primary hover:text-primary bg-primary/5"
+              className="rounded-full hover:border-primar text-navbar hover:text-primary bg-primary/5"
             >
               {t('getStarted')}
             </Button>
           </div>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-1.5 text-muted-foreground hover:text-foreground transition-colors focus:outline-none cursor-pointer"
+            className={cn(
+              "md:hidden p-1.5 hover:text-foreground transition-colors focus:outline-none cursor-pointer",
+              isHomePage ? (scrolled ? "text-tertiary" : "text-white") : "text-tertiary"
+            )}
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -213,7 +225,7 @@ export function Navbar() {
                     'text-lg font-medium tracking-wide py-2 px-4 rounded-xl transition-colors',
                     isActive
                       ? 'bg-primary/10 text-primary'
-                      : 'text-muted-foreground hover:text-foreground'
+                      : 'text-tertiary hover:text-foreground'
                   )}
                 >
                   {item.name}
@@ -234,8 +246,8 @@ export function Navbar() {
                 className={cn(
                   'flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-md border transition-all duration-200 cursor-pointer',
                   locale === l
-                    ? 'bg-primary text-primary-foreground border-primary'
-                    : 'border-border text-muted-foreground hover:border-primary/50 hover:text-primary'
+                    ? 'bg-primary text-tertiary border-primary'
+                    : 'border-border text-tertiary'
                 )}
               >
                 <Image

@@ -40,12 +40,13 @@ export function Footer() {
   const navLinks = [
     { name: tNav('home'), path: '/' },
     { name: tNav('services'), path: '/our-services' },
+    { name: tNav('product'), path: '/product' },
     { name: tNav('portfolio'), path: '/portfolio' },
     { name: tNav('contact'), path: '/contact' },
   ];
 
   return (
-    <footer className="text-muted-foreground py-16 px-6 md:px-12 font-sans">
+    <footer className="text-tertiary py-16 px-6 md:px-12 font-sans">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
         <div className="flex flex-col gap-2">
           <Link href="/" className="inline-block">
@@ -58,7 +59,7 @@ export function Footer() {
               className="object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
-          <p className="text-sm md:text-base text-muted-foreground font-light tracking-wide">
+          <p className="text-sm md:text-base text-tertiary font-light tracking-wide">
             {tFooter('tagline')}
           </p>
         </div>
@@ -76,7 +77,7 @@ export function Footer() {
         </nav>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-16 pt-8 flex justify-center text-xs md:text-sm text-muted-foreground/60">
+      <div className="max-w-7xl mx-auto mt-16 pt-8 flex justify-center text-xs md:text-sm text-tertiary/60">
         <p>
           © {currentYear} CreativeLAB. {tFooter('copyright')}
         </p>

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Link } from '@/i18n/routing';
-import { useParams } from 'next/navigation';
+
 import {
   Code2,
   Gamepad2,
@@ -29,7 +29,7 @@ import { useTranslations } from 'next-intl';
 
 export default function ServicesOverviewPage() {
   const t = useTranslations('services-detail');
-  const header = t.raw('servicesOverviewHeader');
+  const tServices = useTranslations('services');
   const accordion = t.raw('servicesOverviewAccordion') as Array<{
     title: string;
     slug: string;
@@ -105,8 +105,8 @@ export default function ServicesOverviewPage() {
     }
   };
 
-  const breadcrumbItems = [{ name: 'Services' }];
-  const breadcrumbSchema = getBreadcrumbSchema([{ name: 'Services', item: '/our-services' }]);
+  const breadcrumbItems = [{ name: t('servicesOverview.breadcrumb') }];
+  const breadcrumbSchema = getBreadcrumbSchema([{ name: t('servicesOverview.breadcrumb'), item: '/our-services' }]);
 
   return (
     <>
@@ -114,22 +114,22 @@ export default function ServicesOverviewPage() {
 
       <PageHero
         breadcrumbs={breadcrumbItems}
-        label="Our Services"
-        title={header.heading}
-        gradientWord={header.gradientWord}
-        description={header.subheading}
+        label={tServices('label')}
+        title={tServices('heading')}
+        description={tServices('subheading')}
         accentColor="#540ee1"
+        imageFolder="service"
       />
 
       <section className="pb-16 bg-background relative overflow-hidden">
         <Container>
-          <div className="my-20 sm:my-28 relative">
+          <div className="mt-12 sm:mt-16 mb-20 sm:mb-28 relative">
             <h3 className="text-xl sm:text-2xl md:text-3xl font-medium text-center text-foreground mb-16 tracking-tight">
-              Our{' '}
+              {t('servicesOverview.workflow.headingPart1')}{' '}
               <span className="bg-linear-to-r from-[#AB7FEB] to-[#540EE1] bg-clip-text text-transparent">
-                Workflow
+                {t('servicesOverview.workflow.headingPart2')}
               </span>{' '}
-              Roadmap
+              {t('servicesOverview.workflow.headingPart3')}
             </h3>
 
             <div className="flex flex-col gap-12 relative">
@@ -157,12 +157,12 @@ export default function ServicesOverviewPage() {
                     <div className="w-full sm:w-[calc(50%-2rem)] ml-8 sm:ml-0">
                       <Card className="p-6 border-2 border-primary dark:border-border bg-card transition-all duration-300">
                         <span className="text-xs font-medium text-accent tracking-widest uppercase">
-                          Step {step.step}
+                          {t('servicesOverview.workflow.stepPrefix')} {step.step}
                         </span>
                         <h4 className="text-lg sm:text-xl font-medium text-foreground tracking-tight mt-1.5 mb-2">
                           {step.title}
                         </h4>
-                        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <p className="text-sm sm:text-base text-tertiary leading-relaxed">
                           {step.desc}
                         </p>
                       </Card>
@@ -173,12 +173,11 @@ export default function ServicesOverviewPage() {
             </div>
           </div>
 
-          <div className="my-20 sm:my-28">
+          <div className="mt-12 sm:mt-16 mb-20 sm:mb-28">
             <SectionHeader
-              label="Explore Details"
-              title="Explore In Detail"
-              gradientWord="Detail"
-              description="Review our specific technology capability highlights and stats across each specialized area."
+              label={t('servicesOverview.exploreDetails.label')}
+              title={t('servicesOverview.exploreDetails.title')}
+              description={t('servicesOverview.exploreDetails.desc')}
             />
 
             <div className="flex flex-col gap-4 mx-auto">
@@ -209,7 +208,7 @@ export default function ServicesOverviewPage() {
                         </h3>
                       </div>
                       <ChevronDown
-                        className={`w-5 h-5 text-muted-foreground transition-transform duration-300 ${
+                        className={`w-5 h-5 text-tertiary transition-transform duration-300 ${
                           isOpen ? 'rotate-180 text-foreground' : ''
                         }`}
                       />
@@ -229,20 +228,20 @@ export default function ServicesOverviewPage() {
                             >
                               {service.tagline}
                             </p>
-                            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-2">
+                            <p className="text-sm sm:text-base text-tertiary leading-relaxed mt-2">
                               {service.description}
                             </p>
                           </div>
 
                           <div>
                             <h4 className="text-xs font-medium uppercase tracking-wider text-foreground mb-3">
-                              Capabilities Highlights
+                              {t('servicesOverview.capabilities.heading')}
                             </h4>
                             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                               {service.highlights.map((highlight, idx) => (
                                 <li
                                   key={idx}
-                                  className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground"
+                                  className="flex items-center gap-2 text-xs sm:text-sm text-tertiary"
                                 >
                                   <CheckCircle2
                                     className="w-4 h-4 shrink-0"
@@ -259,7 +258,7 @@ export default function ServicesOverviewPage() {
                             className="inline-flex items-center gap-1.5 text-sm font-medium tracking-wide hover:underline mt-2 w-fit cursor-pointer"
                             style={{ color: service.color }}
                           >
-                            Explore Full Page
+                            {t('servicesOverview.capabilities.exploreLink')}
                           </Link>
                         </div>
 
@@ -270,7 +269,7 @@ export default function ServicesOverviewPage() {
                           >
                             {service.stat}
                           </span>
-                          <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground mt-2">
+                          <span className="text-xs font-medium uppercase tracking-wider text-tertiary mt-2">
                             {service.statLabel}
                           </span>
                         </div>
@@ -288,16 +287,16 @@ export default function ServicesOverviewPage() {
               <div className="absolute -bottom-1/2 -right-1/2 w-full h-full rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
 
               <h3 className="text-xl sm:text-2xl md:text-4xl font-medium text-foreground tracking-tight">
-                Not sure which service{' '}
+                {t('servicesOverview.cta.titlePart1')}{' '}
                 <span className="bg-linear-to-r from-[#AB7FEB] to-[#540EE1] bg-clip-text text-transparent">
-                  fits?
+                  {t('servicesOverview.cta.titlePart2')}
                 </span>
               </h3>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-lg leading-relaxed">
-                Talk to our team and we&apos;ll map the perfect solution for your needs.
+              <p className="text-sm sm:text-base text-tertiary max-w-lg leading-relaxed">
+                {t('servicesOverview.cta.desc')}
               </p>
               <Button href="/#contact" variant="primary" size="lg" className="group mt-2">
-                Get a Free Consultation
+                {t('servicesOverview.cta.btnText')}
               </Button>
             </Card>
           </AnimateOnScroll>

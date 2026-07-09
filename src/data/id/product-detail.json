@@ -1,0 +1,1175 @@
+{
+  "projects": {
+    "pipely": {
+      "slug": "pipely",
+      "title": "Pipely",
+      "category": "Operasional Bisnis",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "Sistem Manajemen Penjualan all-in-one yang membantu bisnis mengelola point of sale, stok, dan pembelian.",
+      "overview": "Pipely adalah Sistem Manajemen Penjualan all-in-one yang dirancang untuk menyederhanakan cara bisnis menangani transaksi harian, pergerakan stok, dan pembelian — semua dari satu platform yang terhubung.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Pengembangan Produk",
+      "timeline": "Berkelanjutan",
+      "challenge": "Bisnis membutuhkan satu sistem untuk mengelola penjualan, stok, dan pembelian alih-alih menggunakan banyak alat yang terpisah.",
+      "solution": "Membangun platform manajemen penjualan terintegrasi yang menggabungkan point of sale, pelacakan stok dan pembelian, serta dukungan multi pembayaran dalam satu antarmuka.",
+      "features": [
+        "Point of Sale (POS)",
+        "Stock & Purchase Management",
+        "Multi Payment Integration"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
+      "stats": {
+        "label": "Kategori",
+        "value": "Operasional Bisnis"
+      },
+      "subtitle": "Sistem Kasir & Ritel",
+      "featuresDetail": [
+        {
+          "tabLabel": "Mesin Kasir (POS)",
+          "tabIconName": "barcode_scanner",
+          "title": "Berikan Pengalaman Pembayaran yang Cepat, Lancar, dan Akurat",
+          "description": "Percepat setiap transaksi dengan sistem POS intuitif yang dirancang untuk mendukung operasional ritel, berbagai metode pembayaran, dan pengalaman pelanggan yang lebih baik.",
+          "features": [
+            {
+              "label": "Proses Pembayaran Cepat",
+              "iconName": "bolt"
+            },
+            {
+              "label": "Berbagai Metode Pembayaran",
+              "iconName": "credit_card"
+            },
+            {
+              "label": "Dukungan Pemindai Barcode",
+              "iconName": "qr_code"
+            },
+            {
+              "label": "Struk Digital & Cetak",
+              "iconName": "receipt_long"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Manajemen Stok",
+          "tabIconName": "box_add",
+          "title": "Jaga Akurasi Inventaris di Setiap Toko dan Gudang",
+          "description": "Lacak inventaris secara real-time, kelola pergerakan stok, dan cegah kekurangan barang dengan sistem manajemen inventaris terintegrasi.",
+          "features": [
+            {
+              "label": "Pemantauan Stok Real-Time",
+              "iconName": "package"
+            },
+            {
+              "label": "Peringatan Stok Rendah",
+              "iconName": "warning"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Pembelian",
+          "tabIconName": "shopping_basket",
+          "title": "Rampingkan Pembelian dari Pesanan hingga Penerimaan Barang",
+          "description": "Kelola pembelian dari pemasok secara efisien dengan membuat pesanan pembelian, melacak pengiriman, dan memperbarui inventaris secara otomatis setelah barang diterima.",
+          "features": [
+            {
+              "label": "Manajemen Pesanan Pembelian",
+              "iconName": "receipt_long"
+            },
+            {
+              "label": "Penerimaan Barang",
+              "iconName": "thumb_up"
+            },
+            {
+              "label": "Kinerja Pemasok",
+              "iconName": "handshake"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Manajemen Produk",
+          "tabIconName": "receipt",
+          "title": "Atur Produk dengan Kontrol Lengkap dan Fleksibilitas",
+          "description": "Kelola produk, kategori, harga, dan variasi produk melalui katalog terpusat yang menjaga inventaris Anda tetap teratur dan mudah dirawat.",
+          "features": [
+            {
+              "label": "Katalog Produk",
+              "iconName": "package"
+            },
+            {
+              "label": "Manajemen Harga",
+              "iconName": "money"
+            },
+            {
+              "label": "Manajemen SKU & Barcode",
+              "iconName": "new_label"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Laporan & Analisis",
+          "tabIconName": "finance",
+          "title": "Ubah Data Bisnis Menjadi Keputusan yang Lebih Cerdas",
+          "description": "Hasilkan laporan komprehensif yang memberikan wawasan berharga tentang kinerja penjualan, pergerakan inventaris, aktivitas pembelian, dan pertumbuhan bisnis secara keseluruhan.",
+          "features": [
+            {
+              "label": "Laporan Penjualan",
+              "iconName": "finance"
+            },
+            {
+              "label": "Laporan Inventaris",
+              "iconName": "package"
+            },
+            {
+              "label": "Ekspor & Unduh Laporan",
+              "iconName": "download"
+            }
+          ]
+        }
+      ]
+    },
+    "stockflow": {
+      "slug": "stockflow",
+      "title": "StockFlow",
+      "category": "Operasional Bisnis",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "Sistem Manajemen Gudang yang memberikan visibilitas dan kontrol lebih baik atas operasi inventaris.",
+      "overview": "StockFlow memberikan tim gudang visibilitas dan kontrol lebih baik atas operasi inventaris, mulai dari check-in hingga stock opname, dalam satu sistem yang ringkas.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Pengembangan Produk",
+      "timeline": "Berkelanjutan",
+      "challenge": "Operasi gudang membutuhkan visibilitas yang lebih jelas atas pergerakan stok dan cara yang andal untuk merekonsiliasi inventaris.",
+      "solution": "Mengembangkan Sistem Manajemen Gudang yang mencakup alur check-in/check-out dan proses stock opname agar data inventaris tetap akurat.",
+      "features": [
+        "Warehouse Management",
+        "Check In & Check Out",
+        "Stock Opname"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
+      "stats": {
+        "label": "Kategori",
+        "value": "Operasional Bisnis"
+      },
+      "subtitle": "Sistem Manajemen Gudang"
+    },
+    "plannr": {
+      "slug": "plannr",
+      "title": "PlannR",
+      "category": "Operasional Bisnis",
+      "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "Sistem Manajemen Proyek yang membantu tim mengorganisir proyek dan memantau kinerja dalam satu platform.",
+      "overview": "PlannR membantu tim mengorganisir proyek, mengelola klien, dan memantau kinerja laba rugi dari satu platform yang terhubung.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Pengembangan Produk",
+      "timeline": "Berkelanjutan",
+      "challenge": "Tim membutuhkan cara terpadu untuk melacak tugas, mengelola hubungan klien, dan memantau profitabilitas proyek.",
+      "solution": "Membangun platform manajemen proyek yang menggabungkan pelacakan tugas, manajemen klien, dan pemantauan laba rugi dalam satu ruang kerja.",
+      "features": [
+        "Task & Project Tracking",
+        "Client Management",
+        "Profit & Loss Monitoring"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
+      "stats": {
+        "label": "Kategori",
+        "value": "Operasional Bisnis"
+      },
+      "subtitle": "Sistem Manajemen Produk",
+      "featuresDetail": [
+        {
+          "tabLabel": "Area Kerja",
+          "tabIconName": "folder",
+          "title": "Berdayakan Tim untuk Berkolaborasi Tanpa Berpindah Alat",
+          "description": "Buat area kerja khusus tempat tim dapat mengelola tugas, berbagi dokumen, berkomunikasi, dan tetap selaras di setiap proyek.",
+          "features": [
+            {
+              "label": "Manajemen Tugas",
+              "iconName": "check"
+            },
+            {
+              "label": "Kolaborasi Tim",
+              "iconName": "users"
+            },
+            {
+              "label": "Berbagi Berkas",
+              "iconName": "folder"
+            },
+            {
+              "label": "Komentar & Diskusi",
+              "iconName": "message"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Klien",
+          "tabIconName": "client",
+          "title": "Bangun Hubungan Klien yang Lebih Kuat di Setiap Proyek",
+          "description": "Jaga agar informasi klien, riwayat komunikasi, dan catatan proyek tetap teratur di satu tempat untuk memberikan pengalaman yang lebih transparan dan profesional.",
+          "features": [
+            {
+              "label": "Database Klien",
+              "iconName": "users"
+            },
+            {
+              "label": "Riwayat Komunikasi",
+              "iconName": "message"
+            },
+            {
+              "label": "Catatan Proyek",
+              "iconName": "folder"
+            },
+            {
+              "label": "Linimasa Aktivitas",
+              "iconName": "clock"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Alur Kerja",
+          "tabIconName": "pipeline",
+          "title": "Atur Setiap Proyek dengan Alur Kerja yang Fleksibel",
+          "description": "Visualisasikan setiap tahapan proyek, prioritaskan pekerjaan, dan jaga agar tugas terus berjalan efisien dengan alur kerja yang dapat disesuaikan.",
+          "features": [
+            {
+              "label": "Tahapan Alur Kerja Kustom",
+              "iconName": "arrow_split"
+            },
+            {
+              "label": "Papan Kanban Seret & Lepas",
+              "iconName": "view_kanban"
+            },
+            {
+              "label": "Pelacakan Pencapaian",
+              "iconName": "flag"
+            },
+            {
+              "label": "Prioritisasi Tugas",
+              "iconName": "check"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Penagihan",
+          "tabIconName": "receipt",
+          "title": "Sederhanakan Penagihan Proyek dan Atur Pembayaran",
+          "description": "Buat faktur, pantau status pembayaran, dan pertahankan catatan penagihan yang akurat untuk merampingkan alur kerja keuangan Anda.",
+          "features": [
+            {
+              "label": "Pembuatan Faktur",
+              "iconName": "receipt_long"
+            },
+            {
+              "label": "Pelacakan Pembayaran",
+              "iconName": "credit_card"
+            },
+            {
+              "label": "Riwayat Penagihan",
+              "iconName": "book_4"
+            },
+            {
+              "label": "Faktur Klien",
+              "iconName": "docs"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Keuangan",
+          "tabIconName": "finance",
+          "title": "Ambil Keputusan Keuangan Lebih Cerdas dengan Wawasan Real-Time",
+          "description": "Lacak anggaran proyek, pengeluaran, dan profitabilitas melalui laporan keuangan komprehensif yang mendukung perencanaan lebih baik dan pertumbuhan bisnis.",
+          "features": [
+            {
+              "label": "Pemantauan Anggaran",
+              "iconName": "credit_card"
+            },
+            {
+              "label": "Pelacakan Pengeluaran",
+              "iconName": "payments"
+            },
+            {
+              "label": "Analisis Keuntungan",
+              "iconName": "finance"
+            },
+            {
+              "label": "Laporan Keuangan",
+              "iconName": "docs"
+            }
+          ]
+        }
+      ]
+    },
+    "kruu": {
+      "slug": "kruu",
+      "title": "Kruu",
+      "category": "Sumber Daya Manusia",
+      "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "Sistem Manajemen Sumber Daya Manusia (HRMS) yang menyederhanakan administrasi karyawan dan penggajian.",
+      "overview": "Kruu adalah Sistem Manajemen Sumber Daya Manusia (HRMS) yang menyederhanakan administrasi karyawan, penggajian, dan manajemen cuti untuk tim yang berkembang.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Pengembangan Produk",
+      "timeline": "Berkelanjutan",
+      "challenge": "Tim HR membutuhkan cara untuk menyederhanakan administrasi karyawan, pemrosesan penggajian, dan manajemen cuti dalam satu sistem.",
+      "solution": "Mengembangkan HRMS yang mencakup manajemen karyawan, pemrosesan penggajian, dan manajemen cuti untuk menyederhanakan operasional HR.",
+      "features": [
+        "Employee Management",
+        "Payroll Management",
+        "Leave Management"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
+      "stats": {
+        "label": "Kategori",
+        "value": "Sumber Daya Manusia"
+      },
+      "subtitle": "Sistem Manajemen SDM",
+      "featuresDetail": [
+        {
+          "tabLabel": "Direktori Karyawan",
+          "tabIconName": "users",
+          "title": "Simpan Setiap Profil Karyawan Teratur di Satu Tempat",
+          "description": "Simpan dan kelola informasi karyawan, detail organisasi, riwayat pekerjaan, dan dokumen penting melalui database karyawan terpusat.",
+          "features": [
+            {
+              "label": "Database Karyawan",
+              "iconName": "users"
+            },
+            {
+              "label": "Pencarian Karyawan Lanjutan",
+              "iconName": "magnifying_person"
+            },
+            {
+              "label": "Catatan Karyawan Digital",
+              "iconName": "article_person"
+            },
+            {
+              "label": "Manajemen Departemen & Jabatan",
+              "iconName": "apartment"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Kehadiran",
+          "tabIconName": "distance",
+          "title": "Lacak Kehadiran Karyawan dengan Akurat dan Transparan",
+          "description": "Pantau kehadiran karyawan secara real-time menggunakan check-in digital, log kehadiran, dan validasi berbasis lokasi untuk meningkatkan akuntabilitas.",
+          "features": [
+            {
+              "label": "Log Kehadiran",
+              "iconName": "clock_log"
+            },
+            {
+              "label": "GPS & Geofencing",
+              "iconName": "location"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Pengajuan Cuti & Kehadiran",
+          "tabIconName": "holiday",
+          "title": "Sederhanakan Cuti, WFH, dan Koreksi Kehadiran",
+          "description": "Izinkan karyawan untuk mengajukan permohonan cuti, kerja dari rumah (WFH), permintaan lembur, dan koreksi kehadiran melalui satu alur kerja yang efisien.",
+          "features": [
+            {
+              "label": "Manajemen Cuti",
+              "iconName": "holiday"
+            },
+            {
+              "label": "Permintaan WFH",
+              "iconName": "home"
+            },
+            {
+              "label": "Koreksi Kehadiran",
+              "iconName": "alarm"
+            },
+            {
+              "label": "Lembur",
+              "iconName": "overtime"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Organisasi",
+          "tabIconName": "account_tree",
+          "title": "Kelola Struktur Organisasi dengan Mudah",
+          "description": "Pertahankan hierarki perusahaan, informasi cabang, departemen, dan struktur pelaporan dari satu sistem manajemen terpusat.",
+          "features": [
+            {
+              "label": "Manajemen Struktur",
+              "iconName": "account_tree"
+            },
+            {
+              "label": "Pembagian Wilayah Kerja",
+              "iconName": "web"
+            },
+            {
+              "label": "Manajemen Kelompok",
+              "iconName": "groups"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Penggajian",
+          "tabIconName": "money_bag",
+          "title": "Otomatisasi Pemrosesan Gaji dengan Percaya Diri",
+          "description": "Hitung gaji, lembur, potongan, tunjangan, dan catatan penggajian secara akurat sekaligus mengurangi perhitungan manual yang berulang.",
+          "features": [
+            {
+              "label": "Pemrosesan Gaji",
+              "iconName": "money"
+            },
+            {
+              "label": "Perhitungan Penggajian",
+              "iconName": "receipt_long"
+            },
+            {
+              "label": "Laporan Gaji",
+              "iconName": "docs"
+            }
+          ]
+        }
+      ]
+    },
+    "jipies": {
+      "slug": "jipies",
+      "title": "Jipies",
+      "category": "Sumber Daya Manusia",
+      "image": "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "Platform GPS Manajemen Armada yang memberikan visibilitas real-time atas operasi kendaraan dan perilaku pengemudi.",
+      "overview": "Jipies adalah platform GPS Manajemen Armada yang memberikan bisnis visibilitas real-time atas operasi kendaraan, geo-fencing, dan perilaku pengemudi.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Pengembangan Produk",
+      "timeline": "Berkelanjutan",
+      "challenge": "Tim operasional lapangan membutuhkan visibilitas real-time atas lokasi kendaraan dan perilaku pengemudi di seluruh armada mereka.",
+      "solution": "Membangun platform manajemen armada GPS dengan pelacakan real-time, peringatan geo-fence, dan pemantauan perilaku pengemudi.",
+      "features": [
+        "GPS Real-Time Tracking",
+        "Geo-Fence & Alerts",
+        "Driver Behavior Monitoring"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "WebSocket"
+      ],
+      "stats": {
+        "label": "Kategori",
+        "value": "Sumber Daya Manusia"
+      },
+      "subtitle": "Sistem Pelacakan GPS",
+      "featuresDetail": [
+        {
+          "tabLabel": "Manajemen Armada",
+          "tabIconName": "shipping-speed",
+          "title": "Atur dan Pantau Setiap Kendaraan dengan Mudah",
+          "description": "Pertahankan informasi lengkap untuk setiap kendaraan, termasuk pendaftaran, penggunaan, penugasan, dan riwayat operasional melalui satu platform terpusat.",
+          "features": [
+            {
+              "label": "Database Armada",
+              "iconName": "shipping"
+            },
+            {
+              "label": "Informasi Kendaraan",
+              "iconName": "docs_search"
+            },
+            {
+              "label": "Penugasan Armada",
+              "iconName": "add_notes"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Pemeliharaan",
+          "tabIconName": "build",
+          "title": "Kurangi Waktu Henti dengan Pemeliharaan Preventif",
+          "description": "Jadwalkan pemeliharaan rutin, pantau riwayat servis, dan terima pengingat pemeliharaan agar setiap kendaraan tetap beroperasi pada kinerja puncak.",
+          "features": [
+            {
+              "label": "Pemeliharaan Preventif",
+              "iconName": "log"
+            },
+            {
+              "label": "Penjadwalan Servis",
+              "iconName": "clock"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Manajemen Pengemudi",
+          "tabIconName": "steering",
+          "title": "Tingkatkan Kinerja Pengemudi dan Keamanan Operasional",
+          "description": "Kelola profil pengemudi, pantau perilaku mengemudi, dan evaluasi kinerja pengemudi untuk mempromosikan operasi yang lebih aman dan meningkatkan akuntabilitas.",
+          "features": [
+            {
+              "label": "Profil Pengemudi",
+              "iconName": "id_card"
+            },
+            {
+              "label": "Pemantauan Perilaku Pengemudi",
+              "iconName": "traffic"
+            },
+            {
+              "label": "Dasbor Keselamatan",
+              "iconName": "star"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Manajemen Geofence",
+          "tabIconName": "location",
+          "title": "Terima Peringatan Instan untuk Pergerakan Kendaraan",
+          "description": "Buat batas geografis (geofence) khusus di sekitar area operasional, lokasi pelanggan, atau zona terbatas dan terima notifikasi otomatis setiap kali kendaraan masuk atau keluar dari area tersebut.",
+          "features": [
+            {
+              "label": "Batas Geografis Kustom",
+              "iconName": "location2"
+            },
+            {
+              "label": "Log Waktu Pengiriman",
+              "iconName": "warning"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Laporan & Analisis",
+          "tabIconName": "bar2",
+          "title": "Ubah Data Armada Menjadi Keputusan Operasional yang Lebih Baik",
+          "description": "Hasilkan laporan mendalam tentang pemanfaatan armada, perilaku pengemudi, pemeliharaan, efisiensi bahan bakar, dan kinerja operasional untuk terus meningkatkan bisnis Anda.",
+          "features": [
+            {
+              "label": "Laporan Kinerja Armada",
+              "iconName": "bar2"
+            },
+            {
+              "label": "Pemanfaatan Kendaraan",
+              "iconName": "gas_station"
+            },
+            {
+              "label": "Ekspor Laporan",
+              "iconName": "download"
+            }
+          ]
+        }
+      ]
+    },
+    "classix": {
+      "slug": "classix",
+      "title": "Classix",
+      "category": "Solusi Industri",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "Platform ERP terintegrasi untuk institusi pendidikan yang menyederhanakan administrasi dan manajemen pembelajaran.",
+      "overview": "Classix adalah platform ERP terintegrasi untuk institusi pendidikan, menyederhanakan administrasi, absensi, dan e-learning dalam satu sistem.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Pengembangan Produk",
+      "timeline": "Berkelanjutan",
+      "challenge": "Institusi pendidikan membutuhkan satu platform untuk mengelola administrasi, absensi, dan pembelajaran digital.",
+      "solution": "Mengembangkan ERP pendidikan yang menggabungkan modul administrasi pintar, absensi pintar, dan e-learning pintar.",
+      "features": [
+        "Smart Administration",
+        "Smart Attendance Management",
+        "Smart E-Learning"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
+      "stats": {
+        "label": "Kategori",
+        "value": "Solusi Industri"
+      },
+      "subtitle": "Sistem Manajemen Akademik",
+      "featuresDetail": [
+        {
+          "tabLabel": "Kehadiran",
+          "tabIconName": "distance",
+          "title": "Catat Kehadiran Siswa dengan Cepat dan Akurat",
+          "description": "Digitalisasi kehadiran kelas dengan pelacakan real-time, catatan kehadiran otomatis, dan pelaporan komprehensif untuk meningkatkan disiplin siswa dan efisiensi administrasi.",
+          "features": [
+            {
+              "label": "Log Cepat",
+              "iconName": "users"
+            },
+            {
+              "label": "Ekspor CSV",
+              "iconName": "magnifying_person"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Pembelajaran",
+          "tabIconName": "book_4",
+          "title": "Berdayakan Pembelajaran dan Kolaborasi Kelas",
+          "description": "Jalankan kursus digital, kelola tugas pekerjaan rumah, atur kuis interaktif, dan bagikan materi pendidikan dalam satu ekosistem kelas.",
+          "features": [
+            {
+              "label": "Kursus Online",
+              "iconName": "book_4"
+            },
+            {
+              "label": "Tugas Sekolah",
+              "iconName": "assignment"
+            },
+            {
+              "label": "Kuis Interaktif",
+              "iconName": "quiz"
+            },
+            {
+              "label": "Materi Pembelajaran",
+              "iconName": "draft"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Manajemen Siswa",
+          "tabIconName": "groups",
+          "title": "Jaga Informasi Siswa Tetap Teratur dan Dapat Diakses",
+          "description": "Kelola profil siswa, catatan pendaftaran, tugas kelas, dan riwayat akademis melalui satu database terpusat.",
+          "features": [
+            {
+              "label": "Profil Siswa",
+              "iconName": "school"
+            },
+            {
+              "label": "Pencarian Siswa",
+              "iconName": "manage_search"
+            },
+            {
+              "label": "Catatan Akademis",
+              "iconName": "plagiarism"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Guru & Kelas",
+          "tabIconName": "play_lesson",
+          "title": "Kelola Guru, Kelas, dan Mata Pelajaran dengan Mudah",
+          "description": "Atur tugas guru, jadwal kelas, dan informasi mata pelajaran sekaligus menyederhanakan administrasi akademis di seluruh sekolah.",
+          "features": [
+            {
+              "label": "Direktori Guru",
+              "iconName": "person"
+            },
+            {
+              "label": "Manajemen Kelas",
+              "iconName": "person_raised_hand"
+            },
+            {
+              "label": "Manajemen Mata Pelajaran",
+              "iconName": "book_4"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Analisis Sekolah",
+          "tabIconName": "donut_large",
+          "title": "Ambil Keputusan Akademis Lebih Baik dengan Wawasan Real-Time",
+          "description": "Akses dasbor dan laporan komprehensif yang mencakup kehadiran, kinerja akademis, dan aktivitas operasional untuk mendukung manajemen sekolah berbasis data.",
+          "features": [
+            {
+              "label": "Dasbor Sekolah",
+              "iconName": "bar2"
+            },
+            {
+              "label": "Analisis Akademis",
+              "iconName": "bar"
+            },
+            {
+              "label": "Laporan Siswa",
+              "iconName": "download"
+            }
+          ]
+        }
+      ]
+    },
+    "diggit": {
+      "slug": "diggit",
+      "title": "Diggit",
+      "category": "Solusi Industri",
+      "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "Sistem ERP Pertambangan yang membantu perusahaan memantau produksi, logistik, dan operasi keuangan.",
+      "overview": "Diggit adalah Sistem ERP Pertambangan yang membantu perusahaan memantau produksi, logistik, dan operasi keuangan dari lapangan hingga kantor pusat.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Pengembangan Produk",
+      "timeline": "Berkelanjutan",
+      "challenge": "Operasi pertambangan membutuhkan pemantauan yang lebih baik atas stok, logistik, dan aktivitas kendaraan lapangan di lokasi terpencil.",
+      "solution": "Membangun sistem ERP pertambangan yang mencakup manajemen stok & inventaris, peringatan geo-fence, dan pemantauan perilaku pengemudi.",
+      "features": [
+        "Stock & Inventory Management",
+        "Geo-Fence & Alerts",
+        "Driver Behavior Monitoring"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
+      "stats": {
+        "label": "Kategori",
+        "value": "Solusi Industri"
+      },
+      "subtitle": "Sistem Manajemen Tambang",
+      "featuresDetail": [
+        {
+          "tabLabel": "Perencanaan Tambang",
+          "tabIconName": "checklist",
+          "title": "Bangun Fondasi Kuat untuk Setiap Operasi Penambangan",
+          "description": "Perencanaan yang efektif adalah kunci untuk memaksimalkan produktivitas dan meminimalkan risiko operasional. Dengan proses perencanaan yang terstruktur, tim Anda dapat mengoordinasikan sumber daya, meningkatkan eksekusi, dan memastikan setiap operasi sejalan dengan tujuan bisnis.",
+          "features": [
+            {
+              "label": "Perencanaan Tambang",
+              "iconName": "checklist"
+            },
+            {
+              "label": "Perencanaan Target Produksi",
+              "iconName": "target"
+            },
+            {
+              "label": "Penjadwalan Operasional",
+              "iconName": "calendar"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Produksi",
+          "tabIconName": "person_engineering",
+          "title": "Tingkatkan Produktivitas dengan Kontrol Operasional Lebih Baik",
+          "description": "Dapatkan visibilitas lebih besar ke dalam operasi sehari-hari dan buat keputusan berdasarkan informasi yang akurat secara real-time. Tingkatkan konsistensi, kurangi penundaan, dan jaga agar produksi tetap berjalan efisien.",
+          "features": [
+            {
+              "label": "Penghitung Tonase",
+              "iconName": "front_loader"
+            },
+            {
+              "label": "Analisis Kadar Bijih",
+              "iconName": "person_engineering"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Manajemen Armada",
+          "tabIconName": "shipping",
+          "title": "Maksimalkan Kinerja Peralatan di Setiap Operasi",
+          "description": "Jaga agar operasi Anda berjalan lancar dengan meningkatkan pemanfaatan peralatan, mengurangi waktu henti, dan memastikan setiap aset berkinerja pada potensi penuhnya sepanjang siklus hidupnya.",
+          "features": [
+            {
+              "label": "Pelacakan Peralatan",
+              "iconName": "shipping"
+            },
+            {
+              "label": "Pemantauan Armada",
+              "iconName": "front_loader"
+            },
+            {
+              "label": "Pit & Lokasi",
+              "iconName": "location"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Manajemen Aset",
+          "tabIconName": "warehouse",
+          "title": "Lindungi Aset Berharga dan Perpanjang Masa Pakainya",
+          "description": "Pantau data sensor real-time dari ekskavator, pengangkut, dan bor untuk mencegah kerusakan tak terduga dan menjaga aset bernilai tinggi bekerja secara efisien.",
+          "features": [
+            {
+              "label": "Pemantauan Sensor",
+              "iconName": "wifi"
+            },
+            {
+              "label": "Pelacakan Siklus Aset",
+              "iconName": "history"
+            },
+            {
+              "label": "Peringatan Pemeliharaan",
+              "iconName": "warning"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Inventaris",
+          "tabIconName": "inventory",
+          "title": "Pastikan Sumber Daya Selalu Tersedia Saat Anda Butuhkan",
+          "description": "Tingkatkan efisiensi operasional dengan menjaga informasi inventaris yang akurat dan memastikan bahan-bahan penting selalu tersedia untuk mendukung aktivitas sehari-hari.",
+          "features": [
+            {
+              "label": "Log Penyimpanan Bahan Peledak",
+              "iconName": "package"
+            },
+            {
+              "label": "Sensor Tingkat Bahan Bakar",
+              "iconName": "box"
+            },
+            {
+              "label": "Toko Suku Cadang",
+              "iconName": "tag"
+            },
+            {
+              "label": "Kepatuhan Keselamatan",
+              "iconName": "qr_code"
+            }
+          ]
+        }
+      ]
+    },
+    "sailoo": {
+      "slug": "sailoo",
+      "title": "Sailoo",
+      "category": "Solusi Industri",
+      "image": "https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "Sistem Manajemen Pelayaran yang dibangun untuk mengoptimalkan operasi maritim, penjadwalan armada, dan rantai pasokan.",
+      "overview": "Sailoo adalah Sistem Manajemen Pelayaran yang dibangun untuk mengoptimalkan operasi maritim, penjadwalan kapal, dan logistik pelabuhan.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Pengembangan Produk",
+      "timeline": "Berkelanjutan",
+      "challenge": "Operator maritim membutuhkan visibilitas terpusat atas pesanan pelayaran, propulsi kapal, dan operasi pelabuhan.",
+      "solution": "Mengembangkan sistem manajemen pelayaran dengan manajemen pesanan pelayaran, pemantauan propulsi kapal, dan manajemen pelabuhan.",
+      "features": [
+        "Voyage Order Management",
+        "Vessel Propulsion Monitoring",
+        "Port Management"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
+      "stats": {
+        "label": "Kategori",
+        "value": "Solusi Industri"
+      },
+      "subtitle": "Sistem Manajemen Kapal",
+      "featuresDetail": [
+        {
+          "tabLabel": "Manajemen Pelayaran",
+          "tabIconName": "sailing",
+          "title": "Rencanakan, Laksanakan, dan Pantau Setiap Pelayaran dengan Percaya Diri",
+          "description": "Kelola jadwal pelayaran, rute, penugasan kapal, tonggak operasional, dan status pelayaran melalui platform terpusat yang dirancang untuk meningkatkan akurasi perencanaan dan efisiensi operasional.",
+          "features": [
+            {
+              "label": "Perencanaan Pelayaran",
+              "iconName": "map"
+            },
+            {
+              "label": "Rute & Jadwal",
+              "iconName": "location"
+            },
+            {
+              "label": "Penugasan Kapal",
+              "iconName": "boat"
+            },
+            {
+              "label": "Pemantauan Status Pelayaran",
+              "iconName": "error"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Kargo",
+          "tabIconName": "package",
+          "title": "Pertahankan Visibilitas Penuh di Setiap Pergerakan Kargo",
+          "description": "Kelola manifes kargo, informasi pengiriman, aktivitas pemuatan, dan dokumentasi kargo sambil memastikan catatan yang akurat di setiap pelayaran.",
+          "features": [
+            {
+              "label": "Manifes Kargo",
+              "iconName": "package"
+            },
+            {
+              "label": "Dokumentasi Pengiriman",
+              "iconName": "assignment2"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Manajemen Armada",
+          "tabIconName": "sailing",
+          "title": "Jaga Setiap Kapal Tetap Teratur dan Siap Beroperasi",
+          "description": "Pertahankan informasi lengkap kapal, riwayat operasional, sertifikasi, dan pemanfaatan armada dari satu sistem manajemen terpusat.",
+          "features": [
+            {
+              "label": "Database Kapal",
+              "iconName": "sailing"
+            },
+            {
+              "label": "Informasi Armada",
+              "iconName": "assignment2"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Pemeliharaan",
+          "tabIconName": "log",
+          "title": "Jaga Armada Anda Siap untuk Setiap Pelayaran",
+          "description": "Rencanakan pemeliharaan preventif, pantau jadwal servis, dan pertahankan catatan pemeliharaan untuk mengurangi waktu henti dan meningkatkan keandalan kapal.",
+          "features": [
+            {
+              "label": "Pemeliharaan Preventif",
+              "iconName": "log"
+            },
+            {
+              "label": "Penjadwalan Servis",
+              "iconName": "calendar"
+            },
+            {
+              "label": "Catatan Pemeliharaan",
+              "iconName": "receipt_long"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Laporan & Analisis",
+          "tabIconName": "bar2",
+          "title": "Ubah Data Pelayaran Menjadi Keputusan Lebih Cerdas",
+          "description": "Hasilkan laporan komprehensif yang mencakup kinerja pelayaran, operasi kargo, pemanfaatan kapal, dan aktivitas pemeliharaan untuk meningkatkan efisiensi operasional.",
+          "features": [
+            {
+              "label": "Laporan Kinerja Pelayaran",
+              "iconName": "bar2"
+            },
+            {
+              "label": "Analisis Armada",
+              "iconName": "sailing"
+            },
+            {
+              "label": "Laporan Kargo",
+              "iconName": "package"
+            },
+            {
+              "label": "Ekspor Laporan",
+              "iconName": "download"
+            }
+          ]
+        }
+      ]
+    },
+    "registr": {
+      "slug": "registr",
+      "title": "RegistR.",
+      "category": "Acara & Registrasi",
+      "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "Sistem Manajemen Acara (EMS) yang membantu penyelenggara mengelola pendaftaran, tiket, dan pengalaman peserta.",
+      "overview": "RegistR. adalah Sistem Manajemen Acara (EMS) yang menyederhanakan setiap titik sentuh acara, mulai dari pendaftaran hingga check-in di lokasi.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Pengembangan Produk",
+      "timeline": "Berkelanjutan",
+      "challenge": "Penyelenggara acara membutuhkan platform terpusat untuk mengelola tiket, check-in peserta, dan tempat duduk dari satu tempat.",
+      "solution": "Membangun sistem manajemen acara dengan tiket, check-in mandiri, reservasi kursi, dan kustomisasi tiket.",
+      "features": [
+        "Ticketing System",
+        "Self-Service Check-In",
+        "Seat Reservation",
+        "Ticket Customization"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
+      "stats": {
+        "label": "Kategori",
+        "value": "Acara & Registrasi"
+      },
+      "subtitle": "Sistem Registrasi Acara"
+    },
+    "converra": {
+      "slug": "converra",
+      "title": "Converra",
+      "category": "CMS Pintar",
+      "image": "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "Sistem Manajemen Konten Pintar yang dibangun untuk menyederhanakan manajemen layar dan distribusi konten dalam skala besar.",
+      "overview": "Converra adalah Sistem Manajemen Konten Pintar (CMS) yang memungkinkan bisnis mendistribusikan, menjadwalkan, dan memantau konten di berbagai layar dari satu platform terpusat.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Pengembangan Produk",
+      "timeline": "Berkelanjutan",
+      "challenge": "Bisnis dengan banyak layar digital membutuhkan kontrol terpusat atas pemasangan perangkat, penjadwalan konten, dan kesehatan layar.",
+      "solution": "Mengembangkan CMS pintar dengan pemasangan & manajemen layar, pemantauan status layar, dan alat unggah konten.",
+      "features": [
+        "Device Pairing & Screen Management",
+        "Screen Status Monitoring",
+        "Content Upload"
+      ],
+      "technologies": [
+        "React",
+        "Electron",
+        "Node.js",
+        "Prisma",
+        "MySQL"
+      ],
+      "stats": {
+        "label": "Kategori",
+        "value": "CMS Pintar"
+      },
+      "subtitle": "Sistem Manajemen Armada"
+    },
+    "tanta": {
+      "slug": "tanta",
+      "title": "Tanta Resto & Lounge",
+      "category": "Landing Page",
+      "image": "/thumbnails/tanta.webp",
+      "desc": "Landing page pemasaran premium untuk Tanta Resto & Lounge di Plaza Senayan.",
+      "overview": "Tanta Resto & Lounge adalah destinasi kuliner fusion Indonesia-Barat berkelas di Plaza Senayan. Kami membangun landing page pemasaran berkinerja tinggi yang menangkap kehangatan, cita rasa kaya, dan suasana elegan restoran untuk mendorong reservasi online dan eksplorasi menu.",
+      "client": "Tanta Resto & Lounge",
+      "role": "Pengembangan Web",
+      "timeline": "2026",
+      "challenge": "Tanta Resto & Lounge membutuhkan landing page yang estetis dan ramah seluler untuk memamerkan menu mereka dan meningkatkan reservasi makan malam langsung tanpa bergantung pada agregator pihak ketiga.",
+      "solution": "Mengembangkan landing page responsif dengan galeri menu kustom, integrasi peta interaktif, dan alat reservasi WhatsApp langsung.",
+      "features": [
+        "Galeri Menu Unggulan",
+        "Integrasi Reservasi Langsung",
+        "Peta Lokasi Interaktif"
+      ],
+      "technologies": [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "stats": {
+        "label": "Kategori",
+        "value": "Landing Page"
+      },
+      "liveUrl": "https://tanta.vercel.app/",
+      "subtitle": "Halaman Utama Restoran"
+    },
+    "in-lite": {
+      "slug": "in-lite",
+      "title": "in-Lite Indonesia",
+      "category": "Landing Page",
+      "image": "/thumbnails/in-lite.webp",
+      "desc": "Landing page berkualitas tinggi yang memamerkan seri Switch & Socket modern dari in-Lite LED.",
+      "overview": "in-Lite Indonesia adalah merek pencahayaan terkemuka. Dalam transisi mereka menjadi solusi pencahayaan satu atap, mereka meluncurkan saklar dan stop kontak seri Alura & Linea. Kami merancang landing page premium untuk memamerkan seri minimalis dan elegan ini, menekankan desain estetika, tekstur lapisan baby-skin, dan keamanan tahan api.",
+      "client": "PT Suryamas Lumisindo Dwidaya (in-Lite LED)",
+      "role": "Pengembangan Web",
+      "timeline": "2026",
+      "challenge": "Memperkenalkan lini produk non-lighting pertama in-Lite (saklar dan stop kontak) membutuhkan fokus visual yang kuat pada bahan, tekstur, dan estetika premium.",
+      "solution": "Membangun halaman showcase interaktif berbasis scroll yang menonjolkan estetika desain, tekstur, aksen krom, dan spesifikasi keselamatan dari seri Linea dan Alura.",
+      "features": [
+        "Perbandingan Seri Linea & Alura",
+        "Sorotan Bahan & Spek Keamanan",
+        "Pilihan Warna Interaktif"
+      ],
+      "technologies": [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "stats": {
+        "label": "Kategori",
+        "value": "Landing Page"
+      },
+      "liveUrl": "https://in-lite-indonesia.vercel.app/",
+      "subtitle": "Halaman Utama Katalog LED"
+    },
+    "bsp": {
+      "slug": "bsp",
+      "title": "Bali Surfers Perfume",
+      "category": "Landing Page",
+      "image": "/thumbnails/bsp.webp",
+      "desc": "Landing page pemasaran bertema akuatik untuk merek wewangian lokal populer Bali Surfers Perfume.",
+      "overview": "Bali Surfers Perfume adalah merek wewangian mass-market Indonesia dengan estetika petualangan pantai. Kami merancang landing page yang menyegarkan dan berkinerja tinggi untuk menceritakan kisah merek mereka yang unik (Blue Point, Kuta 7AM/7PM) dan memamerkan koleksi EDP aktif mereka.",
+      "client": "Bali Surfers Perfume",
+      "role": "Pengembangan Web",
+      "timeline": "2026",
+      "challenge": "Klien perlu menerjemahkan pengalaman penciuman dan nuansa petualangan pantai Bali ke dalam kehadiran digital berdampak tinggi yang mendorong akuisisi reseller mass-market.",
+      "solution": "Merancang tata letak landing page akuatik yang segar dengan karusel produk lebar penuh, pemrosesan profil aroma yang detail (top, middle, base notes), dan formulir pendaftaran reseller.",
+      "features": [
+        "Eksplorasi Profil Aroma",
+        "Karusel Varian EDP",
+        "Pendaftaran Saluran Reseller"
+      ],
+      "technologies": [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "stats": {
+        "label": "Kategori",
+        "value": "Landing Page"
+      },
+      "liveUrl": "https://balisurfersperfume.vercel.app/"
+    },
+    "leko": {
+      "slug": "leko",
+      "title": "Warung Leko Grand Wisata",
+      "category": "Landing Page",
+      "image": "/thumbnails/leko.webp",
+      "desc": "Landing page menu makanan dan reservasi modern untuk Warung Leko Grand Wisata.",
+      "overview": "Warung Leko Grand Wisata adalah tempat kuliner terkenal dengan menu iga empuk (Iga Penyet) dan hidangan kaya rasa khas Indonesia. Kami membangun landing page menu yang menarik dan responsif untuk menampilkan hidangan khas, memfasilitasi reservasi, dan mengarahkan pelanggan ke saluran pemesanan.",
+      "client": "Warung Leko Grand Wisata",
+      "role": "Pengembangan Web",
+      "timeline": "2026",
+      "challenge": "Menerjemahkan menu makanan tradisional yang sudah mapan ke dalam tata letak digital modern yang cepat dimuat untuk memotivasi kunjungan akhir pekan dan reservasi keluarga besar.",
+      "solution": "Mengembangkan menu digital interaktif dengan teknologi tinggi, harga yang jelas, dan reservasi WhatsApp satu klik.",
+      "features": [
+        "Pameran Hidangan Khas",
+        "Menu Digital Interaktif",
+        "Sistem Reservasi WhatsApp"
+      ],
+      "technologies": [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "stats": {
+        "label": "Kategori",
+        "value": "Landing Page"
+      },
+      "liveUrl": "https://leko-grandwisata.vercel.app/",
+      "subtitle": "Halaman Utama Restoran Iga"
+    },
+    "metland": {
+      "slug": "metland",
+      "title": "Metland Cikarang",
+      "category": "Landing Page",
+      "image": "/thumbnails/metland.webp",
+      "desc": "Landing page properti bertema eco-living untuk proyek perumahan Cibitung dari PT Metropolitan Land Tbk.",
+      "overview": "Metland Cikarang adalah perumahan eco-living di Cibitung, Bekasi, oleh PT Metropolitan Land Tbk. Kami merancang landing page real estate berkonversi tinggi yang menampilkan desain arsitektur biofilik hijau, fasilitas, dan denah lantai mereka kepada calon pembeli rumah.",
+      "client": "PT Metropolitan Land Tbk",
+      "role": "Pengembangan Web",
+      "timeline": "2026",
+      "challenge": "Mengomunikasikan nilai fitur rumah ramah lingkungan (desain biofilik, langit-langit tinggi, ruang hijau) sekaligus memaksimalkan penangkapan prospek penjualan.",
+      "solution": "Membangun landing page showcase properti bertema biofilik premium dengan rencana tata letak, peta, dan formulir kontak visibilitas tinggi untuk memesan tur galeri pemasaran.",
+      "features": [
+        "Presentasi Konsep Eco-Living",
+        "Galeri Denah Lantai",
+        "Penangkapan Prospek Pemasaran"
+      ],
+      "technologies": [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "stats": {
+        "label": "Kategori",
+        "value": "Landing Page"
+      },
+      "liveUrl": "https://metland-cikarang.vercel.app/",
+      "subtitle": "Halaman Utama Perumahan"
+    }
+  }
+}

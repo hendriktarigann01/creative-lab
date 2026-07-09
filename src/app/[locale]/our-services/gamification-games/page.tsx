@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Gamepad2, Smartphone, Share2, Trophy, Target, Play, RotateCcw } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Card } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
+
 import { Button } from '@/components/ui/Button';
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 import { PageHero } from '@/components/ui/PageHero';
@@ -17,6 +17,25 @@ export default function GamificationPage() {
   const data = t.raw('gamificationPageData') as {
     hero: { title: string; coloredWord: string; desc: string };
     capabilities: Array<{ title: string; desc: string; icon: string }>;
+    breadcrumbServices?: string;
+    breadcrumbCurrent?: string;
+    heroLabel?: string;
+    heroTitle?: string;
+    gameHeadingPart1?: string;
+    gameHeadingPart2?: string;
+    gameSubheading?: string;
+    hudScore?: string;
+    hudTime?: string;
+    gameReady?: string;
+    btnStart?: string;
+    gameOver?: string;
+    btnPlayAgain?: string;
+    capabilitiesHeadingPart1?: string;
+    capabilitiesHeadingPart2?: string;
+    ctaHeadingPart1?: string;
+    ctaHeadingPart2?: string;
+    ctaDesc?: string;
+    ctaBtnText?: string;
   };
 
   const [gameState, setGameState] = useState<'idle' | 'playing' | 'gameover'>('idle');
@@ -93,13 +112,13 @@ export default function GamificationPage() {
   };
 
   const breadcrumbItems = [
-    { name: 'Services', path: '/our-services' },
-    { name: 'Gamification & Games' },
+    { name: data.breadcrumbServices || 'Services', path: '/our-services' },
+    { name: data.breadcrumbCurrent || 'Gamification & Games' },
   ];
 
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: 'Services', item: '/our-services' },
-    { name: 'Gamification & Games', item: '/our-services/gamification-games' },
+    { name: data.breadcrumbServices || 'Services', item: '/our-services' },
+    { name: data.breadcrumbCurrent || 'Gamification & Games', item: '/our-services/gamification-games' },
   ]);
 
   const serviceSchema = getServiceSchema(data.hero.title, data.hero.desc, 'gamification-games');
@@ -111,11 +130,11 @@ export default function GamificationPage() {
 
       <PageHero
         breadcrumbs={breadcrumbItems}
-        label="Gamification & Games"
-        title="Gamification & Games"
-        gradientWord="Games"
+        label={data.heroLabel || 'Gamification & Games'}
+        title={data.heroTitle || 'Gamification & Games'}
         description={data.hero.desc}
         accentColor="#8b5cf6"
+        imageFolder="service"
       />
 
       <section className="pb-16 bg-background relative overflow-hidden">
@@ -124,11 +143,10 @@ export default function GamificationPage() {
           <div className="my-16 sm:my-24">
             <div className="flex flex-col gap-3 max-w-3xl mb-8 sm:mb-12">
               <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mt-1">
-                Try It <span className="text-[#8b5cf6]">Yourself</span>
+                {data.gameHeadingPart1 || 'Try It'} <span className="text-[#8b5cf6]">{data.gameHeadingPart2 || 'Yourself'}</span>
               </h2>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Click the targets as fast as you can! This is a taste of our interactive
-                capabilities.
+              <p className="text-sm sm:text-base text-tertiary leading-relaxed">
+                {data.gameSubheading || 'Click the targets as fast as you can! This is a taste of our interactive capabilities.'}
               </p>
             </div>
 
@@ -138,14 +156,14 @@ export default function GamificationPage() {
               <div className="flex justify-between items-center bg-muted/30 border border-border px-6 py-4 rounded-xl relative z-15">
                 <div className="flex items-center gap-1.5">
                   <Trophy className="w-5 h-5 text-[#8b5cf6]" />
-                  <span className="text-sm font-medium text-muted-foreground">
-                    Score: <span className="text-foreground font-medium text-lg">{score}</span>
+                  <span className="text-sm font-medium text-tertiary">
+                    {data.hudScore || 'Score:'} <span className="text-foreground font-medium text-lg">{score}</span>
                   </span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Target className="w-5 h-5 text-[#8b5cf6]" />
-                  <span className="text-sm font-medium text-muted-foreground">
-                    Time Left:{' '}
+                  <span className="text-sm font-medium text-tertiary">
+                    {data.hudTime || 'Time Left:'}{' '}
                     <span className="text-foreground font-medium text-lg">{timeLeft}s</span>
                   </span>
                 </div>
@@ -159,14 +177,14 @@ export default function GamificationPage() {
                 {/* Idle state overlay */}
                 {gameState === 'idle' && (
                   <div className="flex flex-col items-center gap-4 text-center px-4 relative z-10 animate-fade-in">
-                    <p className="text-base text-muted-foreground">Ready to test your reflexes?</p>
+                    <p className="text-base text-tertiary">{data.gameReady || 'Ready to test your reflexes?'}</p>
                     <Button
                       onClick={startGame}
                       variant="primary"
                       className="bg-[#8b5cf6] hover:bg-[#8b5cf6]/95"
                     >
                       <Play className="w-4 h-4 mr-2" />
-                      Start Game
+                      {data.btnStart || 'Start Game'}
                     </Button>
                   </div>
                 )}
@@ -175,7 +193,7 @@ export default function GamificationPage() {
                 {gameState === 'gameover' && (
                   <div className="flex flex-col items-center gap-4 text-center px-4 relative z-10 animate-fade-in">
                     <p className="text-xl font-medium text-foreground">
-                      Game Over! Score: <span className="text-[#8b5cf6]">{score}</span>
+                      {data.gameOver || 'Game Over! Score:'} <span className="text-[#8b5cf6]">{score}</span>
                     </p>
                     <Button
                       onClick={startGame}
@@ -183,7 +201,7 @@ export default function GamificationPage() {
                       className="hover:border-[#8b5cf6]/30 hover:text-foreground"
                     >
                       <RotateCcw className="w-4 h-4 mr-2" />
-                      Play Again
+                      {data.btnPlayAgain || 'Play Again'}
                     </Button>
                   </div>
                 )}
@@ -209,7 +227,7 @@ export default function GamificationPage() {
           {/* Core Capabilities */}
           <div className="my-16 sm:my-24">
             <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mb-10 sm:mb-14">
-              Core <span className="text-[#8b5cf6]">Capabilities</span>
+              {data.capabilitiesHeadingPart1 || 'Core'} <span className="text-[#8b5cf6]">{data.capabilitiesHeadingPart2 || 'Capabilities'}</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -224,7 +242,7 @@ export default function GamificationPage() {
                   <h3 className="text-lg sm:text-xl font-medium text-foreground tracking-tight">
                     {cap.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  <p className="text-sm sm:text-base text-tertiary leading-relaxed">
                     {cap.desc}
                   </p>
                 </Card>
@@ -236,13 +254,13 @@ export default function GamificationPage() {
           <AnimateOnScroll variant="scale" className="my-16 sm:my-24  mx-auto">
             <Card className="p-8 sm:p-12 text-center relative overflow-hidden flex flex-col items-center gap-5 sm:gap-6">
               <h3 className="text-xl sm:text-2xl md:text-4xl font-medium text-foreground tracking-tight">
-                Ready to{' '}
+                {data.ctaHeadingPart1 || 'Ready to'}{' '}
                 <span className="text-[#8b5cf6] drop-shadow-[0_2px_10px_rgba(139,92,246,0.2)]">
-                  Play?
+                  {data.ctaHeadingPart2 || 'Play?'}
                 </span>
               </h3>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-lg leading-relaxed">
-                Let us gamify your customer experience and drive real engagement.
+              <p className="text-sm sm:text-base text-tertiary max-w-lg leading-relaxed">
+                {data.ctaDesc || 'Let us gamify your customer experience and drive real engagement.'}
               </p>
               <Button
                 href="/#contact"
@@ -250,7 +268,7 @@ export default function GamificationPage() {
                 size="lg"
                 className="bg-[#8b5cf6] shadow-[#8b5cf6]/20 hover:bg-[#8b5cf6]/95 group mt-2"
               >
-                Start a Project
+                {data.ctaBtnText || 'Start a Project'}
               </Button>
             </Card>
           </AnimateOnScroll>

@@ -4,5 +4,6 @@ import { routing } from "./i18n/routing";
 export default createMiddleware(routing);
 
 export const config = {
-  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
+  // Exclude only template slugs from middleware, so /portfolio itself is localized
+  matcher: ["/((?!api|_next|_vercel|portfolio/(?:in-lite|bsp|leko|metland|tanta)|.*\\..*).*)"],
 };

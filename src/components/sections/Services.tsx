@@ -11,7 +11,7 @@ import { Service } from '@/types';
 
 export function Services() {
   const t = useTranslations('services');
-  const servicesHeader = t.raw('servicesHeader');
+
   const servicesData = t.raw('servicesData') as Service[];
 
   const getIcon = (iconName: string, colorClass: string) => {
@@ -87,9 +87,7 @@ export function Services() {
       <Container>
         <AnimateOnScroll variant="slideUp">
           <SectionHeader
-            label={t('heading')}
             title={t('heading')}
-            gradientWord={t('gradientWord')}
             description={t('subheading')}
           />
         </AnimateOnScroll>
@@ -116,7 +114,7 @@ export function Services() {
                     <h3 className="text-lg sm:text-xl font-medium text-foreground tracking-tight mb-2 group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                    <p className="text-sm text-tertiary leading-relaxed mb-6">
                       {service.desc}
                     </p>
                   </div>

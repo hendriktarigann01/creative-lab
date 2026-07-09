@@ -2,6 +2,7 @@
   "nav": {
     "home": "Home",
     "services": "Services",
+    "product": "Product",
     "portfolio": "Portfolio",
     "contact": "Contact Us",
     "getStarted": "Get Started"
@@ -18,11 +19,16 @@
     "seq2Plain": "We engineer",
     "seq2Gradient": "experiences.",
     "seq3Plain": "Precision in",
-    "seq3Gradient": "action."
+    "seq3Gradient": "action.",
+    "sequence3": {
+      "imageUrl": "https://picsum.photos/seed/techlab/2000/1200",
+      "imageAlt": "High Tech",
+      "overlayText": "Precision in Action"
+    }
   },
   "advantages": {
-    "heading": "Why choose us?",
-    "headingPlain": "Why choose ",
+    "heading": "Why Choose Us?",
+    "headingPlain": "Why Choose ",
     "headingColored": "us?",
     "subheading": "Partner with the experts who build without limits.",
     "integrated": {
@@ -43,9 +49,10 @@
     }
   },
   "services": {
-    "heading": "Our Services",
+    "label": "Our Services",
+    "heading": "We deliver digital innovation, from enterprise platforms to immersive gamification.",
     "gradientWord": "Services",
-    "subheading": "A comprehensive suite of master-level capabilities, visible at a glance.",
+    "subheading": "From enterprise-grade platforms to immersive gamification, we deliver the full spectrum of digital innovation.",
     "enterprise": {
       "title": "Enterprise & B2G Solutions",
       "desc": "Efficiency, Data Security, and Scalability."
@@ -61,7 +68,63 @@
     "strategy": {
       "title": "Digital Strategy",
       "desc": "Long-term Partnerships."
-    }
+    },
+    "servicesData": [
+      {
+        "title": "Enterprise & B2G Solutions",
+        "desc": "Efficiency, Data Security, and Scalability.",
+        "icon": "Code2",
+        "color": "enterprise",
+        "slug": "enterprise-b2g-solutions",
+        "features": [
+          "Bespoke Web & Mobile: High-performance internal apps (HRIS, CRM) tailored to your logic.",
+          "Smart Dashboard: Transform complex data into real-time insights for Command Centers.",
+          "Custom CMS: Centralized control for seamless updates across thousands of devices.",
+          "Asset Management: Digital tracking using QR/RFID to secure high-value assets."
+        ],
+        "link": "/our-services/enterprise-b2g-solutions"
+      },
+      {
+        "title": "Gamification & Games",
+        "desc": "Retention, Brand Recall, and ROI.",
+        "icon": "Gamepad2",
+        "color": "gamification",
+        "slug": "gamification-games",
+        "features": [
+          "Kinetic & Gesture Games: Motion sensor experiences turning lobbies into active playgrounds.",
+          "AR Activation: Overlaying digital magic—perfect for product launches.",
+          "Social Wall: Real-time social media feeds displayed on your LED screens.",
+          "Phygital Leaderboards: Competitive gaming hubs synced with smartphones."
+        ],
+        "link": "/our-services/gamification-games"
+      },
+      {
+        "title": "Interactive Experiences",
+        "desc": "Maximizing MJ Solution Hardware Potential.",
+        "icon": "Activity",
+        "color": "interactive",
+        "slug": "interactive-experiences",
+        "features": [
+          "Smart Wayfinding: Intelligent navigation for malls, hospitals, and government hubs.",
+          "VR Simulators: Immersive training and 360 virtual property tours.",
+          "Interactive Modules: Multi-touch software for deep exploration in museums.",
+          "IoT Integration: Middleware connecting software to physical sensors and lighting."
+        ],
+        "link": "/our-services/interactive-experiences"
+      },
+      {
+        "title": "Digital Strategy",
+        "desc": "Long-term Partnerships.",
+        "icon": "Presentation",
+        "color": "strategy",
+        "slug": "digital-strategy",
+        "features": [
+          "Transformation Roadmap: We advise and transition institutions from manual to automated workflows.",
+          "UI/UX Design Lab: User-centric interfaces intuitive for Gen Z to Government officials."
+        ],
+        "link": "/our-services/digital-strategy"
+      }
+    ]
   },
   "workflow": {
     "heading": "Our Workflow",
@@ -92,23 +155,77 @@
       "desc": "24/7 SLAs, continuous monitoring, and scalable server maintenance."
     }
   },
-  "portfolio": {
-    "heading": "Our Portfolio",
-    "gradientWord": "Portfolio",
-    "subheading": "Hover to explore our master-level executions.",
+  "product": {
+    "heading": "Build Better Businesses with Software, Interactive Experiences, and Digital Innovation",
+    "gradientWord": "Product",
+    "subheading": "From enterprise software to interactive experiences, we accelerate your digital transformation through modern, scalable solutions that deliver real impact.",
     "showcaseTitle": "All Projects Showcase",
-    "exploreProject": "Explore Project"
+    "exploreProject": "Explore Project",
+    "explore": "Explore",
+    "breadcrumb": "Product",
+    "label": "Product"
+  },
+  "portfolio": {
+    "heading": "Projects That Drive Digital Transformation",
+    "subheading": "From enterprise platforms to interactive digital experiences, every project reflects our commitment to solving real business challenges through thoughtful design and technology.",
+    "showcaseTitle": "Our Portfolio",
+    "exploreProject": "Explore Project",
+    "breadcrumb": "Portfolio",
+    "redirecting": "Redirecting to preview...",
+    "templates": [
+      {
+        "slug": "in-lite",
+        "name": "in-Lite Indonesia",
+        "tagline": "Pionir Lampu LED Lokal & Inovasi Sakelar Premium",
+        "description": "Catalog landing page for LED lighting products and premium smart switch Alura & Linea series.",
+        "image": "/portfolio/in-lite/inlite.webp",
+        "category": "Retail & Electronics"
+      },
+      {
+        "slug": "bsp",
+        "name": "Bali Surfer's Perfume (BSP)",
+        "tagline": "Aroma Tropis Khas Bali & Kebebasan Tanpa Batas",
+        "description": "Premium local Eau de Parfum (EDP) fragrance brand with fresh aquatic coastal scents.",
+        "image": "/portfolio/bsp/bsp.png",
+        "category": "Fashion & Beauty"
+      },
+      {
+        "slug": "leko",
+        "name": "Warung Leko Grand Wisata",
+        "tagline": "Spesialis Iga Penyet & Masakan Indonesia",
+        "description": "Indonesian ribs specialty restaurant menu, branches information, and reservations page.",
+        "image": "/portfolio/leko/leko.png",
+        "category": "Food & Beverage"
+      },
+      {
+        "slug": "metland",
+        "name": "Metland Cikarang",
+        "tagline": "Perumahan Eco Living di Cibitung, Bekasi",
+        "description": "Marketing showcase for eco-living modern residential housing development in Cibitung.",
+        "image": "/portfolio/metland/metland.png",
+        "category": "Real Estate & Housing"
+      },
+      {
+        "slug": "tanta",
+        "name": "Tanta Resto & Lounge",
+        "tagline": "Warmth, Flavor, and Care in Every Dish",
+        "description": "High-end Indonesian & Western fusion fine dining restaurant located at Plaza Senayan.",
+        "image": "/portfolio/tanta/tanta.png",
+        "category": "Food & Beverage"
+      }
+    ]
   },
   "cta": {
     "heading": "Ready to build without limits?",
     "gradientWord": "without limits?",
     "description": "Connect with our engineering team to design bespoke software ecosystems and high-fidelity interactive physical installations.",
-    "ctaText": "Get Started Now"
+    "ctaText": "Get Started Now",
+    "label": "CTA"
   },
   "contact": {
-    "heading": "Let's build a masterpiece together",
+    "heading": "Let’s Collaborate and Build Your Next Digital Masterpiece",
     "gradientWord": "masterpiece together",
-    "subheading": "Contact us on your preferred platform. We are ready to respond.",
+    "subheading": "Reach out to us through your preferred platform. Our team is fully prepared to align with your vision and deliver prompt, dedicated support.",
     "faqTitle": "Frequently Asked Questions",
     "faqSub": "Everything you need to know about starting a project with Creative Lab.",
     "infoTitle": "Contact Information",
@@ -138,7 +255,10 @@
         "q": "Can we schedule an on-site demonstration?",
         "a": "Yes. Contact us via phone or email to request a high-fidelity mock-up presentation at your headquarters or at our Jakarta showroom."
       }
-    ]
+    ],
+    "faqLabel": "FAQ",
+    "slaAvailabilityValue": "24/7 Operations",
+    "label": "Contact"
   },
   "projectDetail": {
     "backBtn": "Back to Portfolio",
@@ -154,16 +274,42 @@
     "techDeployed": "Technologies Deployed",
     "notFoundTitle": "Project Not Found",
     "notFoundSub": "The requested portfolio execution could not be located.",
-    "visitWebsite": "Visit Live Website"
+    "visitWebsite": "Visit Live Website",
+    "getConsultation": "Get Consultation",
+    "dashboardPreview": "{title} Dashboard Preview"
   },
   "footer": {
-    "tagline": "Architecting Tomorrow's Legacy",
+    "tagline": "Integrated software solutions for efficient operations and business growth.",
     "copyright": "All rights reserved."
   },
   "notFound": {
     "title": "Page Not Found",
     "description": "The page you are looking for does not exist, has been removed, or has been relocated within our ecosystem.",
     "goHome": "Back to Homepage"
+  },
+  "categories": {
+    "All": "All",
+    "Business Operations": "Business Operations",
+    "Workforce & Human Capital": "Workforce & Human Capital",
+    "Industry Solutions": "Industry Solutions",
+    "Smart CMS": "Smart CMS",
+    "Event & Registration": "Event & Registration",
+    "Play Lab": "Play Lab"
+  },
+  "diagram": {
+    "heading": "Built to Help Teams Deliver Better Projects",
+    "description": "More than just task management. We connect your people, projects, clients, and finances in one platform to drive productivity and success.",
+    "completeVisibility": "Complete Project Visibility",
+    "fasterCheckout": "Faster Checkout",
+    "accurateInventory": "Accurate Inventory",
+    "betterPurchasing": "Better Purchasing",
+    "actionableInsights": "Actionable Insights",
+    "readyToGrow": "Ready to Grow",
+    "logoAlt": "Project Logo"
+  },
+  "featureProduct": {
+    "heading": "Everything You Need to Deliver Projects Successfully",
+    "description": "One app for all your project needs. Plan, collaborate and monitor your team's finances with ease, all in one place.",
+    "featuresAlt": "{title} Features"
   }
 }
-

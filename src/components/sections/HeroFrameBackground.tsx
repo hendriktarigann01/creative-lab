@@ -8,9 +8,7 @@ const PRELOAD_COUNT = 20;
 export function HeroFrameBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const imagesRef = useRef<(HTMLImageElement | null)[]>(
-    Array(TOTAL_FRAMES).fill(null)
-  );
+  const imagesRef = useRef<(HTMLImageElement | null)[]>(Array(TOTAL_FRAMES).fill(null));
   const loadedRef = useRef(0);
   const rafRef = useRef<number>(0);
 
@@ -18,11 +16,9 @@ export function HeroFrameBackground() {
   const progressTextRef = useRef<HTMLSpanElement>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
 
-  /** Build URL for each frame */
   const getUrl = (n: number) =>
     `/frame-creativelab-parallax/frame_${String(n).padStart(6, '0')}.webp`;
 
-  /** Draw loaded frame to canvas with CSS cover-like fit */
   const drawFrame = useCallback((index: number) => {
     const canvas = canvasRef.current;
     const img = imagesRef.current[index];
@@ -87,13 +83,10 @@ export function HeroFrameBackground() {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const h = window.innerHeight;
-      const maxScroll = h * 5;
+      const maxScroll = h * 4;
       const p = Math.min(1, Math.max(0, scrollY / maxScroll));
 
-      targetFrame = Math.min(
-        TOTAL_FRAMES - 1,
-        Math.floor(p * (TOTAL_FRAMES - 1))
-      );
+      targetFrame = Math.min(TOTAL_FRAMES - 1, Math.floor(p * (TOTAL_FRAMES - 1)));
 
       if (scrollY > 4 * h) {
         opacity = Math.max(0, 1 - (scrollY - 4 * h) / (0.6 * h));
@@ -132,7 +125,7 @@ export function HeroFrameBackground() {
       if (progressContainerRef.current) {
         const scrollY = window.scrollY;
         const h = window.innerHeight;
-        const isPastHero = scrollY >= 4.8 * h || smoothP >= 0.98;
+        const isPastHero = scrollY >= 4.2 * h;
         progressContainerRef.current.style.opacity = isPastHero ? '0' : '1';
         progressContainerRef.current.style.visibility = isPastHero ? 'hidden' : 'visible';
       }

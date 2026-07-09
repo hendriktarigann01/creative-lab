@@ -78,7 +78,7 @@ export function AboutUs() {
               {t('seq2Gradient')}
             </span>
           </h2>
-          <p className="text-lg sm:text-2xl text-muted-foreground mt-6 max-w-2xl font-light leading-relaxed">
+          <p className="text-lg sm:text-2xl text-tertiary mt-6 max-w-2xl font-light leading-relaxed">
             {t('seq2Sub')}
           </p>
         </div>

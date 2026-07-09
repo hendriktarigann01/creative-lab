@@ -3,7 +3,7 @@
 import { Route, Palette, CheckCircle2 } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Card } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
+
 import { Button } from '@/components/ui/Button';
 import { PageHero } from '@/components/ui/PageHero';
 import { JsonLd } from '@/components/ui/JsonLd';
@@ -17,6 +17,18 @@ export default function DigitalStrategyPage() {
     hero: { title: string; coloredWord: string; desc: string };
     roadmap: Array<{ phase: string; title: string; desc: string; position: 'left' | 'right' }>;
     capabilities: Array<{ title: string; desc: string; icon: string }>;
+    breadcrumbServices?: string;
+    breadcrumbCurrent?: string;
+    heroLabel?: string;
+    roadmapHeadingPart1?: string;
+    roadmapHeadingPart2?: string;
+    roadmapSubheading?: string;
+    capabilitiesHeadingPart1?: string;
+    capabilitiesHeadingPart2?: string;
+    ctaHeadingPart1?: string;
+    ctaHeadingPart2?: string;
+    ctaDesc?: string;
+    ctaBtnText?: string;
   };
   const getIcon = (iconName: string, className: string = 'w-6 h-6') => {
     switch (iconName) {
@@ -30,13 +42,13 @@ export default function DigitalStrategyPage() {
   };
 
   const breadcrumbItems = [
-    { name: 'Services', path: '/our-services' },
-    { name: 'Digital Strategy' },
+    { name: data.breadcrumbServices || 'Services', path: '/our-services' },
+    { name: data.breadcrumbCurrent || 'Digital Strategy' },
   ];
 
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: 'Services', item: '/our-services' },
-    { name: 'Digital Strategy', item: '/our-services/digital-strategy' },
+    { name: data.breadcrumbServices || 'Services', item: '/our-services' },
+    { name: data.breadcrumbCurrent || 'Digital Strategy', item: '/our-services/digital-strategy' },
   ]);
 
   const serviceSchema = getServiceSchema(data.hero.title, data.hero.desc, 'digital-strategy');
@@ -48,11 +60,11 @@ export default function DigitalStrategyPage() {
 
       <PageHero
         breadcrumbs={breadcrumbItems}
-        label="Digital Strategy"
-        title="Digital Strategy"
-        gradientWord="Strategy"
+        label={data.heroLabel || 'Digital Strategy'}
+        title={data.hero.title}
         description={data.hero.desc}
         accentColor="#10b981"
+        imageFolder="service"
       />
 
       <section className="pb-16 bg-background relative overflow-hidden">
@@ -61,10 +73,10 @@ export default function DigitalStrategyPage() {
           <div className="my-16 sm:my-24 relative">
             <div className="flex flex-col gap-3 max-w-3xl mb-12 sm:mb-16 text-center mx-auto items-center">
               <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mt-1">
-                Transformation <span className="text-[#10b981]">Roadmap</span>
+                {data.roadmapHeadingPart1 || 'Transformation'} <span className="text-[#10b981]">{data.roadmapHeadingPart2 || 'Roadmap'}</span>
               </h2>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-xl">
-                Scroll through our proven 6-phase methodology.
+              <p className="text-sm sm:text-base text-tertiary leading-relaxed max-w-xl">
+                {data.roadmapSubheading || 'Scroll through our proven 6-phase methodology.'}
               </p>
             </div>
 
@@ -100,7 +112,7 @@ export default function DigitalStrategyPage() {
                         <h4 className="text-base sm:text-lg md:text-xl font-medium text-foreground mt-1.5 mb-2">
                           {phase.title}
                         </h4>
-                        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <p className="text-sm sm:text-base text-tertiary leading-relaxed">
                           {phase.desc}
                         </p>
                       </Card>
@@ -114,7 +126,7 @@ export default function DigitalStrategyPage() {
           {/* Core Capabilities */}
           <div className="my-16 sm:my-24">
             <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mb-10 sm:mb-14">
-              Core <span className="text-[#10b981]">Capabilities</span>
+              {data.capabilitiesHeadingPart1 || 'Core'} <span className="text-[#10b981]">{data.capabilitiesHeadingPart2 || 'Capabilities'}</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
@@ -129,7 +141,7 @@ export default function DigitalStrategyPage() {
                   <h3 className="text-lg sm:text-xl font-medium text-foreground tracking-tight">
                     {cap.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  <p className="text-sm sm:text-base text-tertiary leading-relaxed">
                     {cap.desc}
                   </p>
                 </Card>
@@ -141,13 +153,13 @@ export default function DigitalStrategyPage() {
           <AnimateOnScroll variant="scale" className="my-16 sm:my-24  mx-auto">
             <Card className="p-8 sm:p-12 text-center relative overflow-hidden flex flex-col items-center gap-5 sm:gap-6">
               <h3 className="text-xl sm:text-2xl md:text-4xl font-medium text-foreground tracking-tight">
-                Ready to{' '}
+                {data.ctaHeadingPart1 || 'Ready to'}{' '}
                 <span className="text-[#10b981] drop-shadow-[0_2px_10px_rgba(16,185,129,0.2)]">
-                  Transform?
+                  {data.ctaHeadingPart2 || 'Transform?'}
                 </span>
               </h3>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-lg leading-relaxed">
-                Let us guide your organization through a seamless digital transformation.
+              <p className="text-sm sm:text-base text-tertiary max-w-lg leading-relaxed">
+                {data.ctaDesc || 'Let us guide your organization through a seamless digital transformation.'}
               </p>
               <Button
                 href="/#contact"
@@ -155,7 +167,7 @@ export default function DigitalStrategyPage() {
                 size="lg"
                 className="bg-[#10b981] shadow-[#10b981]/20 hover:bg-[#10b981]/95 group mt-2"
               >
-                Start a Project
+                {data.ctaBtnText || 'Start a Project'}
               </Button>
             </Card>
           </AnimateOnScroll>

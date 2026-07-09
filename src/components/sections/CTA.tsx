@@ -20,9 +20,8 @@ export function CTA({ hidePattern = false }: { hidePattern?: boolean }) {
         <div className=" mx-auto text-center flex flex-col items-center gap-6 sm:gap-8">
           <AnimateOnScroll variant="slideUp">
             <SectionHeader
-              label="CTA"
+              label={t('label') || 'CTA'}
               title={t('heading')}
-              gradientWord={t('gradientWord')}
               description={t('description')}
               align="center"
               className="mb-0 sm:mb-0 "

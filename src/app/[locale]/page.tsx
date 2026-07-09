@@ -11,7 +11,7 @@ import { HeroFrameBackground } from '@/components/sections/HeroFrameBackground';
 import { Advantage } from '@/components/sections/Advantage';
 import { Services } from '@/components/sections/Services';
 import { Workflow } from '@/components/sections/Workflow';
-import { Portfolio } from '@/components/sections/Portfolio';
+// import { Portfolio } from '@/components/sections/Portfolio';
 import { Contact } from '@/components/sections/Contact';
 import { CTA } from '@/components/sections/CTA';
 
@@ -21,6 +21,9 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  if (locale !== 'en' && locale !== 'id') {
+    return {};
+  }
   const metadata = (await import(`@/data/${locale}/metadata.json`)).default.siteMetadata;
 
   return {
@@ -84,7 +87,7 @@ export default function Home() {
         <Advantage />
         <Services />
         <Workflow />
-        <Portfolio />
+        {/* <Portfolio /> */}
         <CTA />
         <Contact />
       </main>

@@ -5,7 +5,7 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Container } from '@/components/ui/Container';
 import { usePortfolioCarousel } from '@/hooks/usePortfolioCarousel';
 import { ARROW_CLASSES } from '@/constants/portfolio';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { LazyImage } from '@/components/ui/LazyImage';
 
@@ -14,24 +14,33 @@ interface PortfolioProps {
 }
 
 export function Portfolio({ hideHeader = false }: PortfolioProps) {
-  const t = useTranslations('portfolio');
-  const tDetail = useTranslations('portfolio-detail');
+  const t = useTranslations('product');
+  const tPortfolio = useTranslations('portfolio-detail');
+  const tProduct = useTranslations('product-detail');
 
-  const projectsMap = tDetail.raw('projects') as Record<string, {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const portfolioProjects = tPortfolio.raw('projects') as Record<string, any>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const productProjects = tProduct.raw('projects') as Record<string, any>;
+
+  const projectsMap = {
+    ...portfolioProjects,
+    ...productProjects,
+  };
+  const projects = Object.values(projectsMap) as Array<{
     slug: string;
     title: string;
     category: string;
     image: string;
     desc: string;
   }>;
-  const projects = Object.values(projectsMap);
   const cards = projects.map((project) => ({
     imgUrl: project.image,
     alt: project.title,
-    linkUrl: `/portfolio/${project.category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')}/${project.slug}`,
+    linkUrl: `/product/${project.category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')}/${project.slug}`,
   }));
 
-  const { centerIndex, containerRef, setAutoplayActive, cycle, needsPagination } =
+  const { containerRef, setAutoplayActive, cycle, needsPagination } =
     usePortfolioCarousel(cards.length);
 
   const chevron = (direction: 'left' | 'right') => (
@@ -56,9 +65,7 @@ export function Portfolio({ hideHeader = false }: PortfolioProps) {
       <Container className="flex flex-col items-center">
         {!hideHeader && (
           <SectionHeader
-            label={t('heading')}
             title={t('heading')}
-            gradientWord={t('gradientWord')}
             description={t('subheading')}
             align="center"
           />

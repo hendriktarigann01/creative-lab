@@ -2,6 +2,7 @@
   "nav": {
     "home": "Beranda",
     "services": "Layanan",
+    "product": "Produk",
     "portfolio": "Portofolio",
     "contact": "Hubungi Kami",
     "getStarted": "Mulai"
@@ -18,7 +19,12 @@
     "seq2Plain": "Kami merekayasa",
     "seq2Gradient": "Pengalaman.",
     "seq3Plain": "Presisi dalam",
-    "seq3Gradient": "Aksi."
+    "seq3Gradient": "Aksi.",
+    "sequence3": {
+      "imageUrl": "https://picsum.photos/seed/techlab/2000/1200",
+      "imageAlt": "Teknologi Tinggi",
+      "overlayText": "Presisi dalam Aksi"
+    }
   },
   "advantages": {
     "heading": "Mengapa memilih kami?",
@@ -43,9 +49,10 @@
     }
   },
   "services": {
+    "label": "Showcase Keahlian",
     "heading": "Layanan Kami",
     "gradientWord": "Layanan",
-    "subheading": "Rangkaian lengkap kapabilitas tingkat ahli, terlihat dalam sekejap.",
+    "subheading": "Dari platform kelas perusahaan hingga gamifikasi imersif—kami menghadirkan spektrum penuh inovasi digital.",
     "enterprise": {
       "title": "Enterprise & B2G Solutions",
       "desc": "Efisiensi, Keamanan Data, dan Skalabilitas."
@@ -61,7 +68,63 @@
     "strategy": {
       "title": "Digital Strategy",
       "desc": "Kemitraan Jangka Panjang."
-    }
+    },
+    "servicesData": [
+      {
+        "title": "Enterprise & B2G Solutions",
+        "desc": "Efisiensi, Keamanan Data, dan Skalabilitas.",
+        "icon": "Code2",
+        "color": "enterprise",
+        "slug": "enterprise-b2g-solutions",
+        "features": [
+          "Web & Seluler Kustom: Aplikasi internal berkinerja tinggi (HRIS, CRM) yang disesuaikan dengan logika bisnis Anda.",
+          "Smart Dashboard: Mengubah data kompleks menjadi wawasan real-time untuk Command Center.",
+          "Custom CMS: Kontrol terpusat untuk pembaruan tanpa hambatan di ribuan perangkat.",
+          "Manajemen Aset: Pelacakan digital menggunakan integrasi QR/RFID untuk mengamankan aset berharga."
+        ],
+        "link": "/our-services/enterprise-b2g-solutions"
+      },
+      {
+        "title": "Gamification & Games",
+        "desc": "Retensi, Ingatan Brand, dan ROI.",
+        "icon": "Gamepad2",
+        "color": "gamification",
+        "slug": "gamification-games",
+        "features": [
+          "Game Kinetik & Gerakan: Pengalaman sensor gerak yang mengubah lobi menjadi taman bermain aktif.",
+          "Aktivasi AR: Menambahkan keajaiban digital ke dunia nyata—sempurna untuk peluncuran produk.",
+          "Social Wall: Integrasi media sosial waktu nyata yang menampilkan konten audiens di layar LED.",
+          "Papan Peringkat Phygital: Pusat permainan kompetitif yang disinkronkan dengan smartphone pengunjung."
+        ],
+        "link": "/our-services/gamification-games"
+      },
+      {
+        "title": "Interactive Experiences",
+        "desc": "Memaksimalkan Potensi Perangkat Keras MJ Solution.",
+        "icon": "Activity",
+        "color": "interactive",
+        "slug": "interactive-experiences",
+        "features": [
+          "Smart Wayfinding: Navigasi cerdas untuk pusat perbelanjaan, rumah sakit, dan pusat pemerintahan.",
+          "Simulator VR: Pelatihan imersif dan tur properti virtual (walkthrough 360°).",
+          "Modul Pameran Interaktif: Perangkat lunak multi-sentuh untuk eksplorasi arsip digital di museum.",
+          "Integrasi IoT: Middleware khusus yang menghubungkan perangkat lunak dengan sensor fisik dan pencahayaan."
+        ],
+        "link": "/our-services/interactive-experiences"
+      },
+      {
+        "title": "Digital Strategy",
+        "desc": "Kemitraan Jangka Panjang.",
+        "icon": "Presentation",
+        "color": "strategy",
+        "slug": "digital-strategy",
+        "features": [
+          "Peta Jalan Transformasi: Kami menasihati dan membantu institusi bertransisi dari alur kerja manual ke otomatis.",
+          "Lab Desain UI/UX: Antarmuka yang berpusat pada pengguna, intuitif untuk Gen Z hingga pejabat Pemerintah."
+        ],
+        "link": "/our-services/digital-strategy"
+      }
+    ]
   },
   "workflow": {
     "heading": "Alur Kerja Kami",
@@ -92,18 +155,72 @@
       "desc": "SLA 24/7, pemantauan berkelanjutan, dan pemeliharaan server yang skalabel."
     }
   },
-  "portfolio": {
-    "heading": "Portofolio Kami",
-    "gradientWord": "Portofolio",
+  "product": {
+    "heading": "Bangun Bisnis yang Lebih Baik dengan Perangkat Lunak, Pengalaman Interaktif, dan Inovasi Digital",
+    "gradientWord": "Produk",
     "subheading": "Arahkan kursor untuk menjelajahi eksekusi tingkat master kami.",
     "showcaseTitle": "Galeri Semua Proyek",
-    "exploreProject": "Jelajahi Proyek"
+    "exploreProject": "Jelajahi Proyek",
+    "explore": "Jelajahi",
+    "breadcrumb": "Produk",
+    "label": "Produk"
+  },
+  "portfolio": {
+    "heading": "Proyek yang Mendorong Transformasi Digital",
+    "subheading": "Dari platform perusahaan hingga pengalaman digital interaktif, setiap proyek mencerminkan komitmen kami untuk menyelesaikan tantangan bisnis nyata melalui desain dan teknologi yang matang.",
+    "showcaseTitle": "Portofolio Kami",
+    "exploreProject": "Jelajahi Proyek",
+    "breadcrumb": "Portofolio",
+    "redirecting": "Mengalihkan ke pratinjau...",
+    "templates": [
+      {
+        "slug": "in-lite",
+        "name": "in-Lite Indonesia",
+        "tagline": "Pionir Lampu LED Lokal & Inovasi Sakelar Premium",
+        "description": "Halaman katalog untuk produk lampu LED dan sakelar pintar premium seri Alura & Linea.",
+        "image": "/portfolio/in-lite/inlite.webp",
+        "category": "Ritel & Elektronik"
+      },
+      {
+        "slug": "bsp",
+        "name": "Bali Surfer's Perfume (BSP)",
+        "tagline": "Aroma Tropis Khas Bali & Kebebasan Tanpa Batas",
+        "description": "Merek parfum lokal premium Eau de Parfum (EDP) dengan aroma pesisir laut yang segar.",
+        "image": "/portfolio/bsp/bsp.png",
+        "category": "Mode & Kecantikan"
+      },
+      {
+        "slug": "leko",
+        "name": "Warung Leko Grand Wisata",
+        "tagline": "Spesialis Iga Penyet & Masakan Indonesia",
+        "description": "Menu restoran spesialis iga Indonesia, informasi cabang, dan halaman reservasi.",
+        "image": "/portfolio/leko/leko.png",
+        "category": "Makanan & Minuman"
+      },
+      {
+        "slug": "metland",
+        "name": "Metland Cikarang",
+        "tagline": "Perumahan Eco Living di Cibitung, Bekasi",
+        "description": "Showcase pemasaran untuk pengembangan perumahan modern eco-living di Cibitung.",
+        "image": "/portfolio/metland/metland.png",
+        "category": "Real Estate & Perumahan"
+      },
+      {
+        "slug": "tanta",
+        "name": "Tanta Resto & Lounge",
+        "tagline": "Kehangatan, Rasa, dan Kepedulian dalam Setiap Hidangan",
+        "description": "Restoran kelas atas perpaduan masakan Indonesia & Barat yang terletak di Plaza Senayan.",
+        "image": "/portfolio/tanta/tanta.png",
+        "category": "Makanan & Minuman"
+      }
+    ]
   },
   "cta": {
     "heading": "Siap membangun tanpa batas?",
     "gradientWord": "tanpa batas?",
     "description": "Hubungi tim teknisi kami untuk merancang ekosistem perangkat lunak khusus dan instalasi fisik interaktif dengan ketelitian tinggi.",
-    "ctaText": "Mulai Sekarang"
+    "ctaText": "Mulai Sekarang",
+    "label": "CTA"
   },
   "contact": {
     "heading": "Ayo buat mahakarya bersama",
@@ -138,7 +255,10 @@
         "q": "Bisakah kita menjadwalkan demonstrasi di lokasi?",
         "a": "Ya. Hubungi kami melalui telepon atau email untuk meminta presentasi mock-up dengan ketelitian tinggi di kantor pusat Anda atau di showroom Jakarta kami."
       }
-    ]
+    ],
+    "faqLabel": "FAQ",
+    "slaAvailabilityValue": "Operasional 24/7",
+    "label": "Kontak"
   },
   "projectDetail": {
     "backBtn": "Kembali ke Portofolio",
@@ -154,7 +274,9 @@
     "techDeployed": "Teknologi yang Digunakan",
     "notFoundTitle": "Proyek Tidak Ditemukan",
     "notFoundSub": "Eksekusi portofolio yang diminta tidak dapat ditemukan.",
-    "visitWebsite": "Kunjungi Website"
+    "visitWebsite": "Kunjungi Website",
+    "getConsultation": "Dapatkan Konsultasi",
+    "dashboardPreview": "Pratinjau Dasbor {title}"
   },
   "footer": {
     "tagline": "Architecting Tomorrow's Legacy",
@@ -164,5 +286,30 @@
     "title": "Halaman Tidak Ditemukan",
     "description": "Halaman yang Anda cari tidak ada, telah dihapus, atau telah dipindahkan dalam ekosistem kami.",
     "goHome": "Kembali ke Beranda"
+  },
+  "categories": {
+    "All": "Semua",
+    "Business Operations": "Operasional Bisnis",
+    "Workforce & Human Capital": "Sumber Daya Manusia",
+    "Industry Solutions": "Solusi Industri",
+    "Smart CMS": "CMS Pintar",
+    "Event & Registration": "Acara & Registrasi",
+    "Play Lab": "Play Lab"
+  },
+  "diagram": {
+    "heading": "Dibuat untuk Membantu Tim Memberikan Proyek yang Lebih Baik",
+    "description": "Lebih dari sekadar manajemen tugas. Kami menghubungkan orang, proyek, klien, dan keuangan Anda dalam satu platform untuk mendorong produktivitas dan kesuksesan.",
+    "completeVisibility": "Visibilitas Proyek Lengkap",
+    "fasterCheckout": "Pembayaran Lebih Cepat",
+    "accurateInventory": "Inventaris Akurat",
+    "betterPurchasing": "Pembelian Lebih Baik",
+    "actionableInsights": "Wawasan yang Dapat Ditindaklanjuti",
+    "readyToGrow": "Siap Tumbuh",
+    "logoAlt": "Logo Proyek"
+  },
+  "featureProduct": {
+    "heading": "Semua yang Anda Butuhkan untuk Menyelesaikan Proyek dengan Sukses",
+    "description": "Satu aplikasi untuk semua kebutuhan proyek Anda. Rencanakan, kolaborasikan, dan pantau keuangan tim Anda dengan mudah, semua di satu tempat.",
+    "featuresAlt": "Fitur {title}"
   }
 }

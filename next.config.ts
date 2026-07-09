@@ -18,6 +18,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/portfolio/:slug',
+        destination: '/portfolio/:slug/index.html',
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);

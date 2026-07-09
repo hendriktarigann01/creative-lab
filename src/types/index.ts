@@ -75,12 +75,30 @@ export interface TimelinePhase {
   position: 'left' | 'right';
 }
 
+export interface IndustryItem {
+  title: string;
+  desc: string;
+  img?: string;
+}
+
+export interface ProjectImplementation {
+  sectionTitle: string;
+  sectionDesc: string;
+  industries: IndustryItem[];
+}
+
+export interface ProjectCTA {
+  title: string;
+  subtitle: string;
+}
+
 export interface ProjectDetail {
   slug: string;
   title: string;
   category: string;
   image: string;
   desc: string;
+  subtitle?: string;
   overview: string;
   client: string;
   role: string;
@@ -91,4 +109,8 @@ export interface ProjectDetail {
   technologies: string[];
   stats: { label: string; value: string };
   liveUrl?: string;
+  implementation?: ProjectImplementation;
+  cta?: ProjectCTA;
 }
+
+

@@ -14,10 +14,19 @@ export function Toggle({ className }: ToggleProps) {
   useEffect(() => {
     const isDark = document.documentElement.classList.contains('dark');
     const initialTheme = isDark ? 'dark' : 'light';
-    const timer = setTimeout(() => {
-      setTheme(initialTheme);
-    }, 0);
-    return () => clearTimeout(timer);
+    setTheme(initialTheme);
+
+    const observer = new MutationObserver(() => {
+      const currentDark = document.documentElement.classList.contains('dark');
+      setTheme(currentDark ? 'dark' : 'light');
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const toggleTheme = () => {
@@ -36,7 +45,7 @@ export function Toggle({ className }: ToggleProps) {
     <button
       onClick={toggleTheme}
       className={cn(
-        'relative inline-flex items-center justify-center p-2 rounded-full border border-border bg-card text-muted-foreground hover:text-foreground transition-all duration-300 cursor-pointer w-10 h-10',
+        'relative inline-flex items-center justify-center p-2 rounded-full transition-all duration-300 cursor-pointer w-10 h-10',
         className
       )}
       aria-label="Toggle theme"

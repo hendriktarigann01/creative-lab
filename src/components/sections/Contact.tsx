@@ -128,29 +128,28 @@ export function Contact({ hideHeader = false }: ContactProps) {
       <Container className="flex flex-col items-center relative z-10 w-full">
         {!hideHeader && (
           <SectionHeader
-            label="Contact"
+            label={t('label') || 'Contact'}
             title={t('heading')}
-            gradientWord={t('gradientWord')}
             description={t('subheading')}
             align="center"
           />
         )}
 
         {hideHeader ? (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
             <div className="lg:col-span-3 h-full flex flex-col justify-center">
               <Card className="p-6 border-border bg-card hover:border-primary/20 transition-all duration-300 flex flex-col gap-4">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-widest">
+                  <h4 className="text-xs font-medium text-tertiary uppercase tracking-widest">
                     {t('emailLabel')}
                   </h4>
                   <p className="text-base font-medium text-foreground mt-1.5 break-all">
                     hello.creativelab@mjsolution.co.id
                   </p>
-                  <p className="text-xs text-muted-foreground mt-2">{t('emailSub')}</p>
+                  <p className="text-xs text-tertiary mt-2">{t('emailSub')}</p>
                 </div>
               </Card>
             </div>
@@ -165,13 +164,13 @@ export function Contact({ hideHeader = false }: ContactProps) {
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-widest">
+                  <h4 className="text-xs font-medium text-tertiary uppercase tracking-widest">
                     {t('slaLabel')}
                   </h4>
                   <p className="text-base font-medium text-foreground mt-1.5">
-                    {locale === 'id' ? 'Operasional 24/7' : '24/7 Operations'}
+                    {t('slaAvailabilityValue') || '24/7 Operations'}
                   </p>
-                  <p className="text-xs text-muted-foreground mt-2">{t('slaSub')}</p>
+                  <p className="text-xs text-tertiary mt-2">{t('slaSub')}</p>
                 </div>
               </Card>
             </div>

@@ -33,7 +33,7 @@ export default function NotFound() {
             {t('title')}
           </h1>
           
-          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl mb-10">
+          <p className="text-base sm:text-lg text-tertiary leading-relaxed max-w-xl mb-10">
             {t('description')}
           </p>
           

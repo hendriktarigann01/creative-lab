@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactLenis } from 'lenis/react';
-import type { ReactNode } from 'react';
+import { type ReactNode, useEffect } from 'react';
 
 if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
   const orig = console.error;
@@ -28,7 +28,20 @@ if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
   }
 }
 
+import { usePathname } from 'next/navigation';
+
 export function LenisProvider({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+  const isProductRoute = pathname?.includes('/product');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  if (isProductRoute) {
+    return <>{children}</>;
+  }
+
   return (
     <ReactLenis
       root

@@ -104,6 +104,23 @@ export default function InteractivePage() {
     hotspots: Array<{ id: number; title: string; desc: string; icon: string }>;
     useCases: Array<{ title: string; desc: string; icon: string }>;
     capabilities: Array<{ title: string; desc: string; icon: string }>;
+    breadcrumbServices?: string;
+    breadcrumbCurrent?: string;
+    heroLabel?: string;
+    heroTitle?: string;
+    panoramaHeadingPart1?: string;
+    panoramaHeadingPart2?: string;
+    panoramaSubheading?: string;
+    panoramaDragHint?: string;
+    panoramaLoading?: string;
+    applicationsHeadingPart1?: string;
+    applicationsHeadingPart2?: string;
+    capabilitiesHeadingPart1?: string;
+    capabilitiesHeadingPart2?: string;
+    ctaHeadingPart1?: string;
+    ctaHeadingPart2?: string;
+    ctaDesc?: string;
+    ctaBtnText?: string;
   };
 
   const [activeHotspot, setActiveHotspot] = useState<number | null>(null);
@@ -135,13 +152,13 @@ export default function InteractivePage() {
   };
 
   const breadcrumbItems = [
-    { name: 'Services', path: '/our-services' },
-    { name: 'Interactive Experiences' },
+    { name: data.breadcrumbServices || 'Services', path: '/our-services' },
+    { name: data.breadcrumbCurrent || 'Interactive Experiences' },
   ];
 
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: 'Services', item: '/our-services' },
-    { name: 'Interactive Experiences', item: '/our-services/interactive-experiences' },
+    { name: data.breadcrumbServices || 'Services', item: '/our-services' },
+    { name: data.breadcrumbCurrent || 'Interactive Experiences', item: '/our-services/interactive-experiences' },
   ]);
 
   const serviceSchema = getServiceSchema(
@@ -157,11 +174,11 @@ export default function InteractivePage() {
 
       <PageHero
         breadcrumbs={breadcrumbItems}
-        label="Interactive Experiences"
-        title="Interactive Experiences"
-        gradientWord="Experiences"
+        label={data.heroLabel || 'Interactive Experiences'}
+        title={data.heroTitle || 'Interactive Experiences'}
         description={data.hero.desc}
         accentColor="#ec4899"
+        imageFolder="service"
       />
 
       <section className="bg-background relative overflow-hidden">
@@ -170,11 +187,10 @@ export default function InteractivePage() {
           <div className="my-16 sm:my-24">
             <div className="flex flex-col gap-3 max-w-3xl mb-8 sm:mb-12">
               <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mt-1">
-                Experience a <span className="text-[#ec4899]">True 360° Space</span>
+                {data.panoramaHeadingPart1 || 'Experience a'} <span className="text-[#ec4899]">{data.panoramaHeadingPart2 || 'True 360° Space'}</span>
               </h2>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Click and drag in any direction (up, down, left, right) to look around. Tap the
-                hotspots to explore interactive features.
+              <p className="text-sm sm:text-base text-tertiary leading-relaxed">
+                {data.panoramaSubheading || 'Click and drag in any direction (up, down, left, right) to look around. Tap the hotspots to explore interactive features.'}
               </p>
             </div>
 
@@ -183,7 +199,7 @@ export default function InteractivePage() {
               {/* Drag Hint */}
               <div className="absolute top-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/60 border border-border text-xs font-medium text-foreground pointer-events-none backdrop-blur-sm">
                 <Navigation className="w-3.5 h-3.5 rotate-45 text-[#ec4899]" />
-                Drag to Look Around
+                {data.panoramaDragHint || 'Drag to Look Around'}
               </div>
 
               {/* Panorama Panning Area */}
@@ -201,7 +217,7 @@ export default function InteractivePage() {
                       fallback={
                         <Html center>
                           <div className="text-white text-xs sm:text-sm">
-                            Loading 360 Environment...
+                            {data.panoramaLoading || 'Loading 360 Environment...'}
                           </div>
                         </Html>
                       }
@@ -216,7 +232,7 @@ export default function InteractivePage() {
                 </div>
               ) : (
                 <div className="absolute inset-0 z-0 bg-black flex items-center justify-center text-white text-xs sm:text-sm">
-                  Loading 360 Environment...
+                  {data.panoramaLoading || 'Loading 360 Environment...'}
                 </div>
               )}
 
@@ -225,7 +241,7 @@ export default function InteractivePage() {
                 <div className="absolute inset-x-4 bottom-4 z-30 p-5 rounded-xl bg-card/90 border border-border backdrop-blur-md shadow-2xl flex flex-col gap-2 max-w-sm animate-slide-up">
                   <button
                     onClick={() => setActiveHotspot(null)}
-                    className="absolute top-3 right-3 p-1 rounded-full text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+                    className="absolute top-3 right-3 p-1 rounded-full text-tertiary hover:text-foreground transition-colors cursor-pointer"
                     aria-label="Close details"
                   >
                     <X className="w-4 h-4" />
@@ -241,7 +257,7 @@ export default function InteractivePage() {
                             {spot.title}
                           </h4>
                         </div>
-                        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-xs sm:text-sm text-tertiary leading-relaxed">
                           {spot.desc}
                         </p>
                       </>
@@ -255,7 +271,7 @@ export default function InteractivePage() {
           {/* Real-World Use Cases */}
           <div className="my-16 sm:my-24">
             <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mb-10 sm:mb-14 text-center">
-              Real-World <span className="text-[#ec4899]">Applications</span>
+              {data.applicationsHeadingPart1 || 'Real-World'} <span className="text-[#ec4899]">{data.applicationsHeadingPart2 || 'Applications'}</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -270,7 +286,7 @@ export default function InteractivePage() {
                   <h3 className="text-lg sm:text-xl font-medium text-foreground tracking-tight">
                     {useCase.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{useCase.desc}</p>
+                  <p className="text-sm text-tertiary leading-relaxed">{useCase.desc}</p>
                 </Card>
               ))}
             </div>
@@ -279,7 +295,7 @@ export default function InteractivePage() {
           {/* Core Capabilities */}
           <div className="my-16 sm:my-24">
             <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mb-10 sm:mb-14">
-              Core <span className="text-[#ec4899]">Capabilities</span>
+              {data.capabilitiesHeadingPart1 || 'Core'} <span className="text-[#ec4899]">{data.capabilitiesHeadingPart2 || 'Capabilities'}</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -294,7 +310,7 @@ export default function InteractivePage() {
                   <h3 className="text-lg sm:text-xl font-medium text-foreground tracking-tight">
                     {cap.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  <p className="text-sm sm:text-base text-tertiary leading-relaxed">
                     {cap.desc}
                   </p>
                 </Card>
@@ -306,13 +322,13 @@ export default function InteractivePage() {
           <AnimateOnScroll variant="scale" className="my-16 sm:my-24  mx-auto">
             <Card className="p-8 sm:p-12 text-center relative overflow-hidden flex flex-col items-center gap-5 sm:gap-6">
               <h3 className="text-xl sm:text-2xl md:text-4xl font-medium text-foreground tracking-tight">
-                Ready to{' '}
+                {data.ctaHeadingPart1 || 'Ready to'}{' '}
                 <span className="text-[#ec4899] drop-shadow-[0_2px_10px_rgba(236,72,153,0.2)]">
-                  Immerse?
+                  {data.ctaHeadingPart2 || 'Immerse?'}
                 </span>
               </h3>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-lg leading-relaxed">
-                Let us build an interactive experience that transforms your space.
+              <p className="text-sm sm:text-base text-tertiary max-w-lg leading-relaxed">
+                {data.ctaDesc || 'Let us build an interactive experience that transforms your space.'}
               </p>
               <Button
                 href="/#contact"
@@ -320,7 +336,7 @@ export default function InteractivePage() {
                 size="lg"
                 className="bg-[#ec4899] shadow-[#ec4899]/20 hover:bg-[#ec4899]/95 group mt-2"
               >
-                Start a Project
+                {data.ctaBtnText || 'Start a Project'}
               </Button>
             </Card>
           </AnimateOnScroll>

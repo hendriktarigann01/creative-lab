@@ -1,0 +1,1095 @@
+{
+  "projects": {
+    "plannr": {
+      "slug": "plannr",
+      "title": "PlannR",
+      "category": "Business Operations",
+      "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "A Project Management System that helps teams organize projects and monitor performance on one platform.",
+      "overview": "PlannR helps teams organize projects, manage clients, and monitor profit and loss performance from a single connected platform.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Product Development",
+      "timeline": "Ongoing",
+      "challenge": "Teams needed a unified way to track tasks, manage client relationships, and monitor project profitability.",
+      "solution": "Built a project management platform combining task tracking, client management, and profit & loss monitoring in one workspace.",
+      "features": ["Task & Project Tracking", "Client Management", "Profit & Loss Monitoring"],
+      "technologies": ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      "stats": {
+        "label": "Category",
+        "value": "Business Operations"
+      },
+      "subtitle": "Product Management System",
+      "featuresDetail": [
+        {
+          "tabLabel": "Workspaces",
+          "tabIconName": "folder",
+          "title": "Empower Teams to Collaborate Without Switching Between Tools",
+          "description": "Create dedicated workspaces where teams can manage tasks, share documents, communicate, and stay aligned throughout every project.",
+          "features": [
+            {
+              "label": "Task Management",
+              "iconName": "check"
+            },
+            {
+              "label": "Team Collaboration",
+              "iconName": "users"
+            },
+            {
+              "label": "File Sharing",
+              "iconName": "folder"
+            },
+            {
+              "label": "Comments & Discussions",
+              "iconName": "message"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Client",
+          "tabIconName": "client",
+          "title": "Build Stronger Client Relationships Throughout Every Project",
+          "description": "Keep client information, communication history, and project records organized in one place to deliver a more transparent and professional experience.",
+          "features": [
+            {
+              "label": "Client Database",
+              "iconName": "users"
+            },
+            {
+              "label": "Communication History",
+              "iconName": "message"
+            },
+            {
+              "label": "Project Records",
+              "iconName": "folder"
+            },
+            {
+              "label": "Activity Timeline",
+              "iconName": "clock"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Pipeline",
+          "tabIconName": "pipeline",
+          "title": "Organize Every Project with a Flexible Workflow",
+          "description": "Visualize every project stage, prioritize work, and keep tasks moving efficiently with customizable workflows designed for modern teams.",
+          "features": [
+            {
+              "label": "Custom Workflow Stages",
+              "iconName": "arrow_split"
+            },
+            {
+              "label": "Drag & Drop Kanban Board",
+              "iconName": "view_kanban"
+            },
+            {
+              "label": "Milestone Tracking",
+              "iconName": "flag"
+            },
+            {
+              "label": "Task Prioritization",
+              "iconName": "check"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Billing",
+          "tabIconName": "receipt",
+          "title": "Simplify Project Billing and Keep Payments Organized",
+          "description": "Generate invoices, monitor payment status, and maintain accurate billing records to streamline your financial workflow.",
+          "features": [
+            {
+              "label": "Invoice Generation",
+              "iconName": "receipt_long"
+            },
+            {
+              "label": "Payment Tracking",
+              "iconName": "credit_card"
+            },
+            {
+              "label": "Billing History",
+              "iconName": "book_4"
+            },
+            {
+              "label": "Client Invoices",
+              "iconName": "docs"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Finance",
+          "tabIconName": "finance",
+          "title": "Make Smarter Financial Decisions with Real-Time Insights",
+          "description": "Track project budgets, expenses, and profitability through comprehensive financial reports that support better planning and business growth.",
+          "features": [
+            {
+              "label": "Budget Monitoring",
+              "iconName": "credit_card"
+            },
+            {
+              "label": "Expense Tracking",
+              "iconName": "payments"
+            },
+            {
+              "label": "Profit Analysis",
+              "iconName": "finance"
+            },
+            {
+              "label": "Financial Reports",
+              "iconName": "docs"
+            }
+          ]
+        }
+      ]
+    },
+    "pipely": {
+      "slug": "pipely",
+      "title": "Pipely",
+      "category": "Business Operations",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "An all-in-one Sales Management System that helps businesses manage point of sale, stock, and purchases.",
+      "overview": "Pipely is an all-in-one Sales Management System built to simplify how businesses handle daily transactions, stock movement, and purchasing — all from a single connected platform.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Product Development",
+      "timeline": "Ongoing",
+      "challenge": "Businesses needed a single system to manage sales, stock, and purchasing instead of juggling disconnected tools.",
+      "solution": "Built an integrated sales management platform combining point of sale, stock and purchase tracking, and multi payment support in one interface.",
+      "features": [
+        "Point of Sale (POS)",
+        "Stock & Purchase Management",
+        "Multi Payment Integration"
+      ],
+      "technologies": ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      "stats": {
+        "label": "Category",
+        "value": "Business Operations"
+      },
+      "subtitle": "Point of Sales & Retail System",
+      "featuresDetail": [
+        {
+          "tabLabel": "Point of Sale",
+          "tabIconName": "barcode_scanner",
+          "title": "Deliver Fast, Seamless, and Accurate Checkout Experiences",
+          "description": "Speed up every transaction with an intuitive POS system designed to support retail operations, multiple payment methods, and a better customer experience.",
+          "features": [
+            {
+              "label": "Fast Checkout Process",
+              "iconName": "bolt"
+            },
+            {
+              "label": "Multiple Payment Methods",
+              "iconName": "credit_card"
+            },
+            {
+              "label": "Barcode Scanner Support",
+              "iconName": "qr_code"
+            },
+            {
+              "label": "Digital & Printed Receipts",
+              "iconName": "receipt_long"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Stock Management",
+          "tabIconName": "box_add",
+          "title": "Keep Inventory Accurate Across Every Store and Warehouse",
+          "description": "Track inventory in real time, manage stock movements, and prevent shortages with an integrated inventory management system built for growing businesses.",
+          "features": [
+            {
+              "label": "Real-Time Stock Monitoring",
+              "iconName": "package"
+            },
+            {
+              "label": "Low Stock Alerts",
+              "iconName": "warning"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Purchasing",
+          "tabIconName": "shopping_basket",
+          "title": "Streamline Purchasing from Order to Goods Receiving",
+          "description": "Manage supplier purchases efficiently by creating purchase orders, tracking deliveries, and automatically updating inventory once goods are received.",
+          "features": [
+            {
+              "label": "Purchase Order Management",
+              "iconName": "receipt_long"
+            },
+            {
+              "label": "Goods Receiving",
+              "iconName": "thumb_up"
+            },
+            {
+              "label": "Supplier Performance",
+              "iconName": "handshake"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Product Management",
+          "tabIconName": "receipt",
+          "title": "Organize Products with Complete Control and Flexibility",
+          "description": "Manage products, categories, pricing, and product variations through a centralized catalog that keeps your inventory organized and easy to maintain.",
+          "features": [
+            {
+              "label": "Product Catalog",
+              "iconName": "package"
+            },
+            {
+              "label": "Price Management",
+              "iconName": "money"
+            },
+            {
+              "label": "SKU & Barcode Management",
+              "iconName": "new_label"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Reports & Analytics",
+          "tabIconName": "finance",
+          "title": "Turn Business Data into Smarter Decisions",
+          "description": "Generate comprehensive reports that provide valuable insights into sales performance, inventory movement, purchasing activities, and overall business growth.",
+          "features": [
+            {
+              "label": "Sales Reports",
+              "iconName": "finance"
+            },
+            {
+              "label": "Inventory Reports",
+              "iconName": "package"
+            },
+            {
+              "label": "Export & Download Reports",
+              "iconName": "download"
+            }
+          ]
+        }
+      ]
+    },
+    "kruu": {
+      "slug": "kruu",
+      "title": "Kruu",
+      "category": "Workforce & Human Capital",
+      "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "Simplify employee management, attendance, payroll, and workforce administration through one centralized platform. Empower HR teams with automated workflows and real-time employee insights.",
+      "overview": "Kruu is a Human Resource Management System (HRMS) that simplifies employee administration, payroll, and leave management for growing teams.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Product Development",
+      "timeline": "Ongoing",
+      "challenge": "HR teams needed to streamline employee administration, payroll processing, and leave management in one system.",
+      "solution": "Developed an HRMS covering employee management, payroll processing, and leave management to simplify HR operations.",
+      "features": ["Employee Management", "Payroll Management", "Leave Management"],
+      "technologies": ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      "stats": {
+        "label": "Category",
+        "value": "Workforce & Human Capital"
+      },
+      "subtitle": "HR Management System",
+      "featuresDetail": [
+        {
+          "tabLabel": "Employee Directory",
+          "tabIconName": "users",
+          "title": "Keep Every Employee Profile Organized in One Place",
+          "description": "Store and manage employee information, organizational details, employment history, and important documents through a centralized employee database.",
+          "features": [
+            {
+              "label": "Employee Database",
+              "iconName": "users"
+            },
+            {
+              "label": "Advanced Employee Search",
+              "iconName": "magnifying_person"
+            },
+            {
+              "label": "Digital Employee Records",
+              "iconName": "article_person"
+            },
+            {
+              "label": "Department & Position Management",
+              "iconName": "apartment"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Attendance",
+          "tabIconName": "distance",
+          "title": "Track Employee Attendance with Accuracy and Transparency",
+          "description": "Monitor employee attendance in real time using digital check-in, attendance logs, and location-based validation to improve accountability across your organization.",
+          "features": [
+            {
+              "label": "Attendance Log",
+              "iconName": "clock_log"
+            },
+            {
+              "label": "GPS & Geofencing",
+              "iconName": "location"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Leave & Attendance Req",
+          "tabIconName": "holiday",
+          "title": "Simplify Leave, WFH, and Attendance Corrections",
+          "description": "Allow employees to submit leave requests, work-from-home applications, overtime requests, and attendance corrections through one streamlined workflow.",
+          "features": [
+            {
+              "label": "Leave Management",
+              "iconName": "holiday"
+            },
+            {
+              "label": "Work From Home Requests",
+              "iconName": "home"
+            },
+            {
+              "label": "Attendance Correction",
+              "iconName": "alarm"
+            },
+            {
+              "label": "Overtime",
+              "iconName": "overtime"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Organization",
+          "tabIconName": "account_tree",
+          "title": "Manage Organizational Structure with Ease",
+          "description": "Maintain company hierarchy, branch information, departments, and reporting structures from one centralized management system.",
+          "features": [
+            {
+              "label": "Leave Management",
+              "iconName": "account_tree"
+            },
+            {
+              "label": "Work From Home Requests",
+              "iconName": "web"
+            },
+            {
+              "label": "Overtime",
+              "iconName": "groups"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Payroll",
+          "tabIconName": "money_bag",
+          "title": "Automate Payroll Processing with Confidence",
+          "description": "Calculate salaries, overtime, deductions, allowances, and payroll records accurately while reducing repetitive manual calculations.",
+          "features": [
+            {
+              "label": "Salary Processing",
+              "iconName": "money"
+            },
+            {
+              "label": "Payroll Calculation",
+              "iconName": "receipt_long"
+            },
+            {
+              "label": "Payroll Reports",
+              "iconName": "docs"
+            }
+          ]
+        }
+      ]
+    },
+    "classix": {
+      "slug": "classix",
+      "title": "Classix",
+      "category": "Industry Solutions",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "Digitize school operations by connecting academic management, attendance, e-learning, grading, and administration in one integrated system designed for modern educational institutions.",
+      "overview": "Classix is an integrated ERP platform for educational institutions, simplifying administration, attendance, and e-learning in one system.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Product Development",
+      "timeline": "Ongoing",
+      "challenge": "Educational institutions needed a single platform to manage administration, attendance, and digital learning.",
+      "solution": "Developed an education ERP combining smart administration, smart attendance, and smart e-learning modules.",
+      "features": ["Smart Administration", "Smart Attendance Management", "Smart E-Learning"],
+      "technologies": ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      "stats": {
+        "label": "Category",
+        "value": "Industry Solutions"
+      },
+      "subtitle": "Academic Management System",
+      "featuresDetail": [
+        {
+          "tabLabel": "Attendance",
+          "tabIconName": "distance",
+          "title": "Record Student Attendance Quickly and Accurately",
+          "description": "Digitize classroom attendance with real-time tracking, automated attendance records, and comprehensive reporting to improve student discipline and administrative efficiency.",
+          "features": [
+            {
+              "label": "Quick Log",
+              "iconName": "users"
+            },
+            {
+              "label": "Export CSV",
+              "iconName": "magnifying_person"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Learning",
+          "tabIconName": "book_4",
+          "title": "Empower Learning and Classroom Collaboration",
+          "description": "Run digital courses, manage homework assignments, set interactive quizzes, and share educational resources in a single classroom ecosystem.",
+          "features": [
+            {
+              "label": "Online Courses",
+              "iconName": "book_4"
+            },
+            {
+              "label": "Assignments",
+              "iconName": "assignment"
+            },
+            {
+              "label": "Interactive Quizzes",
+              "iconName": "quiz"
+            },
+            {
+              "label": "Learning Materials",
+              "iconName": "draft"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Student Management",
+          "tabIconName": "groups",
+          "title": "Keep Student Information Organized and Accessible",
+          "description": "Manage student profiles, enrollment records, class assignments, and academic history through one centralized database.",
+          "features": [
+            {
+              "label": "Student Profiles",
+              "iconName": "school"
+            },
+            {
+              "label": "Student Search",
+              "iconName": "manage_search"
+            },
+            {
+              "label": "Academic Records",
+              "iconName": "plagiarism"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Teacher & Class",
+          "tabIconName": "play_lesson",
+          "title": "Manage Teachers, Classes, and Subjects with Ease",
+          "description": "Organize teacher assignments, class schedules, and subject information while simplifying academic administration across the school.",
+          "features": [
+            {
+              "label": "Teacher Directory",
+              "iconName": "person"
+            },
+            {
+              "label": "Class Management",
+              "iconName": "person_raised_hand"
+            },
+            {
+              "label": "Subject Management",
+              "iconName": "book_4"
+            }
+          ]
+        },
+        {
+          "tabLabel": "School Analytics",
+          "tabIconName": "donut_large",
+          "title": "Make Better Academic Decisions with Real-Time Insights",
+          "description": "Access comprehensive dashboards and reports covering attendance, academic performance, and operational activities to support data-driven school management.",
+          "features": [
+            {
+              "label": "School Dashboard",
+              "iconName": "bar2"
+            },
+            {
+              "label": "Academic Analytics",
+              "iconName": "bar"
+            },
+            {
+              "label": "Student Reports",
+              "iconName": "download"
+            }
+          ]
+        }
+      ]
+    },
+    "jipies": {
+      "slug": "jipies",
+      "title": "Jipies",
+      "category": "Workforce & Human Capital",
+      "image": "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "Monitor vehicles, drivers, and fleet operations in real time to improve operational efficiency, enhance safety, and optimize fleet performance across your organization.",
+      "overview": "Jipies is a Fleet Management GPS platform giving businesses real-time visibility into vehicle operations, geo-fencing, and driver behavior.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Product Development",
+      "timeline": "Ongoing",
+      "challenge": "Field operations teams needed real-time visibility into vehicle location and driver behavior across their fleet.",
+      "solution": "Built a GPS fleet management platform with real-time tracking, geo-fence alerts, and driver behavior monitoring.",
+      "features": ["GPS Real-Time Tracking", "Geo-Fence & Alerts", "Driver Behavior Monitoring"],
+      "technologies": ["React", "Node.js", "PostgreSQL", "WebSocket"],
+      "stats": {
+        "label": "Category",
+        "value": "Workforce & Human Capital"
+      },
+      "subtitle": "GPS Tracking System",
+      "featuresDetail": [
+        {
+          "tabLabel": "Fleet Management",
+          "tabIconName": "shipping-speed",
+          "title": "Organize and Monitor Every Vehicle with Ease",
+          "description": "Maintain complete information for every vehicle, including registration, utilization, assignments, and operational history through one centralized platform.",
+          "features": [
+            {
+              "label": "Fleet Database",
+              "iconName": "shipping"
+            },
+            {
+              "label": "Vehicle Information",
+              "iconName": "docs_search"
+            },
+            {
+              "label": "Fleet Assignment",
+              "iconName": "add_notes"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Maintenance",
+          "tabIconName": "build",
+          "title": "Reduce Downtime with Preventive Maintenance",
+          "description": "Schedule regular maintenance, monitor service history, and receive maintenance reminders to keep every vehicle operating at peak performance.",
+          "features": [
+            {
+              "label": "Preventive Maintenance",
+              "iconName": "log"
+            },
+            {
+              "label": "Service Scheduling",
+              "iconName": "clock"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Driver Management",
+          "tabIconName": "steering",
+          "title": "Improve Driver Performance and Operational Safety",
+          "description": "Manage driver profiles, monitor driving behavior, and evaluate driver performance to promote safer operations and improve accountability.",
+          "features": [
+            {
+              "label": "Driver Profiles",
+              "iconName": "id_card"
+            },
+            {
+              "label": "Driver Behavior Monitoring",
+              "iconName": "traffic"
+            },
+            {
+              "label": "Safety Dashboard",
+              "iconName": "star"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Geofence Management",
+          "tabIconName": "location",
+          "title": "Receive Instant Alerts for Vehicle Movement",
+          "description": "Create custom geofences around operational areas, customer locations, or restricted zones and receive automatic notifications whenever vehicles enter or leave designated areas.",
+          "features": [
+            {
+              "label": "Custom Geofences",
+              "iconName": "location2"
+            },
+            {
+              "label": "Delivery Time Logs",
+              "iconName": "warning"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Reports & Analytics",
+          "tabIconName": "bar2",
+          "title": "Turn Fleet Data into Better Operational Decisions",
+          "description": "Generate detailed reports on fleet utilization, driver behavior, maintenance, fuel efficiency, and operational performance to continuously improve your business.",
+          "features": [
+            {
+              "label": "Fleet Performance Reports",
+              "iconName": "bar2"
+            },
+            {
+              "label": "Vehicle Utilization",
+              "iconName": "gas_station"
+            },
+            {
+              "label": "Export Reports",
+              "iconName": "download"
+            }
+          ]
+        }
+      ]
+    },
+    "diggit": {
+      "slug": "diggit",
+      "title": "Diggit",
+      "category": "Industry Solutions",
+      "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "Connect mine planning, production, fleet, assets, inventory, and financial operations into one intelligent ERP platform. Designed to help mining companies improve productivity, reduce operational costs, and support sustainable growth.",
+      "overview": "Diggit is a Mining ERP System that helps companies monitor production, logistics, and financial operations from the field to the back office.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Product Development",
+      "timeline": "Ongoing",
+      "challenge": "Mining operations needed better monitoring of stock, logistics, and field vehicle activity across remote sites.",
+      "solution": "Built a mining ERP system covering stock & inventory management, geo-fence alerts, and driver behavior monitoring.",
+      "features": [
+        "Stock & Inventory Management",
+        "Geo-Fence & Alerts",
+        "Driver Behavior Monitoring"
+      ],
+      "technologies": ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      "stats": {
+        "label": "Category",
+        "value": "Industry Solutions"
+      },
+      "subtitle": "Mine Management System",
+      "featuresDetail": [
+        {
+          "tabLabel": "Mine Planning",
+          "tabIconName": "checklist",
+          "title": "Build a Strong Foundation for Every Mining Operation",
+          "description": "Effective planning is the key to maximizing productivity and minimizing operational risks. With a structured planning process, your team can coordinate resources, improve execution, and ensure every operation aligns with business objectives.",
+          "features": [
+            {
+              "label": "Mine Planning",
+              "iconName": "checklist"
+            },
+            {
+              "label": "Production Target Planning",
+              "iconName": "target"
+            },
+            {
+              "label": "Operational Scheduling",
+              "iconName": "calendar"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Production",
+          "tabIconName": "person_engineering",
+          "title": "Increase Productivity with Better Operational Control",
+          "description": "Gain greater visibility into daily operations and make informed decisions based on accurate, real-time information. Improve consistency, reduce delays, and keep production running efficiently.",
+          "features": [
+            {
+              "label": "Tonnage Counter",
+              "iconName": "front_loader"
+            },
+            {
+              "label": "Ore Grade Analytics",
+              "iconName": "person_engineering"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Fleet Management",
+          "tabIconName": "shipping",
+          "title": "Maximize Equipment Performance Across Every Operation",
+          "description": "Keep your operations running smoothly by improving equipment utilization, reducing downtime, and ensuring every asset performs at its full potential throughout its lifecycle.",
+          "features": [
+            {
+              "label": "Equipment Tracking",
+              "iconName": "shipping"
+            },
+            {
+              "label": "Fleet Monitoring",
+              "iconName": "front_loader"
+            },
+            {
+              "label": "Pit & Site",
+              "iconName": "location"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Asset Management",
+          "tabIconName": "warehouse",
+          "title": "Protect Valuable Assets and Extend Their Lifespan",
+          "description": "Maintain complete records for mining assets, equipment history, inspections, and maintenance activities to maximize operational reliability.",
+          "features": [
+            {
+              "label": "Asset Registry",
+              "iconName": "add_notes"
+            },
+            {
+              "label": "Asset Maintenance",
+              "iconName": "log"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Inventory",
+          "tabIconName": "inventory",
+          "title": "Ensure Resources Are Always Available When You Need Them",
+          "description": "Improve operational efficiency by maintaining accurate inventory information and ensuring critical materials are always available to support daily activities.",
+          "features": [
+            {
+              "label": "Explosive Storage Log",
+              "iconName": "package"
+            },
+            {
+              "label": "Fuel Level Sensors",
+              "iconName": "box"
+            },
+            {
+              "label": "Spare Parts Store",
+              "iconName": "tag"
+            },
+            {
+              "label": "Safety Compliance",
+              "iconName": "qr_code"
+            }
+          ]
+        }
+      ]
+    },
+    "sailoo": {
+      "slug": "sailoo",
+      "title": "Sailoo",
+      "category": "Industry Solutions",
+      "image": "https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "A Voyage Management System built to optimize maritime operations, fleet scheduling, and supply chain.",
+      "overview": "Sailoo is a Voyage Management System built to optimize maritime operations, vessel scheduling, and port logistics.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Product Development",
+      "timeline": "Ongoing",
+      "challenge": "Maritime operators needed centralized visibility over voyage orders, vessel propulsion, and port operations.",
+      "solution": "Developed a voyage management system with voyage order management, vessel propulsion monitoring, and port management.",
+      "features": ["Voyage Order Management", "Vessel Propulsion Monitoring", "Port Management"],
+      "technologies": ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      "stats": {
+        "label": "Category",
+        "value": "Industry Solutions"
+      },
+      "subtitle": "Vessel Management System",
+      "featuresDetail": [
+        {
+          "tabLabel": "Voyage Management",
+          "tabIconName": "sailing",
+          "title": "Plan, Execute, and Monitor Every Voyage with Confidence",
+          "description": "Manage voyage schedules, routes, vessel assignments, operational milestones, and voyage status through a centralized platform designed to improve planning accuracy and operational efficiency.",
+          "features": [
+            {
+              "label": "Voyage Planning",
+              "iconName": "map"
+            },
+            {
+              "label": "Route & Schedule",
+              "iconName": "location"
+            },
+            {
+              "label": "Vessel Assignment",
+              "iconName": "boat"
+            },
+            {
+              "label": "Voyage Status Monitoring",
+              "iconName": "error"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Cargo",
+          "tabIconName": "package",
+          "title": "Maintain Complete Visibility Across Every Cargo Movement",
+          "description": "Manage cargo manifests, shipment information, loading activities, and cargo documentation while ensuring accurate records throughout every voyage.",
+          "features": [
+            {
+              "label": "Cargo Manifest",
+              "iconName": "package"
+            },
+            {
+              "label": "Shipment Documentation",
+              "iconName": "assignment2"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Fleet Management",
+          "tabIconName": "sailing",
+          "title": "Keep Every Vessel Organized and Operational",
+          "description": "Maintain complete vessel information, operational history, certifications, and fleet utilization from one centralized management system.",
+          "features": [
+            {
+              "label": "Vessel Database",
+              "iconName": "sailing"
+            },
+            {
+              "label": "Fleet Information",
+              "iconName": "assignment2"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Maintenance",
+          "tabIconName": "log",
+          "title": "Keep Your Fleet Ready for Every Voyage",
+          "description": "Plan preventive maintenance, monitor service schedules, and maintain maintenance records to reduce downtime and improve vessel reliability.",
+          "features": [
+            {
+              "label": "Preventive Maintenance",
+              "iconName": "log"
+            },
+            {
+              "label": "Service Scheduling",
+              "iconName": "calendar"
+            },
+            {
+              "label": "Maintenance Records",
+              "iconName": "receipt_long"
+            }
+          ]
+        },
+        {
+          "tabLabel": "Reports & Analytics",
+          "tabIconName": "bar2",
+          "title": "Turn Voyage Data into Smarter Decisions",
+          "description": "Generate comprehensive reports covering voyage performance, cargo operations, vessel utilization, and maintenance activities to improve operational efficiency.",
+          "features": [
+            {
+              "label": "Voyage Performance Reports",
+              "iconName": "bar2"
+            },
+            {
+              "label": "Fleet Analytics",
+              "iconName": "sailing"
+            },
+            {
+              "label": "Cargo Reports",
+              "iconName": "package"
+            },
+            {
+              "label": "Export Reports",
+              "iconName": "download"
+            }
+          ]
+        }
+      ]
+    },
+    "converra": {
+      "slug": "converra",
+      "title": "Converra",
+      "category": "Smart CMS",
+      "image": "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "A Smart Content Management System built to simplify screen management and content delivery at scale.",
+      "overview": "Converra is a Smart Content Management System (CMS) that enables businesses to distribute, schedule, and monitor content across multiple displays from one centralized platform.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Product Development",
+      "timeline": "Ongoing",
+      "challenge": "Businesses with multiple digital displays needed centralized control over device pairing, content scheduling, and screen health.",
+      "solution": "Developed a smart CMS with device pairing & screen management, screen status monitoring, and content upload tools.",
+      "features": [
+        "Device Pairing & Screen Management",
+        "Screen Status Monitoring",
+        "Content Upload"
+      ],
+      "technologies": ["React", "Electron", "Node.js", "Prisma", "MySQL"],
+      "stats": {
+        "label": "Category",
+        "value": "Smart CMS"
+      },
+      "subtitle": "Fleet Management System"
+    },
+    "stockflow": {
+      "slug": "stockflow",
+      "title": "StockFlow",
+      "category": "Business Operations",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "Optimize the organization, storage, and physical movement of goods within the warehouse safely and efficiently.",
+      "overview": "StockFlow gives warehouse teams better visibility and control over inventory operations, from check-in to stock opname, in one streamlined system.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Product Development",
+      "timeline": "Ongoing",
+      "challenge": "Warehouse operations needed clearer visibility over stock movement and a reliable way to reconcile inventory.",
+      "solution": "Developed a Warehouse Management System covering check-in/check-out flows and stock opname processes to keep inventory data accurate.",
+      "features": ["Warehouse Management", "Check In & Check Out", "Stock Opname"],
+      "technologies": ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      "stats": {
+        "label": "Category",
+        "value": "Business Operations"
+      },
+      "subtitle": "Warehouse Management System"
+    },
+    "registr": {
+      "slug": "registr",
+      "title": "RegistR.",
+      "category": "Event & Registration",
+      "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&h=800&q=80",
+      "desc": "An Event Management System (EMS) that helps organizers manage registrations, ticketing, and attendee experiences.",
+      "overview": "RegistR. is an Event Management System (EMS) that streamlines every touchpoint of an event, from registration to on-site check-in.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Product Development",
+      "timeline": "Ongoing",
+      "challenge": "Event organizers needed a centralized platform to manage ticketing, attendee check-in, and seating from one place.",
+      "solution": "Built an event management system with ticketing, self-service check-in, seat reservation, and ticket customization.",
+      "features": [
+        "Ticketing System",
+        "Self-Service Check-In",
+        "Seat Reservation",
+        "Ticket Customization"
+      ],
+      "technologies": ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      "stats": {
+        "label": "Category",
+        "value": "Event & Registration"
+      },
+      "subtitle": "Event Registration System"
+    },
+    "shio": {
+      "slug": "shio",
+      "title": "Shio",
+      "category": "Play Lab",
+      "image": "/product/apps/shio/shio-mockup.webp",
+      "desc": "Shio is a Chinese zodiac-themed game app that offers brief horoscopes and light-hearted mini-games based on the 12 Chinese zodiac signs.",
+      "overview": "Shio is an interactive gamification experience designed to engage audiences during Chinese New Year activations and brand events.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Product Development",
+      "timeline": "Ongoing",
+      "challenge": "Brand activations needed a festive, interactive game to engage visitors.",
+      "solution": "Built a web-based Shio interactive kiosk game that allows visitors to discover predictions and win prizes.",
+      "features": ["Web-Based Kiosk UI", "Fast Deployment", "Festive CNY Themes"],
+      "technologies": ["React", "Tailwind CSS", "Framer Motion"],
+      "stats": {
+        "label": "Category",
+        "value": "Play Lab"
+      },
+      "subtitle": "Interactive Game"
+    },
+    "pap": {
+      "slug": "pap",
+      "title": "PAP",
+      "category": "Play Lab",
+      "image": "/product/apps/pap/pap-mockup.webp",
+      "desc": "A modern photobooth solution featuring instant photos, customisable frames, creative effects and dynamic backgrounds for a more enjoyable and interactive user experience.",
+      "overview": "PAP (Post a Photo) is an interactive photo-taking event booth game that encourages social media sharing and user engagement.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Product Development",
+      "timeline": "Ongoing",
+      "challenge": "Increasing social media reach organically during live brand activations.",
+      "solution": "Developed a photo-taking kiosk app that formats pictures with custom event borders, ready for instant download.",
+      "features": ["Custom Frame Overlays", "QR Code Download", "Social Media Sharing"],
+      "technologies": ["React", "Tailwind CSS", "Framer Motion"],
+      "stats": {
+        "label": "Category",
+        "value": "Play Lab"
+      },
+      "subtitle": "Interactive Game"
+    },
+    "puzzle": {
+      "slug": "puzzle",
+      "title": "Puzzle",
+      "category": "Play Lab",
+      "image": "/product/apps/puzzle/puzzle-mockup.webp",
+      "desc": "Players must complete the puzzle as quickly as possible to achieve the best time and make it onto the leaderboard.",
+      "overview": "Puzzle is a classic slide/drag puzzle game featuring key brand visuals, challenging visitors to reconstruct the image to win prizes.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Product Development",
+      "timeline": "Ongoing",
+      "challenge": "Keeping visitors engaged longer at the event booth.",
+      "solution": "Developed an interactive picture puzzle game with dragging mechanics and completion timing logs.",
+      "features": ["Picture Uploading Support", "Timer Mechanics", "Interactive Win Effects"],
+      "technologies": ["React", "Tailwind CSS", "Framer Motion"],
+      "stats": {
+        "label": "Category",
+        "value": "Play Lab"
+      },
+      "subtitle": "Interactive Game"
+    },
+    "catch": {
+      "slug": "catch",
+      "title": "Catch",
+      "category": "Play Lab",
+      "image": "/product/apps/catch/catch-mockup.webp",
+      "desc": "Catch is an interactive mini-game based on hand-motion sensors, in which players catch falling objects using a virtual basket.",
+      "overview": "Catch is a fast-paced reaction game where players move a basket left and right to catch falling brand items and avoid obstacles.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Product Development",
+      "timeline": "Ongoing",
+      "challenge": "Reinforcing brand products familiarity in a playful, memorable way.",
+      "solution": "Designed a web-based catch game with falling brand logos and items, customizable speed levels, and score tracking.",
+      "features": ["Brand Assets Customization", "Speed Escalation", "High-Scores Log"],
+      "technologies": ["React", "Tailwind CSS", "Canvas API"],
+      "stats": {
+        "label": "Category",
+        "value": "Play Lab"
+      },
+      "subtitle": "Interactive Game"
+    },
+    "spin-wheel": {
+      "slug": "spin-wheel",
+      "title": "Spinwheel",
+      "category": "Play Lab",
+      "image": "/product/apps/spin-wheel/spin-wheel-mockup.webp",
+      "desc": "An interactive digital spinning wheel app used for entertainment and promotion. Users can spin the wheel via the touchscreen",
+      "overview": "Spinwheel is a classic digital lucky draw game designed to draw crowds and distribute rewards seamlessly at event booths.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Product Development",
+      "timeline": "Ongoing",
+      "challenge": "Events needed a transparent, exciting way to run digital giveaways.",
+      "solution": "Created an customizable interactive digital wheel with admin control for prizes distribution.",
+      "features": [
+        "Prize Probability Controls",
+        "Exciting Sound Effects",
+        "Visitor Data Collection"
+      ],
+      "technologies": ["React", "Tailwind CSS", "Framer Motion"],
+      "stats": {
+        "label": "Category",
+        "value": "Play Lab"
+      },
+      "subtitle": "Interactive Game"
+    },
+    "memory-card": {
+      "slug": "memory-card",
+      "title": "Memory Card",
+      "category": "Play Lab",
+      "image": "/product/apps/memory-card/memory-card-mockup.webp",
+      "desc": "Boost Audience Engagement Through Interactive Experiences that are Fast and Fun.",
+      "overview": "Memory Card is a cognitive match-two card game that features brand assets, helping visitors memorize brand items and win rewards.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Product Development",
+      "timeline": "Ongoing",
+      "challenge": "Fostering visitor engagement and brand recall in a limited time.",
+      "solution": "Created a clean card-flip matching game utilizing brand images with countdown timer mechanics.",
+      "features": ["Card Art Customization", "Timer & Move Counters", "Leaderboard System"],
+      "technologies": ["React", "Tailwind CSS", "Framer Motion"],
+      "stats": {
+        "label": "Category",
+        "value": "Play Lab"
+      },
+      "subtitle": "Interactive Game"
+    },
+    "scream": {
+      "slug": "scream",
+      "title": "Scream",
+      "category": "Play Lab",
+      "image": "/product/apps/scream/scream-mockup.webp",
+      "desc": "The Scream Challenge is a real-time, voice-based minigame in which players must SCREAM as loudly as possible to survive the louder you scream, the better your chances.",
+      "overview": "Scream is a microphone-input sound game where users scream to power an on-screen character, ideal for driving crowd enthusiasm.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Product Development",
+      "timeline": "Ongoing",
+      "challenge": "Booths needed loud, attention-grabbing interactive experiences to draw crowds.",
+      "solution": "Built a decibel-meter based runner game where user sound level determines player speed and score.",
+      "features": [
+        "Decibel Measurement Integration",
+        "Fast-Paced Gameplay",
+        "Live High-Scores Leaderboard"
+      ],
+      "technologies": ["React", "Tailwind CSS", "HTML5 Audio API"],
+      "stats": {
+        "label": "Category",
+        "value": "Play Lab"
+      },
+      "subtitle": "Interactive Game"
+    }
+  }
+}

@@ -48,20 +48,44 @@ export default function EnterprisePage() {
     metrics: Array<{ label: string; value: string }>;
     systemStatus: Array<{ label: string; status: string; icon: string }>;
     capabilities: Array<{ title: string; desc: string; icon: string }>;
+    breadcrumbServices?: string;
+    breadcrumbCurrent?: string;
+    heroLabel?: string;
+    heroTitle?: string;
+    dashboardHeadingPart1?: string;
+    dashboardHeadingPart2?: string;
+    dashboardSubheading?: string;
+    consoleTitle?: string;
+    consoleStatus?: string;
+    capabilitiesHeadingPart1?: string;
+    capabilitiesHeadingPart2?: string;
+    ctaHeadingPart1?: string;
+    ctaHeadingPart2?: string;
+    ctaDesc?: string;
+    ctaBtnText?: string;
+    initialLogs?: string[];
+    simulatedEvents?: string[];
   };
 
-  const [logs, setLogs] = useState<string[]>(initialLogs);
+  const [logs, setLogs] = useState<string[]>([]);
 
   useEffect(() => {
+    if (data.initialLogs) {
+      setLogs(data.initialLogs);
+    }
+  }, [data.initialLogs]);
+
+  useEffect(() => {
+    const events = data.simulatedEvents || simulatedEvents;
     const interval = setInterval(() => {
       const time = new Date().toTimeString().split(' ')[0];
-      const randomEvent = simulatedEvents[Math.floor(Math.random() * simulatedEvents.length)];
+      const randomEvent = events[Math.floor(Math.random() * events.length)];
       const newLog = `${time} ${randomEvent}`;
       setLogs((prev) => [...prev.slice(1), newLog]);
     }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [data.simulatedEvents]);
 
   const getIcon = (iconName: string, className: string = 'w-6 h-6') => {
     switch (iconName) {
@@ -87,13 +111,13 @@ export default function EnterprisePage() {
   };
 
   const breadcrumbItems = [
-    { name: 'Services', path: '/our-services' },
-    { name: 'Enterprise & B2G Solutions' },
+    { name: data.breadcrumbServices || 'Services', path: '/our-services' },
+    { name: data.breadcrumbCurrent || 'Enterprise & B2G Solutions' },
   ];
 
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: 'Services', item: '/our-services' },
-    { name: 'Enterprise & B2G Solutions', item: '/our-services/enterprise-b2g-solutions' },
+    { name: data.breadcrumbServices || 'Services', item: '/our-services' },
+    { name: data.breadcrumbCurrent || 'Enterprise & B2G Solutions', item: '/our-services/enterprise-b2g-solutions' },
   ]);
 
   const serviceSchema = getServiceSchema(
@@ -109,11 +133,11 @@ export default function EnterprisePage() {
 
       <PageHero
         breadcrumbs={breadcrumbItems}
-        label="Enterprise & B2G"
-        title="Enterprise & B2G Solutions"
-        gradientWord="B2G Solutions"
+        label={data.heroLabel || 'Enterprise & B2G'}
+        title={data.heroTitle || 'Enterprise & B2G Solutions'}
         description={data.hero.desc}
         accentColor="#3b82f6"
+        imageFolder="service"
       />
 
       <section className="pb-16 bg-background relative overflow-hidden">
@@ -122,10 +146,10 @@ export default function EnterprisePage() {
           <div className="my-16 sm:my-24">
             <div className="flex flex-col gap-3 max-w-3xl mb-8 sm:mb-12">
               <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mt-1">
-                Live <span className="text-[#3b82f6]">Dashboard</span>
+                {data.dashboardHeadingPart1 || 'Live'} <span className="text-[#3b82f6]">{data.dashboardHeadingPart2 || 'Dashboard'}</span>
               </h2>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Watch our simulated enterprise monitoring system in action.
+              <p className="text-sm sm:text-base text-tertiary leading-relaxed">
+                {data.dashboardSubheading || 'Watch our simulated enterprise monitoring system in action.'}
               </p>
             </div>
 
@@ -139,7 +163,7 @@ export default function EnterprisePage() {
                   <span className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-[#3b82f6]">
                     {metric.value}
                   </span>
-                  <span className="block text-xs font-medium uppercase tracking-wider text-muted-foreground mt-2">
+                  <span className="block text-xs font-medium uppercase tracking-wider text-tertiary mt-2">
                     {metric.label}
                   </span>
                 </Card>
@@ -152,15 +176,15 @@ export default function EnterprisePage() {
               <div className="lg:col-span-2 rounded-2xl border border-border bg-card overflow-hidden flex flex-col h-[320px]">
                 <div className="px-4 py-3 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <Terminal className="w-4 h-4 text-muted-foreground" />
-                    <span className="text-xs font-medium text-muted-foreground tracking-wider uppercase">
-                      MJS Command Center — Live Feed
+                    <Terminal className="w-4 h-4 text-tertiary" />
+                    <span className="text-xs font-medium text-tertiary tracking-wider uppercase">
+                      {data.consoleTitle || 'MJS Command Center — Live Feed'}
                     </span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                     <span className="text-[10px] font-medium text-emerald-500 uppercase tracking-widest">
-                      ONLINE
+                      {data.consoleStatus || 'ONLINE'}
                     </span>
                   </div>
                 </div>
@@ -175,7 +199,7 @@ export default function EnterprisePage() {
                         : 'text-amber-600 dark:text-amber-400';
                     return (
                       <div key={index} className="flex gap-2 leading-relaxed">
-                        <span className="text-muted-foreground select-none shrink-0">&gt;</span>
+                        <span className="text-tertiary select-none shrink-0">&gt;</span>
                         <span className={colorClass}>{log}</span>
                       </div>
                     );
@@ -208,7 +232,7 @@ export default function EnterprisePage() {
           {/* Core Capabilities */}
           <div className="my-16 sm:my-24">
             <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mb-10 sm:mb-14">
-              Core <span className="text-[#3b82f6]">Capabilities</span>
+              {data.capabilitiesHeadingPart1 || 'Core'} <span className="text-[#3b82f6]">{data.capabilitiesHeadingPart2 || 'Capabilities'}</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -223,7 +247,7 @@ export default function EnterprisePage() {
                   <h3 className="text-lg sm:text-xl font-medium text-foreground tracking-tight">
                     {cap.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  <p className="text-sm sm:text-base text-tertiary leading-relaxed">
                     {cap.desc}
                   </p>
                 </Card>
@@ -235,13 +259,13 @@ export default function EnterprisePage() {
           <AnimateOnScroll variant="scale" className="my-16 sm:my-24  mx-auto">
             <Card className="p-8 sm:p-12 text-center relative overflow-hidden flex flex-col items-center gap-5 sm:gap-6">
               <h3 className="text-xl sm:text-2xl md:text-4xl font-medium text-foreground tracking-tight">
-                Ready to{' '}
+                {data.ctaHeadingPart1 || 'Ready to'}{' '}
                 <span className="text-[#3b82f6] drop-shadow-[0_2px_10px_rgba(59,130,246,0.2)]">
-                  Transform?
+                  {data.ctaHeadingPart2 || 'Transform?'}
                 </span>
               </h3>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-lg leading-relaxed">
-                Let us build a secure, scalable platform that powers your operations.
+              <p className="text-sm sm:text-base text-tertiary max-w-lg leading-relaxed">
+                {data.ctaDesc || 'Let us build a secure, scalable platform that powers your operations.'}
               </p>
               <Button
                 href="/#contact"
@@ -249,7 +273,7 @@ export default function EnterprisePage() {
                 size="lg"
                 className="bg-[#3b82f6] shadow-[#3b82f6]/20 hover:bg-[#3b82f6]/95 group mt-2"
               >
-                Start a Project
+                {data.ctaBtnText || 'Start a Project'}
               </Button>
             </Card>
           </AnimateOnScroll>

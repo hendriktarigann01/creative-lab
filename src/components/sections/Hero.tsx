@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Container } from '@/components/ui/Container';
-import { Button } from '@/components/ui/Button';
+
 import { useTranslations } from 'next-intl';
 import { ChevronsDown } from 'lucide-react';
 
@@ -97,8 +97,6 @@ export function Hero() {
   const slide3 = getSlideState(p, 3);
 
   const title = tHero('title');
-  const grad = tHero('gradientWord');
-  const parts = title.split(grad);
 
   return (
     <section id="hero-track" className="relative h-[500vh] w-full bg-transparent">
@@ -124,15 +122,11 @@ export function Hero() {
           className="absolute inset-0 flex items-center justify-center pointer-events-auto"
         >
           <Container className="flex flex-col items-center gap-6 sm:gap-8 text-center mt-16">
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.1] select-none uppercase drop-shadow-lg">
-              {parts[0]}
-              <span className="bg-linear-to-r from-[#AB7FEB] to-[#540EE1] bg-clip-text text-transparent">
-                {grad}
-              </span>
-              {parts[1]}
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-[1.1] select-none uppercase drop-shadow-lg">
+              {title}
             </h1>
 
-            <p className="text-lg sm:text-xl text-muted-foreground font-light leading-relaxed max-w-2xl">
+            <p className="text-lg sm:text-xl text-white/60 font-light leading-relaxed max-w-2xl">
               {tHero('description')}
             </p>
 

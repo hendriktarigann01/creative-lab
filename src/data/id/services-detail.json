@@ -1,9 +1,4 @@
 {
-  "servicesOverviewHeader": {
-    "heading": "Layanan Kami",
-    "gradientWord": "Layanan",
-    "subheading": "Dari platform tingkat perusahaan hingga gamifikasi imersif—kami menghadirkan spektrum penuh inovasi digital."
-  },
   "servicesOverviewAccordion": [
     {
       "title": "Enterprise & B2G Solutions",
@@ -73,16 +68,44 @@
       "desc": "Kami membangun ekosistem perangkat lunak yang tangguh, aman, dan skalabel untuk perusahaan dan lembaga pemerintah. Solusi kami menangani operasi misi kritis tanpa kompromi."
     },
     "metrics": [
-      { "label": "Uptime SLA", "value": "99.9%" },
-      { "label": "Perangkat Dikelola", "value": "12000+" },
-      { "label": "Data Points/Detik", "value": "50000" },
-      { "label": "Klien Dilayani", "value": "85+" }
+      {
+        "label": "Uptime SLA",
+        "value": "99.9%"
+      },
+      {
+        "label": "Perangkat Dikelola",
+        "value": "12000+"
+      },
+      {
+        "label": "Data Points/Detik",
+        "value": "50000"
+      },
+      {
+        "label": "Klien Dilayani",
+        "value": "85+"
+      }
     ],
     "systemStatus": [
-      { "label": "API Gateway", "status": "Normal", "icon": "Server" },
-      { "label": "Firewall", "status": "Aktif", "icon": "Shield" },
-      { "label": "CDN Edge", "status": "14 Node", "icon": "Wifi" },
-      { "label": "Beban CPU", "status": "23%", "icon": "Activity" }
+      {
+        "label": "API Gateway",
+        "status": "Normal",
+        "icon": "Server"
+      },
+      {
+        "label": "Firewall",
+        "status": "Aktif",
+        "icon": "Shield"
+      },
+      {
+        "label": "CDN Edge",
+        "status": "14 Node",
+        "icon": "Wifi"
+      },
+      {
+        "label": "Beban CPU",
+        "status": "23%",
+        "icon": "Activity"
+      }
     ],
     "capabilities": [
       {
@@ -105,6 +128,39 @@
         "desc": "Solusi pelacakan digital menggunakan integrasi QR/RFID untuk mengamankan dan memantau aset perusahaan yang bernilai tinggi secara real time.",
         "icon": "QrCode"
       }
+    ],
+    "breadcrumbServices": "Layanan",
+    "breadcrumbCurrent": "Solusi Enterprise & B2G",
+    "heroLabel": "Enterprise & B2G",
+    "heroTitle": "Solusi Enterprise & B2G",
+    "dashboardHeadingPart1": "Dasbor",
+    "dashboardHeadingPart2": "Langsung",
+    "dashboardSubheading": "Lihat sistem pemantauan simulasi enterprise kami yang sedang berjalan.",
+    "consoleTitle": "Pusat Komando MJS — Feed Langsung",
+    "consoleStatus": "AKTIF",
+    "capabilitiesHeadingPart1": "Kemampuan",
+    "capabilitiesHeadingPart2": "Utama",
+    "ctaHeadingPart1": "Siap untuk",
+    "ctaHeadingPart2": "Transformasi?",
+    "ctaDesc": "Mari kita bangun platform yang aman dan terukur untuk mendukung operasional Anda.",
+    "ctaBtnText": "Mulai Proyek",
+    "initialLogs": [
+      "14:32:01 [INFO] Sinkronisasi dasbor selesai — 847 perangkat aktif",
+      "14:32:03 [OK] Pemindaian keamanan berhasil — nol ancaman terdeteksi",
+      "14:32:05 [DATA] Memproses 12.847 titik data dari Sensor Array B",
+      "14:32:08 [INFO] Pencadangan otomatis dimulai — 2.4TB diarsipkan",
+      "14:32:10 [OK] Cache CDN diperbarui di 14 node edge",
+      "14:32:12 [DATA] Analitik real-time: 2.341 sesi aktif",
+      "14:32:15 [INFO] Penyeimbang beban: lalu lintas didistribusikan ke 8 instans",
+      "14:32:18 [OK] Sertifikat SSL diverifikasi — semua titik akhir aman"
+    ],
+    "simulatedEvents": [
+      "[DATA] Sensor Array C diperbarui: suhu stabil di 21.4°C",
+      "[OK] Sinkronisasi selesai: Feed Pusat Komando aktif",
+      "[INFO] Audit SSL otomatis selesai: 0 kerentanan ditemukan",
+      "[DATA] Gateway API memproses 5.142 permintaan/detik",
+      "[OK] Replikasi database: disinkronkan ke wilayah replika AP-Southeast-1",
+      "[INFO] Pembersihan memori selesai: GC membebaskan 412MB"
     ]
   },
   "gamificationPageData": {
@@ -134,7 +190,26 @@
         "desc": "Pusat permainan kompetitif yang menyinkronkan smartphone pengunjung dengan tampilan skala besar untuk hadiah instan dan pengumpulan data.",
         "icon": "Trophy"
       }
-    ]
+    ],
+    "breadcrumbServices": "Layanan",
+    "breadcrumbCurrent": "Gamifikasi & Game",
+    "heroLabel": "Gamifikasi & Game",
+    "heroTitle": "Gamifikasi & Game",
+    "gameHeadingPart1": "Cobalah",
+    "gameHeadingPart2": "Sendiri",
+    "gameSubheading": "Klik target secepat mungkin! Ini adalah contoh kemampuan interaktif kami.",
+    "hudScore": "Skor:",
+    "hudTime": "Sisa Waktu:",
+    "gameReady": "Siap menguji refleks Anda?",
+    "btnStart": "Mulai Permainan",
+    "gameOver": "Permainan Selesai! Skor:",
+    "btnPlayAgain": "Main Lagi",
+    "capabilitiesHeadingPart1": "Kemampuan",
+    "capabilitiesHeadingPart2": "Utama",
+    "ctaHeadingPart1": "Siap untuk",
+    "ctaHeadingPart2": "Bermain?",
+    "ctaDesc": "Biarkan kami menggamifikasi pengalaman pelanggan Anda dan mendorong keterlibatan nyata.",
+    "ctaBtnText": "Mulai Proyek"
   },
   "interactivePageData": {
     "hero": {
@@ -200,7 +275,24 @@
         "desc": "Middleware khusus yang menghubungkan perangkat lunak Anda ke sensor fisik, pencahayaan, atau elemen mekanis.",
         "icon": "Cpu"
       }
-    ]
+    ],
+    "breadcrumbServices": "Layanan",
+    "breadcrumbCurrent": "Pengalaman Interaktif",
+    "heroLabel": "Pengalaman Interaktif",
+    "heroTitle": "Pengalaman Interaktif",
+    "panoramaHeadingPart1": "Rasakan",
+    "panoramaHeadingPart2": "Ruang 360° Nyata",
+    "panoramaSubheading": "Klik dan seret ke segala arah (atas, bawah, kiri, kanan) untuk melihat sekeliling. Ketuk hotspot untuk menjelajahi fitur interaktif.",
+    "panoramaDragHint": "Seret untuk Melihat Sekeliling",
+    "panoramaLoading": "Memuat Lingkungan 360...",
+    "applicationsHeadingPart1": "Aplikasi",
+    "applicationsHeadingPart2": "Dunia Nyata",
+    "capabilitiesHeadingPart1": "Kemampuan",
+    "capabilitiesHeadingPart2": "Utama",
+    "ctaHeadingPart1": "Siap untuk",
+    "ctaHeadingPart2": "Merasakan?",
+    "ctaDesc": "Mari bangun pengalaman interaktif yang mengubah ruang Anda.",
+    "ctaBtnText": "Mulai Proyek"
   },
   "digitalStrategyPageData": {
     "hero": {
@@ -257,6 +349,42 @@
         "desc": "Merancang antarmuka yang berpusat pada pengguna yang tidak hanya indah tetapi juga intuitif untuk berbagai demografi—dari Gen Z hingga pejabat Pemerintah.",
         "icon": "Palette"
       }
-    ]
+    ],
+    "breadcrumbServices": "Layanan",
+    "breadcrumbCurrent": "Strategi Digital",
+    "heroLabel": "Strategi Digital",
+    "roadmapHeadingPart1": "Peta Jalan",
+    "roadmapHeadingPart2": "Transformasi",
+    "roadmapSubheading": "Telusuri metodologi 6-fase kami yang terbukti.",
+    "capabilitiesHeadingPart1": "Kemampuan",
+    "capabilitiesHeadingPart2": "Utama",
+    "ctaHeadingPart1": "Siap untuk",
+    "ctaHeadingPart2": "Transformasi?",
+    "ctaDesc": "Biarkan kami memandu organisasi Anda melalui transformasi digital yang lancar.",
+    "ctaBtnText": "Mulai Proyek"
+  },
+  "servicesOverview": {
+    "breadcrumb": "Layanan",
+    "workflow": {
+      "headingPart1": "Alur",
+      "headingPart2": "Kerja",
+      "headingPart3": "Kami",
+      "stepPrefix": "Langkah"
+    },
+    "exploreDetails": {
+      "label": "Jelajahi Detail",
+      "title": "Jelajahi Lebih Detail",
+      "desc": "Tinjau sorotan kemampuan teknologi spesifik dan statistik kami di setiap area khusus."
+    },
+    "capabilities": {
+      "heading": "Sorotan Kemampuan",
+      "exploreLink": "Jelajahi Halaman Penuh"
+    },
+    "cta": {
+      "titlePart1": "Belum yakin layanan apa yang",
+      "titlePart2": "sesuai?",
+      "desc": "Diskusikan dengan tim kami dan kami akan memetakan solusi terbaik untuk kebutuhan Anda.",
+      "btnText": "Dapatkan Konsultasi Gratis"
+    }
   }
 }

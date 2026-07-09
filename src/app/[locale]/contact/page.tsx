@@ -20,11 +20,10 @@ export default function ContactPage() {
   return (
     <div className="bg-background min-h-dvh pb-16 relative overflow-hidden flex flex-col items-center">
       <div className="w-full relative z-10">
-        <PageHero
+        <PageHero 
           breadcrumbs={[{ name: tNav('contact') }]}
           label={tNav('contact')}
           title={t('heading')}
-          gradientWord={t('gradientWord')}
           description={t('subheading')}
           accentColor="#540ee1"
         />
@@ -36,9 +35,8 @@ export default function ContactPage() {
 
       <Container className="relative z-10 mb-20 sm:mb-28 ">
         <SectionHeader
-          label="FAQ"
+          label={t('faqLabel')}
           title={t('faqTitle')}
-          gradientWord={locale === 'id' ? 'Pertanyaan' : 'Questions'}
           description={t('faqSub')}
           align="center"
         />
@@ -58,7 +56,7 @@ export default function ContactPage() {
                   >
                     <span className="text-base sm:text-lg">{faq.q}</span>
                     <ChevronDown
-                      className={`w-5 h-5 text-muted-foreground transition-transform duration-300 ${
+                      className={`w-5 h-5 text-tertiary transition-transform duration-300 ${
                         isOpen ? 'rotate-180 text-primary' : ''
                       }`}
                     />
@@ -68,7 +66,7 @@ export default function ContactPage() {
                       isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <p className="p-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    <p className="p-4 text-sm sm:text-base text-tertiary leading-relaxed">
                       {faq.a}
                     </p>
                   </div>

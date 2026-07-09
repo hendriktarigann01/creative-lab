@@ -12,24 +12,16 @@ export default getRequestConfig(async ({ requestLocale }) => {
   }
 
   const common = (await import(`@/data/${locale}/common.json`)).default;
-  const about = (await import(`@/data/${locale}/about.json`)).default;
-  const services = (await import(`@/data/${locale}/services.json`)).default;
   const servicesDetail = (await import(`@/data/${locale}/services-detail.json`)).default;
   const portfolioDetail = (await import(`@/data/${locale}/portfolio-detail.json`)).default;
+  const productDetail = (await import(`@/data/${locale}/product-detail.json`)).default;
   const metadata = (await import(`@/data/${locale}/metadata.json`)).default;
 
   const messages = {
     ...common,
-    about: {
-      ...common.about,
-      ...about,
-    },
-    services: {
-      ...common.services,
-      ...services,
-    },
     'services-detail': servicesDetail,
     'portfolio-detail': portfolioDetail,
+    'product-detail': productDetail,
     metadata,
   };
 

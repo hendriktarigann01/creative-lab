@@ -1,9 +1,4 @@
 {
-  "servicesOverviewHeader": {
-    "heading": "Our Services",
-    "gradientWord": "Services",
-    "subheading": "From enterprise-grade platforms to immersive gamification—we deliver the full spectrum of digital innovation."
-  },
   "servicesOverviewAccordion": [
     {
       "title": "Enterprise & B2G Solutions",
@@ -73,16 +68,44 @@
       "desc": "We architect robust, secure, and scalable software ecosystems for enterprises and government institutions. Our solutions handle mission-critical operations with zero compromise."
     },
     "metrics": [
-      { "label": "Uptime SLA", "value": "99.9%" },
-      { "label": "Devices Managed", "value": "12000+" },
-      { "label": "Data Points/Sec", "value": "50000" },
-      { "label": "Clients Served", "value": "85+" }
+      {
+        "label": "Uptime SLA",
+        "value": "99.9%"
+      },
+      {
+        "label": "Devices Managed",
+        "value": "12000+"
+      },
+      {
+        "label": "Data Points/Sec",
+        "value": "50000"
+      },
+      {
+        "label": "Clients Served",
+        "value": "85+"
+      }
     ],
     "systemStatus": [
-      { "label": "API Gateway", "status": "Healthy", "icon": "Server" },
-      { "label": "Firewall", "status": "Active", "icon": "Shield" },
-      { "label": "CDN Edge", "status": "14 Nodes", "icon": "Wifi" },
-      { "label": "CPU Load", "status": "23%", "icon": "Activity" }
+      {
+        "label": "API Gateway",
+        "status": "Healthy",
+        "icon": "Server"
+      },
+      {
+        "label": "Firewall",
+        "status": "Active",
+        "icon": "Shield"
+      },
+      {
+        "label": "CDN Edge",
+        "status": "14 Nodes",
+        "icon": "Wifi"
+      },
+      {
+        "label": "CPU Load",
+        "status": "23%",
+        "icon": "Activity"
+      }
     ],
     "capabilities": [
       {
@@ -105,6 +128,39 @@
         "desc": "Digital tracking solutions using QR/RFID integration to secure and monitor high-value corporate assets in real time.",
         "icon": "QrCode"
       }
+    ],
+    "breadcrumbServices": "Services",
+    "breadcrumbCurrent": "Enterprise & B2G Solutions",
+    "heroLabel": "Enterprise & B2G",
+    "heroTitle": "Enterprise & B2G Solutions",
+    "dashboardHeadingPart1": "Live",
+    "dashboardHeadingPart2": "Dashboard",
+    "dashboardSubheading": "Watch our simulated enterprise monitoring system in action.",
+    "consoleTitle": "MJS Command Center — Live Feed",
+    "consoleStatus": "ONLINE",
+    "capabilitiesHeadingPart1": "Core",
+    "capabilitiesHeadingPart2": "Capabilities",
+    "ctaHeadingPart1": "Ready to",
+    "ctaHeadingPart2": "Transform?",
+    "ctaDesc": "Let us build a secure, scalable platform that powers your operations.",
+    "ctaBtnText": "Start a Project",
+    "initialLogs": [
+      "14:32:01 [INFO] Dashboard sync completed — 847 devices online",
+      "14:32:03 [OK] Security scan passed — zero threats detected",
+      "14:32:05 [DATA] Processing 12,847 data points from Sensor Array B",
+      "14:32:08 [INFO] Auto-backup initiated — 2.4TB archived",
+      "14:32:10 [OK] CDN cache refreshed across 14 edge nodes",
+      "14:32:12 [DATA] Real-time analytics: 2,341 active sessions",
+      "14:32:15 [INFO] Load balancer: traffic distributed across 8 instances",
+      "14:32:18 [OK] SSL certificates verified — all endpoints secure"
+    ],
+    "simulatedEvents": [
+      "[DATA] Sensor Array C updated: temperature stable at 21.4°C",
+      "[OK] Sync complete: Command Center feed active",
+      "[INFO] Automated SSL audit complete: 0 vulnerabilities found",
+      "[DATA] API Gateway processed 5,142 requests/sec",
+      "[OK] Database replication: synced to replica region AP-Southeast-1",
+      "[INFO] Memory clean completed: GC freed 412MB"
     ]
   },
   "gamificationPageData": {
@@ -134,7 +190,26 @@
         "desc": "Competitive gaming hubs that sync visitors' smartphones with large-scale displays for instant rewards and data collection.",
         "icon": "Trophy"
       }
-    ]
+    ],
+    "breadcrumbServices": "Services",
+    "breadcrumbCurrent": "Gamification & Games",
+    "heroLabel": "Gamification & Games",
+    "heroTitle": "Gamification & Games",
+    "gameHeadingPart1": "Try It",
+    "gameHeadingPart2": "Yourself",
+    "gameSubheading": "Click the targets as fast as you can! This is a taste of our interactive capabilities.",
+    "hudScore": "Score:",
+    "hudTime": "Time Left:",
+    "gameReady": "Ready to test your reflexes?",
+    "btnStart": "Start Game",
+    "gameOver": "Game Over! Score:",
+    "btnPlayAgain": "Play Again",
+    "capabilitiesHeadingPart1": "Core",
+    "capabilitiesHeadingPart2": "Capabilities",
+    "ctaHeadingPart1": "Ready to",
+    "ctaHeadingPart2": "Play?",
+    "ctaDesc": "Let us gamify your customer experience and drive real engagement.",
+    "ctaBtnText": "Start a Project"
   },
   "interactivePageData": {
     "hero": {
@@ -200,7 +275,24 @@
         "desc": "Custom middleware that connects your software to physical sensors, lighting, or mechanical elements.",
         "icon": "Cpu"
       }
-    ]
+    ],
+    "breadcrumbServices": "Services",
+    "breadcrumbCurrent": "Interactive Experiences",
+    "heroLabel": "Interactive Experiences",
+    "heroTitle": "Interactive Experiences",
+    "panoramaHeadingPart1": "Experience a",
+    "panoramaHeadingPart2": "True 360° Space",
+    "panoramaSubheading": "Click and drag in any direction (up, down, left, right) to look around. Tap the hotspots to explore interactive features.",
+    "panoramaDragHint": "Drag to Look Around",
+    "panoramaLoading": "Loading 360 Environment...",
+    "applicationsHeadingPart1": "Real-World",
+    "applicationsHeadingPart2": "Applications",
+    "capabilitiesHeadingPart1": "Core",
+    "capabilitiesHeadingPart2": "Capabilities",
+    "ctaHeadingPart1": "Ready to",
+    "ctaHeadingPart2": "Immerse?",
+    "ctaDesc": "Let us build an interactive experience that transforms your space.",
+    "ctaBtnText": "Start a Project"
   },
   "digitalStrategyPageData": {
     "hero": {
@@ -257,6 +349,42 @@
         "desc": "Crafting user-centric interfaces that are not only beautiful but also intuitive for various demographics—from Gen Z to Government officials.",
         "icon": "Palette"
       }
-    ]
+    ],
+    "breadcrumbServices": "Services",
+    "breadcrumbCurrent": "Digital Strategy",
+    "heroLabel": "Digital Strategy",
+    "roadmapHeadingPart1": "Transformation",
+    "roadmapHeadingPart2": "Roadmap",
+    "roadmapSubheading": "Scroll through our proven 6-phase methodology.",
+    "capabilitiesHeadingPart1": "Core",
+    "capabilitiesHeadingPart2": "Capabilities",
+    "ctaHeadingPart1": "Ready to",
+    "ctaHeadingPart2": "Transform?",
+    "ctaDesc": "Let us guide your organization through a seamless digital transformation.",
+    "ctaBtnText": "Start a Project"
+  },
+  "servicesOverview": {
+    "breadcrumb": "Services",
+    "workflow": {
+      "headingPart1": "Our",
+      "headingPart2": "Workflow",
+      "headingPart3": "Roadmap",
+      "stepPrefix": "Step"
+    },
+    "exploreDetails": {
+      "label": "Explore Details",
+      "title": "Explore In Detail",
+      "desc": "Review our specific technology capability highlights and stats across each specialized area."
+    },
+    "capabilities": {
+      "heading": "Capabilities Highlights",
+      "exploreLink": "Explore Full Page"
+    },
+    "cta": {
+      "titlePart1": "Not sure which service",
+      "titlePart2": "fits?",
+      "desc": "Talk to our team and we'll map the perfect solution for your needs.",
+      "btnText": "Get a Free Consultation"
+    }
   }
 }
