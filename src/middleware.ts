@@ -5,5 +5,5 @@ export default createMiddleware(routing);
 
 export const config = {
   // Exclude only template slugs from middleware, so /portfolio itself is localized
-  matcher: ["/((?!api|_next|_vercel|portfolio/(?:in-lite|bsp|leko|metland|tanta)|.*\\..*).*)"],
+  matcher: ["/((?!api|_next|_vercel|portfolio/(?:in-lite|bsp|leko|metland|tanta|karindo|yw)|.*\\..*).*)"],
 };

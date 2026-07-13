@@ -28,8 +28,6 @@
   },
   "advantages": {
     "heading": "Mengapa memilih kami?",
-    "headingPlain": "Mengapa memilih ",
-    "headingColored": "kami?",
     "subheading": "Bekerja samalah dengan para ahli yang membangun tanpa batas.",
     "integrated": {
       "title": "Integrasi Hardware & Software",
@@ -49,8 +47,7 @@
     }
   },
   "services": {
-    "label": "Showcase Keahlian",
-    "heading": "Layanan Kami",
+    "heading": "Kami menghadirkan inovasi digital, mulai dari solusi perusahaan hingga gamifikasi.",
     "gradientWord": "Layanan",
     "subheading": "Dari platform kelas perusahaan hingga gamifikasi imersif—kami menghadirkan spektrum penuh inovasi digital.",
     "enterprise": {
@@ -212,6 +209,22 @@
         "description": "Restoran kelas atas perpaduan masakan Indonesia & Barat yang terletak di Plaza Senayan.",
         "image": "/portfolio/tanta/tanta.png",
         "category": "Makanan & Minuman"
+      },
+      {
+        "slug": "karindo",
+        "name": "Karindo LED",
+        "tagline": "All In One Rental Solution",
+        "description": "Solusi penjualan dan penyewaan tampilan LED dan prosesor video berstandar dunia.",
+        "image": "/portfolio/karindo/karindo.png",
+        "category": "Ritel & Elektronik"
+      },
+      {
+        "slug": "yw",
+        "name": "YW Production",
+        "tagline": "Partner Penyedia Perlengkapan Produksi Event",
+        "description": "Penyedia perlengkapan produksi event berkualitas seperti rigging, panggung, tata suara, tata cahaya, dan tampilan LED.",
+        "image": "/portfolio/yw/yw.png",
+        "category": "Jasa & Acara"
       }
     ]
   },

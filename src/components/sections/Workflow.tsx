@@ -4,7 +4,6 @@ import { Search, Map, Code, TestTube, Rocket, HeartHandshake } from 'lucide-reac
 import { Container } from '@/components/ui/Container';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
-// import { RandomPattern } from '@/components/ui/RandomPattern';
 import { useTranslations } from 'next-intl';
 
 export function Workflow() {

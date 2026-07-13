@@ -65,8 +65,6 @@ export function Advantage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
 
-  const headingPlain = t('headingPlain');
-  const headingColored = t('headingColored');
 
   const advantagesItems = [
     { title: t('integrated.title'), desc: t('integrated.desc'), icon: 'Wrench' },
@@ -113,9 +111,8 @@ export function Advantage() {
         <Container className="flex flex-col gap-4 lg:gap-8 max-h-[95vh] justify-center">
           {/* Title Block */}
           <div className="flex flex-col gap-1 sm:gap-2 text-center max-w-3xl mx-auto shrink-0">
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-medium tracking-tight leading-[1.1] text-foreground">
-              {headingPlain}
-              <span className="text-accent">{headingColored}</span>
+            <h2 className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent text-2xl sm:text-4xl lg:text-5xl font-medium tracking-tight leading-[1.1]">
+              {t('heading')}
             </h2>
             <p className="text-tertiary text-xs sm:text-sm max-w-xl mx-auto leading-relaxed mt-1 hidden sm:block">
               {t('subheading')}

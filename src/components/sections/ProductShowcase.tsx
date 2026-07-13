@@ -31,12 +31,10 @@ export function ProductShowcase({ products }: ProductShowcaseProps) {
   const t = useTranslations('product');
   const tCat = useTranslations('categories');
 
-  // Filter available categories based on existing products
   const categories = CATEGORIES_ORDER.filter(
     (cat) => cat === 'All' || products.some((p) => p.category === cat || p.category === tCat(cat))
   );
 
-  // Filter products by active category selection
   const filteredProjects = products.filter((project) => {
     if (activeFilter === 'All') return true;
     return project.category === activeFilter || project.category === tCat(activeFilter);
@@ -145,15 +143,15 @@ export function ProductShowcase({ products }: ProductShowcaseProps) {
         />
       )}
 
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+      <div className="fixed bottom-5 right-8 z-50 flex items-end gap-4">
         <AnimatePresence>
           {isFilterOpen && (
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 15 }}
+              initial={{ opacity: 0, scale: 0.9, x: 15 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              exit={{ opacity: 0, scale: 0.9, x: 15 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="mb-4 mr-0 w-[280px] bg-card/95 backdrop-blur-md border border-border p-6 flex flex-col gap-1.5 rounded-tr-[50px] rounded-bl-[50px] rounded-tl-lg rounded-br-lg"
+              className="w-[280px] bg-card/95 backdrop-blur-md border border-border p-6 flex flex-col gap-1.5 rounded-tr-[50px] rounded-bl-[50px] rounded-tl-lg rounded-br-lg"
             >
               {categories.map((category) => {
                 const displayCatName = tCat(category);
@@ -183,10 +181,16 @@ export function ProductShowcase({ products }: ProductShowcaseProps) {
 
         <button
           onClick={() => setIsFilterOpen(!isFilterOpen)}
-          className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white hover:scale-105 active:scale-95 transition-all cursor-pointer"
+          className="w-13 h-13 rounded-full bg-primary flex items-center justify-center text-white hover:scale-105 active:scale-95 transition-all cursor-pointer shrink-0"
           aria-label="Filter products"
         >
-          {isFilterOpen ? <X className="w-6 h-6" /> : <SlidersHorizontal className="w-6 h-6" />}
+          {!isFilterOpen && (
+            <div className="absolute inset-0 rounded-full border-2 border-primary animate-ping z-0 pointer-events-none" />
+          )}
+
+          <span className="relative z-10">
+            {isFilterOpen ? <X className="w-6 h-6" /> : <SlidersHorizontal className="w-6 h-6" />}
+          </span>
         </button>
       </div>
     </>

@@ -9,7 +9,7 @@ export default function TemplateSlugPage() {
   const params = useParams();
   const slug = params.slug as string;
 
-  const validSlugs = ['bsp', 'in-lite', 'leko', 'metland', 'tanta'];
+  const validSlugs = ['bsp', 'in-lite', 'leko', 'metland', 'tanta', 'karindo', 'yw'];
 
   if (!validSlugs.includes(slug)) {
     notFound();

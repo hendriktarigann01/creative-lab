@@ -10,6 +10,7 @@ import { Hero } from '@/components/sections/Hero';
 import { HeroFrameBackground } from '@/components/sections/HeroFrameBackground';
 import { Advantage } from '@/components/sections/Advantage';
 import { Services } from '@/components/sections/Services';
+import Discovery from '@/components/sections/Discovery';
 import { Workflow } from '@/components/sections/Workflow';
 // import { Portfolio } from '@/components/sections/Portfolio';
 import { Contact } from '@/components/sections/Contact';
@@ -86,6 +87,7 @@ export default function Home() {
         <Hero />
         <Advantage />
         <Services />
+        {/* <Discovery /> */}
         <Workflow />
         {/* <Portfolio /> */}
         <CTA />

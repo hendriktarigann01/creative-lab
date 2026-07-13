@@ -19,17 +19,17 @@ export function SectionHeader({
   return (
     <div
       className={cn(
-        'flex flex-col gap-3 max-w-3xl mb-10 sm:mb-16',
+        'flex flex-col gap-3 max-w-3xl mb-10 sm:mb-16 space-y-3',
         align === 'center' ? 'mx-auto text-center items-center' : 'text-left items-start',
         className
       )}
       {...props}
     >
-      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mt-1">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
         {title}
       </h2>
       {description && (
-        <p className="text-base sm:text-lg text-tertiary leading-relaxed mt-2 max-w-2xl">
+        <p className="text-base sm:text-lg text-tertiary max-w-2xl">
           {description}
         </p>
       )}

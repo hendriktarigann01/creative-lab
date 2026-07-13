@@ -28,8 +28,7 @@
   },
   "advantages": {
     "heading": "Why Choose Us?",
-    "headingPlain": "Why Choose ",
-    "headingColored": "us?",
+
     "subheading": "Partner with the experts who build without limits.",
     "integrated": {
       "title": "Integrated Hardware & Software",
@@ -49,8 +48,7 @@
     }
   },
   "services": {
-    "label": "Our Services",
-    "heading": "We deliver digital innovation, from enterprise platforms to immersive gamification.",
+    "heading": "We deliver digital innovation, from enterprise to gamification.",
     "gradientWord": "Services",
     "subheading": "From enterprise-grade platforms to immersive gamification, we deliver the full spectrum of digital innovation.",
     "enterprise": {
@@ -178,7 +176,6 @@
         "name": "in-Lite Indonesia",
         "tagline": "Pionir Lampu LED Lokal & Inovasi Sakelar Premium",
         "description": "Catalog landing page for LED lighting products and premium smart switch Alura & Linea series.",
-        "image": "/portfolio/in-lite/inlite.webp",
         "category": "Retail & Electronics"
       },
       {
@@ -186,7 +183,6 @@
         "name": "Bali Surfer's Perfume (BSP)",
         "tagline": "Aroma Tropis Khas Bali & Kebebasan Tanpa Batas",
         "description": "Premium local Eau de Parfum (EDP) fragrance brand with fresh aquatic coastal scents.",
-        "image": "/portfolio/bsp/bsp.png",
         "category": "Fashion & Beauty"
       },
       {
@@ -194,7 +190,6 @@
         "name": "Warung Leko Grand Wisata",
         "tagline": "Spesialis Iga Penyet & Masakan Indonesia",
         "description": "Indonesian ribs specialty restaurant menu, branches information, and reservations page.",
-        "image": "/portfolio/leko/leko.png",
         "category": "Food & Beverage"
       },
       {
@@ -202,7 +197,6 @@
         "name": "Metland Cikarang",
         "tagline": "Perumahan Eco Living di Cibitung, Bekasi",
         "description": "Marketing showcase for eco-living modern residential housing development in Cibitung.",
-        "image": "/portfolio/metland/metland.png",
         "category": "Real Estate & Housing"
       },
       {
@@ -210,8 +204,21 @@
         "name": "Tanta Resto & Lounge",
         "tagline": "Warmth, Flavor, and Care in Every Dish",
         "description": "High-end Indonesian & Western fusion fine dining restaurant located at Plaza Senayan.",
-        "image": "/portfolio/tanta/tanta.png",
         "category": "Food & Beverage"
+      },
+      {
+        "slug": "karindo",
+        "name": "Karindo LED",
+        "tagline": "All In One Rental Solution",
+        "description": "World-class LED display and video processor sales and rental solutions.",
+        "category": "Retail & Electronics"
+      },
+      {
+        "slug": "yw",
+        "name": "YW Production",
+        "tagline": "Your Premium Event Partner",
+        "description": "Event equipment provider specializing in rigging, stage, audio, lighting, and LED displays.",
+        "category": "Services & Events"
       }
     ]
   },
