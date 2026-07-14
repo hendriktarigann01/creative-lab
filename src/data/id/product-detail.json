@@ -129,7 +129,8 @@
             }
           ]
         }
-      ]
+      ],
+      "shortDesc": "Kelola penjualan, POS, stok, dan pembelian."
     },
     "stockflow": {
       "slug": "stockflow",
@@ -158,7 +159,8 @@
         "label": "Kategori",
         "value": "Operasional Bisnis"
       },
-      "subtitle": "Sistem Manajemen Gudang"
+      "subtitle": "Sistem Manajemen Gudang",
+      "shortDesc": "Kelola inventaris dan operasi gudang."
     },
     "plannr": {
       "slug": "plannr",
@@ -309,7 +311,8 @@
             }
           ]
         }
-      ]
+      ],
+      "shortDesc": "Kelola proyek, pantau kinerja."
     },
     "kruu": {
       "slug": "kruu",
@@ -444,7 +447,8 @@
             }
           ]
         }
-      ]
+      ],
+      "shortDesc": "Sistem tenaga kerja dan penggajian terpusat."
     },
     "jipies": {
       "slug": "jipies",
@@ -567,7 +571,8 @@
             }
           ]
         }
-      ]
+      ],
+      "shortDesc": "Lacak armada, optimalkan kinerja."
     },
     "classix": {
       "slug": "classix",
@@ -698,7 +703,8 @@
             }
           ]
         }
-      ]
+      ],
+      "shortDesc": "Digitalisasi operasi sekolah terintegrasi."
     },
     "diggit": {
       "slug": "diggit",
@@ -789,19 +795,15 @@
           "tabLabel": "Manajemen Aset",
           "tabIconName": "warehouse",
           "title": "Lindungi Aset Berharga dan Perpanjang Masa Pakainya",
-          "description": "Pantau data sensor real-time dari ekskavator, pengangkut, dan bor untuk mencegah kerusakan tak terduga dan menjaga aset bernilai tinggi bekerja secara efisien.",
+          "description": "Simpan catatan lengkap untuk aset pertambangan, riwayat peralatan, inspeksi, dan aktivitas pemeliharaan untuk memaksimalkan keandalan operasional.",
           "features": [
             {
-              "label": "Pemantauan Sensor",
-              "iconName": "wifi"
+              "label": "Registri Aset",
+              "iconName": "add_notes"
             },
             {
-              "label": "Pelacakan Siklus Aset",
-              "iconName": "history"
-            },
-            {
-              "label": "Peringatan Pemeliharaan",
-              "iconName": "warning"
+              "label": "Pemeliharaan Aset",
+              "iconName": "log"
             }
           ]
         },
@@ -829,7 +831,8 @@
             }
           ]
         }
-      ]
+      ],
+      "shortDesc": "Sistem ERP Terintegrasi untuk operasi pertambangan yang lebih cerdas."
     },
     "sailoo": {
       "slug": "sailoo",
@@ -960,7 +963,8 @@
             }
           ]
         }
-      ]
+      ],
+      "shortDesc": "Sistem operasi maritim terpusat."
     },
     "registr": {
       "slug": "registr",
@@ -990,7 +994,8 @@
         "label": "Kategori",
         "value": "Acara & Registrasi"
       },
-      "subtitle": "Sistem Registrasi Acara"
+      "subtitle": "Sistem Registrasi Acara",
+      "shortDesc": "Sederhanakan proses pendaftaran acara dan pengelolaan peserta."
     },
     "converra": {
       "slug": "converra",
@@ -1020,156 +1025,211 @@
         "label": "Kategori",
         "value": "CMS Pintar"
       },
-      "subtitle": "Sistem Manajemen Armada"
+      "subtitle": "Sistem Manajemen Armada",
+      "shortDesc": "Kelola konten digital dari satu platform."
     },
-    "tanta": {
-      "slug": "tanta",
-      "title": "Tanta Resto & Lounge",
-      "category": "Landing Page",
-      "image": "/thumbnails/tanta.webp",
-      "desc": "Landing page pemasaran premium untuk Tanta Resto & Lounge di Plaza Senayan.",
-      "overview": "Tanta Resto & Lounge adalah destinasi kuliner fusion Indonesia-Barat berkelas di Plaza Senayan. Kami membangun landing page pemasaran berkinerja tinggi yang menangkap kehangatan, cita rasa kaya, dan suasana elegan restoran untuk mendorong reservasi online dan eksplorasi menu.",
-      "client": "Tanta Resto & Lounge",
-      "role": "Pengembangan Web",
-      "timeline": "2026",
-      "challenge": "Tanta Resto & Lounge membutuhkan landing page yang estetis dan ramah seluler untuk memamerkan menu mereka dan meningkatkan reservasi makan malam langsung tanpa bergantung pada agregator pihak ketiga.",
-      "solution": "Mengembangkan landing page responsif dengan galeri menu kustom, integrasi peta interaktif, dan alat reservasi WhatsApp langsung.",
+    "shio": {
+      "slug": "shio",
+      "title": "Shio",
+      "category": "Play Lab",
+      "image": "/product/apps/shio/shio-mockup.webp",
+      "desc": "Permainan Shio interaktif yang dirancang untuk acara dan aktivasi merek.",
+      "overview": "Shio adalah pengalaman gamifikasi interaktif yang dirancang untuk menarik audiens selama aktivasi Tahun Baru Imlek dan acara merek.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Pengembangan Produk",
+      "timeline": "Berkelanjutan",
+      "challenge": "Aktivasi merek membutuhkan permainan interaktif yang meriah untuk menarik pengunjung.",
+      "solution": "Membangun game kios interaktif Shio berbasis web yang memungkinkan pengunjung menemukan prediksi dan memenangkan hadiah.",
       "features": [
-        "Galeri Menu Unggulan",
-        "Integrasi Reservasi Langsung",
-        "Peta Lokasi Interaktif"
+        "UI Kios Berbasis Web",
+        "Penerapan Cepat",
+        "Tema CNY Meriah"
       ],
       "technologies": [
-        "Next.js",
         "React",
         "Tailwind CSS",
         "Framer Motion"
       ],
       "stats": {
         "label": "Kategori",
-        "value": "Landing Page"
+        "value": "Play Lab"
       },
-      "liveUrl": "https://tanta.vercel.app/",
-      "subtitle": "Halaman Utama Restoran"
+      "subtitle": "Permainan Interaktif",
+      "shortDesc": "Permainan zodiak Cina."
     },
-    "in-lite": {
-      "slug": "in-lite",
-      "title": "in-Lite Indonesia",
-      "category": "Landing Page",
-      "image": "/thumbnails/in-lite.webp",
-      "desc": "Landing page berkualitas tinggi yang memamerkan seri Switch & Socket modern dari in-Lite LED.",
-      "overview": "in-Lite Indonesia adalah merek pencahayaan terkemuka. Dalam transisi mereka menjadi solusi pencahayaan satu atap, mereka meluncurkan saklar dan stop kontak seri Alura & Linea. Kami merancang landing page premium untuk memamerkan seri minimalis dan elegan ini, menekankan desain estetika, tekstur lapisan baby-skin, dan keamanan tahan api.",
-      "client": "PT Suryamas Lumisindo Dwidaya (in-Lite LED)",
-      "role": "Pengembangan Web",
-      "timeline": "2026",
-      "challenge": "Memperkenalkan lini produk non-lighting pertama in-Lite (saklar dan stop kontak) membutuhkan fokus visual yang kuat pada bahan, tekstur, dan estetika premium.",
-      "solution": "Membangun halaman showcase interaktif berbasis scroll yang menonjolkan estetika desain, tekstur, aksen krom, dan spesifikasi keselamatan dari seri Linea dan Alura.",
+    "spin-wheel": {
+      "slug": "spin-wheel",
+      "title": "Spinwheel",
+      "category": "Play Lab",
+      "image": "/product/apps/spin-wheel/spin-wheel-mockup.webp",
+      "desc": "Permainan Spinwheel interaktif yang dirancang untuk acara dan aktivasi merek.",
+      "overview": "Spinwheel adalah permainan undian berhadiah digital klasik yang dirancang untuk menarik kerumunan dan mendistribusikan hadiah dengan lancar di stan acara.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Pengembangan Produk",
+      "timeline": "Berkelanjutan",
+      "challenge": "Acara membutuhkan cara yang transparan dan menarik untuk menjalankan undian digital.",
+      "solution": "Membuat roda digital interaktif yang dapat disesuaikan dengan kontrol admin untuk distribusi hadiah.",
       "features": [
-        "Perbandingan Seri Linea & Alura",
-        "Sorotan Bahan & Spek Keamanan",
-        "Pilihan Warna Interaktif"
+        "Kontrol Probabilitas Hadiah",
+        "Efek Suara Menarik",
+        "Pengumpulan Data Pengunjung"
       ],
       "technologies": [
-        "Next.js",
         "React",
         "Tailwind CSS",
         "Framer Motion"
       ],
       "stats": {
         "label": "Kategori",
-        "value": "Landing Page"
+        "value": "Play Lab"
       },
-      "liveUrl": "https://in-lite-indonesia.vercel.app/",
-      "subtitle": "Halaman Utama Katalog LED"
+      "subtitle": "Permainan Interaktif",
+      "shortDesc": "Roda putar digital interaktif."
     },
-    "bsp": {
-      "slug": "bsp",
-      "title": "Bali Surfers Perfume",
-      "category": "Landing Page",
-      "image": "/thumbnails/bsp.webp",
-      "desc": "Landing page pemasaran bertema akuatik untuk merek wewangian lokal populer Bali Surfers Perfume.",
-      "overview": "Bali Surfers Perfume adalah merek wewangian mass-market Indonesia dengan estetika petualangan pantai. Kami merancang landing page yang menyegarkan dan berkinerja tinggi untuk menceritakan kisah merek mereka yang unik (Blue Point, Kuta 7AM/7PM) dan memamerkan koleksi EDP aktif mereka.",
-      "client": "Bali Surfers Perfume",
-      "role": "Pengembangan Web",
-      "timeline": "2026",
-      "challenge": "Klien perlu menerjemahkan pengalaman penciuman dan nuansa petualangan pantai Bali ke dalam kehadiran digital berdampak tinggi yang mendorong akuisisi reseller mass-market.",
-      "solution": "Merancang tata letak landing page akuatik yang segar dengan karusel produk lebar penuh, pemrosesan profil aroma yang detail (top, middle, base notes), dan formulir pendaftaran reseller.",
+    "pap": {
+      "slug": "pap",
+      "title": "PAP",
+      "category": "Play Lab",
+      "image": "/product/apps/pap/pap-mockup.webp",
+      "desc": "Permainan PAP interaktif yang dirancang untuk acara dan aktivasi merek.",
+      "overview": "PAP (Post a Photo) adalah permainan kios foto acara interaktif yang mendorong berbagi media sosial dan keterlibatan pengguna.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Pengembangan Produk",
+      "timeline": "Berkelanjutan",
+      "challenge": "Meningkatkan jangkauan media sosial secara organik selama aktivasi merek langsung.",
+      "solution": "Mengembangkan aplikasi kios pengambilan foto yang memformat gambar dengan bingkai acara khusus, siap untuk diunduh instan.",
       "features": [
-        "Eksplorasi Profil Aroma",
-        "Karusel Varian EDP",
-        "Pendaftaran Saluran Reseller"
+        "Hamparan Bingkai Kustom",
+        "Unduhan Kode QR",
+        "Berbagi Media Sosial"
       ],
       "technologies": [
-        "Next.js",
         "React",
         "Tailwind CSS",
         "Framer Motion"
       ],
       "stats": {
         "label": "Kategori",
-        "value": "Landing Page"
+        "value": "Play Lab"
       },
-      "liveUrl": "https://balisurfersperfume.vercel.app/"
+      "subtitle": "Permainan Interaktif",
+      "shortDesc": "Stan foto kreatif instan."
     },
-    "leko": {
-      "slug": "leko",
-      "title": "Warung Leko Grand Wisata",
-      "category": "Landing Page",
-      "image": "/thumbnails/leko.webp",
-      "desc": "Landing page menu makanan dan reservasi modern untuk Warung Leko Grand Wisata.",
-      "overview": "Warung Leko Grand Wisata adalah tempat kuliner terkenal dengan menu iga empuk (Iga Penyet) dan hidangan kaya rasa khas Indonesia. Kami membangun landing page menu yang menarik dan responsif untuk menampilkan hidangan khas, memfasilitasi reservasi, dan mengarahkan pelanggan ke saluran pemesanan.",
-      "client": "Warung Leko Grand Wisata",
-      "role": "Pengembangan Web",
-      "timeline": "2026",
-      "challenge": "Menerjemahkan menu makanan tradisional yang sudah mapan ke dalam tata letak digital modern yang cepat dimuat untuk memotivasi kunjungan akhir pekan dan reservasi keluarga besar.",
-      "solution": "Mengembangkan menu digital interaktif dengan teknologi tinggi, harga yang jelas, dan reservasi WhatsApp satu klik.",
+    "scream": {
+      "slug": "scream",
+      "title": "Scream",
+      "category": "Play Lab",
+      "image": "/product/apps/scream/scream-mockup.webp",
+      "desc": "Permainan Scream interaktif yang dirancang untuk acara dan aktivasi merek.",
+      "overview": "Scream adalah permainan suara input mikrofon di mana pengguna berteriak untuk memberi kekuatan pada karakter di layar, ideal untuk mendorong antusiasme kerumunan.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Pengembangan Produk",
+      "timeline": "Berkelanjutan",
+      "challenge": "Stan membutuhkan pengalaman interaktif yang keras dan menarik perhatian untuk menarik kerumunan.",
+      "solution": "Membangun game pelari berbasis pengukur desibel di mana tingkat suara pengguna menentukan kecepatan dan skor pemain.",
       "features": [
-        "Pameran Hidangan Khas",
-        "Menu Digital Interaktif",
-        "Sistem Reservasi WhatsApp"
+        "Integrasi Pengukuran Desibel",
+        "Gameplay Cepat",
+        "Papan Peringkat Skor Tinggi Langsung"
       ],
       "technologies": [
-        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "HTML5 Audio API"
+      ],
+      "stats": {
+        "label": "Kategori",
+        "value": "Play Lab"
+      },
+      "subtitle": "Permainan Interaktif",
+      "shortDesc": "Game suara berteriak untuk bertahan hidup."
+    },
+    "catch": {
+      "slug": "catch",
+      "title": "Catch",
+      "category": "Play Lab",
+      "image": "/product/apps/catch/catch-mockup.webp",
+      "desc": "Permainan Catch interaktif yang dirancang untuk acara dan aktivasi merek.",
+      "overview": "Catch adalah permainan reaksi cepat di mana pemain memindahkan keranjang ke kiri dan kanan untuk menangkap item merek yang jatuh dan menghindari rintangan.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Pengembangan Produk",
+      "timeline": "Berkelanjutan",
+      "challenge": "Memperkuat keakraban produk merek dengan cara yang menyenangkan dan mudah diingat.",
+      "solution": "Merancang permainan tangkap berbasis web dengan logo dan item merek yang jatuh, tingkat kecepatan yang dapat disesuaikan, dan pelacakan skor.",
+      "features": [
+        "Kustomisasi Aset Merek",
+        "Eskalasi Kecepatan",
+        "Log Skor Tinggi"
+      ],
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "Canvas API"
+      ],
+      "stats": {
+        "label": "Kategori",
+        "value": "Play Lab"
+      },
+      "subtitle": "Permainan Interaktif",
+      "shortDesc": "Game menangkap objek dengan gerakan tangan."
+    },
+    "memory-card": {
+      "slug": "memory-card",
+      "title": "Memory Card",
+      "category": "Play Lab",
+      "image": "/product/apps/memory-card/memory-card-mockup.webp",
+      "desc": "Permainan Kartu Memori interaktif yang dirancang untuk acara dan aktivasi merek.",
+      "overview": "Memory Card adalah permainan kartu mencocokkan dua kartu kognitif yang menampilkan aset merek, membantu pengunjung mengingat item merek dan memenangkan hadiah.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Pengembangan Produk",
+      "timeline": "Berkelanjutan",
+      "challenge": "Mendorong keterlibatan pengunjung dan ingatan merek dalam waktu terbatas.",
+      "solution": "Membuat permainan mencocokkan balik kartu bersih menggunakan gambar merek dengan mekanisme penghitung waktu mundur.",
+      "features": [
+        "Kustomisasi Seni Kartu",
+        "Pengukur Waktu & Gerakan",
+        "Sistem Papan Peringkat"
+      ],
+      "technologies": [
         "React",
         "Tailwind CSS",
         "Framer Motion"
       ],
       "stats": {
         "label": "Kategori",
-        "value": "Landing Page"
+        "value": "Play Lab"
       },
-      "liveUrl": "https://leko-grandwisata.vercel.app/",
-      "subtitle": "Halaman Utama Restoran Iga"
+      "subtitle": "Permainan Interaktif",
+      "shortDesc": "Mencocokkan pasangan gambar yang identik."
     },
-    "metland": {
-      "slug": "metland",
-      "title": "Metland Cikarang",
-      "category": "Landing Page",
-      "image": "/thumbnails/metland.webp",
-      "desc": "Landing page properti bertema eco-living untuk proyek perumahan Cibitung dari PT Metropolitan Land Tbk.",
-      "overview": "Metland Cikarang adalah perumahan eco-living di Cibitung, Bekasi, oleh PT Metropolitan Land Tbk. Kami merancang landing page real estate berkonversi tinggi yang menampilkan desain arsitektur biofilik hijau, fasilitas, dan denah lantai mereka kepada calon pembeli rumah.",
-      "client": "PT Metropolitan Land Tbk",
-      "role": "Pengembangan Web",
-      "timeline": "2026",
-      "challenge": "Mengomunikasikan nilai fitur rumah ramah lingkungan (desain biofilik, langit-langit tinggi, ruang hijau) sekaligus memaksimalkan penangkapan prospek penjualan.",
-      "solution": "Membangun landing page showcase properti bertema biofilik premium dengan rencana tata letak, peta, dan formulir kontak visibilitas tinggi untuk memesan tur galeri pemasaran.",
+    "puzzle": {
+      "slug": "puzzle",
+      "title": "Puzzle",
+      "category": "Play Lab",
+      "image": "/product/apps/puzzle/puzzle-mockup.webp",
+      "desc": "Permainan Puzzle interaktif yang dirancang untuk acara dan aktivasi merek.",
+      "overview": "Puzzle adalah permainan puzzle geser/seret klasik yang menampilkan visual merek utama, menantang pengunjung untuk merekonstruksi gambar untuk memenangkan hadiah.",
+      "client": "CreativeLAB by MJ Solution Indonesia",
+      "role": "Pengembangan Produk",
+      "timeline": "Berkelanjutan",
+      "challenge": "Menjaga pengunjung tetap terlibat lebih lama di stan acara.",
+      "solution": "Mengembangkan permainan puzzle gambar interaktif dengan mekanik menyeret dan log waktu penyelesaian.",
       "features": [
-        "Presentasi Konsep Eco-Living",
-        "Galeri Denah Lantai",
-        "Penangkapan Prospek Pemasaran"
+        "Dukungan Unggah Gambar",
+        "Mekanik Pengukur Waktu",
+        "Efek Kemenangan Interaktif"
       ],
       "technologies": [
-        "Next.js",
         "React",
         "Tailwind CSS",
         "Framer Motion"
       ],
       "stats": {
         "label": "Kategori",
-        "value": "Landing Page"
+        "value": "Play Lab"
       },
-      "liveUrl": "https://metland-cikarang.vercel.app/",
-      "subtitle": "Halaman Utama Perumahan"
+      "subtitle": "Permainan Interaktif",
+      "shortDesc": "Pecahkan teka-teki, puncaki papan peringkat."
     }
   }
 }

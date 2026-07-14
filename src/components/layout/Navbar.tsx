@@ -193,7 +193,7 @@ export function Navbar() {
               href="/contact"
               variant="outline"
               size="sm"
-              className="rounded-full hover:border-primar text-navbar hover:text-primary bg-primary/5"
+              className="rounded-full hover:border hover:border-primary text-tertiary hover:text-primary "
             >
               {t('getStarted')}
             </Button>

@@ -71,8 +71,8 @@
         {
           "tabLabel": "Pipeline",
           "tabIconName": "pipeline",
-          "title": "Organize Every Project with a Flexible Workflow",
-          "description": "Visualize every project stage, prioritize work, and keep tasks moving efficiently with customizable workflows designed for modern teams.",
+          "title": "Gain Complete Visibility into Your Sales Process",
+          "description": "Organize your sales activities through a structured pipeline that gives your team better visibility into every opportunity, improves collaboration, and supports more predictable sales performance.",
           "features": [
             {
               "label": "Custom Workflow Stages",
@@ -140,7 +140,8 @@
             }
           ]
         }
-      ]
+      ],
+      "shortDesc": "Manage projects, monitor performance."
     },
     "pipely": {
       "slug": "pipely",
@@ -266,7 +267,8 @@
             }
           ]
         }
-      ]
+      ],
+      "shortDesc": "Manage sales, POS, stock, and purchases."
     },
     "kruu": {
       "slug": "kruu",
@@ -392,7 +394,8 @@
             }
           ]
         }
-      ]
+      ],
+      "shortDesc": "Centralized workforce and payroll system."
     },
     "classix": {
       "slug": "classix",
@@ -514,7 +517,8 @@
             }
           ]
         }
-      ]
+      ],
+      "shortDesc": "Digitize integrated school operations."
     },
     "jipies": {
       "slug": "jipies",
@@ -628,7 +632,8 @@
             }
           ]
         }
-      ]
+      ],
+      "shortDesc": "Track fleets, optimize performance."
     },
     "diggit": {
       "slug": "diggit",
@@ -750,7 +755,8 @@
             }
           ]
         }
-      ]
+      ],
+      "shortDesc": "Integrated ERP for smarter mining operations."
     },
     "sailoo": {
       "slug": "sailoo",
@@ -872,7 +878,8 @@
             }
           ]
         }
-      ]
+      ],
+      "shortDesc": "Centralized maritime operations system."
     },
     "converra": {
       "slug": "converra",
@@ -896,7 +903,8 @@
         "label": "Category",
         "value": "Smart CMS"
       },
-      "subtitle": "Fleet Management System"
+      "subtitle": "Fleet Management System",
+      "shortDesc": "Manage digital content from one platform."
     },
     "stockflow": {
       "slug": "stockflow",
@@ -916,7 +924,8 @@
         "label": "Category",
         "value": "Business Operations"
       },
-      "subtitle": "Warehouse Management System"
+      "subtitle": "Warehouse Management System",
+      "shortDesc": "Manage inventory and warehouse operations."
     },
     "registr": {
       "slug": "registr",
@@ -941,7 +950,8 @@
         "label": "Category",
         "value": "Event & Registration"
       },
-      "subtitle": "Event Registration System"
+      "subtitle": "Event Registration System",
+      "shortDesc": "Simplify event registration and attendee management."
     },
     "shio": {
       "slug": "shio",
@@ -961,7 +971,8 @@
         "label": "Category",
         "value": "Play Lab"
       },
-      "subtitle": "Interactive Game"
+      "subtitle": "Interactive Game",
+      "shortDesc": "Chinese zodiac game."
     },
     "pap": {
       "slug": "pap",
@@ -981,7 +992,8 @@
         "label": "Category",
         "value": "Play Lab"
       },
-      "subtitle": "Interactive Game"
+      "subtitle": "Interactive Game",
+      "shortDesc": "Instant creative photo booth."
     },
     "puzzle": {
       "slug": "puzzle",
@@ -1001,7 +1013,8 @@
         "label": "Category",
         "value": "Play Lab"
       },
-      "subtitle": "Interactive Game"
+      "subtitle": "Interactive Game",
+      "shortDesc": "Solve puzzles, top leaderboard."
     },
     "catch": {
       "slug": "catch",
@@ -1021,7 +1034,8 @@
         "label": "Category",
         "value": "Play Lab"
       },
-      "subtitle": "Interactive Game"
+      "subtitle": "Interactive Game",
+      "shortDesc": "Hand-motion object catching game."
     },
     "spin-wheel": {
       "slug": "spin-wheel",
@@ -1045,7 +1059,8 @@
         "label": "Category",
         "value": "Play Lab"
       },
-      "subtitle": "Interactive Game"
+      "subtitle": "Interactive Game",
+      "shortDesc": "Interactive digital spin wheel."
     },
     "memory-card": {
       "slug": "memory-card",
@@ -1065,7 +1080,8 @@
         "label": "Category",
         "value": "Play Lab"
       },
-      "subtitle": "Interactive Game"
+      "subtitle": "Interactive Game",
+      "shortDesc": "match pairs of identical images"
     },
     "scream": {
       "slug": "scream",
@@ -1089,7 +1105,8 @@
         "label": "Category",
         "value": "Play Lab"
       },
-      "subtitle": "Interactive Game"
+      "subtitle": "Interactive Game",
+      "shortDesc": "Voice game scream and survive."
     }
   }
 }

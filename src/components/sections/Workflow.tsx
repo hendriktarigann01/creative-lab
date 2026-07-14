@@ -1,96 +1,116 @@
 'use client';
 
-import { Search, Map, Code, TestTube, Rocket, HeartHandshake } from 'lucide-react';
-import { Container } from '@/components/ui/Container';
-import { SectionHeader } from '@/components/ui/SectionHeader';
-import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
+import { useRef, useState } from 'react';
+import Image from 'next/image';
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'motion/react';
 import { useTranslations } from 'next-intl';
+import { WORKFLOW_STEPS } from '@/constants/workflow';
+import { ProcessStep } from '@/types';
+
+const VH_PER_STEP = 0.85;
+
+function StepCard({ step, active }: { step: ProcessStep; active: boolean }) {
+  return (
+    <div
+      className={`rounded-xl border p-4 shadow-xs transition-all duration-300 ${
+        active
+          ? 'border-accent/40 bg-accent/5 ring-4 ring-accent/15 shadow-[0_0_20px_rgba(171,127,235,0.06)]'
+          : 'border-white/10 bg-white/[0.02]'
+      }`}
+    >
+      <h3
+        className={`text-sm font-medium transition-colors duration-300 ${
+          active
+            ? 'bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent'
+            : 'text-tertiary/85'
+        }`}
+      >
+        {step.title}
+      </h3>
+      <p className="mt-1.5 text-[11px] leading-relaxed text-tertiary/65">{step.description}</p>
+    </div>
+  );
+}
+
+function ActiveStepVisual({ step }: { step: ProcessStep }) {
+  return (
+    <div className="flex h-[400px] w-[200px] items-center justify-center relative select-none">
+      <AnimatePresence mode="wait">
+        <motion.div key={step.id} className="relative z-10">
+          <Image
+            src={step.image}
+            alt={`${step.title} step illustration`}
+            width={160}
+            height={420}
+            className="select-none"
+            priority
+          />
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
+}
 
 export function Workflow() {
   const t = useTranslations('workflow');
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const getIcon = (iconName: string) => {
-    const iconStyles = 'w-5 h-5 text-white';
-    switch (iconName) {
-      case 'Search':
-        return <Search className={iconStyles} />;
-      case 'Map':
-        return <Map className={iconStyles} />;
-      case 'Code':
-        return <Code className={iconStyles} />;
-      case 'TestTube':
-        return <TestTube className={iconStyles} />;
-      case 'Rocket':
-        return <Rocket className={iconStyles} />;
-      case 'HeartHandshake':
-        return <HeartHandshake className={iconStyles} />;
-      default:
-        return null;
-    }
-  };
+  const steps: ProcessStep[] = WORKFLOW_STEPS.map((step, index) => ({
+    ...step,
+    title: t(`step${index + 1}.title`),
+    description: t(`step${index + 1}.desc`),
+  }));
 
-  const translatedSteps = [
-    { step: '01', title: t('step1.title'), desc: t('step1.desc'), icon: 'Search' },
-    { step: '02', title: t('step2.title'), desc: t('step2.desc'), icon: 'Map' },
-    { step: '03', title: t('step3.title'), desc: t('step3.desc'), icon: 'Code' },
-    { step: '04', title: t('step4.title'), desc: t('step4.desc'), icon: 'TestTube' },
-    { step: '05', title: t('step5.title'), desc: t('step5.desc'), icon: 'Rocket' },
-    { step: '06', title: t('step6.title'), desc: t('step6.desc'), icon: 'HeartHandshake' },
-  ];
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end end'],
+  });
+
+  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+    const idx = Math.min(steps.length - 1, Math.max(0, Math.floor(latest * steps.length)));
+    setActiveIndex((prev) => (prev === idx ? prev : idx));
+  });
+
+  const activeStep = steps[activeIndex] ?? steps[0];
 
   return (
-    <section id="workflow" className="relative py-24 sm:py-32 bg-background overflow-hidden">
-      <div className="absolute top-[30%] left-[50%] -translate-x-1/2 w-[60%] h-[40%] rounded-full bg-[#ec4899]/3 blur-[140px] pointer-events-none" />
-
-      <Container>
-        <AnimateOnScroll variant="slideUp">
-          <SectionHeader
-            title={t('heading')}
-            description={t('subheading')}
-          />
-        </AnimateOnScroll>
-
-        {/* Stepper Container */}
-        <div className="relative mt-8 sm:mt-16">
-          {/* Connecting Line - Desktop Only */}
-          <div className="hidden lg:block absolute top-7 left-[8.33%] right-[8.33%] h-0.5 bg-linear-to-r from-[#AB7FEB] to-[#540EE1] opacity-35 z-0" />
-
-          {/* Stepper Grid */}
-          <AnimateOnScroll
-            variant="staggerContainer"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 relative z-10"
-          >
-            {translatedSteps.map((step, index) => (
-              <AnimateOnScroll
-                key={index}
-                variant="staggerItem"
-                className="flex flex-col items-center text-center h-full"
-              >
-                {/* Step Circle & Number Badge */}
-                <div className="relative flex items-center justify-center mb-6">
-                  {/* Connecting Line - Mobile Only */}
-                  {index < translatedSteps.length - 1 && (
-                    <div className="lg:hidden absolute bottom-[-32px] left-1/2 -translate-x-1/2 w-0.5 h-8 bg-linear-to-b from-[#AB7FEB] to-[#540EE1] opacity-35 z-0" />
-                  )}
-
-                  {/* Icon */}
-                  <div className="w-14 h-14 p-4 rounded-2xl bg-linear-to-r from-[#AB7FEB] to-[#540EE1] flex items-center justify-center shadow-md shadow-gamification/20 relative z-10">
-                    {getIcon(step.icon)}
-                  </div>
-                </div>
-
-                {/* Content */}
-                <h3 className="text-lg font-medium text-foreground tracking-tight mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-tertiary leading-relaxed max-w-[200px] sm:max-w-[260px] lg:max-w-none">
-                  {step.desc}
-                </p>
-              </AnimateOnScroll>
-            ))}
-          </AnimateOnScroll>
+    <div className="bg-background">
+      {/* Heading Block */}
+      <div className="bg-background px-6 py-20 sm:py-28">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl sm:text-4xl font-medium tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            {t('heading')}
+          </h2>
+          <p className="mt-4 text-sm sm:text-base leading-relaxed text-tertiary/75">
+            {t('subheading')}
+          </p>
         </div>
-      </Container>
-    </section>
+      </div>
+
+      {/* Pinned Scroll Section */}
+      <section
+        ref={sectionRef}
+        style={{ height: `${steps.length * VH_PER_STEP * 100}vh` }}
+        className="relative bg-background"
+      >
+        <div className="sticky top-0 flex min-h-screen items-center justify-center px-4 overflow-hidden">
+          <div className="mx-auto grid w-full max-w-7xl grid-cols-[1fr_160px_1fr] items-center gap-x-40 relative">
+            <div
+              className="row-span-full flex justify-center"
+              style={{ gridColumn: 2, gridRow: `1 / ${steps.length + 1}` }}
+            >
+              <ActiveStepVisual step={activeStep} />
+            </div>
+
+            {steps.map((step, i) => (
+              <div key={step.id} style={{ gridRow: i + 1, gridColumn: i % 2 === 0 ? 1 : 3 }}>
+                <StepCard step={step} active={i === activeIndex} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

@@ -1,19 +1,15 @@
 import type { Metadata } from 'next';
 import { getOrganizationSchema, getWebSiteSchema } from '@/lib/structured-data';
 
-// Layout components
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
-
-// Section components
 import { Hero } from '@/components/sections/Hero';
 import { HeroFrameBackground } from '@/components/sections/HeroFrameBackground';
 import { Advantage } from '@/components/sections/Advantage';
+import { ProductShowcase } from '@/components/sections/ProductShowcase';
 import { Services } from '@/components/sections/Services';
-import Discovery from '@/components/sections/Discovery';
+import { PortfolioShowcase } from '@/components/sections/PortfolioShowcase';
 import { Workflow } from '@/components/sections/Workflow';
-// import { Portfolio } from '@/components/sections/Portfolio';
-import { Contact } from '@/components/sections/Contact';
 import { CTA } from '@/components/sections/CTA';
 
 interface Props {
@@ -68,33 +64,29 @@ export default function Home() {
 
   return (
     <>
-      {/* Structured Data injection */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema).replace(/</g, '\\u003c') }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema).replace(/</g, '\\u003c'),
+        }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema).replace(/</g, '\\u003c') }}
       />
 
-      {/* Global Header */}
       <Navbar />
 
-      {/* Main Sections */}
       <main className="flex-1 bg-background text-foreground relative">
         <HeroFrameBackground />
         <Hero />
         <Advantage />
+        <ProductShowcase />
         <Services />
-        {/* <Discovery /> */}
-        <Workflow />
-        {/* <Portfolio /> */}
+        <Workflow /> <PortfolioShowcase />
         <CTA />
-        <Contact />
       </main>
 
-      {/* Global Footer */}
       <Footer />
     </>
   );

@@ -212,7 +212,7 @@ export function HeroFrameBackground() {
         <div className="w-full h-1.5 bg-[#ab7feb]/20 backdrop-blur-sm">
           <div
             ref={progressBarRef}
-            className="h-full bg-gradient-to-r from-[#540ee1] to-[#ab7feb] shadow-[0_0_8px_rgba(171,127,235,0.5)] origin-left w-full"
+            className="h-full bg-gradient-to-r from-[#ab7feb] to-[#540ee1] shadow-[0_0_8px_rgba(171,127,235,0.5)] origin-left w-full"
             style={{ transform: 'scaleX(0)', willChange: 'transform' }}
           />
         </div>

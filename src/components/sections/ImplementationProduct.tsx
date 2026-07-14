@@ -5,11 +5,8 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MoveUp, MoveDown, Plus } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { ProjectImplementation } from '@/types';
+import { ProjectImplementation, ImplementationProductProps } from '@/types';
 
-interface ImplementationProductProps {
-  data?: ProjectImplementation;
-}
 
 export default function ImplementationProduct({ data }: ImplementationProductProps) {
   const [activeIndex, setActiveIndex] = useState(0);

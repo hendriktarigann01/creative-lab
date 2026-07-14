@@ -1,144 +1,98 @@
 'use client';
 
-import { Code2, Gamepad2, Activity, Presentation } from 'lucide-react';
-import { Container } from '@/components/ui/Container';
-import { SectionHeader } from '@/components/ui/SectionHeader';
-import { Button } from '@/components/ui/Button';
-import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
-import { Link } from '@/i18n/routing';
+import { useState } from 'react';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
-import { Service } from '@/types';
+import { SERVICE_ASSETS } from '@/constants/services';
+import { ServiceItem } from '@/types';
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: i * 0.1, ease: 'easeOut' as const },
+  }),
+};
 
 export function Services() {
   const t = useTranslations('services');
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const servicesData = t.raw('servicesData') as Service[];
+  const servicesData = (t.raw('servicesData') as ServiceItem[]) || [];
 
-  const getIcon = (iconName: string, colorClass: string) => {
-    const iconStyles = `w-7 h-7 ${colorClass}`;
-    switch (iconName) {
-      case 'Code2':
-        return <Code2 className={iconStyles} />;
-      case 'Gamepad2':
-        return <Gamepad2 className={iconStyles} />;
-      case 'Activity':
-        return <Activity className={iconStyles} />;
-      case 'Presentation':
-        return <Presentation className={iconStyles} />;
-      default:
-        return null;
-    }
-  };
+  const services = servicesData.map((item) => ({
+    ...item,
+    asset: SERVICE_ASSETS[item.slug] || '/service/enterprise.webp',
+  }));
 
-  const getAccentColorClasses = (color: string) => {
-    switch (color) {
-      case 'enterprise':
-        return {
-          text: 'text-enterprise',
-          border: 'hover:border-enterprise/30',
-          bg: 'bg-enterprise/5 border-enterprise/10',
-          shadow: 'hover:shadow-enterprise/10',
-        };
-      case 'gamification':
-        return {
-          text: 'text-gamification',
-          border: 'hover:border-gamification/30',
-          bg: 'bg-gamification/5 border-gamification/10',
-          shadow: 'hover:shadow-gamification/10',
-        };
-      case 'interactive':
-        return {
-          text: 'text-interactive',
-          border: 'hover:border-interactive/30',
-          bg: 'bg-interactive/5 border-interactive/10',
-          shadow: 'hover:shadow-interactive/10',
-        };
-      case 'strategy':
-        return {
-          text: 'text-strategy',
-          border: 'hover:border-strategy/30',
-          bg: 'bg-strategy/5 border-strategy/10',
-          shadow: 'hover:shadow-strategy/10',
-        };
-      default:
-        return {
-          text: 'text-primary',
-          border: 'hover:border-primary/30',
-          bg: 'bg-primary/5 border-primary/10',
-          shadow: 'hover:shadow-primary/10',
-        };
-    }
-  };
-
-  const translatedServices = servicesData.map((service) => {
-    const key = service.color;
-    return {
-      ...service,
-      title: t(`${key}.title`),
-      desc: t(`${key}.desc`),
-    };
-  });
+  const activeService = services[activeIndex] ?? services[0];
 
   return (
-    <section id="services" className="relative py-24 sm:py-32 bg-background overflow-hidden">
-      {/* Background radial highlight */}
-      <div className="absolute top-[20%] left-[-10%] w-[40%] h-[50%] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
-
-      <Container>
-        <AnimateOnScroll variant="slideUp">
-          <SectionHeader
-            title={t('heading')}
-            description={t('subheading')}
-          />
-        </AnimateOnScroll>
-
-        <AnimateOnScroll
-          variant="staggerContainer"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
-        >
-          {translatedServices.map((service, index) => {
-            const theme = getAccentColorClasses(service.color);
-            return (
-              <AnimateOnScroll key={index} variant="staggerItem" className="h-full">
-                <div
-                  className={`relative overflow-hidden h-full rounded-2xl border border-border bg-card p-8 transition-all duration-300 flex flex-col justify-between group ${theme.border} ${theme.shadow} hover:shadow-lg hover:-translate-y-1`}
-                >
-                  <div>
-                    {/* Icon Kiosk */}
-                    <div
-                      className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 border ${theme.bg}`}
-                    >
-                      {getIcon(service.icon, theme.text)}
-                    </div>
-                    {/* Content */}
-                    <h3 className="text-lg sm:text-xl font-medium text-foreground tracking-tight mb-2 group-hover:text-primary transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-tertiary leading-relaxed mb-6">
-                      {service.desc}
-                    </p>
-                  </div>
-
-                  {/* Learn More Link */}
-                  <Link
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    href={service.link as any}
-                    className={`inline-flex items-center text-sm font-medium tracking-wide gap-1 w-fit group-hover:underline cursor-pointer ${theme.text}`}
-                  >
-                    Learn More
-                  </Link>
-                </div>
-              </AnimateOnScroll>
-            );
-          })}
-        </AnimateOnScroll>
-
-        <div className="flex justify-center">
-          <Button href="/our-services" variant="outline" size="lg" className="group">
-            Explore All Services
-          </Button>
+    <section className="relative overflow-hidden bg-background py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-medium tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent sm:text-4xl">
+            {t('showcaseHeading')}
+          </h2>
+          <p className="mt-4 text-sm text-tertiary/75 sm:text-base leading-relaxed">
+            {t('showcaseSubheading')}
+          </p>
         </div>
-      </Container>
+
+        <div className="mt-16 grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+          {/* Left Column: Interactive Cards */}
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            {services.map((item, i) => (
+              <motion.div
+                key={item.slug}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={cardVariants}
+                onMouseEnter={() => setActiveIndex(i)}
+                className={`cursor-pointer bg-card rounded-xl p-5 border transition-all duration-300 select-none ${
+                  i === activeIndex
+                    ? 'border-border  ring-5 ring-primary/15'
+                    : 'border-border  hover:border-white/20'
+                }`}
+              >
+                <h3 className="min-h-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent text-base font-medium">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-tertiary/70">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Right Column: Dynamic Asset Preview */}
+          <div className="relative mx-auto flex h-[320px] w-full max-w-md items-center justify-center sm:h-[400px]">
+            {/* Ambient Purple background glow */}
+            <div className="absolute inset-0 rounded-full bg-primary/15 blur-3xl pointer-events-none" />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeService.asset}
+                initial={{ opacity: 0, scale: 0.92 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.92 }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+                className="relative z-10 h-full w-full"
+              >
+                <Image
+                  src={activeService.asset}
+                  alt={activeService.title}
+                  width={480}
+                  height={480}
+                  className="h-full w-full object-contain"
+                  priority
+                />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

@@ -10,16 +10,16 @@
   "hero": {
     "title": "Architecting digital ecosystems",
     "gradientWord": "digital ecosystems",
-    "description": "Kami merancang ekosistem perangkat lunak khusus dan instalasi fisik interaktif dengan ketelitian tinggi.",
+    "description": "Kami merancang ekosistem perangkat lunak kustom dan instalasi fisik interaktif berpresisi tinggi.",
     "ctaText": "Mulai Evolusi Digital Anda"
   },
   "about": {
     "seq1Plain": "Kami tidak hanya",
     "seq1Gradient": "menulis kode.",
     "seq2Plain": "Kami merekayasa",
-    "seq2Gradient": "Pengalaman.",
+    "seq2Gradient": "pengalaman.",
     "seq3Plain": "Presisi dalam",
-    "seq3Gradient": "Aksi.",
+    "seq3Gradient": "aksi.",
     "sequence3": {
       "imageUrl": "https://picsum.photos/seed/techlab/2000/1200",
       "imageAlt": "Teknologi Tinggi",
@@ -27,14 +27,14 @@
     }
   },
   "advantages": {
-    "heading": "Mengapa memilih kami?",
-    "subheading": "Bekerja samalah dengan para ahli yang membangun tanpa batas.",
+    "heading": "Mengapa Memilih Kami?",
+    "subheading": "Bermitralah dengan para ahli yang membangun tanpa batas.",
     "integrated": {
-      "title": "Integrasi Hardware & Software",
-      "desc": "Rekayasa lengkap dari baris kode pertama hingga instalasi fisik, menjamin tanpa lag."
+      "title": "Integrasi Perangkat Keras & Lunak",
+      "desc": "Rekayasa menyeluruh dari baris kode pertama hingga instalasi fisik, menjamin performa tanpa lag."
     },
     "agile": {
-      "title": "Prototyping Cepat & Sprint Agile",
+      "title": "Prototiping Cepat & Sprint Agile",
       "desc": "Mengubah ide abstrak menjadi MVP siap uji dalam hitungan minggu untuk validasi cepat."
     },
     "enterprise": {
@@ -43,13 +43,15 @@
     },
     "compliance": {
       "title": "Kepatuhan B2G & Keamanan Publik",
-      "desc": "Kepatuhan ketat terhadap pengadaan sektor publik, pelaporan, dan standar keamanan negara."
+      "desc": "Kepatuhan ketat terhadap standar pengadaan sektor publik, pelaporan, dan keamanan negara."
     }
   },
   "services": {
-    "heading": "Kami menghadirkan inovasi digital, mulai dari solusi perusahaan hingga gamifikasi.",
+    "heading": "Kami menghadirkan inovasi digital, mulai dari solusi enterprise hingga gamifikasi.",
     "gradientWord": "Layanan",
-    "subheading": "Dari platform kelas perusahaan hingga gamifikasi imersif—kami menghadirkan spektrum penuh inovasi digital.",
+    "subheading": "Dari platform kelas enterprise hingga gamifikasi imersif—kami menghadirkan seluruh spektrum inovasi digital.",
+    "showcaseHeading": "Lebih dari Sekadar Produk, Kami Menghadirkan Solusi Ujung-ke-Ujung",
+    "showcaseSubheading": "Kami tidak hanya membangun produk, tetapi juga menghadirkan solusi digital ujung-ke-ujung yang membantu bisnis berinovasi, meningkatkan keterlibatan pengguna, dan mencapai pertumbuhan jangka panjang.",
     "enterprise": {
       "title": "Enterprise & B2G Solutions",
       "desc": "Efisiensi, Keamanan Data, dan Skalabilitas."
@@ -74,10 +76,10 @@
         "color": "enterprise",
         "slug": "enterprise-b2g-solutions",
         "features": [
-          "Web & Seluler Kustom: Aplikasi internal berkinerja tinggi (HRIS, CRM) yang disesuaikan dengan logika bisnis Anda.",
-          "Smart Dashboard: Mengubah data kompleks menjadi wawasan real-time untuk Command Center.",
-          "Custom CMS: Kontrol terpusat untuk pembaruan tanpa hambatan di ribuan perangkat.",
-          "Manajemen Aset: Pelacakan digital menggunakan integrasi QR/RFID untuk mengamankan aset berharga."
+          "Web & Mobile Kustom: Aplikasi internal berkinerja tinggi (HRIS, CRM) yang disesuaikan dengan logika bisnis Anda.",
+          "Dashboard Pintar: Mengubah data kompleks menjadi wawasan real-time untuk Command Center.",
+          "CMS Kustom: Kontrol terpusat untuk pembaruan tanpa hambatan di ribuan perangkat.",
+          "Manajemen Aset: Pelacakan digital dengan integrasi QR/RFID untuk mengamankan aset berharga."
         ],
         "link": "/our-services/enterprise-b2g-solutions"
       },
@@ -88,10 +90,10 @@
         "color": "gamification",
         "slug": "gamification-games",
         "features": [
-          "Game Kinetik & Gerakan: Pengalaman sensor gerak yang mengubah lobi menjadi taman bermain aktif.",
-          "Aktivasi AR: Menambahkan keajaiban digital ke dunia nyata—sempurna untuk peluncuran produk.",
-          "Social Wall: Integrasi media sosial waktu nyata yang menampilkan konten audiens di layar LED.",
-          "Papan Peringkat Phygital: Pusat permainan kompetitif yang disinkronkan dengan smartphone pengunjung."
+          "Game Kinetik & Sensor Gerak: Pengalaman interaktif yang mengubah lobi menjadi area bermain aktif.",
+          "Aktivasi AR: Menghadirkan keajaiban digital ke dunia nyata—sempurna untuk peluncuran produk.",
+          "Social Wall: Integrasi media sosial real-time untuk menampilkan konten audiens di layar LED.",
+          "Leaderboard Phygital: Pusat permainan kompetitif yang terhubung langsung dengan ponsel pengunjung."
         ],
         "link": "/our-services/gamification-games"
       },
@@ -102,10 +104,10 @@
         "color": "interactive",
         "slug": "interactive-experiences",
         "features": [
-          "Smart Wayfinding: Navigasi cerdas untuk pusat perbelanjaan, rumah sakit, dan pusat pemerintahan.",
+          "Wayfinding Pintar: Navigasi cerdas untuk pusat perbelanjaan, rumah sakit, dan pusat pemerintahan.",
           "Simulator VR: Pelatihan imersif dan tur properti virtual (walkthrough 360°).",
-          "Modul Pameran Interaktif: Perangkat lunak multi-sentuh untuk eksplorasi arsip digital di museum.",
-          "Integrasi IoT: Middleware khusus yang menghubungkan perangkat lunak dengan sensor fisik dan pencahayaan."
+          "Modul Pameran Interaktif: Perangkat lunak multi-touch untuk eksplorasi arsip digital di museum.",
+          "Integrasi IoT: Middleware kustom yang menghubungkan perangkat lunak dengan sensor fisik dan pencahayaan."
         ],
         "link": "/our-services/interactive-experiences"
       },
@@ -116,8 +118,8 @@
         "color": "strategy",
         "slug": "digital-strategy",
         "features": [
-          "Peta Jalan Transformasi: Kami menasihati dan membantu institusi bertransisi dari alur kerja manual ke otomatis.",
-          "Lab Desain UI/UX: Antarmuka yang berpusat pada pengguna, intuitif untuk Gen Z hingga pejabat Pemerintah."
+          "Peta Jalan Transformasi: Konsultasi dan pendampingan bagi institusi dalam bertransisi dari alur kerja manual ke otomatis.",
+          "Desain UI/UX: Antarmuka yang berpusat pada pengguna, intuitif untuk Gen Z hingga instansi pemerintah."
         ],
         "link": "/our-services/digital-strategy"
       }
@@ -126,45 +128,111 @@
   "workflow": {
     "heading": "Alur Kerja Kami",
     "gradientWord": "Alur Kerja",
-    "subheading": "Peta Jalan Interaktif. Lacak proses kami dari konsep hingga pengiriman!",
+    "subheading": "Setiap produk digital yang sukses dimulai dengan proses yang jelas, mulai dari tahap discovery dan perencanaan hingga peluncuran dan dukungan berkelanjutan.",
     "step1": {
       "title": "Discovery",
-      "desc": "Kami menganalisis logika bisnis Anda, mengaudit sistem warisan, dan menentukan persyaratan teknis."
+      "desc": "Kami menganalisis logika bisnis Anda, mengaudit sistem legacy, dan menentukan spesifikasi teknis."
     },
     "step2": {
       "title": "Blueprint",
-      "desc": "Arsitek kami merancang UI/UX, skema database, dan alur kerja sistem."
+      "desc": "Arsitek sistem kami merancang UI/UX, skema database, dan alur kerja sistem."
     },
     "step3": {
       "title": "Build",
-      "desc": "Sprint pengembangan agile dengan integrasi berkelanjutan dan pembaruan klien secara real-time."
+      "desc": "Proses pengembangan dengan metode agile, integrasi berkelanjutan, dan pembaruan berkala secara real-time."
     },
     "step4": {
       "title": "Test",
-      "desc": "QA yang ketat, pengujian penetrasi keamanan, dan pengujian penerimaan pengguna (UAT)."
+      "desc": "Quality Assurance (QA) yang ketat, penetration testing (uji keamanan), dan User Acceptance Testing (UAT)."
     },
     "step5": {
       "title": "Deploy",
-      "desc": "Peluncuran lancar ke server produksi, toko aplikasi, atau kios perangkat keras fisik."
+      "desc": "Peluncuran sistem ke server produksi (production), app store, atau perangkat interaktif fisik."
     },
     "step6": {
       "title": "Support",
-      "desc": "SLA 24/7, pemantauan berkelanjutan, dan pemeliharaan server yang skalabel."
+      "desc": "Dukungan SLA 24/7, pemantauan berkala, dan pemeliharaan infrastruktur server yang skalabel."
     }
   },
   "product": {
     "heading": "Bangun Bisnis yang Lebih Baik dengan Perangkat Lunak, Pengalaman Interaktif, dan Inovasi Digital",
     "gradientWord": "Produk",
-    "subheading": "Arahkan kursor untuk menjelajahi eksekusi tingkat master kami.",
+    "subheading": "Arahkan kursor untuk menjelajahi portofolio terbaik kami.",
     "showcaseTitle": "Galeri Semua Proyek",
     "exploreProject": "Jelajahi Proyek",
     "explore": "Jelajahi",
     "breadcrumb": "Produk",
     "label": "Produk"
   },
+  "productShowcase": {
+    "heading": "Solusi untuk Setiap Kebutuhan Bisnis",
+    "subheading": "Jelajahi portofolio solusi digital komprehensif yang dirancang untuk meningkatkan efisiensi, mengoptimalkan operasional, dan mendorong pertumbuhan bisnis di berbagai industri.",
+    "noProjects": "Belum ada proyek di kategori ini.",
+    "explore": "Jelajahi {name}",
+    "categories": {
+      "workforce": {
+        "label": "Tenaga Kerja & Manajemen SDM",
+        "projects": []
+      },
+      "industry": {
+        "label": "Solusi Industri",
+        "projects": []
+      },
+      "smart-cms": {
+        "label": "CMS Pintar",
+        "projects": []
+      },
+      "event-registration": {
+        "label": "Acara & Registrasi",
+        "projects": []
+      },
+      "play-lab": {
+        "label": "Play Lab",
+        "projects": [
+          {
+            "slug": "shio",
+            "name": "Shio",
+            "description": "Permainan zodiak Cina."
+          },
+          {
+            "slug": "pap",
+            "name": "PAP",
+            "description": "Stan foto kreatif instan."
+          },
+          {
+            "slug": "puzzle",
+            "name": "Puzzle",
+            "description": "Pecahkan teka-teki, puncaki papan peringkat."
+          },
+          {
+            "slug": "catch",
+            "name": "Catch",
+            "description": "Game menangkap objek dengan sensor gerakan tangan."
+          },
+          {
+            "slug": "scream-challenge",
+            "name": "scream-challenge",
+            "description": "Game suara berteriak untuk bertahan hidup."
+          },
+          {
+            "slug": "spin-wheel",
+            "name": "Spin Wheel",
+            "description": "Roda putar digital interaktif."
+          },
+          {
+            "slug": "memory-card",
+            "name": "Memory Card",
+            "description": "Mencocokkan pasangan gambar yang identik."
+          }
+        ]
+      }
+    }
+  },
   "portfolio": {
     "heading": "Proyek yang Mendorong Transformasi Digital",
-    "subheading": "Dari platform perusahaan hingga pengalaman digital interaktif, setiap proyek mencerminkan komitmen kami untuk menyelesaikan tantangan bisnis nyata melalui desain dan teknologi yang matang.",
+    "subheading": "Dari platform enterprise hingga pengalaman digital interaktif, setiap proyek mencerminkan komitmen kami dalam menjawab tantangan bisnis melalui desain dan teknologi yang andal.",
+    "showcaseHeading": "Mengubah Ide Menjadi Solusi Digital Dunia Nyata",
+    "showcaseSubheading": "Kami menghadirkan solusi digital ujung-ke-ujung yang membantu bisnis berinovasi, meningkatkan keterlibatan pengguna, dan mencapai pertumbuhan jangka panjang.",
     "showcaseTitle": "Portofolio Kami",
     "exploreProject": "Jelajahi Proyek",
     "breadcrumb": "Portofolio",
@@ -175,7 +243,6 @@
         "name": "in-Lite Indonesia",
         "tagline": "Pionir Lampu LED Lokal & Inovasi Sakelar Premium",
         "description": "Halaman katalog untuk produk lampu LED dan sakelar pintar premium seri Alura & Linea.",
-        "image": "/portfolio/in-lite/inlite.webp",
         "category": "Ritel & Elektronik"
       },
       {
@@ -183,7 +250,6 @@
         "name": "Bali Surfer's Perfume (BSP)",
         "tagline": "Aroma Tropis Khas Bali & Kebebasan Tanpa Batas",
         "description": "Merek parfum lokal premium Eau de Parfum (EDP) dengan aroma pesisir laut yang segar.",
-        "image": "/portfolio/bsp/bsp.png",
         "category": "Mode & Kecantikan"
       },
       {
@@ -191,7 +257,6 @@
         "name": "Warung Leko Grand Wisata",
         "tagline": "Spesialis Iga Penyet & Masakan Indonesia",
         "description": "Menu restoran spesialis iga Indonesia, informasi cabang, dan halaman reservasi.",
-        "image": "/portfolio/leko/leko.png",
         "category": "Makanan & Minuman"
       },
       {
@@ -199,7 +264,6 @@
         "name": "Metland Cikarang",
         "tagline": "Perumahan Eco Living di Cibitung, Bekasi",
         "description": "Showcase pemasaran untuk pengembangan perumahan modern eco-living di Cibitung.",
-        "image": "/portfolio/metland/metland.png",
         "category": "Real Estate & Perumahan"
       },
       {
@@ -207,7 +271,6 @@
         "name": "Tanta Resto & Lounge",
         "tagline": "Kehangatan, Rasa, dan Kepedulian dalam Setiap Hidangan",
         "description": "Restoran kelas atas perpaduan masakan Indonesia & Barat yang terletak di Plaza Senayan.",
-        "image": "/portfolio/tanta/tanta.png",
         "category": "Makanan & Minuman"
       },
       {
@@ -215,7 +278,6 @@
         "name": "Karindo LED",
         "tagline": "All In One Rental Solution",
         "description": "Solusi penjualan dan penyewaan tampilan LED dan prosesor video berstandar dunia.",
-        "image": "/portfolio/karindo/karindo.png",
         "category": "Ritel & Elektronik"
       },
       {
@@ -223,33 +285,32 @@
         "name": "YW Production",
         "tagline": "Partner Penyedia Perlengkapan Produksi Event",
         "description": "Penyedia perlengkapan produksi event berkualitas seperti rigging, panggung, tata suara, tata cahaya, dan tampilan LED.",
-        "image": "/portfolio/yw/yw.png",
         "category": "Jasa & Acara"
       }
     ]
   },
   "cta": {
-    "heading": "Siap membangun tanpa batas?",
+    "heading": "Siap Membangun Tanpa Batas?",
     "gradientWord": "tanpa batas?",
-    "description": "Hubungi tim teknisi kami untuk merancang ekosistem perangkat lunak khusus dan instalasi fisik interaktif dengan ketelitian tinggi.",
+    "description": "Hubungi tim engineering kami untuk merancang ekosistem perangkat lunak kustom dan instalasi fisik interaktif berpresisi tinggi.",
     "ctaText": "Mulai Sekarang",
     "label": "CTA"
   },
   "contact": {
-    "heading": "Ayo buat mahakarya bersama",
+    "heading": "Ayo Ciptakan Mahakarya Bersama",
     "gradientWord": "mahakarya bersama",
     "subheading": "Hubungi kami di platform pilihan Anda. Kami siap merespons.",
     "faqTitle": "Pertanyaan yang Sering Diajukan",
     "faqSub": "Semua yang perlu Anda ketahui tentang memulai proyek dengan Creative Lab.",
     "infoTitle": "Informasi Kontak",
     "emailLabel": "Email",
-    "emailSub": "Respons dalam waktu 24 jam.",
+    "emailSub": "Respons dalam waktu kurang dari 24 jam.",
     "phoneLabel": "Dukungan Telepon",
-    "phoneSub": "Sen - Jum, 09.00 - 18.00 (WIB)",
+    "phoneSub": "Senin - Jumat, 09:00 - 18:00 (WIB)",
     "hqLabel": "Kantor Pusat",
     "hqSub": "MJ Solution Indonesia Center",
     "slaLabel": "Ketersediaan SLA",
-    "slaSub": "Dukungan langsung untuk sistem aktif",
+    "slaSub": "Dukungan langsung untuk sistem yang sedang berjalan",
     "connectSocial": "Hubungkan di Media Sosial",
     "faqs": [
       {
@@ -286,7 +347,7 @@
     "impact": "Metrik Dampak",
     "techDeployed": "Teknologi yang Digunakan",
     "notFoundTitle": "Proyek Tidak Ditemukan",
-    "notFoundSub": "Eksekusi portofolio yang diminta tidak dapat ditemukan.",
+    "notFoundSub": "Portofolio yang Anda cari tidak dapat ditemukan.",
     "visitWebsite": "Kunjungi Website",
     "getConsultation": "Dapatkan Konsultasi",
     "dashboardPreview": "Pratinjau Dasbor {title}"
@@ -297,32 +358,32 @@
   },
   "notFound": {
     "title": "Halaman Tidak Ditemukan",
-    "description": "Halaman yang Anda cari tidak ada, telah dihapus, atau telah dipindahkan dalam ekosistem kami.",
+    "description": "Halaman yang Anda cari tidak ditemukan atau telah dipindahkan.",
     "goHome": "Kembali ke Beranda"
   },
   "categories": {
     "All": "Semua",
     "Business Operations": "Operasional Bisnis",
-    "Workforce & Human Capital": "Sumber Daya Manusia",
+    "Workforce & Human Capital": "Tenaga Kerja & Manajemen SDM",
     "Industry Solutions": "Solusi Industri",
     "Smart CMS": "CMS Pintar",
     "Event & Registration": "Acara & Registrasi",
     "Play Lab": "Play Lab"
   },
   "diagram": {
-    "heading": "Dibuat untuk Membantu Tim Memberikan Proyek yang Lebih Baik",
-    "description": "Lebih dari sekadar manajemen tugas. Kami menghubungkan orang, proyek, klien, dan keuangan Anda dalam satu platform untuk mendorong produktivitas dan kesuksesan.",
+    "heading": "Didesain untuk Membantu Tim Menyelesaikan Proyek Lebih Baik",
+    "description": "Lebih dari sekadar manajemen tugas. Kami mengintegrasikan tim, proyek, klien, dan keuangan dalam satu platform untuk mendorong produktivitas dan kesuksesan bisnis.",
     "completeVisibility": "Visibilitas Proyek Lengkap",
-    "fasterCheckout": "Pembayaran Lebih Cepat",
+    "fasterCheckout": "Proses Transaksi Lebih Cepat",
     "accurateInventory": "Inventaris Akurat",
-    "betterPurchasing": "Pembelian Lebih Baik",
-    "actionableInsights": "Wawasan yang Dapat Ditindaklanjuti",
+    "betterPurchasing": "Pembelian yang Optimal",
+    "actionableInsights": "Analisis yang Dapat Ditindaklanjuti",
     "readyToGrow": "Siap Tumbuh",
     "logoAlt": "Logo Proyek"
   },
   "featureProduct": {
-    "heading": "Semua yang Anda Butuhkan untuk Menyelesaikan Proyek dengan Sukses",
-    "description": "Satu aplikasi untuk semua kebutuhan proyek Anda. Rencanakan, kolaborasikan, dan pantau keuangan tim Anda dengan mudah, semua di satu tempat.",
+    "heading": "Semua yang Anda Butuhkan untuk Menyelesaikan Proyek",
+    "description": "Satu platform untuk semua kebutuhan proyek Anda. Rencanakan, kolaborasikan, dan pantau keuangan tim Anda dengan mudah di satu tempat.",
     "featuresAlt": "Fitur {title}"
   }
 }

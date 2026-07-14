@@ -51,6 +51,8 @@
     "heading": "We deliver digital innovation, from enterprise to gamification.",
     "gradientWord": "Services",
     "subheading": "From enterprise-grade platforms to immersive gamification, we deliver the full spectrum of digital innovation.",
+    "showcaseHeading": "Beyond Products, We Deliver Complete Solutions",
+    "showcaseSubheading": "We go beyond building products by delivering end-to-end digital solutions that help businesses innovate, engage users, and achieve long-term growth.",
     "enterprise": {
       "title": "Enterprise & B2G Solutions",
       "desc": "Efficiency, Data Security, and Scalability."
@@ -127,7 +129,7 @@
   "workflow": {
     "heading": "Our Workflow",
     "gradientWord": "Workflow",
-    "subheading": "Interactive Roadmap. Track our process from concept to delivery!",
+    "subheading": "Every successful digital product starts with a clear process from discovery and planning to deployment and continuous support.",
     "step1": {
       "title": "Discovery",
       "desc": "We analyze your business logic, audit legacy systems, and define technical requirements."
@@ -163,9 +165,75 @@
     "breadcrumb": "Product",
     "label": "Product"
   },
+  "productShowcase": {
+    "heading": "Solutions for Every Business Need",
+    "subheading": "Explore a comprehensive portfolio of digital solutions designed to improve efficiency, simplify operations, and support business growth across industries.",
+    "noProjects": "No projects yet in this category.",
+    "explore": "Explore {name}",
+    "categories": {
+      "workforce": {
+        "label": "Workforce & Human Capital",
+        "projects": []
+      },
+      "industry": {
+        "label": "Industry Solutions",
+        "projects": []
+      },
+      "smart-cms": {
+        "label": "Smart CMS",
+        "projects": []
+      },
+      "event-registration": {
+        "label": "Event & Registration",
+        "projects": []
+      },
+      "play-lab": {
+        "label": "Play Lab",
+        "projects": [
+          {
+            "slug": "shio",
+            "name": "Shio",
+            "description": "Chinese zodiac game."
+          },
+          {
+            "slug": "pap",
+            "name": "PAP",
+            "description": "Instant creative photo booth."
+          },
+          {
+            "slug": "puzzle",
+            "name": "Puzzle",
+            "description": "Solve puzzles, top leaderboard."
+          },
+          {
+            "slug": "catch",
+            "name": "Catch",
+            "description": "Hand-motion object catching game."
+          },
+          {
+            "slug": "scream-challenge",
+            "name": "Scream Challenge",
+            "description": "Voice game scream and survive."
+          },
+          {
+            "slug": "spin-wheel",
+            "name": "Spin Wheel",
+            "description": "Interactive digital spin wheel."
+          },
+          {
+            "slug": "memory-card",
+            "name": "Memory Card",
+            "description": "Match pairs of identical images."
+          }
+        ]
+      }
+    }
+  },
   "portfolio": {
     "heading": "Projects That Drive Digital Transformation",
     "subheading": "From enterprise platforms to interactive digital experiences, every project reflects our commitment to solving real business challenges through thoughtful design and technology.",
+    "showcaseHeading": "Turning Ideas into Real-World Digital Solutions",
+    "showcaseSubheading": "We go beyond building products by delivering end-to-end digital solutions that help businesses innovate, engage users, and achieve long-term growth.",
     "showcaseTitle": "Our Portfolio",
     "exploreProject": "Explore Project",
     "breadcrumb": "Portfolio",

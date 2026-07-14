@@ -113,4 +113,47 @@ export interface ProjectDetail {
   cta?: ProjectCTA;
 }
 
+export interface ProcessStep {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+export interface ProjectDetailItem {
+  slug: string;
+  title: string;
+  category: string;
+  desc: string;
+  shortDesc: string;
+}
+
+export interface ProductShowcaseProps {
+  products?: any[];
+  locale?: string;
+}
+
+export interface ServiceItem {
+  title: string;
+  desc: string;
+  slug: string;
+}
+
+export interface ShowcaseProject {
+  slug: string;
+  name: string;
+  description: string;
+}
+
+export interface AdvantageRowProps {
+  index: number;
+  item: { title: string; desc: string; icon: string };
+  isActive: boolean;
+}
+
+export interface ImplementationProductProps {
+  data?: ProjectImplementation;
+}
+
+
 

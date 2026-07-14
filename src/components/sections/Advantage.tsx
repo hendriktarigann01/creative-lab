@@ -6,12 +6,8 @@ import { Container } from '@/components/ui/Container';
 import { ICON_MAP } from '@/constants/advantages';
 import { useTranslations } from 'next-intl';
 import { LazyImage } from '@/components/ui/LazyImage';
+import { AdvantageRowProps } from '@/types';
 
-interface AdvantageRowProps {
-  index: number;
-  item: { title: string; desc: string; icon: string };
-  isActive: boolean;
-}
 
 function AdvantageRow({ index: _index, item, isActive }: AdvantageRowProps) {
   return (
@@ -22,7 +18,7 @@ function AdvantageRow({ index: _index, item, isActive }: AdvantageRowProps) {
         <div
           className={`w-8 h-8 sm:w-10 sm:h-10 p-2 rounded-lg flex items-center justify-center border transition-all duration-300 [&_svg]:w-4 [&_svg]:h-4 sm:[&_svg]:w-5 sm:[&_svg]:h-5 ${
             isActive
-              ? 'bg-accent/15 border-accent/30 text-accent'
+              ? 'bg-primary/15 border-accent/30 text-accent'
               : 'bg-white/5 border-white/10 text-tertiary'
           }`}
         >
@@ -111,10 +107,10 @@ export function Advantage() {
         <Container className="flex flex-col gap-4 lg:gap-8 max-h-[95vh] justify-center">
           {/* Title Block */}
           <div className="flex flex-col gap-1 sm:gap-2 text-center max-w-3xl mx-auto shrink-0">
-            <h2 className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent text-2xl sm:text-4xl lg:text-5xl font-medium tracking-tight leading-[1.1]">
+            <h2 className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent text-3xl sm:text-4xl font-medium tracking-tight leading-[1.1]">
               {t('heading')}
             </h2>
-            <p className="text-tertiary text-xs sm:text-sm max-w-xl mx-auto leading-relaxed mt-1 hidden sm:block">
+            <p className="text-tertiary/75 text-sm sm:text-base max-w-xl mx-auto leading-relaxed mt-4">
               {t('subheading')}
             </p>
           </div>
