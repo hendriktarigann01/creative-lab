@@ -47,6 +47,7 @@
     }
   },
   "services": {
+    "label": "Layanan",
     "heading": "Kami menghadirkan inovasi digital, mulai dari solusi enterprise hingga gamifikasi.",
     "gradientWord": "Layanan",
     "subheading": "Dari platform kelas enterprise hingga gamifikasi imersif—kami menghadirkan seluruh spektrum inovasi digital.",

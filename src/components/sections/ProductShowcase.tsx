@@ -4,140 +4,193 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
-import { ArrowRight } from 'lucide-react';
-import { PRODUCT_CATEGORIES } from '@/constants/products';
-import { ProjectDetailItem, ProductShowcaseProps } from '@/types';
+import { Link } from '@/i18n/routing';
+import { ArrowRight, X, SlidersHorizontal } from 'lucide-react';
+import { Container } from '@/components/ui/Container';
+import { ProjectDetail } from '@/types';
+import { cn } from '@/lib/utils';
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.4, delay: i * 0.06, ease: 'easeOut' as const },
-  }),
-};
+interface ProductShowcaseProps {
+  products: ProjectDetail[];
+  locale: string;
+}
 
-export function ProductShowcase({
-  products: _products,
-  locale: _locale,
-}: ProductShowcaseProps = {}) {
-  const t = useTranslations('productShowcase');
-  const tCommon = useTranslations();
-  const tDetail = useTranslations('product-detail');
+const CATEGORIES_ORDER = [
+  'All',
+  'Business Operations',
+  'Workforce & Human Capital',
+  'Industry Solutions',
+  'Smart CMS',
+  'Event & Registration',
+  'Play Lab',
+];
 
-  const [activeKey, setActiveKey] = useState(PRODUCT_CATEGORIES[PRODUCT_CATEGORIES.length - 1].key);
+export function ProductShowcase({ products }: ProductShowcaseProps) {
+  const [activeFilter, setActiveFilter] = useState('All');
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const t = useTranslations('product');
+  const tCat = useTranslations('categories');
 
-  // Load projects dynamically from product-detail.json
-  const projectsMap = (tDetail.raw('projects') as Record<string, ProjectDetailItem>) || {};
-  const allProjects = Object.values(projectsMap);
+  // Filter available categories based on existing products
+  const categories = CATEGORIES_ORDER.filter(
+    (cat) => cat === 'All' || products.some((p) => p.category === cat || p.category === tCat(cat))
+  );
 
-  const categories = PRODUCT_CATEGORIES.map((cat) => {
-    // Map the English categoryName to the current localized category name using categories namespace in common.json
-    const localizedCatName = tCommon(`categories.${cat.categoryName}`);
-    const categoryProjects = allProjects.filter((p) => p.category === localizedCatName);
-
-    return {
-      ...cat,
-      label: localizedCatName,
-      projects: categoryProjects,
-    };
+  // Filter products by active category selection
+  const filteredProjects = products.filter((project) => {
+    if (activeFilter === 'All') return true;
+    return project.category === activeFilter || project.category === tCat(activeFilter);
   });
 
-  const activeCategory = categories.find((c) => c.key === activeKey) ?? categories[0];
-
-  const getLogoSrc = (slug: string, categoryKey: string) => {
-    if (categoryKey === 'play-lab') {
-      return '/logo/playlab.webp';
-    }
-    return `/logo/${slug}.webp`;
-  };
-
   return (
-    <section className="bg-background py-20 sm:py-28 relative">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-medium tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent sm:text-4xl">
-            {t('heading')}
-          </h2>
-          <p className="mt-4 text-sm text-tertiary/75 sm:text-base leading-relaxed">
-            {t('subheading')}
-          </p>
-        </div>
+    <>
+      <div className="relative z-10 min-h-screen mt-16 sm:mt-24">
+        {filteredProjects.map((project, index) => {
+          const isPlayLab = project.category === 'Play Lab';
+          const logoSlug =
+            project.slug === 'spin-wheel' ? 'playlab' : isPlayLab ? 'playlab' : project.slug;
+          const subtitleText = project.subtitle || '';
 
-        <div className="mt-12 rounded-3xl border border-border bg-white/5 p-6 backdrop-blur-md shadow-xs sm:p-8">
-          <div className="flex flex-nowrap gap-2 overflow-x-auto pb-2 hide-scrollbar">
-            {categories.map((category) => {
-              const Icon = category.icon;
-              const isActive = category.key === activeKey;
-              return (
-                <button
-                  key={category.key}
-                  onClick={() => setActiveKey(category.key)}
-                  className={`flex shrink-0 items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap ${
-                    isActive
-                      ? 'bg-primary/15 border border-accent/30 text-accent'
-                      : 'bg-navbar/15 text-tertiary/60 border border-transparent hover:text-tertiary'
-                  }`}
-                >
-                  <Icon className="h-4 w-4 shrink-0" />
-                  {category.label}
-                </button>
-              );
-            })}
-          </div>
-
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeCategory.key}
-              className="grid grid-cols-1 gap-5 mt-6 sm:grid-cols-2 lg:grid-cols-4"
+          return (
+            <section
+              key={project.slug}
+              className="h-screen w-full snap-center snap-always bg-transparent flex items-center justify-center relative overflow-hidden"
             >
-              {activeCategory.projects.length === 0 && (
-                <p className="col-span-full py-16 text-center text-sm text-tertiary/45">
-                  {t('noProjects')}
-                </p>
-              )}
-
-              {activeCategory.projects.map((project, i) => (
-                <motion.div
-                  key={project.slug}
-                  custom={i}
-                  initial="hidden"
-                  animate="visible"
-                  variants={cardVariants}
-                  className="relative flex flex-col overflow-hidden rounded-2xl border border-border bg-white/[0.02] p-5 hover:border-white/20 transition-all duration-300 group"
-                >
-                  {/* Subtle card bottom glow */}
-                  <div className="absolute -bottom-[10%] left-0 right-0 h-1/2 rounded-full bg-primary/15 blur-3xl pointer-events-none transition-all duration-300 group-hover:bg-accent/25" />
-
-                  <div className="relative z-10 flex flex-col h-full">
-                    <h3 className="text-base font-medium bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                      {project.title}
-                    </h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-tertiary/75 line-clamp-3">
-                      {project.shortDesc}
-                    </p>
-
-                    <div className="my-5 flex h-24 items-center justify-center rounded-xl bg-white/5 border border-white/5">
-                      <Image
-                        src={getLogoSrc(project.slug, activeCategory.key)}
-                        alt={project.title}
-                        width={120}
-                        height={60}
-                        className="h-14 w-auto object-contain"
-                      />
+              <Container className="w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-12 items-center justify-between w-full">
+                  {/* Left Column: Info Panel */}
+                  <div className="lg:col-span-5 flex flex-col justify-between h-full gap-6">
+                    {/* Top: Logo & Category badge */}
+                    <div className="flex flex-col gap-5">
+                      <div className="h-16 flex items-center">
+                        <Image
+                          src={`/logo/${logoSlug}.webp`}
+                          alt={`${project.title} Logo`}
+                          width={360}
+                          height={110}
+                          className="h-10 sm:h-16 w-auto object-contain select-none"
+                          priority={index === 0}
+                        />
+                      </div>
+                      <div>
+                        <span className="inline-flex px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-medium tracking-wide uppercase select-none">
+                          {project.category}
+                        </span>
+                      </div>
                     </div>
 
-                    <button className="mt-auto flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-accent py-2.5 text-xs text-white transition-opacity hover:opacity-90 cursor-pointer">
-                      {t('explore', { name: project.title })}
-                      <ArrowRight className="h-3 w-3" />
-                    </button>
+                    {/* Bottom: Subtitle, Title, Desc & Action Button */}
+                    <div className="flex flex-col gap-4">
+                      <div className="space-y-3">
+                        <span className="text-xs sm:text-sm font-medium bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent tracking-wider uppercase block select-none">
+                          {subtitleText}
+                        </span>
+                        <h3 className="text-3xl sm:text-4xl font-medium tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent select-none">
+                          {project.title}
+                        </h3>
+                        <p className="text-sm sm:text-base text-tertiary leading-relaxed mt-2 select-none">
+                          {project.desc}
+                        </p>
+                      </div>
+                      <div className="pt-2">
+                        <Link
+                          href={`/product/${project.category
+                            .toLowerCase()
+                            .replace(/[^a-z0-9]+/g, '-')
+                            .replace(/(^-|-$)+/g, '')}/${project.slug}`}
+                          className="inline-flex items-center gap-2 px-6 py-3 hover:brightness-110 text-white rounded-full font-medium text-sm transition-all cursor-pointer bg-gradient-to-r from-primary to-accent"
+                        >
+                          <span>
+                            {t('explore')} {project.title}
+                          </span>
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </div>
+                    </div>
                   </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
-        </div>
+
+                  {/* Right Column: Stacked Mockup Images */}
+                  <div className="lg:col-span-7 flex flex-col gap-4 lg:gap-5 w-full">
+                    {/* Top Mockup */}
+                    <div className="relative aspect-square w-full rounded-2xl ml-auto overflow-hidden border border-border bg-card transition-all duration-300 group max-w-[160px] sm:max-w-[220px] lg:max-w-[320px]">
+                      <Image
+                        src={`/product/apps/${project.slug}/${project.slug}-mockup.webp`}
+                        alt={`${project.title} Mockup`}
+                        fill
+                        className="object-cover object-left-top transition-transform duration-500 select-none"
+                        priority={index === 0}
+                      />
+                    </div>
+                    {/* Bottom Case Study */}
+                    <div className="relative aspect-square w-full rounded-2xl ml-auto overflow-hidden border border-border bg-card transition-all duration-300 group max-w-[160px] sm:max-w-[220px] lg:max-w-[320px]">
+                      <Image
+                        src={`/product/apps/${project.slug}/${project.slug}-case.webp`}
+                        alt={`${project.title} Case study`}
+                        fill
+                        className="object-cover object-center transition-transform duration-500 select-none"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Container>
+            </section>
+          );
+        })}
       </div>
-    </section>
+
+      {/* Floating Filter Button & Popup Overlay */}
+      {isFilterOpen && (
+        <div
+          className="fixed inset-0 bg-background/30 backdrop-blur-xs z-40 transition-opacity duration-300"
+          onClick={() => setIsFilterOpen(false)}
+        />
+      )}
+
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <AnimatePresence>
+          {isFilterOpen && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 15 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
+              className="mb-4 mr-0 w-[280px] bg-card/95 backdrop-blur-md border border-border p-6 flex flex-col gap-1.5 rounded-tr-[50px] rounded-bl-[50px] rounded-tl-lg rounded-br-lg"
+            >
+              {categories.map((category) => {
+                const displayCatName = tCat(category);
+                const isActive = activeFilter === category;
+
+                return (
+                  <button
+                    key={category}
+                    onClick={() => {
+                      setActiveFilter(category);
+                      setIsFilterOpen(false);
+                    }}
+                    className={cn(
+                      'w-full text-center px-4 py-2.5 rounded-2xl text-sm transition-all cursor-pointer font-medium border border-transparent',
+                      isActive
+                        ? 'bg-primary/10 border-primary/20 text-primary font-medium'
+                        : 'text-foreground hover:bg-muted/50 hover:text-foreground'
+                    )}
+                  >
+                    {displayCatName}
+                  </button>
+                );
+              })}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <button
+          onClick={() => setIsFilterOpen(!isFilterOpen)}
+          className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white hover:scale-105 active:scale-95 transition-all cursor-pointer"
+          aria-label="Filter products"
+        >
+          {isFilterOpen ? <X className="w-6 h-6" /> : <SlidersHorizontal className="w-6 h-6" />}
+        </button>
+      </div>
+    </>
   );
 }

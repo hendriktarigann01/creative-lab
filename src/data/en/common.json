@@ -48,6 +48,7 @@
     }
   },
   "services": {
+    "label": "Services",
     "heading": "We deliver digital innovation, from enterprise to gamification.",
     "gradientWord": "Services",
     "subheading": "From enterprise-grade platforms to immersive gamification, we deliver the full spectrum of digital innovation.",

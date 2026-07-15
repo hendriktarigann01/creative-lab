@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { PageHero } from '@/components/ui/PageHero';
 import { ProductShowcase } from '@/components/sections/ProductShowcase';
+import { Footer } from '@/components/layout/Footer';
 import { ProjectDetail } from '@/types';
 
 export default function ProductPage() {
@@ -49,6 +50,11 @@ export default function ProductPage() {
 
       {/* Product List Showcase Component */}
       <ProductShowcase products={products} locale={locale} />
+
+      {/* Footer wrapped in scroll-snap section */}
+      <div className="snap-center snap-always w-full">
+        <Footer />
+      </div>
     </div>
   );
 }

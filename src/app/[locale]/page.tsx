@@ -6,7 +6,7 @@ import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/components/sections/Hero';
 import { HeroFrameBackground } from '@/components/sections/HeroFrameBackground';
 import { Advantage } from '@/components/sections/Advantage';
-import { ProductShowcase } from '@/components/sections/ProductShowcase';
+import { ProductListShowcase } from '@/components/sections/ProductListShowcase';
 import { Services } from '@/components/sections/Services';
 import { PortfolioShowcase } from '@/components/sections/PortfolioShowcase';
 import { Workflow } from '@/components/sections/Workflow';
@@ -81,7 +81,7 @@ export default function Home() {
         <HeroFrameBackground />
         <Hero />
         <Advantage />
-        <ProductShowcase />
+        <ProductListShowcase />
         <Services />
         <Workflow /> <PortfolioShowcase />
         <CTA />

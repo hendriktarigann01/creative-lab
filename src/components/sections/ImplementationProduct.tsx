@@ -128,6 +128,7 @@ export default function ImplementationProduct({ data }: ImplementationProductPro
                     alt={industries[0]?.title || ''}
                     fill
                     className={getImgClass(0)}
+                    priority={true}
                   />
                 </div>
                 <div className="relative w-full h-80 rounded-2xl overflow-hidden bg-muted">
@@ -136,6 +137,7 @@ export default function ImplementationProduct({ data }: ImplementationProductPro
                     alt={industries[1]?.title || ''}
                     fill
                     className={getImgClass(1)}
+                    priority={true}
                   />
                 </div>
               </div>
@@ -148,6 +150,7 @@ export default function ImplementationProduct({ data }: ImplementationProductPro
                     alt={industries[2]?.title || ''}
                     fill
                     className={getImgClass(2)}
+                    priority={true}
                   />
                 </div>
                 <div className="relative w-full h-56 rounded-2xl overflow-hidden bg-muted">
@@ -156,6 +159,7 @@ export default function ImplementationProduct({ data }: ImplementationProductPro
                     alt={industries[3]?.title || ''}
                     fill
                     className={getImgClass(3)}
+                    priority={true}
                   />
                 </div>
               </div>
@@ -214,6 +218,7 @@ export default function ImplementationProduct({ data }: ImplementationProductPro
                 alt={industries[activeIndex].title}
                 fill
                 className="object-cover"
+                priority={true}
               />
             </motion.div>
           </AnimatePresence>

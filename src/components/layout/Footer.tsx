@@ -67,7 +67,7 @@ export function Footer() {
             <Link
               key={idx}
               href={link.path as never}
-              className="hover:text-primary transition-colors duration-300 font-medium"
+              className="hover:text-primary transition-colors duration-300"
             >
               {link.name}
             </Link>

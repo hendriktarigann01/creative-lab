@@ -122,6 +122,7 @@ export function PortfolioShowcase() {
                     height={260}
                     className="h-full w-full object-cover aspect-video group-hover:scale-[1.02] transition-transform duration-500"
                     priority={i < 2}
+                    loading={i >= 2 ? 'lazy' : undefined}
                   />
                 </div>
 

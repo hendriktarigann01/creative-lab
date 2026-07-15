@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 import { Container } from '@/components/ui/Container';
 import { ICON_MAP } from '@/constants/advantages';
 import { useTranslations } from 'next-intl';
-import { LazyImage } from '@/components/ui/LazyImage';
+import Image from 'next/image';
 import { AdvantageRowProps } from '@/types';
 
 
@@ -141,12 +141,13 @@ export function Advantage() {
                         willChange: 'opacity',
                       }}
                     >
-                      <LazyImage
+                      <Image
                         src={`/advantage/slideshow-${index + 1}.png`}
                         alt={item.title}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover w-full h-full"
+                        priority={true}
                       />
                     </div>
                   );

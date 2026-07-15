@@ -77,7 +77,7 @@ export function Workflow() {
   return (
     <div className="bg-background">
       {/* Heading Block */}
-      <div className="bg-background px-6 py-20 sm:py-28">
+      <div className="bg-background px-6 py-10 sm:py-14">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl sm:text-4xl font-medium tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             {t('heading')}
