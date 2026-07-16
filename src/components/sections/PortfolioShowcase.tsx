@@ -76,7 +76,7 @@ export function PortfolioShowcase() {
             </p>
           </div>
 
-          <div className="flex shrink-0 w-full justify-end items-center gap-3 select-none">
+          <div className="hidden sm:flex shrink-0 w-full justify-end items-center gap-3 select-none">
             <button
               onClick={() => scroll('left')}
               disabled={!canScrollLeft}
@@ -98,7 +98,7 @@ export function PortfolioShowcase() {
 
         <div
           ref={scrollRef}
-          className="mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="mt-10 flex snap-x snap-mandatory gap-4 sm:gap-6 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {projects.map((project, i) => (
             <motion.div
@@ -108,11 +108,8 @@ export function PortfolioShowcase() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               variants={cardVariants}
-              className="relative w-[280px] shrink-0 snap-start overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-5 sm:w-[400px] hover:border-white/20 transition-all duration-300 group"
+              className="relative w-[calc(50%-8px)] sm:w-[400px] shrink-0 snap-start overflow-hidden rounded-xl border border-border p-3 xs:p-4 sm:p-5 transition-all duration-300 group"
             >
-              {/* Subtle ambient bottom-right glow inside cards */}
-              <div className="absolute -bottom-[10%] -right-[10%] h-48 w-48 rounded-full bg-primary/10 blur-3xl pointer-events-none group-hover:bg-primary/20 transition-all duration-300" />
-
               <div className="relative z-10 space-y-6">
                 <div className="rounded-lg bg-white/5 border border-white/5 overflow-hidden flex items-center justify-center">
                   <Image
@@ -120,32 +117,52 @@ export function PortfolioShowcase() {
                     alt={project.name}
                     width={400}
                     height={260}
-                    className="h-full w-full object-cover aspect-video group-hover:scale-[1.02] transition-transform duration-500"
+                    className="h-full w-full object-cover aspect-video"
                     priority={i < 2}
                     loading={i >= 2 ? 'lazy' : undefined}
                   />
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-base font-medium bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  <h3 className="min-h-10 md:min-h-auto text-sm sm:text-base font-medium bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                     {project.name}
                   </h3>
-                  <p className="text-sm leading-relaxed text-tertiary/70 line-clamp-2 h-10">
+                  <p className="text-[10px] xs:text-xs sm:text-sm leading-relaxed text-tertiary/70 line-clamp-3 min-h-12 xs:min-h-16 lg:min-h-0 sm:line-clamp-2 sm:h-10">
                     {project.description}
                   </p>
 
                   {/* Wrapped inside a localized Link tag */}
                   <Link
                     href={`/portfolio/${project.slug}`}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-accent px-5 py-2.5 text-xs font-medium text-white transition-opacity hover:opacity-90 active:scale-95 cursor-pointer"
+                    className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-accent px-4 py-2 sm:px-5 sm:py-2.5 text-[10px] xs:text-xs font-medium text-white transition-opacity hover:opacity-90 active:scale-95 cursor-pointer text-center"
                   >
                     {t('exploreProject')}
-                    <ArrowRight className="h-3.5 w-3.5" />
+                    <ArrowRight className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                   </Link>
                 </div>
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Mobile View Scroll Buttons centered at bottom */}
+        <div className="flex sm:hidden w-full justify-center items-center gap-3 mt-6 select-none">
+          <button
+            onClick={() => scroll('left')}
+            disabled={!canScrollLeft}
+            aria-label="Previous project"
+            className={navButtonClass(canScrollLeft)}
+          >
+            <ArrowLeft className="h-4 w-4" />
+          </button>
+          <button
+            onClick={() => scroll('right')}
+            disabled={!canScrollRight}
+            aria-label="Next project"
+            className={navButtonClass(canScrollRight)}
+          >
+            <ArrowRight className="h-4 w-4" />
+          </button>
         </div>
       </div>
     </section>

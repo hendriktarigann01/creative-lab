@@ -44,7 +44,7 @@ export default function ImplementationProduct({ data }: ImplementationProductPro
         <div className="hidden md:block bg-card border border-border rounded-2xl p-10 shadow-sm">
           <div className="grid grid-cols-2 gap-16">
             {/* Left: Nav + Industry List */}
-            <div className="flex gap-5 h-full items-center">
+            <div className="flex gap-10 h-full items-center">
               {/* Arrow Buttons */}
               <div className="flex flex-col items-center justify-start gap-4 pt-2 shrink-0">
                 <button
@@ -81,7 +81,7 @@ export default function ImplementationProduct({ data }: ImplementationProductPro
                     <div
                       key={idx}
                       onClick={() => setActiveIndex(idx)}
-                      className="mb-1 p-4 bg-card rounded-lg cursor-pointer border border-border"
+                      className="mb-1 p-6 bg-card rounded-lg cursor-pointer border border-border"
                       style={{ boxShadow: '0px 4px 50px rgba(175, 175, 175, 0.1)' }}
                     >
                       <div className="flex items-start gap-3">
@@ -90,12 +90,9 @@ export default function ImplementationProduct({ data }: ImplementationProductPro
                             <Plus className="w-full h-full" />
                           </div>
                         )}
-                        <div className="flex-1">
-                          <h3 className="font-medium text-muted-Nforeground mb-2">
-                            {industry.title}
-                          </h3>
+                        <div className="text-sm flex-1">
                           <AnimatePresence initial={false}>
-                            {isActive && (
+                            {isActive ? (
                               <motion.div
                                 key={`content-${idx}`}
                                 initial={{ opacity: 0, height: 0 }}
@@ -104,10 +101,13 @@ export default function ImplementationProduct({ data }: ImplementationProductPro
                                 transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                                 className="overflow-hidden"
                               >
-                                <p className="text-tertiary text-sm mb-3">
+                                <p className="text-tertiary">
+                                  <span className="font-medium">{industry.title},</span>{' '}
                                   {industry.desc}
                                 </p>
                               </motion.div>
+                            ) : (
+                              <h3 className="font-medium text-tertiary">{industry.title}</h3>
                             )}
                           </AnimatePresence>
                         </div>
@@ -122,7 +122,7 @@ export default function ImplementationProduct({ data }: ImplementationProductPro
             <div className="grid grid-cols-2 gap-4">
               {/* Left column: image 0 (pendek) + image 1 (tinggi) */}
               <div className="flex flex-col gap-4">
-                <div className="relative w-full h-56 rounded-2xl overflow-hidden bg-muted">
+                <div className="relative w-full h-56 rounded-xl overflow-hidden bg-muted">
                   <Image
                     src={industries[0]?.img || ''}
                     alt={industries[0]?.title || ''}
@@ -131,7 +131,7 @@ export default function ImplementationProduct({ data }: ImplementationProductPro
                     priority={true}
                   />
                 </div>
-                <div className="relative w-full h-80 rounded-2xl overflow-hidden bg-muted">
+                <div className="relative w-full h-80 rounded-xl overflow-hidden bg-muted">
                   <Image
                     src={industries[1]?.img || ''}
                     alt={industries[1]?.title || ''}
@@ -144,7 +144,7 @@ export default function ImplementationProduct({ data }: ImplementationProductPro
 
               {/* Right column: image 2 (tinggi) + image 3 (pendek) */}
               <div className="flex flex-col gap-4">
-                <div className="relative w-full h-80 rounded-2xl overflow-hidden bg-muted">
+                <div className="relative w-full h-80 rounded-xl overflow-hidden bg-muted">
                   <Image
                     src={industries[2]?.img || ''}
                     alt={industries[2]?.title || ''}
@@ -153,7 +153,7 @@ export default function ImplementationProduct({ data }: ImplementationProductPro
                     priority={true}
                   />
                 </div>
-                <div className="relative w-full h-56 rounded-2xl overflow-hidden bg-muted">
+                <div className="relative w-full h-56 rounded-xl overflow-hidden bg-muted">
                   <Image
                     src={industries[3]?.img || ''}
                     alt={industries[3]?.title || ''}
@@ -211,7 +211,7 @@ export default function ImplementationProduct({ data }: ImplementationProductPro
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="relative w-full h-56 rounded-2xl overflow-hidden bg-muted"
+              className="relative w-full h-56 rounded-xl overflow-hidden bg-muted"
             >
               <Image
                 src={industries[activeIndex]?.img || ''}

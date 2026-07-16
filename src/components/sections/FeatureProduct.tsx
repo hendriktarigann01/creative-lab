@@ -11,6 +11,7 @@ interface FeatureItem {
   title: string;
   description: string;
   features: { label: string; iconName: string }[];
+  img?: string;
 }
 
 interface FeatureProductProps {
@@ -54,6 +55,19 @@ export default function FeatureProduct({ projectSlug }: FeatureProductProps) {
 
   const activeItem = features[activeTab];
 
+  let heading = tCommon('heading');
+  let description = tCommon('description');
+
+  try {
+    const hasCustomHeader = tDetail.raw(`projects.${projectSlug}.featuresHeader`) ? true : false;
+    if (hasCustomHeader) {
+      heading = tDetail(`projects.${projectSlug}.featuresHeader.heading`);
+      description = tDetail(`projects.${projectSlug}.featuresHeader.description`);
+    }
+  } catch (e) {
+    // Ignore and fallback
+  }
+
   if (!features || features.length === 0) {
     return null;
   }
@@ -62,14 +76,14 @@ export default function FeatureProduct({ projectSlug }: FeatureProductProps) {
     <section className="relative w-full py-16 sm:py-24 bg-background">
       <Container className="relative z-10 flex flex-col items-center">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight">
+        <div className="text-center mb-14">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto font-medium tracking-tight">
             <span className="bg-gradient-to-r from-[#AB7FEB] to-[#540EE1] bg-clip-text text-transparent">
-              {tCommon('heading')}
+              {heading}
             </span>
           </h2>
-          <p className="text-sm sm:text-base text-tertiary mt-4 leading-relaxed">
-            {tCommon('description')}
+          <p className="max-w-4xl mx-auto text-sm sm:text-base text-tertiary mt-4 leading-relaxed">
+            {description}
           </p>
         </div>
 
@@ -152,8 +166,10 @@ export default function FeatureProduct({ projectSlug }: FeatureProductProps) {
                     className="w-full h-full relative"
                   >
                     <Image
-                      src={`/product/feature/${projectSlug}-1.webp`}
-                      alt={tCommon('featuresAlt', { title: projectSlug }) || `${projectSlug} Features`}
+                      src={activeItem.img || `/product/feature/${projectSlug}-1.webp`}
+                      alt={
+                        tCommon('featuresAlt', { title: projectSlug }) || `${projectSlug} Features`
+                      }
                       fill
                       className="object-cover object-left-top transition-transform duration-500 hover:scale-102"
                       sizes="(max-width: 1024px) 100vw, 50vw"

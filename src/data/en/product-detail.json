@@ -12,8 +12,17 @@
       "timeline": "Ongoing",
       "challenge": "Teams needed a unified way to track tasks, manage client relationships, and monitor project profitability.",
       "solution": "Built a project management platform combining task tracking, client management, and profit & loss monitoring in one workspace.",
-      "features": ["Task & Project Tracking", "Client Management", "Profit & Loss Monitoring"],
-      "technologies": ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      "features": [
+        "Task & Project Tracking",
+        "Client Management",
+        "Profit & Loss Monitoring"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
       "stats": {
         "label": "Category",
         "value": "Business Operations"
@@ -42,7 +51,8 @@
               "label": "Comments & Discussions",
               "iconName": "message"
             }
-          ]
+          ],
+          "img": "/product/feature/plannr-1.webp"
         },
         {
           "tabLabel": "Client",
@@ -66,7 +76,8 @@
               "label": "Activity Timeline",
               "iconName": "clock"
             }
-          ]
+          ],
+          "img": "/product/feature/plannr-2.webp"
         },
         {
           "tabLabel": "Pipeline",
@@ -90,7 +101,8 @@
               "label": "Task Prioritization",
               "iconName": "check"
             }
-          ]
+          ],
+          "img": "/product/feature/plannr-3.webp"
         },
         {
           "tabLabel": "Billing",
@@ -114,7 +126,8 @@
               "label": "Client Invoices",
               "iconName": "docs"
             }
-          ]
+          ],
+          "img": "/product/feature/plannr-4.webp"
         },
         {
           "tabLabel": "Finance",
@@ -138,10 +151,78 @@
               "label": "Financial Reports",
               "iconName": "docs"
             }
-          ]
+          ],
+          "img": "/product/feature/plannr-5.webp"
         }
       ],
-      "shortDesc": "Manage projects, monitor performance."
+      "shortDesc": "Manage projects, monitor performance.",
+      "implementation": {
+        "sectionTitle": "Built for Businesses That Manage Projects Every Day",
+        "sectionDesc": "One app for all your project needs. Plan, collaborate and monitor your team’s finances with ease, all in one place.",
+        "industries": [
+          {
+            "title": "Construction",
+            "desc": "Coordinate project schedules, site activities, contractors, documentation, and budgets from one centralized platform.",
+            "img": "/product/implementation/construction.webp"
+          },
+          {
+            "title": "Healthcare",
+            "desc": "Manage medical programs, staffing tasks, facility audits, and clinic launch timelines efficiently.",
+            "img": "/product/implementation/healthcare.webp"
+          },
+          {
+            "title": "Corporate",
+            "desc": "Streamline corporate operations, department deliverables, resource scheduling, and profit-and-loss performance tracking.",
+            "img": "/product/implementation/corporate.webp"
+          },
+          {
+            "title": "Retail",
+            "desc": "Optimize store launch projects, retail branch rollouts, and inventory procurement schedules.",
+            "img": "/product/implementation/retail.webp"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Deliver Projects Faster with Better Collaboration",
+        "subtitle": "Optimize workflows, improve collaboration, and keep projects on schedule. Contact our experts for your business solutions!"
+      },
+      "headline": "Manage Projects, Inventory, and Sales from One Integrated Platform",
+      "subheadline": "Streamline every stage of your operations from procurement and inventory to point of sale and reporting with a centralized project management system designed for growing businesses.",
+      "diagram": {
+        "heading": "Built to Help Teams Deliver Better Projects",
+        "description": "More than just task management. We connect your people, projects, clients, and finances in one platform to drive productivity and success.",
+        "logoAlt": "Project Logo",
+        "cards": [
+          {
+            "label": "Complete Project Visibility",
+            "icon": "bar2"
+          },
+          {
+            "label": "Data-Driven Decisions",
+            "icon": "bid_landscape"
+          },
+          {
+            "label": "Better Team Collaboration",
+            "icon": "users"
+          },
+          {
+            "label": "Financial Transparency",
+            "icon": "handshake"
+          },
+          {
+            "label": "Stronger Client Relationships",
+            "icon": "handshake"
+          },
+          {
+            "label": "Built to Scale",
+            "icon": "rocket_launch"
+          }
+        ]
+      },
+      "featuresHeader": {
+        "heading": "Everything You Need to Deliver Projects Successfully",
+        "description": "One app for all your project needs. Plan, collaborate and monitor your team's finances with ease, all in one place."
+      }
     },
     "pipely": {
       "slug": "pipely",
@@ -160,7 +241,12 @@
         "Stock & Purchase Management",
         "Multi Payment Integration"
       ],
-      "technologies": ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
       "stats": {
         "label": "Category",
         "value": "Business Operations"
@@ -189,7 +275,8 @@
               "label": "Digital & Printed Receipts",
               "iconName": "receipt_long"
             }
-          ]
+          ],
+          "img": "/product/feature/pipely-1.webp"
         },
         {
           "tabLabel": "Stock Management",
@@ -205,7 +292,8 @@
               "label": "Low Stock Alerts",
               "iconName": "warning"
             }
-          ]
+          ],
+          "img": "/product/feature/pipely-2.webp"
         },
         {
           "tabLabel": "Purchasing",
@@ -225,7 +313,8 @@
               "label": "Supplier Performance",
               "iconName": "handshake"
             }
-          ]
+          ],
+          "img": "/product/feature/pipely-3.webp"
         },
         {
           "tabLabel": "Product Management",
@@ -245,7 +334,8 @@
               "label": "SKU & Barcode Management",
               "iconName": "new_label"
             }
-          ]
+          ],
+          "img": "/product/feature/pipely-4.webp"
         },
         {
           "tabLabel": "Reports & Analytics",
@@ -265,10 +355,78 @@
               "label": "Export & Download Reports",
               "iconName": "download"
             }
-          ]
+          ],
+          "img": "/product/feature/pipely-5.webp"
         }
       ],
-      "shortDesc": "Manage sales, POS, stock, and purchases."
+      "shortDesc": "Manage sales, POS, stock, and purchases.",
+      "headline": "Simplify Every Sale, Inventory, and Business Operation in One Platform",
+      "subheadline": "Manage sales, inventory, purchasing, and reporting through one integrated system built to help your business operate more efficiently.",
+      "implementation": {
+        "sectionTitle": "Built for Every Business That Sells Products",
+        "sectionDesc": "Whether you operate a retail store, restaurant, pharmacy, or wholesale business, our Sales Management System helps simplify daily operations, improve inventory accuracy, and increase sales efficiency.",
+        "industries": [
+          {
+            "title": "Retail & Supermarket",
+            "desc": "Manage daily sales, inventory, multiple store locations through one centralized platform.",
+            "img": "/product/implementation/supermarket.webp"
+          },
+          {
+            "title": "Food & Beverage",
+            "desc": "Streamline restaurant and cafe operations by integrating POS, inventory management, purchasing, and sales reporting.",
+            "img": "/product/implementation/f&b.webp"
+          },
+          {
+            "title": "Pharmacy & Healthcare",
+            "desc": "Maintain accurate medicine inventory, purchasing records, stock movements, and sales with complete operational visibility.",
+            "img": "/product/implementation/pharmacy.webp"
+          },
+          {
+            "title": "Wholesale & Distribution",
+            "desc": "Handle bulk orders, warehouse inventory, supplier management, and product distribution more efficiently.",
+            "img": "/product/implementation/wholesale.webp"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to Transform Your Sales Operations?",
+        "subtitle": "Manage sales, inventory, and purchasing more efficiently. Contact our team for the best solutions for your business!"
+      },
+      "diagram": {
+        "heading": "Built to Help Teams Deliver Better Projects",
+        "description": "More than just task management. We connect your people, projects, clients, and finances in one platform to drive productivity and success.",
+        "logoAlt": "Project Logo",
+        "cards": [
+          {
+            "label": "Complete Project Visibility",
+            "icon": "bar2"
+          },
+          {
+            "label": "Faster Checkout",
+            "icon": "bolt"
+          },
+          {
+            "label": "Accurate Inventory",
+            "icon": "package"
+          },
+          {
+            "label": "Better Purchasing",
+            "icon": "handshake"
+          },
+          {
+            "label": "Actionable Insights",
+            "icon": "query_stats"
+          },
+          {
+            "label": "Ready to Grow",
+            "icon": "rocket_launch"
+          }
+        ]
+      },
+      "featuresHeader": {
+        "heading": "Everything You Need to Manage Sales from Checkout to Inventory",
+        "description": "Simplify your sales operations with an all-in-one platform that connects sales, inventory, purchasing, and reporting. Gain complete visibility into your business while improving efficiency across every transaction."
+      }
     },
     "kruu": {
       "slug": "kruu",
@@ -282,8 +440,17 @@
       "timeline": "Ongoing",
       "challenge": "HR teams needed to streamline employee administration, payroll processing, and leave management in one system.",
       "solution": "Developed an HRMS covering employee management, payroll processing, and leave management to simplify HR operations.",
-      "features": ["Employee Management", "Payroll Management", "Leave Management"],
-      "technologies": ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      "features": [
+        "Employee Management",
+        "Payroll Management",
+        "Leave Management"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
       "stats": {
         "label": "Category",
         "value": "Workforce & Human Capital"
@@ -312,7 +479,8 @@
               "label": "Department & Position Management",
               "iconName": "apartment"
             }
-          ]
+          ],
+          "img": "/product/feature/kruu-1.webp"
         },
         {
           "tabLabel": "Attendance",
@@ -328,7 +496,8 @@
               "label": "GPS & Geofencing",
               "iconName": "location"
             }
-          ]
+          ],
+          "img": "/product/feature/kruu-2.webp"
         },
         {
           "tabLabel": "Leave & Attendance Req",
@@ -352,7 +521,8 @@
               "label": "Overtime",
               "iconName": "overtime"
             }
-          ]
+          ],
+          "img": "/product/feature/kruu-3.webp"
         },
         {
           "tabLabel": "Organization",
@@ -372,7 +542,8 @@
               "label": "Overtime",
               "iconName": "groups"
             }
-          ]
+          ],
+          "img": "/product/feature/kruu-4.webp"
         },
         {
           "tabLabel": "Payroll",
@@ -392,10 +563,78 @@
               "label": "Payroll Reports",
               "iconName": "docs"
             }
-          ]
+          ],
+          "img": "/product/feature/kruu-5.webp"
         }
       ],
-      "shortDesc": "Centralized workforce and payroll system."
+      "shortDesc": "Centralized workforce and payroll system.",
+      "headline": "Simplify Workforce Management from Attendance to Payroll",
+      "subheadline": "Manage the entire employee lifecycle in one integrated platform. Streamline attendance, leave, payroll, and analytics to build a smarter, more productive workforce.",
+      "implementation": {
+        "sectionTitle": "Built for Every Organization That Manages People",
+        "sectionDesc": "Whether you're managing a growing workforce or multiple business locations, our HRMS helps simplify HR operations, improve employee management, and increase organizational efficiency.",
+        "industries": [
+          {
+            "title": "Manufacturing",
+            "desc": "Manage shift workers, attendance, overtime, payroll, and workforce operations across multiple production facilities.",
+            "img": "/product/implementation/manufacturing.webp"
+          },
+          {
+            "title": "Healthcare",
+            "desc": "Track staff attendance, rotating shifts, leave management, and payroll for hospitals, clinics, and healthcare organizations.",
+            "img": "/product/implementation/healthcare2.webp"
+          },
+          {
+            "title": "Corporate",
+            "desc": "Centralize employee management, HR administration, payroll, and workforce reporting for modern businesses.",
+            "img": "/product/implementation/corporate2.webp"
+          },
+          {
+            "title": "Retail",
+            "desc": "Manage employees across multiple stores with centralized attendance, scheduling, payroll, and branch administration.",
+            "img": "/product/implementation/retail2.webp"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to Modernize Your HR Operations?",
+        "subtitle": "Automate employee management and HR processes. Speak with our experts to find the perfect solution for your organization."
+      },
+      "diagram": {
+        "heading": "Built to Simplify Modern Human Resource Management",
+        "description": "Our HRMS connects employee management, attendance, payroll, and workforce administration into one platform helping HR teams save time, reduce errors, and improve employee experiences.",
+        "logoAlt": "Project Logo",
+        "cards": [
+          {
+            "label": "Complete Employee Management",
+            "icon": "bar2"
+          },
+          {
+            "label": "Accurate Attendance Tracking",
+            "icon": "bolt"
+          },
+          {
+            "label": "Automated HR Processes",
+            "icon": "package"
+          },
+          {
+            "label": "Payroll Made Easy",
+            "icon": "handshake"
+          },
+          {
+            "label": "Workforce Insights",
+            "icon": "query_stats"
+          },
+          {
+            "label": "Ready to Grow",
+            "icon": "rocket_launch"
+          }
+        ]
+      },
+      "featuresHeader": {
+        "heading": "Everything You Need to Manage Your Workforce Efficiently",
+        "description": "Digitize HR operations with an all-in-one platform that simplifies employee management, attendance, payroll, and workforce administration while improving accuracy and operational efficiency."
+      }
     },
     "classix": {
       "slug": "classix",
@@ -409,8 +648,17 @@
       "timeline": "Ongoing",
       "challenge": "Educational institutions needed a single platform to manage administration, attendance, and digital learning.",
       "solution": "Developed an education ERP combining smart administration, smart attendance, and smart e-learning modules.",
-      "features": ["Smart Administration", "Smart Attendance Management", "Smart E-Learning"],
-      "technologies": ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      "features": [
+        "Smart Administration",
+        "Smart Attendance Management",
+        "Smart E-Learning"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
       "stats": {
         "label": "Category",
         "value": "Industry Solutions"
@@ -431,7 +679,8 @@
               "label": "Export CSV",
               "iconName": "magnifying_person"
             }
-          ]
+          ],
+          "img": "/product/feature/classix-1.webp"
         },
         {
           "tabLabel": "Learning",
@@ -455,7 +704,8 @@
               "label": "Learning Materials",
               "iconName": "draft"
             }
-          ]
+          ],
+          "img": "/product/feature/classix-2.webp"
         },
         {
           "tabLabel": "Student Management",
@@ -475,7 +725,8 @@
               "label": "Academic Records",
               "iconName": "plagiarism"
             }
-          ]
+          ],
+          "img": "/product/feature/classix-3.webp"
         },
         {
           "tabLabel": "Teacher & Class",
@@ -495,7 +746,8 @@
               "label": "Subject Management",
               "iconName": "book_4"
             }
-          ]
+          ],
+          "img": "/product/feature/classix-4.webp"
         },
         {
           "tabLabel": "School Analytics",
@@ -515,10 +767,78 @@
               "label": "Student Reports",
               "iconName": "download"
             }
-          ]
+          ],
+          "img": "/product/feature/classix-5.webp"
         }
       ],
-      "shortDesc": "Digitize integrated school operations."
+      "shortDesc": "Digitize integrated school operations.",
+      "headline": "One Integrated Platform to Simplify School Management",
+      "subheadline": "Streamline academics, attendance, e-learning, and administration. Empower educators to focus on teaching while boosting institution-wide efficiency.",
+      "implementation": {
+        "sectionTitle": "Built for Modern Educational Institutions",
+        "sectionDesc": "Whether you're managing a school, vocational institution, or higher education campus, our ERP for School helps simplify administration, enhance learning, and improve academic outcomes.",
+        "industries": [
+          {
+            "title": "Primary & Secondary Schools",
+            "desc": "Manage student attendance, academic records, classes, teachers, and daily school operations through one integrated platform.",
+            "img": "/product/implementation/primary-school.webp"
+          },
+          {
+            "title": "Vocational Schools",
+            "desc": "Support competency-based learning with course management, assessments, attendance tracking, and student performance monitoring.",
+            "img": "/product/implementation/vocational-school.webp"
+          },
+          {
+            "title": "Colleges & Universities",
+            "desc": "Coordinate academic administration, learning activities, grading, and faculty management across multiple departments.",
+            "img": "/product/implementation/colleges.webp"
+          },
+          {
+            "title": "Training & Learning Centers",
+            "desc": "Deliver structured courses, monitor participant progress, manage instructors, and streamline administrative operations.",
+            "img": "/product/implementation/training-center.webp"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to Transform Your School with Digital Technology?",
+        "subtitle": "Optimize administration, boost academic performance, and elevate the learning experience. Contact our team for the ideal solution."
+      },
+      "diagram": {
+        "heading": "Built to Support Better Education and Smarter School Management",
+        "description": "Our ERP for School brings together academic operations, student management, and digital learning into one integrated platform, helping schools improve efficiency while creating better learning experiences.",
+        "logoAlt": "Project Logo",
+        "cards": [
+          {
+            "label": "Complete School Management",
+            "icon": "bar2"
+          },
+          {
+            "label": "Digital Learning Experience",
+            "icon": "book_4"
+          },
+          {
+            "label": "Attendance",
+            "icon": "check"
+          },
+          {
+            "label": "Better Academic Insights",
+            "icon": "monitoring"
+          },
+          {
+            "label": "Simplified Administration",
+            "icon": "users"
+          },
+          {
+            "label": "Ready to Grow",
+            "icon": "rocket_launch"
+          }
+        ]
+      },
+      "featuresHeader": {
+        "heading": "Everything You Need to Manage Your School Efficiently",
+        "description": "Manage students, teachers, academic records, attendance, learning activities, and performance reports through one integrated system designed for modern educational institutions."
+      }
     },
     "jipies": {
       "slug": "jipies",
@@ -532,8 +852,17 @@
       "timeline": "Ongoing",
       "challenge": "Field operations teams needed real-time visibility into vehicle location and driver behavior across their fleet.",
       "solution": "Built a GPS fleet management platform with real-time tracking, geo-fence alerts, and driver behavior monitoring.",
-      "features": ["GPS Real-Time Tracking", "Geo-Fence & Alerts", "Driver Behavior Monitoring"],
-      "technologies": ["React", "Node.js", "PostgreSQL", "WebSocket"],
+      "features": [
+        "GPS Real-Time Tracking",
+        "Geo-Fence & Alerts",
+        "Driver Behavior Monitoring"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "WebSocket"
+      ],
       "stats": {
         "label": "Category",
         "value": "Workforce & Human Capital"
@@ -633,7 +962,74 @@
           ]
         }
       ],
-      "shortDesc": "Track fleets, optimize performance."
+      "shortDesc": "Track fleets, optimize performance.",
+      "headline": "Optimize Every Vehicle, Driver, and Fleet Operation in One Platform",
+      "subheadline": "Track vehicles, monitor drivers, and manage maintenance in real-time. Reduce operational costs while ensuring safe, efficient journeys.",
+      "implementation": {
+        "sectionTitle": "lorem ipsum dolor sit amet",
+        "sectionDesc": "lorem ipsum dolor sit amet",
+        "industries": [
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          },
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          },
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          },
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to Optimize Your Fleet Operations?",
+        "subtitle": "Discover how our Fleet Management System can help you improve fleet visibility, reduce operational costs, and enhance driver safety. Speak with our experts to find the right solution for your business."
+      },
+      "diagram": {
+        "heading": "Built to Keep Your Fleet Moving Efficiently",
+        "description": "Connect tracking, maintenance, driver management, and analytics in one platform. Reduce costs, improve safety, and maximize performance.",
+        "logoAlt": "Project Logo",
+        "cards": [
+          {
+            "label": "Complete Fleet Visibility",
+            "icon": "location"
+          },
+          {
+            "label": "Safer Driver Operations",
+            "icon": "traffic"
+          },
+          {
+            "label": "Preventive Maintenance",
+            "icon": "log"
+          },
+          {
+            "label": "Lower Operating Costs",
+            "icon": "money"
+          },
+          {
+            "label": "Data-Driven Fleet Management",
+            "icon": "bar2"
+          },
+          {
+            "label": "Ready to Grow",
+            "icon": "rocket_launch"
+          }
+        ]
+      },
+      "featuresHeader": {
+        "heading": "Everything You Need to Manage Your Fleet Efficiently",
+        "description": "Monitor vehicles, drivers, maintenance, and fleet performance through one integrated platform. Gain complete visibility into your operations while improving safety, reducing downtime, and maximizing fleet utilization."
+      }
     },
     "diggit": {
       "slug": "diggit",
@@ -652,7 +1048,12 @@
         "Geo-Fence & Alerts",
         "Driver Behavior Monitoring"
       ],
-      "technologies": ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
       "stats": {
         "label": "Category",
         "value": "Industry Solutions"
@@ -756,7 +1157,74 @@
           ]
         }
       ],
-      "shortDesc": "Integrated ERP for smarter mining operations."
+      "shortDesc": "Integrated ERP for smarter mining operations.",
+      "headline": "Optimize Every Mining Operation from Planning to Production",
+      "subheadline": "Optimize your mining operations with an integrated platform. Connect planning to finance, reduce downtime, and maximize efficiency with real-time insights.",
+      "implementation": {
+        "sectionTitle": "lorem ipsum dolor sit amet",
+        "sectionDesc": "lorem ipsum dolor sit amet",
+        "industries": [
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          },
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          },
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          },
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to Transform Your Mining Operations?",
+        "subtitle": "Discover how our Mining ERP can improve operational efficiency, optimize equipment utilization, and simplify resource management. Speak with our experts to find the right solution for your mining business."
+      },
+      "diagram": {
+        "heading": "Built to Power Smarter, Safer, and More Efficient Mining Operations",
+        "description": "We provide reliable technology that can adapt to the complexities of the mining industry, helping you work more efficiently and make decisions faster.",
+        "logoAlt": "Project Logo",
+        "cards": [
+          {
+            "label": "Improve Operational Efficiency",
+            "icon": "person_engineering"
+          },
+          {
+            "label": "Smarter Fleet & Asset Management",
+            "icon": "front_loader"
+          },
+          {
+            "label": "Operational Intelligence",
+            "icon": "bar2"
+          },
+          {
+            "label": "Efficient Resource Management",
+            "icon": "package"
+          },
+          {
+            "label": "Better Cost Control",
+            "icon": "money_bag"
+          },
+          {
+            "label": "Ready to Grow",
+            "icon": "rocket_launch"
+          }
+        ]
+      },
+      "featuresHeader": {
+        "heading": "Everything You Need to Run Modern Mining Operations",
+        "description": "Connect every stage of your mining business with a centralized ERP. Streamline operations from planning to accounting to boost efficiency and performance."
+      }
     },
     "sailoo": {
       "slug": "sailoo",
@@ -770,8 +1238,17 @@
       "timeline": "Ongoing",
       "challenge": "Maritime operators needed centralized visibility over voyage orders, vessel propulsion, and port operations.",
       "solution": "Developed a voyage management system with voyage order management, vessel propulsion monitoring, and port management.",
-      "features": ["Voyage Order Management", "Vessel Propulsion Monitoring", "Port Management"],
-      "technologies": ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      "features": [
+        "Voyage Order Management",
+        "Vessel Propulsion Monitoring",
+        "Port Management"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
       "stats": {
         "label": "Category",
         "value": "Industry Solutions"
@@ -879,7 +1356,74 @@
           ]
         }
       ],
-      "shortDesc": "Centralized maritime operations system."
+      "shortDesc": "Centralized maritime operations system.",
+      "headline": "Manage Every Voyage, Vessel, and Cargo Operation from One Platform",
+      "subheadline": "Streamline your maritime operations with an all-in-one digital platform. Simplify planning, track voyages, and boost fleet efficiency and compliance.",
+      "implementation": {
+        "sectionTitle": "lorem ipsum dolor sit amet",
+        "sectionDesc": "lorem ipsum dolor sit amet",
+        "industries": [
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          },
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          },
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          },
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to Modernize Your Maritime Operations?",
+        "subtitle": "Optimize your voyage planning, fleet utilization, and cargo operations with our Voyage Management System. Contact our team of experts for the best maritime solutions."
+      },
+      "diagram": {
+        "heading": "Built to Simplify Every Maritime Operation",
+        "description": "Our Voyage Management System integrates voyage planning, fleet operations, cargo management, and maintenance into one intelligent platform, helping maritime businesses operate more safely, efficiently, and profitably.",
+        "logoAlt": "Project Logo",
+        "cards": [
+          {
+            "label": "Complete Voyage Visibility",
+            "icon": "boat"
+          },
+          {
+            "label": "Smarter Cargo Management",
+            "icon": "package"
+          },
+          {
+            "label": "Reliable Fleet Operations",
+            "icon": "anchor"
+          },
+          {
+            "label": "Proactive Maintenance",
+            "icon": "log"
+          },
+          {
+            "label": "Operational Intelligence",
+            "icon": "bar2"
+          },
+          {
+            "label": "Ready to Grow",
+            "icon": "rocket_launch"
+          }
+        ]
+      },
+      "featuresHeader": {
+        "heading": "Everything You Need to Manage Maritime Operations Efficiently",
+        "description": "Manage voyage planning, vessel operations, cargo activities, maintenance, and operational reporting through one integrated platform built for modern maritime businesses."
+      }
     },
     "converra": {
       "slug": "converra",
@@ -898,7 +1442,13 @@
         "Screen Status Monitoring",
         "Content Upload"
       ],
-      "technologies": ["React", "Electron", "Node.js", "Prisma", "MySQL"],
+      "technologies": [
+        "React",
+        "Electron",
+        "Node.js",
+        "Prisma",
+        "MySQL"
+      ],
       "stats": {
         "label": "Category",
         "value": "Smart CMS"
@@ -918,8 +1468,17 @@
       "timeline": "Ongoing",
       "challenge": "Warehouse operations needed clearer visibility over stock movement and a reliable way to reconcile inventory.",
       "solution": "Developed a Warehouse Management System covering check-in/check-out flows and stock opname processes to keep inventory data accurate.",
-      "features": ["Warehouse Management", "Check In & Check Out", "Stock Opname"],
-      "technologies": ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      "features": [
+        "Warehouse Management",
+        "Check In & Check Out",
+        "Stock Opname"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
       "stats": {
         "label": "Category",
         "value": "Business Operations"
@@ -945,7 +1504,12 @@
         "Seat Reservation",
         "Ticket Customization"
       ],
-      "technologies": ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
       "stats": {
         "label": "Category",
         "value": "Event & Registration"
@@ -965,8 +1529,16 @@
       "timeline": "Ongoing",
       "challenge": "Brand activations needed a festive, interactive game to engage visitors.",
       "solution": "Built a web-based Shio interactive kiosk game that allows visitors to discover predictions and win prizes.",
-      "features": ["Web-Based Kiosk UI", "Fast Deployment", "Festive CNY Themes"],
-      "technologies": ["React", "Tailwind CSS", "Framer Motion"],
+      "features": [
+        "Web-Based Kiosk UI",
+        "Fast Deployment",
+        "Festive CNY Themes"
+      ],
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
       "stats": {
         "label": "Category",
         "value": "Play Lab"
@@ -986,8 +1558,16 @@
       "timeline": "Ongoing",
       "challenge": "Increasing social media reach organically during live brand activations.",
       "solution": "Developed a photo-taking kiosk app that formats pictures with custom event borders, ready for instant download.",
-      "features": ["Custom Frame Overlays", "QR Code Download", "Social Media Sharing"],
-      "technologies": ["React", "Tailwind CSS", "Framer Motion"],
+      "features": [
+        "Custom Frame Overlays",
+        "QR Code Download",
+        "Social Media Sharing"
+      ],
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
       "stats": {
         "label": "Category",
         "value": "Play Lab"
@@ -1007,8 +1587,16 @@
       "timeline": "Ongoing",
       "challenge": "Keeping visitors engaged longer at the event booth.",
       "solution": "Developed an interactive picture puzzle game with dragging mechanics and completion timing logs.",
-      "features": ["Picture Uploading Support", "Timer Mechanics", "Interactive Win Effects"],
-      "technologies": ["React", "Tailwind CSS", "Framer Motion"],
+      "features": [
+        "Picture Uploading Support",
+        "Timer Mechanics",
+        "Interactive Win Effects"
+      ],
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
       "stats": {
         "label": "Category",
         "value": "Play Lab"
@@ -1028,8 +1616,16 @@
       "timeline": "Ongoing",
       "challenge": "Reinforcing brand products familiarity in a playful, memorable way.",
       "solution": "Designed a web-based catch game with falling brand logos and items, customizable speed levels, and score tracking.",
-      "features": ["Brand Assets Customization", "Speed Escalation", "High-Scores Log"],
-      "technologies": ["React", "Tailwind CSS", "Canvas API"],
+      "features": [
+        "Brand Assets Customization",
+        "Speed Escalation",
+        "High-Scores Log"
+      ],
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "Canvas API"
+      ],
       "stats": {
         "label": "Category",
         "value": "Play Lab"
@@ -1054,7 +1650,11 @@
         "Exciting Sound Effects",
         "Visitor Data Collection"
       ],
-      "technologies": ["React", "Tailwind CSS", "Framer Motion"],
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
       "stats": {
         "label": "Category",
         "value": "Play Lab"
@@ -1074,8 +1674,16 @@
       "timeline": "Ongoing",
       "challenge": "Fostering visitor engagement and brand recall in a limited time.",
       "solution": "Created a clean card-flip matching game utilizing brand images with countdown timer mechanics.",
-      "features": ["Card Art Customization", "Timer & Move Counters", "Leaderboard System"],
-      "technologies": ["React", "Tailwind CSS", "Framer Motion"],
+      "features": [
+        "Card Art Customization",
+        "Timer & Move Counters",
+        "Leaderboard System"
+      ],
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
       "stats": {
         "label": "Category",
         "value": "Play Lab"
@@ -1100,7 +1708,11 @@
         "Fast-Paced Gameplay",
         "Live High-Scores Leaderboard"
       ],
-      "technologies": ["React", "Tailwind CSS", "HTML5 Audio API"],
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "HTML5 Audio API"
+      ],
       "stats": {
         "label": "Category",
         "value": "Play Lab"

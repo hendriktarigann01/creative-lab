@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 import { PRODUCT_CATEGORIES } from '@/constants/products';
 import { ProjectDetailItem, ProductShowcaseProps } from '@/types';
 
@@ -26,6 +26,7 @@ export function ProductListShowcase({
   const tDetail = useTranslations('product-detail');
 
   const [activeKey, setActiveKey] = useState(PRODUCT_CATEGORIES[PRODUCT_CATEGORIES.length - 1].key);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   // Load projects dynamically from product-detail.json
   const projectsMap = (tDetail.raw('projects') as Record<string, ProjectDetailItem>) || {};
@@ -65,7 +66,8 @@ export function ProductListShowcase({
         </div>
 
         <div className="mt-12 rounded-3xl border border-border bg-white/5 p-6 backdrop-blur-md shadow-xs sm:p-8">
-          <div className="flex flex-nowrap gap-2 overflow-x-auto pb-2 hide-scrollbar">
+          {/* Desktop Categories Selector */}
+          <div className="hidden sm:flex flex-nowrap gap-2 overflow-x-auto pb-2 hide-scrollbar">
             {categories.map((category) => {
               const Icon = category.icon;
               const isActive = category.key === activeKey;
@@ -86,10 +88,61 @@ export function ProductListShowcase({
             })}
           </div>
 
+          {/* Mobile Dropdown Category Selector */}
+          <div className="relative sm:hidden w-full">
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="flex w-full items-center justify-between gap-2 rounded-lg bg-primary/15 border border-accent/30 text-accent px-4 py-2.5 text-sm font-medium transition-all duration-200 cursor-pointer"
+            >
+              <div className="flex items-center gap-2">
+                {(() => {
+                  const ActiveIcon = activeCategory.icon;
+                  return <ActiveIcon className="h-4 w-4 shrink-0" />;
+                })()}
+                <span>{activeCategory.label}</span>
+              </div>
+              <ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            <AnimatePresence>
+              {isDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute left-0 right-0 mt-2 z-30 max-h-60 overflow-y-auto rounded-lg border border-border bg-card p-1 shadow-lg"
+                >
+                  {categories.map((category) => {
+                    const CatIcon = category.icon;
+                    const isActive = category.key === activeKey;
+                    return (
+                      <button
+                        key={category.key}
+                        onClick={() => {
+                          setActiveKey(category.key);
+                          setIsDropdownOpen(false);
+                        }}
+                        className={`flex w-full items-center gap-2 rounded-md px-3 py-2 text-left text-sm transition-all duration-150 cursor-pointer ${
+                          isActive
+                            ? 'bg-primary/15 text-accent font-medium'
+                            : 'text-tertiary/75 hover:bg-muted/30 hover:text-foreground'
+                        }`}
+                      >
+                        <CatIcon className="h-4 w-4 shrink-0" />
+                        {category.label}
+                      </button>
+                    );
+                  })}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCategory.key}
-              className="grid grid-cols-1 gap-5 mt-6 sm:grid-cols-2 lg:grid-cols-4"
+              className="grid grid-cols-2 gap-4 mt-6 sm:grid-cols-2 lg:grid-cols-4"
             >
               {activeCategory.projects.length === 0 && (
                 <p className="col-span-full py-16 text-center text-sm text-tertiary/45">
@@ -104,32 +157,32 @@ export function ProductListShowcase({
                   initial="hidden"
                   animate="visible"
                   variants={cardVariants}
-                  className="relative flex flex-col overflow-hidden rounded-2xl border border-border bg-white/[0.02] p-5 hover:border-white/20 transition-all duration-300 group"
+                  className="relative flex flex-col overflow-hidden rounded-2xl border border-border bg-white/[0.02] p-4 sm:p-5 hover:border-white/20 transition-all duration-300 group"
                 >
                   {/* Subtle card bottom glow */}
                   <div className="absolute -bottom-[10%] left-0 right-0 h-1/2 rounded-full bg-primary/15 blur-3xl pointer-events-none transition-all duration-300 group-hover:bg-accent/25" />
 
                   <div className="relative z-10 flex flex-col h-full">
-                    <h3 className="text-base font-medium bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    <h3 className="text-sm sm:text-base font-medium bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                       {project.title}
                     </h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-tertiary/75 line-clamp-3">
+                    <p className="mt-1.5 text-[10px] min-h-[50px] md:min-h-auto xs:text-xs sm:text-sm leading-relaxed text-tertiary/75 line-clamp-3">
                       {project.shortDesc}
                     </p>
 
-                    <div className="my-5 flex h-24 items-center justify-center rounded-xl bg-white/5 border border-white/5">
+                    <div className="my-3 xs:my-5 flex h-16 xs:h-20 sm:h-24 items-center justify-center rounded-xl bg-white/5 border border-white/5">
                       <Image
                         src={getLogoSrc(project.slug, activeCategory.key)}
                         alt={project.title}
                         width={120}
                         height={60}
-                        className="h-14 w-auto object-contain"
+                        className="h-10 xs:h-12 sm:h-14 w-auto object-contain"
                         priority={true}
                       />
                     </div>
 
-                    <button className="mt-auto flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-accent py-2.5 text-xs text-white transition-opacity hover:opacity-90 cursor-pointer">
-                      {t('explore', { name: project.title })}
+                    <button className="mt-auto flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-accent py-2 sm:py-2.5 text-[10px] xs:text-xs text-white transition-opacity hover:opacity-90 cursor-pointer">
+                      Explore
                       <ArrowRight className="h-3 w-3" />
                     </button>
                   </div>

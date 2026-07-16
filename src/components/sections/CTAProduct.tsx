@@ -25,7 +25,7 @@ export default function CTAProduct({ projectSlug, ctaData }: CTAProductProps) {
 
         <div className="relative z-10 w-full flex flex-col items-center">
           {/* Title */}
-          <AnimateOnScroll variant="slideUp">
+          <AnimateOnScroll>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-center max-w-3xl leading-snug">
               <span className="bg-gradient-to-r from-[#AB7FEB] to-[#540EE1] bg-clip-text text-transparent">
                 {ctaData.title}
@@ -33,13 +33,13 @@ export default function CTAProduct({ projectSlug, ctaData }: CTAProductProps) {
             </h2>
           </AnimateOnScroll>
           {/* Subtitle */}
-          <AnimateOnScroll variant="slideUp" className="delay-100">
+          <AnimateOnScroll className="delay-100">
             <p className="max-w-2xl text-center text-sm sm:text-base text-tertiary mt-4 leading-relaxed px-4">
               {ctaData.subtitle}
             </p>
           </AnimateOnScroll>
           {/* Button */}
-          <AnimateOnScroll variant="slideUp" className="mt-8 delay-200">
+          <AnimateOnScroll className="mt-8 delay-200">
             <Button
               href="/contact"
               variant="primary"
@@ -53,7 +53,7 @@ export default function CTAProduct({ projectSlug, ctaData }: CTAProductProps) {
             </Button>
           </AnimateOnScroll>
           {/* Dashboard Mockup - flush to the bottom */}
-          <AnimateOnScroll variant="slideUp" className="w-full mt-12 md:mt-16 delay-300">
+          <div className="w-full mt-12 md:mt-16 delay-300">
             <div className="w-full overflow-hidden">
               <Image
                 src={`/product/cta/${projectSlug}.webp`}
@@ -64,7 +64,7 @@ export default function CTAProduct({ projectSlug, ctaData }: CTAProductProps) {
                 priority
               />
             </div>
-          </AnimateOnScroll>
+          </div>
         </div>
       </div>
     </section>

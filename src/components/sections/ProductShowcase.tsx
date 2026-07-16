@@ -31,12 +31,10 @@ export function ProductShowcase({ products }: ProductShowcaseProps) {
   const t = useTranslations('product');
   const tCat = useTranslations('categories');
 
-  // Filter available categories based on existing products
   const categories = CATEGORIES_ORDER.filter(
     (cat) => cat === 'All' || products.some((p) => p.category === cat || p.category === tCat(cat))
   );
 
-  // Filter products by active category selection
   const filteredProjects = products.filter((project) => {
     if (activeFilter === 'All') return true;
     return project.category === activeFilter || project.category === tCat(activeFilter);

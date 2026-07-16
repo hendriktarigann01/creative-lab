@@ -46,9 +46,9 @@ export function Footer() {
   ];
 
   return (
-    <footer className="text-tertiary text-xs md:text-sm py-16 px-6 md:px-12 font-sans">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
-        <div className="flex flex-col gap-2">
+    <footer className="text-tertiary text-xs md:text-sm py-16 px-6 md:px-12 font-sans border-t border-white/5 bg-background relative z-10">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 md:gap-10 text-center md:text-left">
+        <div className="flex flex-col items-center md:items-start gap-2">
           <Link href="/" className="inline-block">
             <Image
               src={theme === 'light' ? '/creative-lab-2.webp' : '/creative-lab.webp'}
@@ -56,18 +56,18 @@ export function Footer() {
               width={140}
               height={42}
               priority
-              className="object-contain transition-transform duration-300 group-hover:scale-105"
+              className="object-contain transition-transform duration-300 hover:scale-105"
             />
           </Link>
-          <p className="text-sm md:text-base">{tFooter('tagline')}</p>
+          <p className="text-sm md:text-base max-w-sm md:max-w-none text-tertiary/75">{tFooter('tagline')}</p>
         </div>
 
-        <nav className="flex flex-wrap items-center gap-x-8 gap-y-4">
+        <nav className="flex flex-col md:flex-row items-center gap-4 md:gap-x-8 md:gap-y-4">
           {navLinks.map((link, idx) => (
             <Link
               key={idx}
               href={link.path as never}
-              className="hover:text-primary transition-colors duration-300"
+              className="hover:text-primary transition-colors duration-300 py-0.5 md:py-0"
             >
               {link.name}
             </Link>
@@ -75,12 +75,35 @@ export function Footer() {
         </nav>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-12 flex justify-between items-center ">
-        <p>
-          © {currentYear} CreativeLAB. {tFooter('copyright')}
-        </p>
+      <div className="max-w-7xl mx-auto border-t-2 border-border my-8 w-full" />
 
-        <div className="flex gap-4 md:gap-6">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center">
+        {/* Mobile-only text social links separated by '|' */}
+        <div className="flex sm:hidden flex-wrap items-center justify-center gap-x-3 gap-y-2 text-xs text-tertiary/75">
+          <a
+            href="https://www.instagram.com/creativelab.idn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground transition-colors"
+          >
+            Instagram
+          </a>
+          <span className="text-tertiary/30">|</span>
+          <a href="#" className="hover:text-foreground transition-colors">
+            Tiktok
+          </a>
+          <span className="text-tertiary/30">|</span>
+          <a href="#" className="hover:text-foreground transition-colors">
+            Youtube
+          </a>
+          <span className="text-tertiary/30">|</span>
+          <a href="#" className="hover:text-foreground transition-colors">
+            Threads
+          </a>
+        </div>
+
+        {/* Desktop-only SVG social links */}
+        <div className="hidden sm:flex gap-4 md:gap-6">
           {/* Instagram */}
           <a
             href="https://www.instagram.com/creativelab.idn/"
@@ -142,6 +165,10 @@ export function Footer() {
             <span className="hidden md:inline">Facebook</span>
           </a>
         </div>
+
+        <p className="order-first md:order-last text-tertiary/75">
+          © {currentYear} Creative Lab. All rights reserved.
+        </p>
       </div>
     </footer>
   );

@@ -40,13 +40,11 @@ export function PageHeroDetail({ slug, projectTitle, headline, subheadline }: Pa
 
   return (
     <div className="w-full relative overflow-hidden">
-      {/* Soft purple radial glow behind the hero - constant purple theme */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[40%] h-[30%] rounded-full blur-[300px] z-0 pointer-events-none bg-primary" />
 
       <ContainerScroll
         titleComponent={
           <div className="flex flex-col items-center text-center">
-            {/* Image Logo - border and background only appear in dark theme */}
             <div
               className={cn(
                 'z-20 flex items-center justify-center rounded-xl transition-all duration-300 hover:scale-105 select-none p-3 mb-8',

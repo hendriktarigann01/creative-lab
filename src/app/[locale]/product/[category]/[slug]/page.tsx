@@ -40,7 +40,6 @@ export default function ProjectDetailPage() {
 
   return (
     <div className="bg-background min-h-dvh pb-16 relative overflow-hidden flex flex-col items-center">
-      {/* Slicing PageHeroDetail - Premium Dark Showcase Layout matching the mockup photo exactly */}
       <PageHeroDetail
         slug={slug}
         projectTitle={project.title}
@@ -48,13 +47,10 @@ export default function ProjectDetailPage() {
         subheadline={subheadline}
       />
 
-      {/* Feature Product Tabs Section */}
       <FeatureProduct projectSlug={slug} />
 
-      {/* Industry Implementation Section */}
       <ImplementationProduct data={project.implementation} />
 
-      {/* Interactive Architecture/Services Diagram */}
       <Diagram projectSlug={slug} />
 
       {/* CTA section at bottom */}

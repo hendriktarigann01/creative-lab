@@ -28,7 +28,9 @@ function AdvantageRow({ index: _index, item, isActive }: AdvantageRowProps) {
         {/* Title */}
         <h3
           className={`text-base sm:text-lg lg:text-xl font-medium tracking-tight transition-colors duration-300 ${
-            isActive ? 'text-foreground' : 'text-foreground/45'
+            isActive
+              ? 'bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent'
+              : 'text-foreground/45'
           }`}
         >
           {item.title}

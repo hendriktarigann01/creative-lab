@@ -51,7 +51,8 @@
               "label": "Struk Digital & Cetak",
               "iconName": "receipt_long"
             }
-          ]
+          ],
+          "img": "/product/feature/pipely-1.webp"
         },
         {
           "tabLabel": "Manajemen Stok",
@@ -67,7 +68,8 @@
               "label": "Peringatan Stok Rendah",
               "iconName": "warning"
             }
-          ]
+          ],
+          "img": "/product/feature/pipely-2.webp"
         },
         {
           "tabLabel": "Pembelian",
@@ -87,7 +89,8 @@
               "label": "Kinerja Pemasok",
               "iconName": "handshake"
             }
-          ]
+          ],
+          "img": "/product/feature/pipely-3.webp"
         },
         {
           "tabLabel": "Manajemen Produk",
@@ -107,7 +110,8 @@
               "label": "Manajemen SKU & Barcode",
               "iconName": "new_label"
             }
-          ]
+          ],
+          "img": "/product/feature/pipely-4.webp"
         },
         {
           "tabLabel": "Laporan & Analisis",
@@ -127,10 +131,78 @@
               "label": "Ekspor & Unduh Laporan",
               "iconName": "download"
             }
-          ]
+          ],
+          "img": "/product/feature/pipely-5.webp"
         }
       ],
-      "shortDesc": "Kelola penjualan, POS, stok, dan pembelian."
+      "shortDesc": "Kelola penjualan, POS, stok, dan pembelian.",
+      "headline": "Sederhanakan Setiap Penjualan, Inventaris, dan Operasi Bisnis dalam Satu Platform",
+      "subheadline": "Kelola penjualan, inventaris, pembelian, dan pelaporan melalui satu sistem terintegrasi yang dibangun untuk membantu bisnis Anda beroperasi lebih efisien.",
+      "implementation": {
+        "sectionTitle": "Dibuat untuk Setiap Bisnis yang Menjual Produk",
+        "sectionDesc": "Baik Anda mengoperasikan toko ritel, restoran, apotek, atau bisnis grosir, Sistem Manajemen Penjualan kami membantu menyederhanakan operasi harian, meningkatkan akurasi inventaris, dan meningkatkan efisiensi penjualan.",
+        "industries": [
+          {
+            "title": "Ritel & Supermarket",
+            "desc": "Kelola penjualan harian, inventaris, dan beberapa lokasi toko melalui satu platform terpusat.",
+            "img": "/product/implementation/supermarket.webp"
+          },
+          {
+            "title": "Makanan & Minuman",
+            "desc": "Rampingkan operasi restoran dan kafe dengan mengintegrasikan POS, manajemen inventaris, pembelian, dan pelaporan penjualan.",
+            "img": "/product/implementation/f&b.webp"
+          },
+          {
+            "title": "Apotek & Layanan Kesehatan",
+            "desc": "Pertahankan inventaris obat yang akurat, catatan pembelian, pergerakan stok, dan penjualan dengan visibilitas operasional yang lengkap.",
+            "img": "/product/implementation/pharmacy.webp"
+          },
+          {
+            "title": "Grosir & Distribusi",
+            "desc": "Tangani pesanan massal, inventaris gudang, manajemen pemasok, dan distribusi produk secara lebih efisien.",
+            "img": "/product/implementation/wholesale.webp"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Siap untuk Mentransformasikan Operasi Penjualan Anda?",
+        "subtitle": "Kelola penjualan, inventaris, dan pembelian dengan lebih efisien. Hubungi tim kami untuk solusi terbaik bagi bisnis Anda!"
+      },
+      "diagram": {
+        "heading": "Dibangun untuk Membantu Tim Menyelesaikan Proyek Lebih Baik",
+        "description": "Lebih dari sekadar manajemen tugas. Kami menghubungkan tim, proyek, klien, dan keuangan Anda dalam satu platform untuk mendorong produktivitas dan kesuksesan.",
+        "logoAlt": "Logo Proyek",
+        "cards": [
+          {
+            "label": "Visibilitas Proyek yang Lengkap",
+            "icon": "bar2"
+          },
+          {
+            "label": "Pembayaran Lebih Cepat",
+            "icon": "bolt"
+          },
+          {
+            "label": "Inventaris yang Akurat",
+            "icon": "package"
+          },
+          {
+            "label": "Pembelian yang Lebih Baik",
+            "icon": "handshake"
+          },
+          {
+            "label": "Wawasan yang Dapat Ditindaklanjuti",
+            "icon": "query_stats"
+          },
+          {
+            "label": "Siap untuk Tumbuh",
+            "icon": "rocket_launch"
+          }
+        ]
+      },
+      "featuresHeader": {
+        "heading": "Semua yang Anda Butuhkan untuk Mengelola Penjualan dari Pembayaran hingga Inventaris",
+        "description": "Sederhanakan operasi penjualan Anda dengan platform serba ada yang menghubungkan penjualan, inventaris, pembelian, dan pelaporan. Dapatkan visibilitas lengkap ke dalam bisnis Anda sekaligus tingkatkan efisiensi di setiap transaksi."
+      }
     },
     "stockflow": {
       "slug": "stockflow",
@@ -213,7 +285,8 @@
               "label": "Komentar & Diskusi",
               "iconName": "message"
             }
-          ]
+          ],
+          "img": "/product/feature/plannr-1.webp"
         },
         {
           "tabLabel": "Klien",
@@ -237,7 +310,8 @@
               "label": "Linimasa Aktivitas",
               "iconName": "clock"
             }
-          ]
+          ],
+          "img": "/product/feature/plannr-2.webp"
         },
         {
           "tabLabel": "Alur Kerja",
@@ -261,7 +335,8 @@
               "label": "Prioritisasi Tugas",
               "iconName": "check"
             }
-          ]
+          ],
+          "img": "/product/feature/plannr-3.webp"
         },
         {
           "tabLabel": "Penagihan",
@@ -285,7 +360,8 @@
               "label": "Faktur Klien",
               "iconName": "docs"
             }
-          ]
+          ],
+          "img": "/product/feature/plannr-4.webp"
         },
         {
           "tabLabel": "Keuangan",
@@ -309,10 +385,78 @@
               "label": "Laporan Keuangan",
               "iconName": "docs"
             }
-          ]
+          ],
+          "img": "/product/feature/plannr-5.webp"
         }
       ],
-      "shortDesc": "Kelola proyek, pantau kinerja."
+      "shortDesc": "Kelola proyek, pantau kinerja.",
+      "implementation": {
+        "sectionTitle": "Dibuat untuk Bisnis yang Mengelola Proyek Setiap Hari",
+        "sectionDesc": "Satu aplikasi untuk semua kebutuhan proyek Anda. Rencanakan, kolaborasikan, dan pantau keuangan tim Anda dengan mudah, semua di satu tempat.",
+        "industries": [
+          {
+            "title": "Konstruksi",
+            "desc": "Koordinasikan jadwal proyek, aktivitas lapangan, kontraktor, dokumentasi, dan anggaran dari satu platform terpusat.",
+            "img": "/product/implementation/construction.webp"
+          },
+          {
+            "title": "Kesehatan",
+            "desc": "Kelola inisiatif perawatan pasien, jadwal staf medis, audit kepatuhan fasilitas, dan anggaran program kesehatan dengan lancar.",
+            "img": "/product/implementation/healthcare.webp"
+          },
+          {
+            "title": "Perusahaan",
+            "desc": "Sederhanakan operasi perusahaan, hasil kerja departemen, penjadwalan sumber daya, dan pelacakan kinerja laba-rugi.",
+            "img": "/product/implementation/corporate.webp"
+          },
+          {
+            "title": "Ritel",
+            "desc": "Optimalkan jadwal peluncuran ritel, logistik inventaris toko, alur kerja pengadaan pemasok, dan target kinerja penjualan.",
+            "img": "/product/implementation/retail.webp"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Selesaikan Proyek Lebih Cepat dengan Kolaborasi yang Lebih Baik",
+        "subtitle": "Optimalkan alur kerja, tingkatkan kolaborasi, dan jaga agar proyek tetap sesuai jadwal. Hubungi ahli kami untuk solusi bisnis Anda!"
+      },
+      "headline": "Kelola Proyek, Inventaris, dan Penjualan dari Satu Platform Terintegrasi",
+      "subheadline": "Rampingkan setiap tahap operasional Anda mulai dari pengadaan dan inventaris hingga titik penjualan dan pelaporan dengan sistem manajemen proyek terpusat yang dirancang untuk bisnis yang berkembang.",
+      "diagram": {
+        "heading": "Dibangun untuk Membantu Tim Menyelesaikan Proyek Lebih Baik",
+        "description": "Lebih dari sekadar manajemen tugas. Kami menghubungkan tim, proyek, klien, dan keuangan Anda dalam satu platform untuk mendorong produktivitas dan kesuksesan.",
+        "logoAlt": "Logo Proyek",
+        "cards": [
+          {
+            "label": "Visibilitas Proyek yang Lengkap",
+            "icon": "bar2"
+          },
+          {
+            "label": "Keputusan Berbasis Data",
+            "icon": "bid_landscape"
+          },
+          {
+            "label": "Kolaborasi Tim yang Lebih Baik",
+            "icon": "users"
+          },
+          {
+            "label": "Transparansi Keuangan",
+            "icon": "handshake"
+          },
+          {
+            "label": "Hubungan Klien yang Lebih Kuat",
+            "icon": "handshake"
+          },
+          {
+            "label": "Didesain untuk Berkembang",
+            "icon": "rocket_launch"
+          }
+        ]
+      },
+      "featuresHeader": {
+        "heading": "Semua yang Anda Butuhkan untuk Menyelesaikan Proyek dengan Sukses",
+        "description": "Satu aplikasi untuk semua kebutuhan proyek Anda. Rencanakan, kolaborasikan, dan pantau keuangan tim Anda dengan mudah, semua di satu tempat."
+      }
     },
     "kruu": {
       "slug": "kruu",
@@ -365,7 +509,8 @@
               "label": "Manajemen Departemen & Jabatan",
               "iconName": "apartment"
             }
-          ]
+          ],
+          "img": "/product/feature/kruu-1.webp"
         },
         {
           "tabLabel": "Kehadiran",
@@ -381,7 +526,8 @@
               "label": "GPS & Geofencing",
               "iconName": "location"
             }
-          ]
+          ],
+          "img": "/product/feature/kruu-2.webp"
         },
         {
           "tabLabel": "Pengajuan Cuti & Kehadiran",
@@ -405,7 +551,8 @@
               "label": "Lembur",
               "iconName": "overtime"
             }
-          ]
+          ],
+          "img": "/product/feature/kruu-3.webp"
         },
         {
           "tabLabel": "Organisasi",
@@ -425,7 +572,8 @@
               "label": "Manajemen Kelompok",
               "iconName": "groups"
             }
-          ]
+          ],
+          "img": "/product/feature/kruu-4.webp"
         },
         {
           "tabLabel": "Penggajian",
@@ -445,10 +593,78 @@
               "label": "Laporan Gaji",
               "iconName": "docs"
             }
-          ]
+          ],
+          "img": "/product/feature/kruu-5.webp"
         }
       ],
-      "shortDesc": "Sistem tenaga kerja dan penggajian terpusat."
+      "shortDesc": "Sistem tenaga kerja dan penggajian terpusat.",
+      "headline": "Sederhanakan Manajemen Tenaga Kerja mulai dari Kehadiran hingga Penggajian",
+      "subheadline": "Kelola seluruh siklus hidup karyawan dalam satu platform terintegrasi. Rampingkan kehadiran, cuti, penggajian, dan analisis untuk membangun tenaga kerja yang lebih cerdas dan produktif.",
+      "implementation": {
+        "sectionTitle": "Dibuat untuk Setiap Organisasi yang Mengelola Orang",
+        "sectionDesc": "Baik Anda mengoperasikan tenaga kerja yang sedang berkembang atau beberapa lokasi bisnis, HRMS kami membantu menyederhanakan operasi SDM, meningkatkan manajemen karyawan, dan meningkatkan efisiensi organisasi.",
+        "industries": [
+          {
+            "title": "Manufaktur",
+            "desc": "Kelola pekerja shift, kehadiran, lembur, penggajian, dan operasi tenaga kerja di beberapa fasilitas produksi.",
+            "img": "/product/implementation/manufacturing.webp"
+          },
+          {
+            "title": "Layanan Kesehatan",
+            "desc": "Lacak kehadiran staf, shift bergilir, manajemen cuti, dan penggajian untuk rumah sakit, klinik, dan organisasi kesehatan.",
+            "img": "/product/implementation/healthcare2.webp"
+          },
+          {
+            "title": "Perusahaan",
+            "desc": "Pusatkan manajemen karyawan, administrasi SDM, penggajian, dan pelaporan tenaga kerja untuk bisnis modern.",
+            "img": "/product/implementation/corporate2.webp"
+          },
+          {
+            "title": "Ritel",
+            "desc": "Kelola karyawan di beberapa toko dengan kehadiran terpusat, penjadwalan, penggajian, dan administrasi cabang.",
+            "img": "/product/implementation/retail2.webp"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Siap untuk Memodernisasi Operasi SDM Anda?",
+        "subtitle": "Otomatisasikan manajemen karyawan dan proses SDM. Bicaralah dengan ahli kami untuk menemukan solusi sempurna bagi organisasi Anda."
+      },
+      "diagram": {
+        "heading": "Dibangun untuk Menyederhanakan Manajemen Sumber Daya Manusia Modern",
+        "description": "HRMS kami menghubungkan manajemen karyawan, kehadiran, penggajian, dan administrasi tenaga kerja ke dalam satu platform, membantu tim SDM menghemat waktu, mengurangi kesalahan, dan meningkatkan pengalaman karyawan.",
+        "logoAlt": "Logo Proyek",
+        "cards": [
+          {
+            "label": "Manajemen Karyawan Lengkap",
+            "icon": "bar2"
+          },
+          {
+            "label": "Pelacakan Kehadiran Akurat",
+            "icon": "bolt"
+          },
+          {
+            "label": "Proses SDM Otomatis",
+            "icon": "package"
+          },
+          {
+            "label": "Penggajian Menjadi Mudah",
+            "icon": "handshake"
+          },
+          {
+            "label": "Wawasan Tenaga Kerja",
+            "icon": "query_stats"
+          },
+          {
+            "label": "Siap untuk Tumbuh",
+            "icon": "rocket_launch"
+          }
+        ]
+      },
+      "featuresHeader": {
+        "heading": "Semua yang Anda Butuhkan untuk Mengelola Tenaga Kerja Anda dengan Efisien",
+        "description": "Digitalisasikan operasi SDM dengan platform serba ada yang menyederhanakan manajemen karyawan, kehadiran, penggajian, dan administrasi tenaga kerja sekaligus meningkatkan akurasi dan efisiensi operasional."
+      }
     },
     "jipies": {
       "slug": "jipies",
@@ -572,7 +788,74 @@
           ]
         }
       ],
-      "shortDesc": "Lacak armada, optimalkan kinerja."
+      "shortDesc": "Lacak armada, optimalkan kinerja.",
+      "headline": "Optimalkan Setiap Kendaraan, Pengemudi, dan Operasi Armada dalam Satu Platform",
+      "subheadline": "Lacak kendaraan, pantau pengemudi, dan kelola pemeliharaan secara real-time. Kurangi biaya operasional sekaligus pastikan perjalanan yang aman dan efisien.",
+      "implementation": {
+        "sectionTitle": "lorem ipsum dolor sit amet",
+        "sectionDesc": "lorem ipsum dolor sit amet",
+        "industries": [
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          },
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          },
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          },
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Siap untuk Mengoptimalkan Operasi Armada Anda?",
+        "subtitle": "Temukan bagaimana Sistem Manajemen Armada kami dapat membantu Anda meningkatkan visibilitas armada, mengurangi biaya operasional, dan meningkatkan keselamatan pengemudi. Hubungi ahli kami untuk menemukan solusi yang tepat untuk bisnis Anda."
+      },
+      "diagram": {
+        "heading": "Dibangun untuk Menjaga Armada Anda Tetap Bergerak Efisien",
+        "description": "Hubungkan pelacakan, pemeliharaan, manajemen pengemudi, dan analisis dalam satu platform. Kurangi biaya, tingkatkan keselamatan, dan maksimalkan kinerja.",
+        "logoAlt": "Logo Proyek",
+        "cards": [
+          {
+            "label": "Visibilitas Armada Lengkap",
+            "icon": "location"
+          },
+          {
+            "label": "Operasi Pengemudi Lebih Aman",
+            "icon": "traffic"
+          },
+          {
+            "label": "Pemeliharaan Preventif",
+            "icon": "log"
+          },
+          {
+            "label": "Biaya Operasional Lebih Rendah",
+            "icon": "money"
+          },
+          {
+            "label": "Manajemen Armada Berbasis Data",
+            "icon": "bar2"
+          },
+          {
+            "label": "Siap untuk Tumbuh",
+            "icon": "rocket_launch"
+          }
+        ]
+      },
+      "featuresHeader": {
+        "heading": "Semua yang Anda Butuhkan untuk Mengelola Armada Anda dengan Efisien",
+        "description": "Pantau kendaraan, pengemudi, pemeliharaan, dan kinerja armada melalui satu platform terintegrasi. Dapatkan visibilitas lengkap ke dalam operasi Anda sekaligus tingkatkan keselamatan, kurangi waktu henti, dan maksimalkan pemanfaatan armada."
+      }
     },
     "classix": {
       "slug": "classix",
@@ -617,7 +900,8 @@
               "label": "Ekspor CSV",
               "iconName": "magnifying_person"
             }
-          ]
+          ],
+          "img": "/product/feature/classix-1.webp"
         },
         {
           "tabLabel": "Pembelajaran",
@@ -641,7 +925,8 @@
               "label": "Materi Pembelajaran",
               "iconName": "draft"
             }
-          ]
+          ],
+          "img": "/product/feature/classix-2.webp"
         },
         {
           "tabLabel": "Manajemen Siswa",
@@ -661,7 +946,8 @@
               "label": "Catatan Akademis",
               "iconName": "plagiarism"
             }
-          ]
+          ],
+          "img": "/product/feature/classix-3.webp"
         },
         {
           "tabLabel": "Guru & Kelas",
@@ -681,7 +967,8 @@
               "label": "Manajemen Mata Pelajaran",
               "iconName": "book_4"
             }
-          ]
+          ],
+          "img": "/product/feature/classix-4.webp"
         },
         {
           "tabLabel": "Analisis Sekolah",
@@ -701,10 +988,78 @@
               "label": "Laporan Siswa",
               "iconName": "download"
             }
-          ]
+          ],
+          "img": "/product/feature/classix-5.webp"
         }
       ],
-      "shortDesc": "Digitalisasi operasi sekolah terintegrasi."
+      "shortDesc": "Digitalisasi operasi sekolah terintegrasi.",
+      "headline": "Satu Platform Terintegrasi untuk Menyederhanakan Manajemen Sekolah",
+      "subheadline": "Rampingkan akademis, kehadiran, e-learning, dan administrasi. Berdayakan pendidik untuk fokus mengajar sekaligus meningkatkan efisiensi di seluruh institusi.",
+      "implementation": {
+        "sectionTitle": "Dibuat untuk Institusi Pendidikan Modern",
+        "sectionDesc": "Baik Anda mengelola sekolah, lembaga vokasi, atau kampus pendidikan tinggi, ERP Sekolah kami membantu menyederhanakan administrasi, meningkatkan pembelajaran, dan meningkatkan hasil akademis.",
+        "industries": [
+          {
+            "title": "Sekolah Dasar & Menengah",
+            "desc": "Kelola kehadiran siswa, catatan akademik, kelas, guru, dan operasional harian sekolah melalui satu platform terintegrasi.",
+            "img": "/product/implementation/primary-school.webp"
+          },
+          {
+            "title": "Sekolah Vokasi",
+            "desc": "Dukung pembelajaran berbasis kompetensi dengan manajemen mata kuliah, penilaian, pelacakan kehadiran, dan pemantauan kinerja siswa.",
+            "img": "/product/implementation/vocational-school.webp"
+          },
+          {
+            "title": "Sekolah Tinggi & Universitas",
+            "desc": "Koordinasikan administrasi akademik, aktivitas pembelajaran, penilaian, dan manajemen fakultas di berbagai departemen.",
+            "img": "/product/implementation/colleges.webp"
+          },
+          {
+            "title": "Pusat Pelatihan & Pembelajaran",
+            "desc": "Sampaikan kursus terstruktur, pantau kemajuan peserta, kelola instruktur, dan sederhanakan operasi administratif.",
+            "img": "/product/implementation/training-center.webp"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Siap untuk Mentransformasikan Sekolah Anda dengan Teknologi Digital?",
+        "subtitle": "Optimalkan administrasi, tingkatkan kinerja akademis, dan tingkatkan pengalaman belajar. Hubungi tim kami untuk solusi ideal."
+      },
+      "diagram": {
+        "heading": "Dibangun untuk Mendukung Pendidikan Lebih Baik dan Manajemen Sekolah Lebih Cerdas",
+        "description": "ERP Sekolah kami menyatukan operasi akademik, manajemen siswa, dan pembelajaran digital ke dalam satu platform terintegrasi, membantu sekolah meningkatkan efisiensi sekaligus menciptakan pengalaman belajar yang lebih baik.",
+        "logoAlt": "Logo Proyek",
+        "cards": [
+          {
+            "label": "Manajemen Sekolah Lengkap",
+            "icon": "bar2"
+          },
+          {
+            "label": "Pengalaman Belajar Digital",
+            "icon": "book_4"
+          },
+          {
+            "label": "Kehadiran",
+            "icon": "check"
+          },
+          {
+            "label": "Wawasan Akademik Lebih Baik",
+            "icon": "monitoring"
+          },
+          {
+            "label": "Administrasi yang Disederhanakan",
+            "icon": "users"
+          },
+          {
+            "label": "Siap untuk Tumbuh",
+            "icon": "rocket_launch"
+          }
+        ]
+      },
+      "featuresHeader": {
+        "heading": "Semua yang Anda Butuhkan untuk Mengelola Sekolah Anda dengan Efisien",
+        "description": "Kelola siswa, guru, catatan akademik, kehadiran, aktivitas belajar, dan laporan kinerja melalui satu sistem terintegrasi yang dirancang untuk institusi pendidikan modern."
+      }
     },
     "diggit": {
       "slug": "diggit",
@@ -832,7 +1187,74 @@
           ]
         }
       ],
-      "shortDesc": "Sistem ERP Terintegrasi untuk operasi pertambangan yang lebih cerdas."
+      "shortDesc": "Sistem ERP Terintegrasi untuk operasi pertambangan yang lebih cerdas.",
+      "headline": "Optimalkan Setiap Operasi Penambangan dari Perencanaan hingga Produksi",
+      "subheadline": "Optimalkan operasi penambangan Anda dengan platform terintegrasi. Hubungkan perencanaan ke keuangan, kurangi waktu henti, dan maksimalkan efisiensi dengan wawasan real-time.",
+      "implementation": {
+        "sectionTitle": "lorem ipsum dolor sit amet",
+        "sectionDesc": "lorem ipsum dolor sit amet",
+        "industries": [
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          },
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          },
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          },
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Siap untuk Mentransformasikan Operasi Penambangan Anda?",
+        "subtitle": "Temukan bagaimana ERP Pertambangan kami dapat meningkatkan efisiensi operasional, mengoptimalkan pemanfaatan peralatan, dan menyederhanakan manajemen sumber daya. Hubungi ahli kami untuk menemukan solusi yang tepat untuk bisnis pertambangan Anda."
+      },
+      "diagram": {
+        "heading": "Dibangun untuk Mendorong Operasi Pertambangan yang Lebih Cerdas, Aman, dan Efisien",
+        "description": "Kami menyediakan teknologi andal yang dapat beradaptasi dengan kompleksitas industri pertambangan, membantu Anda bekerja lebih efisien dan membuat keputusan lebih cepat.",
+        "logoAlt": "Logo Proyek",
+        "cards": [
+          {
+            "label": "Tingkatkan Efisiensi Operasional",
+            "icon": "person_engineering"
+          },
+          {
+            "label": "Manajemen Armada & Aset Cerdas",
+            "icon": "front_loader"
+          },
+          {
+            "label": "Kecerdasan Operasional",
+            "icon": "bar2"
+          },
+          {
+            "label": "Manajemen Sumber Daya Efisien",
+            "icon": "package"
+          },
+          {
+            "label": "Kontrol Biaya Lebih Baik",
+            "icon": "money_bag"
+          },
+          {
+            "label": "Siap untuk Tumbuh",
+            "icon": "rocket_launch"
+          }
+        ]
+      },
+      "featuresHeader": {
+        "heading": "Semua yang Anda Butuhkan untuk Menjalankan Operasi Pertambangan Modern",
+        "description": "Hubungkan setiap tahap bisnis pertambangan Anda dengan ERP terpusat. Rampingkan operasi mulai dari perencanaan hingga akuntansi untuk meningkatkan efisiensi dan kinerja."
+      }
     },
     "sailoo": {
       "slug": "sailoo",
@@ -964,7 +1386,74 @@
           ]
         }
       ],
-      "shortDesc": "Sistem operasi maritim terpusat."
+      "shortDesc": "Sistem operasi maritim terpusat.",
+      "headline": "Kelola Setiap Pelayaran, Kapal, dan Operasi Kargo dari Satu Platform",
+      "subheadline": "Rampingkan operasi maritim Anda dengan platform digital all-in-one. Sederhanakan perencanaan, lacak pelayaran, dan tingkatkan efisiensi serta kepatuhan armada.",
+      "implementation": {
+        "sectionTitle": "lorem ipsum dolor sit amet",
+        "sectionDesc": "lorem ipsum dolor sit amet",
+        "industries": [
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          },
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          },
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          },
+          {
+            "title": "Lorem Ipsum",
+            "desc": "Lorem ipsum dolor sit amet",
+            "img": "https://placehold.co/600x400"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Siap untuk Memodernisasi Operasi Maritim Anda?",
+        "subtitle": "Optimalkan perencanaan pelayaran, pemanfaatan armada, dan operasi kargo Anda dengan Sistem Manajemen Pelayaran kami. Hubungi tim ahli kami untuk solusi maritim terbaik."
+      },
+      "diagram": {
+        "heading": "Dibangun untuk Menyederhanakan Setiap Operasi Maritim",
+        "description": "Sistem Manajemen Pelayaran kami mengintegrasikan perencanaan pelayaran, operasi armada, manajemen kargo, dan pemeliharaan ke dalam satu platform cerdas, membantu bisnis maritim beroperasi lebih aman, efisien, dan menguntungkan.",
+        "logoAlt": "Logo Proyek",
+        "cards": [
+          {
+            "label": "Visibilitas Pelayaran Lengkap",
+            "icon": "boat"
+          },
+          {
+            "label": "Manajemen Kargo Lebih Cerdas",
+            "icon": "package"
+          },
+          {
+            "label": "Operasi Armada yang Andal",
+            "icon": "anchor"
+          },
+          {
+            "label": "Pemeliharaan Proaktif",
+            "icon": "log"
+          },
+          {
+            "label": "Kecerdasan Operasional",
+            "icon": "bar2"
+          },
+          {
+            "label": "Siap untuk Tumbuh",
+            "icon": "rocket_launch"
+          }
+        ]
+      },
+      "featuresHeader": {
+        "heading": "Semua yang Anda Butuhkan untuk Mengelola Operasi Maritim dengan Efisien",
+        "description": "Kelola perencanaan pelayaran, operasi kapal, aktivitas kargo, pemeliharaan, dan pelaporan operasional melalui satu platform terintegrasi yang dibangun untuk bisnis maritim modern."
+      }
     },
     "registr": {
       "slug": "registr",

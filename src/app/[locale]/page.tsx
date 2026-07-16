@@ -83,7 +83,8 @@ export default function Home() {
         <Advantage />
         <ProductListShowcase />
         <Services />
-        <Workflow /> <PortfolioShowcase />
+        <Workflow />
+        <PortfolioShowcase />
         <CTA />
       </main>
 

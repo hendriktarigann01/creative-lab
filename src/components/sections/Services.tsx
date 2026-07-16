@@ -43,7 +43,7 @@ export function Services() {
 
         <div className="mt-16 grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
           {/* Left Column: Interactive Cards */}
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+          <div className="grid grid-cols-2 gap-3 sm:gap-5 order-2 lg:order-1">
             {services.map((item, i) => (
               <motion.div
                 key={item.slug}
@@ -53,23 +53,22 @@ export function Services() {
                 viewport={{ once: true, amount: 0.3 }}
                 variants={cardVariants}
                 onMouseEnter={() => setActiveIndex(i)}
-                className={`cursor-pointer bg-card rounded-xl p-5 border transition-all duration-300 select-none ${
+                className={`cursor-pointer bg-card rounded-xl p-4 sm:p-5 border transition-all duration-300 select-none ${
                   i === activeIndex
                     ? 'border-border  ring-5 ring-primary/15'
                     : 'border-border  hover:border-white/20'
                 }`}
               >
-                <h3 className="min-h-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent text-base font-medium">
+                <h3 className="min-h-10 sm:min-h-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent text-xs xs:text-sm sm:text-base font-medium">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-tertiary/70">{item.desc}</p>
+                <p className="mt-2 text-[10px] xs:text-xs sm:text-sm leading-relaxed text-tertiary/70">{item.desc}</p>
               </motion.div>
             ))}
           </div>
 
           {/* Right Column: Dynamic Asset Preview */}
-          <div className="relative mx-auto flex h-[320px] w-full max-w-md items-center justify-center sm:h-[400px]">
-            {/* Ambient Purple background glow */}
+          <div className="relative mx-auto flex h-[240px] sm:h-[320px] lg:h-[400px] w-full max-w-xs sm:max-w-md items-center justify-center order-1 lg:order-2">
             <div className="absolute inset-0 rounded-full bg-primary/15 blur-3xl pointer-events-none" />
             <AnimatePresence mode="wait">
               <motion.div
