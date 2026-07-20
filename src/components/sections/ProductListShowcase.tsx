@@ -46,15 +46,8 @@ export function ProductListShowcase({
 
   const activeCategory = categories.find((c) => c.key === activeKey) ?? categories[0];
 
-  const getLogoSrc = (slug: string, categoryKey: string) => {
-    if (categoryKey === 'play-lab') {
-      return '/logo/playlab.webp';
-    }
-    return `/logo/${slug}.webp`;
-  };
-
   const getMockupSrc = (slug: string, categoryKey: string) => {
-    if (categoryKey === 'play-lab' || slug === 'registr') {
+    if (slug === 'registr') {
       return `/product/apps/${slug}/${slug}-mockup.webp`;
     }
     return `/product/mockup/${slug}.webp`;
@@ -108,7 +101,9 @@ export function ProductListShowcase({
                 })()}
                 <span>{activeCategory.label}</span>
               </div>
-              <ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown
+                className={`h-4 w-4 shrink-0 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
+              />
             </button>
 
             <AnimatePresence>
