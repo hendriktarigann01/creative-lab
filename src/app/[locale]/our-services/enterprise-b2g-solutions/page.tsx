@@ -117,7 +117,10 @@ export default function EnterprisePage() {
 
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: data.breadcrumbServices || 'Services', item: '/our-services' },
-    { name: data.breadcrumbCurrent || 'Enterprise & B2G Solutions', item: '/our-services/enterprise-b2g-solutions' },
+    {
+      name: data.breadcrumbCurrent || 'Enterprise & B2G Solutions',
+      item: '/our-services/enterprise-b2g-solutions',
+    },
   ]);
 
   const serviceSchema = getServiceSchema(
@@ -145,11 +148,13 @@ export default function EnterprisePage() {
           {/* Interactive Live Dashboard Mock */}
           <div className="my-16 sm:my-24">
             <div className="flex flex-col gap-3 max-w-3xl mb-8 sm:mb-12">
-              <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mt-1">
-                {data.dashboardHeadingPart1 || 'Live'} <span className="text-[#3b82f6]">{data.dashboardHeadingPart2 || 'Dashboard'}</span>
+              <h2 className="text-xl sm:text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto font-medium tracking-tight tracking-tight text-foreground mt-1">
+                {data.dashboardHeadingPart1 || 'Live'}{' '}
+                <span className="text-[#3b82f6]">{data.dashboardHeadingPart2 || 'Dashboard'}</span>
               </h2>
               <p className="text-sm sm:text-base text-tertiary leading-relaxed">
-                {data.dashboardSubheading || 'Watch our simulated enterprise monitoring system in action.'}
+                {data.dashboardSubheading ||
+                  'Watch our simulated enterprise monitoring system in action.'}
               </p>
             </div>
 
@@ -231,8 +236,11 @@ export default function EnterprisePage() {
 
           {/* Core Capabilities */}
           <div className="my-16 sm:my-24">
-            <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mb-10 sm:mb-14">
-              {data.capabilitiesHeadingPart1 || 'Core'} <span className="text-[#3b82f6]">{data.capabilitiesHeadingPart2 || 'Capabilities'}</span>
+            <h2 className="text-xl sm:text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto font-medium tracking-tight tracking-tight text-foreground mb-10 sm:mb-14">
+              {data.capabilitiesHeadingPart1 || 'Core'}{' '}
+              <span className="text-[#3b82f6]">
+                {data.capabilitiesHeadingPart2 || 'Capabilities'}
+              </span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -247,9 +255,7 @@ export default function EnterprisePage() {
                   <h3 className="text-lg sm:text-xl font-medium text-foreground tracking-tight">
                     {cap.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-tertiary leading-relaxed">
-                    {cap.desc}
-                  </p>
+                  <p className="text-sm sm:text-base text-tertiary leading-relaxed">{cap.desc}</p>
                 </Card>
               ))}
             </div>
@@ -258,14 +264,15 @@ export default function EnterprisePage() {
           {/* Page CTA */}
           <AnimateOnScroll variant="scale" className="my-16 sm:my-24  mx-auto">
             <Card className="p-8 sm:p-12 text-center relative overflow-hidden flex flex-col items-center gap-5 sm:gap-6">
-              <h3 className="text-xl sm:text-2xl md:text-4xl font-medium text-foreground tracking-tight">
+              <h3 className="text-xl sm:text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto font-medium tracking-tight text-foreground tracking-tight">
                 {data.ctaHeadingPart1 || 'Ready to'}{' '}
                 <span className="text-[#3b82f6] drop-shadow-[0_2px_10px_rgba(59,130,246,0.2)]">
                   {data.ctaHeadingPart2 || 'Transform?'}
                 </span>
               </h3>
               <p className="text-sm sm:text-base text-tertiary max-w-lg leading-relaxed">
-                {data.ctaDesc || 'Let us build a secure, scalable platform that powers your operations.'}
+                {data.ctaDesc ||
+                  'Let us build a secure, scalable platform that powers your operations.'}
               </p>
               <Button
                 href="/#contact"

@@ -158,7 +158,10 @@ export default function InteractivePage() {
 
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: data.breadcrumbServices || 'Services', item: '/our-services' },
-    { name: data.breadcrumbCurrent || 'Interactive Experiences', item: '/our-services/interactive-experiences' },
+    {
+      name: data.breadcrumbCurrent || 'Interactive Experiences',
+      item: '/our-services/interactive-experiences',
+    },
   ]);
 
   const serviceSchema = getServiceSchema(
@@ -186,11 +189,15 @@ export default function InteractivePage() {
           {/* 360° Space Simulated Section */}
           <div className="my-16 sm:my-24">
             <div className="flex flex-col gap-3 max-w-3xl mb-8 sm:mb-12">
-              <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mt-1">
-                {data.panoramaHeadingPart1 || 'Experience a'} <span className="text-[#ec4899]">{data.panoramaHeadingPart2 || 'True 360° Space'}</span>
+              <h2 className="text-xl sm:text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto font-medium tracking-tight tracking-tight text-foreground mt-1">
+                {data.panoramaHeadingPart1 || 'Experience a'}{' '}
+                <span className="text-[#ec4899]">
+                  {data.panoramaHeadingPart2 || 'True 360° Space'}
+                </span>
               </h2>
               <p className="text-sm sm:text-base text-tertiary leading-relaxed">
-                {data.panoramaSubheading || 'Click and drag in any direction (up, down, left, right) to look around. Tap the hotspots to explore interactive features.'}
+                {data.panoramaSubheading ||
+                  'Click and drag in any direction (up, down, left, right) to look around. Tap the hotspots to explore interactive features.'}
               </p>
             </div>
 
@@ -270,8 +277,11 @@ export default function InteractivePage() {
 
           {/* Real-World Use Cases */}
           <div className="my-16 sm:my-24">
-            <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mb-10 sm:mb-14 text-center">
-              {data.applicationsHeadingPart1 || 'Real-World'} <span className="text-[#ec4899]">{data.applicationsHeadingPart2 || 'Applications'}</span>
+            <h2 className="text-xl sm:text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto font-medium tracking-tight tracking-tight text-foreground mb-10 sm:mb-14 text-center">
+              {data.applicationsHeadingPart1 || 'Real-World'}{' '}
+              <span className="text-[#ec4899]">
+                {data.applicationsHeadingPart2 || 'Applications'}
+              </span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -294,8 +304,11 @@ export default function InteractivePage() {
 
           {/* Core Capabilities */}
           <div className="my-16 sm:my-24">
-            <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mb-10 sm:mb-14">
-              {data.capabilitiesHeadingPart1 || 'Core'} <span className="text-[#ec4899]">{data.capabilitiesHeadingPart2 || 'Capabilities'}</span>
+            <h2 className="text-xl sm:text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto font-medium tracking-tight tracking-tight text-foreground mb-10 sm:mb-14">
+              {data.capabilitiesHeadingPart1 || 'Core'}{' '}
+              <span className="text-[#ec4899]">
+                {data.capabilitiesHeadingPart2 || 'Capabilities'}
+              </span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -310,9 +323,7 @@ export default function InteractivePage() {
                   <h3 className="text-lg sm:text-xl font-medium text-foreground tracking-tight">
                     {cap.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-tertiary leading-relaxed">
-                    {cap.desc}
-                  </p>
+                  <p className="text-sm sm:text-base text-tertiary leading-relaxed">{cap.desc}</p>
                 </Card>
               ))}
             </div>
@@ -321,14 +332,15 @@ export default function InteractivePage() {
           {/* Page CTA */}
           <AnimateOnScroll variant="scale" className="my-16 sm:my-24  mx-auto">
             <Card className="p-8 sm:p-12 text-center relative overflow-hidden flex flex-col items-center gap-5 sm:gap-6">
-              <h3 className="text-xl sm:text-2xl md:text-4xl font-medium text-foreground tracking-tight">
+              <h3 className="text-xl sm:text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto font-medium tracking-tight text-foreground tracking-tight">
                 {data.ctaHeadingPart1 || 'Ready to'}{' '}
                 <span className="text-[#ec4899] drop-shadow-[0_2px_10px_rgba(236,72,153,0.2)]">
                   {data.ctaHeadingPart2 || 'Immerse?'}
                 </span>
               </h3>
               <p className="text-sm sm:text-base text-tertiary max-w-lg leading-relaxed">
-                {data.ctaDesc || 'Let us build an interactive experience that transforms your space.'}
+                {data.ctaDesc ||
+                  'Let us build an interactive experience that transforms your space.'}
               </p>
               <Button
                 href="/#contact"

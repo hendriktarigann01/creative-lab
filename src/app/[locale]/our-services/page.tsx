@@ -106,7 +106,9 @@ export default function ServicesOverviewPage() {
   };
 
   const breadcrumbItems = [{ name: t('servicesOverview.breadcrumb') }];
-  const breadcrumbSchema = getBreadcrumbSchema([{ name: t('servicesOverview.breadcrumb'), item: '/our-services' }]);
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: t('servicesOverview.breadcrumb'), item: '/our-services' },
+  ]);
 
   return (
     <>
@@ -286,7 +288,7 @@ export default function ServicesOverviewPage() {
               <div className="absolute -top-1/2 -left-1/2 w-full h-full rounded-full bg-primary/5 blur-[100px] pointer-events-none" />
               <div className="absolute -bottom-1/2 -right-1/2 w-full h-full rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
 
-              <h3 className="text-xl sm:text-2xl md:text-4xl font-medium text-foreground tracking-tight">
+              <h3 className="text-xl sm:text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto font-medium tracking-tight text-foreground tracking-tight">
                 {t('servicesOverview.cta.titlePart1')}{' '}
                 <span className="bg-linear-to-r from-[#AB7FEB] to-[#540EE1] bg-clip-text text-transparent">
                   {t('servicesOverview.cta.titlePart2')}

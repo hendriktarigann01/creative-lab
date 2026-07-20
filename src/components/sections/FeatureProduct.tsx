@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Container } from '@/components/ui/Container';
+import { cn } from '@/lib/utils';
+import { ChevronDown } from 'lucide-react';
 
 interface FeatureItem {
   tabLabel: string;
@@ -22,7 +24,7 @@ interface FeatureProductProps {
 function CustomIcon({ name, className = 'w-4 h-4' }: { name: string; className?: string }) {
   return (
     <span
-      className={`inline-block shrink-0 ${className}`}
+      className={cn("inline-block shrink-0", className)}
       style={{
         maskImage: `url(/icons/${name}.svg)`,
         WebkitMaskImage: `url(/icons/${name}.svg)`,
@@ -52,6 +54,7 @@ export default function FeatureProduct({ projectSlug }: FeatureProductProps) {
   }
 
   const [activeTab, setActiveTab] = useState(0);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const activeItem = features[activeTab];
 
@@ -78,7 +81,7 @@ export default function FeatureProduct({ projectSlug }: FeatureProductProps) {
         {/* Section Header */}
         <div className="text-center mb-14">
           <h2 className="text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto font-medium tracking-tight">
-            <span className="bg-gradient-to-r from-[#AB7FEB] to-[#540EE1] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-medium">
               {heading}
             </span>
           </h2>
@@ -88,9 +91,57 @@ export default function FeatureProduct({ projectSlug }: FeatureProductProps) {
         </div>
 
         {/* Feature Interactive Card Box */}
-        <div className="w-full border border-border bg-card p-4 sm:p-8">
-          {/* Scrollable Tab bar replaced with grid to auto-adjust gap and fit full width */}
-          <div className="grid grid-cols-5 gap-2.5 w-full pb-4 mb-6 select-none">
+        <div className="w-full border border-border rounded-md md:rounded-xl bg-card p-4">
+          {/* Mobile Dropdown Tab Selector */}
+          <div className="relative sm:hidden w-full mb-6">
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="flex w-full items-center justify-between gap-2.5 rounded-md border border-primary bg-primary/10 px-4 py-3.5 text-sm font-medium transition-all duration-200 cursor-pointer text-primary"
+            >
+              <div className="flex items-center gap-2">
+                <CustomIcon name={activeItem.tabIconName} className="w-5 h-5" />
+                <span>{activeItem.tabLabel}</span>
+              </div>
+              <ChevronDown className={cn("h-4 w-4 shrink-0 transition-transform duration-200", isDropdownOpen && "rotate-180")} />
+            </button>
+
+            <AnimatePresence>
+              {isDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute left-0 right-0 mt-2 z-30 max-h-60 overflow-y-auto rounded-md border border-border bg-card p-1.5 shadow-lg"
+                >
+                  {features.map((item, idx) => {
+                    const isActive = activeTab === idx;
+                    return (
+                      <button
+                        key={idx}
+                        onClick={() => {
+                          setActiveTab(idx);
+                          setIsDropdownOpen(false);
+                        }}
+                        className={cn(
+                          "flex w-full items-center gap-2.5 rounded-lg px-3 py-2.5 text-left text-sm transition-all duration-150 cursor-pointer",
+                          isActive
+                            ? "bg-primary/15 text-primary font-medium"
+                            : "text-tertiary/75 hover:bg-muted/30 hover:text-foreground"
+                        )}
+                      >
+                        <CustomIcon name={item.tabIconName} className="w-4 h-4" />
+                        <span>{item.tabLabel}</span>
+                      </button>
+                    );
+                  })}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Desktop Tab Selector Grid */}
+          <div className="hidden sm:grid grid-cols-5 gap-2.5 w-full mb-4 select-none">
             {features.map((item, idx) => {
               const isActive = activeTab === idx;
               return (
@@ -112,15 +163,15 @@ export default function FeatureProduct({ projectSlug }: FeatureProductProps) {
 
           {/* Active Tab Content Column Layout */}
           {activeItem && (
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 border-2 border-border rounded-2xl p-4 items-stretch mt-6 min-h-[380px]">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 border border-border rounded-md md:rounded-xl p-6 items-stretch min-h-[380px]">
               {/* Left side details */}
-              <div className="lg:col-span-6 space-y-10">
+              <div className="lg:col-span-6 space-y-10 order-2 lg:order-1">
                 <div className="space-y-5">
                   <motion.h3
                     key={`title-${activeTab}`}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-lg sm:text-xl text-foreground leading-snug tracking-tight"
+                    className="text-lg sm:text-xl text-foreground leading-snug tracking-tight font-medium"
                   >
                     {activeItem.title}
                   </motion.h3>
@@ -154,8 +205,8 @@ export default function FeatureProduct({ projectSlug }: FeatureProductProps) {
                 </ul>
               </div>
 
-              {/* Right side live interactive mock UI replaced with a beautiful static image matching the tab content */}
-              <div className="lg:col-span-6 relative overflow-hidden rounded-xl border border-border bg-muted/40 aspect-video lg:aspect-auto min-h-[300px]">
+              {/* Right side mockup image */}
+              <div className="lg:col-span-6 relative overflow-hidden rounded-md md:rounded-xl bg-muted/40 aspect-[2280/1760] w-full self-center order-1 lg:order-2">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={`mockui-${activeTab}`}
@@ -171,7 +222,7 @@ export default function FeatureProduct({ projectSlug }: FeatureProductProps) {
                         tCommon('featuresAlt', { title: projectSlug }) || `${projectSlug} Features`
                       }
                       fill
-                      className="object-cover object-left-top transition-transform duration-500 hover:scale-102"
+                      className="object-contain transition-transform duration-500 hover:scale-102"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                       priority
                     />

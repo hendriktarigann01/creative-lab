@@ -46,7 +46,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="text-tertiary text-xs md:text-sm py-16 px-6 md:px-12 font-sans border-t border-white/5 bg-background relative z-10">
+    <footer className="text-tertiary text-xs md:text-sm py-16 px-6 md:px-12 font-sans bg-background relative z-10">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 md:gap-10 text-center md:text-left">
         <div className="flex flex-col items-center md:items-start gap-2">
           <Link href="/" className="inline-block">
@@ -75,7 +75,7 @@ export function Footer() {
         </nav>
       </div>
 
-      <div className="max-w-7xl mx-auto border-t-2 border-border my-8 w-full" />
+      <div className="max-w-7xl mx-auto border-t-2 border-border sm:border-none my-10 w-full" />
 
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center">
         {/* Mobile-only text social links separated by '|' */}
@@ -166,7 +166,7 @@ export function Footer() {
           </a>
         </div>
 
-        <p className="order-first md:order-last text-tertiary/75">
+        <p className="order-first text-tertiary/75">
           © {currentYear} Creative Lab. All rights reserved.
         </p>
       </div>

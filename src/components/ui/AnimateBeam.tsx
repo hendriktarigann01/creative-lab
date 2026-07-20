@@ -83,22 +83,50 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
         const isBelow = centerA_Y > centerB_Y + 50;
 
         if (lineType === 'orthogonal') {
+          const isMobile = window.innerWidth < 768;
+
           if (isAbove) {
-            // Top cards: line goes down vertically from the EXACT center of the card's bottom edge
-            sx = from.left - cRect.left + from.width / 2 + startXOffset;
-            sy = fromBottom + startYOffset;
-            ey = toTop + to.height * 0.25 + endYOffset;
-            ex = fromCX < toCX ? toLeft + endXOffset : toRight + endXOffset;
-            d = `M ${sx},${sy} L ${sx},${ey} L ${ex},${ey}`;
+            sx = fromCX + startXOffset;
+            sy = fromCY + startYOffset;          // start from card center, not bottom edge
+            ey = toTop + endYOffset;
+            if (isMobile) {
+              const isLeftCard = fromCX < toCX;
+              const cardDistFromLogo = toCY - fromCY;
+              const totalRange       = toCY;
+              const t = Math.min(1 - cardDistFromLogo / totalRange, 0.65); // cap so never reaches logo edge
+              const maxSpread = to.width * 0.3;                            // keep spread conservative
+              const meetX = isLeftCard
+                ? toCX - maxSpread * t
+                : toCX + maxSpread * t;
+              d = `M ${sx},${sy} L ${meetX},${sy} L ${meetX},${ey}`;
+            } else {
+              // Desktop: vertical down from card center → horizontal to logo left/right edge
+              const deskEx = fromCX < toCX ? toLeft + endXOffset : toRight + endXOffset;
+              const deskEy = toTop + to.height * 0.25 + endYOffset;
+              d = `M ${sx},${sy} L ${sx},${deskEy} L ${deskEx},${deskEy}`;
+            }
           } else if (isBelow) {
-            // Bottom cards: line goes up vertically from the EXACT center of the card's top edge
-            sx = from.left - cRect.left + from.width / 2 + startXOffset;
-            sy = fromTop + startYOffset;
-            ey = toTop + to.height * 0.75 + endYOffset;
-            ex = fromCX < toCX ? toLeft + endXOffset : toRight + endXOffset;
-            d = `M ${sx},${sy} L ${sx},${ey} L ${ex},${ey}`;
+            sx = fromCX + startXOffset;
+            sy = fromCY + startYOffset;
+            ey = _toBottom + endYOffset;
+            if (isMobile) {
+              const isLeftCard = fromCX < toCX;
+              const cardDistFromLogo = fromCY - toCY;
+              const totalRange       = cRect.height - toCY;
+              const t = Math.min(1 - cardDistFromLogo / totalRange, 0.65);
+              const maxSpread = to.width * 0.3;
+              const meetX = isLeftCard
+                ? toCX - maxSpread * t
+                : toCX + maxSpread * t;
+              d = `M ${sx},${sy} L ${meetX},${sy} L ${meetX},${ey}`;
+            } else {
+              // Desktop: vertical up from card center → horizontal to logo left/right edge
+              const deskEx = fromCX < toCX ? toLeft + endXOffset : toRight + endXOffset;
+              const deskEy = toTop + to.height * 0.75 + endYOffset;
+              d = `M ${sx},${sy} L ${sx},${deskEy} L ${deskEx},${deskEy}`;
+            }
           } else {
-            // Mid cards: straight horizontal line into logo LEFT or RIGHT edge (50% height)
+            // Mid cards same row as logo: straight horizontal line into logo LEFT or RIGHT edge (50% height)
             sy = fromCY + startYOffset;
             ey = toTop + to.height * 0.5 + endYOffset;
             if (fromCX < toCX) {
@@ -126,9 +154,13 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
 
     const resizeObserver = new ResizeObserver(() => updatePath());
     if (containerRef.current) resizeObserver.observe(containerRef.current);
+    window.addEventListener('resize', updatePath);
     updatePath();
 
-    return () => resizeObserver.disconnect();
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener('resize', updatePath);
+    };
   }, [
     containerRef,
     fromRef,

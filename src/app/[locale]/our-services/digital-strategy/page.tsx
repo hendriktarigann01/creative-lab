@@ -72,8 +72,9 @@ export default function DigitalStrategyPage() {
           {/* Transformation Roadmap Timeline */}
           <div className="my-16 sm:my-24 relative">
             <div className="flex flex-col gap-3 max-w-3xl mb-12 sm:mb-16 text-center mx-auto items-center">
-              <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mt-1">
-                {data.roadmapHeadingPart1 || 'Transformation'} <span className="text-[#10b981]">{data.roadmapHeadingPart2 || 'Roadmap'}</span>
+              <h2 className="text-xl sm:text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto font-medium tracking-tight tracking-tight text-foreground mt-1">
+                {data.roadmapHeadingPart1 || 'Transformation'}{' '}
+                <span className="text-[#10b981]">{data.roadmapHeadingPart2 || 'Roadmap'}</span>
               </h2>
               <p className="text-sm sm:text-base text-tertiary leading-relaxed max-w-xl">
                 {data.roadmapSubheading || 'Scroll through our proven 6-phase methodology.'}
@@ -125,8 +126,11 @@ export default function DigitalStrategyPage() {
 
           {/* Core Capabilities */}
           <div className="my-16 sm:my-24">
-            <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mb-10 sm:mb-14">
-              {data.capabilitiesHeadingPart1 || 'Core'} <span className="text-[#10b981]">{data.capabilitiesHeadingPart2 || 'Capabilities'}</span>
+            <h2 className="text-xl sm:text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto font-medium tracking-tight tracking-tight text-foreground mb-10 sm:mb-14">
+              {data.capabilitiesHeadingPart1 || 'Core'}{' '}
+              <span className="text-[#10b981]">
+                {data.capabilitiesHeadingPart2 || 'Capabilities'}
+              </span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
@@ -141,9 +145,7 @@ export default function DigitalStrategyPage() {
                   <h3 className="text-lg sm:text-xl font-medium text-foreground tracking-tight">
                     {cap.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-tertiary leading-relaxed">
-                    {cap.desc}
-                  </p>
+                  <p className="text-sm sm:text-base text-tertiary leading-relaxed">{cap.desc}</p>
                 </Card>
               ))}
             </div>
@@ -152,14 +154,15 @@ export default function DigitalStrategyPage() {
           {/* Page CTA */}
           <AnimateOnScroll variant="scale" className="my-16 sm:my-24  mx-auto">
             <Card className="p-8 sm:p-12 text-center relative overflow-hidden flex flex-col items-center gap-5 sm:gap-6">
-              <h3 className="text-xl sm:text-2xl md:text-4xl font-medium text-foreground tracking-tight">
+              <h3 className="text-xl sm:text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto font-medium tracking-tight text-foreground tracking-tight">
                 {data.ctaHeadingPart1 || 'Ready to'}{' '}
                 <span className="text-[#10b981] drop-shadow-[0_2px_10px_rgba(16,185,129,0.2)]">
                   {data.ctaHeadingPart2 || 'Transform?'}
                 </span>
               </h3>
               <p className="text-sm sm:text-base text-tertiary max-w-lg leading-relaxed">
-                {data.ctaDesc || 'Let us guide your organization through a seamless digital transformation.'}
+                {data.ctaDesc ||
+                  'Let us guide your organization through a seamless digital transformation.'}
               </p>
               <Button
                 href="/#contact"

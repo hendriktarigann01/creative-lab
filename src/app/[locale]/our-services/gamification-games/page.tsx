@@ -118,7 +118,10 @@ export default function GamificationPage() {
 
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: data.breadcrumbServices || 'Services', item: '/our-services' },
-    { name: data.breadcrumbCurrent || 'Gamification & Games', item: '/our-services/gamification-games' },
+    {
+      name: data.breadcrumbCurrent || 'Gamification & Games',
+      item: '/our-services/gamification-games',
+    },
   ]);
 
   const serviceSchema = getServiceSchema(data.hero.title, data.hero.desc, 'gamification-games');
@@ -142,11 +145,13 @@ export default function GamificationPage() {
           {/* Try It Yourself Mini Game */}
           <div className="my-16 sm:my-24">
             <div className="flex flex-col gap-3 max-w-3xl mb-8 sm:mb-12">
-              <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mt-1">
-                {data.gameHeadingPart1 || 'Try It'} <span className="text-[#8b5cf6]">{data.gameHeadingPart2 || 'Yourself'}</span>
+              <h2 className="text-xl sm:text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto font-medium tracking-tight tracking-tight text-foreground mt-1">
+                {data.gameHeadingPart1 || 'Try It'}{' '}
+                <span className="text-[#8b5cf6]">{data.gameHeadingPart2 || 'Yourself'}</span>
               </h2>
               <p className="text-sm sm:text-base text-tertiary leading-relaxed">
-                {data.gameSubheading || 'Click the targets as fast as you can! This is a taste of our interactive capabilities.'}
+                {data.gameSubheading ||
+                  'Click the targets as fast as you can! This is a taste of our interactive capabilities.'}
               </p>
             </div>
 
@@ -157,7 +162,8 @@ export default function GamificationPage() {
                 <div className="flex items-center gap-1.5">
                   <Trophy className="w-5 h-5 text-[#8b5cf6]" />
                   <span className="text-sm font-medium text-tertiary">
-                    {data.hudScore || 'Score:'} <span className="text-foreground font-medium text-lg">{score}</span>
+                    {data.hudScore || 'Score:'}{' '}
+                    <span className="text-foreground font-medium text-lg">{score}</span>
                   </span>
                 </div>
                 <div className="flex items-center gap-1.5">
@@ -177,7 +183,9 @@ export default function GamificationPage() {
                 {/* Idle state overlay */}
                 {gameState === 'idle' && (
                   <div className="flex flex-col items-center gap-4 text-center px-4 relative z-10 animate-fade-in">
-                    <p className="text-base text-tertiary">{data.gameReady || 'Ready to test your reflexes?'}</p>
+                    <p className="text-base text-tertiary">
+                      {data.gameReady || 'Ready to test your reflexes?'}
+                    </p>
                     <Button
                       onClick={startGame}
                       variant="primary"
@@ -193,7 +201,8 @@ export default function GamificationPage() {
                 {gameState === 'gameover' && (
                   <div className="flex flex-col items-center gap-4 text-center px-4 relative z-10 animate-fade-in">
                     <p className="text-xl font-medium text-foreground">
-                      {data.gameOver || 'Game Over! Score:'} <span className="text-[#8b5cf6]">{score}</span>
+                      {data.gameOver || 'Game Over! Score:'}{' '}
+                      <span className="text-[#8b5cf6]">{score}</span>
                     </p>
                     <Button
                       onClick={startGame}
@@ -226,8 +235,11 @@ export default function GamificationPage() {
 
           {/* Core Capabilities */}
           <div className="my-16 sm:my-24">
-            <h2 className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-foreground mb-10 sm:mb-14">
-              {data.capabilitiesHeadingPart1 || 'Core'} <span className="text-[#8b5cf6]">{data.capabilitiesHeadingPart2 || 'Capabilities'}</span>
+            <h2 className="text-xl sm:text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto font-medium tracking-tight tracking-tight text-foreground mb-10 sm:mb-14">
+              {data.capabilitiesHeadingPart1 || 'Core'}{' '}
+              <span className="text-[#8b5cf6]">
+                {data.capabilitiesHeadingPart2 || 'Capabilities'}
+              </span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -242,9 +254,7 @@ export default function GamificationPage() {
                   <h3 className="text-lg sm:text-xl font-medium text-foreground tracking-tight">
                     {cap.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-tertiary leading-relaxed">
-                    {cap.desc}
-                  </p>
+                  <p className="text-sm sm:text-base text-tertiary leading-relaxed">{cap.desc}</p>
                 </Card>
               ))}
             </div>
@@ -253,14 +263,15 @@ export default function GamificationPage() {
           {/* Page CTA */}
           <AnimateOnScroll variant="scale" className="my-16 sm:my-24  mx-auto">
             <Card className="p-8 sm:p-12 text-center relative overflow-hidden flex flex-col items-center gap-5 sm:gap-6">
-              <h3 className="text-xl sm:text-2xl md:text-4xl font-medium text-foreground tracking-tight">
+              <h3 className="text-xl sm:text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto font-medium tracking-tight text-foreground tracking-tight">
                 {data.ctaHeadingPart1 || 'Ready to'}{' '}
                 <span className="text-[#8b5cf6] drop-shadow-[0_2px_10px_rgba(139,92,246,0.2)]">
                   {data.ctaHeadingPart2 || 'Play?'}
                 </span>
               </h3>
               <p className="text-sm sm:text-base text-tertiary max-w-lg leading-relaxed">
-                {data.ctaDesc || 'Let us gamify your customer experience and drive real engagement.'}
+                {data.ctaDesc ||
+                  'Let us gamify your customer experience and drive real engagement.'}
               </p>
               <Button
                 href="/#contact"

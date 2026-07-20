@@ -49,14 +49,11 @@ export default function ProjectDetailPage() {
 
       <FeatureProduct projectSlug={slug} />
 
-      <ImplementationProduct data={project.implementation} />
-
       <Diagram projectSlug={slug} />
 
-      {/* CTA section at bottom */}
-      <div className="w-full relative z-10 mt-12">
-        <CTAProduct projectSlug={slug} ctaData={project.cta} />
-      </div>
+      <ImplementationProduct data={project.implementation} />
+
+      <CTAProduct projectSlug={slug} ctaData={project.cta} />
     </div>
   );
 }

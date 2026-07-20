@@ -47,7 +47,7 @@ export function PageHeroDetail({ slug, projectTitle, headline, subheadline }: Pa
           <div className="flex flex-col items-center text-center">
             <div
               className={cn(
-                'z-20 flex items-center justify-center rounded-xl transition-all duration-300 hover:scale-105 select-none p-3 mb-8',
+                'z-20 flex items-center justify-center rounded-md md:rounded-xl transition-all duration-300 hover:scale-105 select-none p-3 mb-8',
                 isDark
                   ? 'border border-neutral-300 bg-white/20'
                   : 'border-transparent bg-transparent'
@@ -93,7 +93,7 @@ export function PageHeroDetail({ slug, projectTitle, headline, subheadline }: Pa
           alt={`${projectTitle} Dashboard`}
           width={1920}
           height={1080}
-          className="h-full w-full rounded-2xl object-cover"
+          className="h-full w-full object-contain"
           priority
         />
       </ContainerScroll>

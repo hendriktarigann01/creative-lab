@@ -53,6 +53,13 @@ export function ProductListShowcase({
     return `/logo/${slug}.webp`;
   };
 
+  const getMockupSrc = (slug: string, categoryKey: string) => {
+    if (categoryKey === 'play-lab' || slug === 'registr') {
+      return `/product/apps/${slug}/${slug}-mockup.webp`;
+    }
+    return `/product/mockup/${slug}.webp`;
+  };
+
   return (
     <section className="bg-background py-20 sm:py-28 relative">
       <div className="mx-auto max-w-7xl px-6">
@@ -170,13 +177,13 @@ export function ProductListShowcase({
                       {project.shortDesc}
                     </p>
 
-                    <div className="my-3 xs:my-5 flex h-16 xs:h-20 sm:h-24 items-center justify-center rounded-xl bg-white/5 border border-white/5">
+                    <div className="my-3 xs:my-5 flex h-16 xs:h-20 sm:h-24 items-center justify-center rounded-xl bg-white/5 border border-white/5 overflow-hidden">
                       <Image
-                        src={getLogoSrc(project.slug, activeCategory.key)}
+                        src={getMockupSrc(project.slug, activeCategory.key)}
                         alt={project.title}
-                        width={120}
-                        height={60}
-                        className="h-10 xs:h-12 sm:h-14 w-auto object-contain"
+                        width={240}
+                        height={120}
+                        className="h-full w-full object-contain p-1.5 transition-transform duration-500 group-hover:scale-103"
                         priority={true}
                       />
                     </div>

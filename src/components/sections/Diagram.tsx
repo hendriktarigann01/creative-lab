@@ -14,8 +14,12 @@ const FeatureCard = forwardRef<
   <div
     ref={ref}
     className={cn(
-      "z-10 flex md:min-w-72 h-14 items-center gap-2 rounded-xl px-4 select-none hover:scale-105 transition-all duration-300",
+      "z-10 flex select-none hover:scale-105 transition-all duration-300",
       "border border-border bg-card text-tertiary shadow-[0_4px_12px_-2px_rgba(0,0,0,0.05)]",
+      // Mobile: vertical card layout, fixed height and width
+      "flex-col items-center justify-center text-center p-2.5 h-16 w-[140px] rounded-md",
+      // Desktop: horizontal card layout, height 14, min-w-72
+      "md:flex-row md:items-center md:gap-2 md:px-4 md:h-14 md:w-auto md:min-w-72 md:rounded-xl",
       className
     )}
   >
@@ -136,56 +140,69 @@ export function Diagram({ projectSlug }: { projectSlug?: string }) {
 
   const renderIcon = (icon: string | React.ReactNode) => {
     if (typeof icon === 'string') {
-      return <CustomIcon name={icon} className="h-4.5 w-4.5" />;
+      return <CustomIcon name={icon} className="h-5 w-5 sm:h-4.5 sm:w-4.5 text-primary" />;
     }
-    return icon;
+    return <div className="h-5 w-5 sm:h-4.5 sm:w-4.5 text-primary flex items-center justify-center">{icon}</div>;
   };
 
   return (
-    <section className="relative overflow-hidden py-24 border-t border-border bg-background text-foreground">
+    <section className="relative overflow-hidden py-16 sm:py-24 bg-background text-foreground">
       {/* Background radial gradient */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(124,58,237,0.15),transparent_65%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(124,58,237,0.3),transparent_65%)]" />
 
       <div className="relative mx-auto max-w-4xl px-6 text-center">
-        <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">
-          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto font-medium tracking-tight">
+          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-medium">
             {heading}
           </span>
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-tertiary">
+        <p className="max-w-4xl mx-auto text-sm sm:text-base text-tertiary mt-4 leading-relaxed">
           {description}
         </p>
       </div>
 
       <div
         ref={containerRef}
-        className="relative mx-auto mt-16 grid h-[520px] w-full max-w-7xl grid-cols-5 grid-rows-3 items-center px-6"
+        className="relative mx-auto mt-16 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-5 md:grid-rows-3 items-center px-6 h-[480px] md:h-[520px] w-full max-w-7xl"
       >
         {/* Row 1 - Column 2 and 4 */}
-        <FeatureCard ref={topLeftRef} className="justify-center col-start-2 row-start-1 justify-self-end">
+        <FeatureCard
+          ref={topLeftRef}
+          className="justify-center col-start-1 row-start-1 justify-self-start md:col-start-2 md:row-start-1 md:justify-self-end"
+        >
           {renderIcon(cards[0].icon)}
-          <span className="text-sm font-medium">{cards[0].label}</span>
+          <span className="text-[8px] sm:text-[10px] leading-tight md:text-sm font-medium mt-1 md:mt-0">
+            {cards[0].label}
+          </span>
         </FeatureCard>
 
-        <FeatureCard ref={topRightRef} className="justify-center col-start-4 row-start-1 justify-self-start">
+        <FeatureCard
+          ref={topRightRef}
+          className="justify-center col-start-2 row-start-1 justify-self-end md:col-start-4 md:row-start-1 md:justify-self-start"
+        >
           {renderIcon(cards[1].icon)}
-          <span className="text-sm font-medium">{cards[1].label}</span>
+          <span className="text-[8px] sm:text-[10px] leading-tight md:text-sm font-medium mt-1 md:mt-0">
+            {cards[1].label}
+          </span>
         </FeatureCard>
 
         {/* Row 2 - Column 1, 3, and 5 */}
-        <FeatureCard ref={midLeftRef} className="justify-center col-start-1 row-start-2 justify-self-start">
+        <FeatureCard
+          ref={midLeftRef}
+          className="justify-center col-start-1 row-start-2 justify-self-start md:col-start-1 md:row-start-2 md:justify-self-start"
+        >
           {renderIcon(cards[2].icon)}
-          <span className="text-sm font-medium">{cards[2].label}</span>
+          <span className="text-[8px] sm:text-[10px] leading-tight md:text-sm font-medium mt-1 md:mt-0">
+            {cards[2].label}
+          </span>
         </FeatureCard>
 
-        {/* Center Logo Box in Column 3 */}
+        {/* Center Logo Box in Column 3 / Row 4 on mobile */}
         <div
           ref={centerRef}
-          className="col-start-3 row-start-2 z-20 mx-auto flex h-28 w-28 items-center justify-center rounded-2xl hover:scale-105 transition-all duration-300 border border-border bg-card shadow-[0_4px_12px_-2px_rgba(0, 0, 0, 0.05)]"
+          className="col-span-2 row-start-4 justify-self-center mt-6 md:col-start-3 md:row-start-2 md:col-span-1 md:justify-self-center md:mt-0 z-20 mx-auto flex h-28 w-28 items-center justify-center rounded-2xl hover:scale-105 transition-all duration-300 border border-border bg-card shadow-[0_4px_12px_-2px_rgba(0, 0, 0, 0.05)]"
         >
-          <div
-            className="w-32 h-32 rounded-xl p-8 bg-white dark:bg-transparent"
-          >
+          <div className="w-24 h-24 rounded-md md:rounded-xl p-5 bg-white dark:bg-transparent">
             <Image
               src={logoSrc}
               alt={logoAlt}
@@ -196,20 +213,35 @@ export function Diagram({ projectSlug }: { projectSlug?: string }) {
           </div>
         </div>
 
-        <FeatureCard ref={midRightRef} className="justify-center col-start-5 row-start-2 justify-self-end">
+        <FeatureCard
+          ref={midRightRef}
+          className="justify-center col-start-2 row-start-2 justify-self-end md:col-start-5 md:row-start-2 md:justify-self-end"
+        >
           {renderIcon(cards[3].icon)}
-          <span className="text-sm font-medium">{cards[3].label}</span>
+          <span className="text-[8px] sm:text-[10px] leading-tight md:text-sm font-medium mt-1 md:mt-0">
+            {cards[3].label}
+          </span>
         </FeatureCard>
 
         {/* Row 3 - Column 2 and 4 */}
-        <FeatureCard ref={bottomLeftRef} className="justify-center col-start-2 row-start-3 justify-self-end">
+        <FeatureCard
+          ref={bottomLeftRef}
+          className="justify-center col-start-1 row-start-3 justify-self-start md:col-start-2 md:row-start-3 md:justify-self-end"
+        >
           {renderIcon(cards[4].icon)}
-          <span className="text-sm font-medium">{cards[4].label}</span>
+          <span className="text-[8px] sm:text-[10px] leading-tight md:text-sm font-medium mt-1 md:mt-0">
+            {cards[4].label}
+          </span>
         </FeatureCard>
 
-        <FeatureCard ref={bottomRightRef} className="justify-center col-start-4 row-start-3 justify-self-start">
+        <FeatureCard
+          ref={bottomRightRef}
+          className="justify-center col-start-2 row-start-3 justify-self-end md:col-start-4 md:row-start-3 md:justify-self-start"
+        >
           {renderIcon(cards[5].icon)}
-          <span className="text-sm font-medium">{cards[5].label}</span>
+          <span className="text-[8px] sm:text-[10px] leading-tight md:text-sm font-medium mt-1 md:mt-0">
+            {cards[5].label}
+          </span>
         </FeatureCard>
 
         {/* Beams - orthogonal lines flowing simultaneously toward the center logo card */}
